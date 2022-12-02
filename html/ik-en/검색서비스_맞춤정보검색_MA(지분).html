@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-kr/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-en/style.css">
+	<link rel="stylesheet" href="../../css/ik-en-new/style_20220216.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>맞춤정보검색 &lt; 검색서비스 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(0, 1)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb10.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>Customized Search</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>Search Service</li>
+						<li>Customized Search</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="top-info-box top-search">
+							<div class="in">
+								<div class="normal-txt">Invest KOREA provides the investors who are interested in Korea with services of
+									recommending information by investment type. In the search screen below, enter the required
+									information after selecting the investment type. Then, <span class="color-blue fwr">the information on
+										Industry, Offerings, and Location, will be customized and provided.</span></div>
+								<div class="normal-txt"> If you register your e-mail account when searching for customized information,
+									we will send you regular e-mails on recommended information by investment field (monthly). </div>
+							</div>
+						</div>
+
+						<!-- 검색영역 -->
+						<!-- 추가사항 : <div class="search-head"> 영역에 new-type 클래스 추가 -->
+						<div class="search-head new-type">
+							<form id="search-form">
+								<div class="box">
+									<div class="tit">Investment Type</div>
+									<div class="cont">
+										<div class="items2">
+											<span class="form-box">
+												<input type="radio" id="search-grfi" name="search-ty" class="blind">
+												<label for="search-grfi">Greenfield</label>
+											</span>
+											<span class="form-box">
+												<input type="radio" id="search-mna" name="search-ty" class="blind" checked>
+												<label for="search-mna">M&amp;A (equity)</label>
+											</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="box">
+									<div class="tit">search query</div>
+
+									<!-- 그린필드 컨텐츠 -->
+									<div id="greenfiled-cont" class="cont" style="display: block;">
+										<div class="detail-box">
+											<div class="detail-tit">Industrial Classification</div>
+											<div class="detail-cont">
+												<select name="nat_cd" id="" title="Select a Industrial Classification">
+													<option value="">Select a Industrial Classification</option>
+												</select>
+											</div>
+										</div>
+										<div class="detail-box">
+											<div class="detail-tit">Standard Industrial Classification (SIC)</div>
+											<div class="detail-cont">
+												<div class="form-srch">
+													<input type="text" id="indust_cl_cd_name" value="" title="Type"
+														placeholder="Select Business Type" readonly>
+													<input type="hidden" id="entp_induty_cd" value="">
+
+													<button type="button" id="indust-button" data-code-id="entp_induty_cd"
+														data-code-name="indust_cl_cd_name" class="btn"><span class="blind">검색</span></button>
+												</div>
+												<div class="normal-mt color-navy">※ This information is necessary for the
+													recommendation of location and offerings.</div>
+											</div>
+										</div>
+										<div class="detail-box">
+											<div class="detail-tit">Amount</div>
+											<div class="detail-cont">
+												<div class="items4">
+
+													<span class="form-box">
+														<input type="radio" name="invt_hope_amt_cd" id="invt_hope_amt_cd_1" class="blind" value="1">
+														<label for="invt_hope_amt_cd_1">Under 1M</label>
+													</span>
+
+													<span class="form-box">
+														<input type="radio" name="invt_hope_amt_cd" id="invt_hope_amt_cd_2" class="blind" value="2">
+														<label for="invt_hope_amt_cd_2">1M ~ 50M</label>
+													</span>
+
+													<span class="form-box">
+														<input type="radio" name="invt_hope_amt_cd" id="invt_hope_amt_cd_3" class="blind" value="3">
+														<label for="invt_hope_amt_cd_3">5M ~ 10M</label>
+													</span>
+
+													<span class="form-box">
+														<input type="radio" name="invt_hope_amt_cd" id="invt_hope_amt_cd_4" class="blind" value="4">
+														<label for="invt_hope_amt_cd_4">over 10M</label>
+													</span>
+
+												</div>
+											</div>
+										</div>
+										<div class="detail-box">
+											<div class="detail-tit">Method</div>
+											<div class="detail-cont">
+												<div class="items3 m-row">
+
+													<span class="form-box">
+														<input type="radio" name="hope_invacq_ty_cd" id="hope_invacq_ty_cd_1" class="blind"
+															value="1">
+														<label for="hope_invacq_ty_cd_1">Equity Investment</label>
+													</span>
+
+													<span class="form-box">
+														<input type="radio" name="hope_invacq_ty_cd" id="hope_invacq_ty_cd_2" class="blind"
+															value="2">
+														<label for="hope_invacq_ty_cd_2">Joint Venture</label>
+													</span>
+
+													<span class="form-box">
+														<input type="radio" name="hope_invacq_ty_cd" id="hope_invacq_ty_cd_3" class="blind"
+															value="3">
+														<label for="hope_invacq_ty_cd_3">M&amp;A</label>
+													</span>
+
+												</div>
+											</div>
+										</div>
+										<div class="detail-box">
+											<div class="detail-tit">Keyword</div>
+											<div class="detail-cont">
+												<input type="text" id="main_prdct_cmdlt_name" value="" title="Enter keywords"
+													placeholder="Enter keywords. (eg: financial service)">
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="box">
+									<div class="tit">Investor information</div>
+									<div class="cont">
+										<div class="detail-box">
+											<div class="detail-tit">Company</div>
+											<div class="detail-cont">
+												<input type="text" id="entp_name" value="" title="Enter a company name.">
+												<div class="normal-mt">※ Please sign up the name of the company you are representing.</div>
+											</div>
+										</div>
+										<div class="detail-box">
+											<div class="detail-tit">Nationality</div>
+											<div class="detail-cont">
+												<select name="nat_cd" id="nat_cd" title="Select a country">
+													<option value="">Select a country</option>
+
+													<option value="11">중국</option>
+
+													<option value="13">독일</option>
+
+													<option value="56">미국</option>
+
+													<option value="58">아랍에미레이트</option>
+
+													<option value="78">남아프리카공화국</option>
+
+													<option value="123">일본</option>
+
+													<option value="124">싱가포르</option>
+
+													<option value="148">인도</option>
+
+													<option value="156">멕시코</option>
+
+													<option value="188">러시아</option>
+
+													<option value="12">대만</option>
+
+													<option value="14">프랑스</option>
+
+													<option value="57">캐나다</option>
+
+													<option value="59">바레인</option>
+
+													<option value="79">레소토</option>
+
+													<option value="125">필리핀</option>
+
+													<option value="149">네팔</option>
+
+													<option value="157">벨리즈</option>
+
+													<option value="189">아르메니아</option>
+
+													<option value="15">모나코</option>
+
+													<option value="60">이집트</option>
+
+													<option value="80">보츠와나</option>
+
+													<option value="126">타이</option>
+
+													<option value="150">파키스탄</option>
+
+													<option value="158">파나마</option>
+
+													<option value="190">우크라이나</option>
+
+													<option value="16">영국</option>
+
+													<option value="61">리비아</option>
+
+													<option value="81">나미비아</option>
+
+													<option value="127">말레이시아</option>
+
+													<option value="151">아프가니스탄</option>
+
+													<option value="159">코스타리카</option>
+
+													<option value="191">몰도바</option>
+
+													<option value="17">아일랜드</option>
+
+													<option value="62">이란</option>
+
+													<option value="82">스와질랜드</option>
+
+													<option value="128">브루나이</option>
+
+													<option value="152">방글라데시</option>
+
+													<option value="160">자마이카</option>
+
+													<option value="192">카자흐스탄</option>
+
+													<option value="18">스웨덴</option>
+
+													<option value="63">이스라엘</option>
+
+													<option value="83">말라위</option>
+
+													<option value="129">미얀마</option>
+
+													<option value="153">부탄</option>
+
+													<option value="161">니카라과</option>
+
+													<option value="193">키르기즈스탄</option>
+
+													<option value="19">노르웨이</option>
+
+													<option value="64">사우디아라비아</option>
+
+													<option value="84">마다가스카르</option>
+
+													<option value="130">인도네시아</option>
+
+													<option value="154">스리랑카</option>
+
+													<option value="162">베네수엘라</option>
+
+													<option value="194">타지키스탄</option>
+
+													<option value="20">아이슬란드</option>
+
+													<option value="65">예멘</option>
+
+													<option value="85">짐바브웨</option>
+
+													<option value="131">동티모르</option>
+
+													<option value="155">몰디브</option>
+
+													<option value="163">가이아나</option>
+
+													<option value="195">아제르바이잔</option>
+
+													<option value="21">라트비아</option>
+
+													<option value="66">요르단</option>
+
+													<option value="86">잠비아</option>
+
+													<option value="132">베트남</option>
+
+													<option value="164">트리니다드 토바고</option>
+
+													<option value="196">조지아</option>
+
+													<option value="22">덴마크</option>
+
+													<option value="67">레바논</option>
+
+													<option value="87">나이지리아</option>
+
+													<option value="133">캄보디아</option>
+
+													<option value="165">그레나다</option>
+
+													<option value="197">우즈베키스탄</option>
+
+													<option value="23">그린랜드</option>
+
+													<option value="68">시리아</option>
+
+													<option value="88">카메룬</option>
+
+													<option value="134">라오스</option>
+
+													<option value="166">바베이도스</option>
+
+													<option value="198">투르크메니스탄</option>
+
+													<option value="24">네덜란드</option>
+
+													<option value="69">모로코</option>
+
+													<option value="89">중앙아프리카공화국</option>
+
+													<option value="135">오스트레일리아</option>
+
+													<option value="167">수리남</option>
+
+													<option value="199">벨라루스</option>
+
+													<option value="25">벨기에</option>
+
+													<option value="70">모리타니</option>
+
+													<option value="90">차드</option>
+
+													<option value="136">파푸아뉴기니</option>
+
+													<option value="168">세인트빈센트, 그레나딘</option>
+
+													<option value="200">몽골</option>
+
+													<option value="26">룩셈부르크</option>
+
+													<option value="71">쿠웨이트</option>
+
+													<option value="91">니제르</option>
+
+													<option value="137">나우루</option>
+
+													<option value="169">과테말라</option>
+
+													<option value="27">이탈리아</option>
+
+													<option value="72">오만</option>
+
+													<option value="92">가봉</option>
+
+													<option value="138">팔라우</option>
+
+													<option value="170">엘살바도르</option>
+
+													<option value="28">교황청</option>
+
+													<option value="73">이라크</option>
+
+													<option value="93">케냐</option>
+
+													<option value="139">솔로몬 제도</option>
+
+													<option value="171">온두라스</option>
+
+													<option value="29">산마리노</option>
+
+													<option value="74">알제리</option>
+
+													<option value="94">우간다</option>
+
+													<option value="140">바누아투</option>
+
+													<option value="172">쿠바</option>
+
+													<option value="30">몰타</option>
+
+													<option value="75">튀니지</option>
+
+													<option value="95">세이셸</option>
+
+													<option value="141">투발루</option>
+
+													<option value="173">도미니카 공화국</option>
+
+													<option value="31">스위스</option>
+
+													<option value="76">터키</option>
+
+													<option value="96">코모로</option>
+
+													<option value="142">마이크로네시아</option>
+
+													<option value="174">도미니카 연방</option>
+
+													<option value="32">리히텐슈타인</option>
+
+													<option value="77">카타르</option>
+
+													<option value="97">모리셔스</option>
+
+													<option value="143">뉴질랜드</option>
+
+													<option value="175">아이티</option>
+
+													<option value="33">스페인</option>
+
+													<option value="98">수단</option>
+
+													<option value="144">통가</option>
+
+													<option value="176">안티구아 바부다</option>
+
+													<option value="34">포르투갈</option>
+
+													<option value="99">남수단</option>
+
+													<option value="145">사모아</option>
+
+													<option value="177">세인트 킷츠 &amp; 네비스</option>
+
+													<option value="35">안도라</option>
+
+													<option value="100">에리트레아</option>
+
+													<option value="146">피지</option>
+
+													<option value="178">세인트 루시아</option>
+
+													<option value="36">오스트리아</option>
+
+													<option value="101">에티오피아</option>
+
+													<option value="147">타히티</option>
+
+													<option value="179">브라질</option>
+
+													<option value="37">그리스</option>
+
+													<option value="102">소말리아</option>
+
+													<option value="180">페루</option>
+
+													<option value="38">사이프로스</option>
+
+													<option value="103">지부티</option>
+
+													<option value="181">볼리비아</option>
+
+													<option value="39">알바니아</option>
+
+													<option value="104">가나</option>
+
+													<option value="182">콜롬비아</option>
+
+													<option value="40">핀란드</option>
+
+													<option value="105">토고</option>
+
+													<option value="183">아르헨티나</option>
+
+													<option value="41">에스토니아</option>
+
+													<option value="106">베냉</option>
+
+													<option value="184">우루과이</option>
+
+													<option value="42">헝가리</option>
+
+													<option value="107">부르키나 파소</option>
+
+													<option value="185">칠레</option>
+
+													<option value="43">폴란드</option>
+
+													<option value="108">탄자니아</option>
+
+													<option value="186">파라과이</option>
+
+													<option value="44">리투아니아</option>
+
+													<option value="109">르완다</option>
+
+													<option value="187">에콰도르</option>
+
+													<option value="45">체코</option>
+
+													<option value="110">브룬디</option>
+
+													<option value="46">루마니아</option>
+
+													<option value="111">모잠비크</option>
+
+													<option value="47">크로아티아</option>
+
+													<option value="112">앙골라</option>
+
+													<option value="48">슬로베니아</option>
+
+													<option value="113">코트디부와르</option>
+
+													<option value="49">보스니아-헤르체고비나</option>
+
+													<option value="114">시에라 리온</option>
+
+													<option value="50">불가리아</option>
+
+													<option value="115">세네갈</option>
+
+													<option value="51">마케도니아</option>
+
+													<option value="116">라이베리아</option>
+
+													<option value="52">슬로바키아</option>
+
+													<option value="117">기니</option>
+
+													<option value="53">세르비아</option>
+
+													<option value="118">감비아</option>
+
+													<option value="54">몬테네그로</option>
+
+													<option value="119">기니비사우</option>
+
+													<option value="55">코소보</option>
+
+													<option value="120">콩고민주공화국</option>
+
+													<option value="121">콩고</option>
+
+													<option value="122">말리</option>
+
+												</select>
+											</div>
+										</div>
+										<div class="detail-box">
+											<div class="detail-tit">E-mail</div>
+											<div class="detail-cont">
+												<input type="text" id="email" value="" title="E-mail">
+												<span class="checkbox">
+													<input type="checkbox" id="email_rcv_yn" name="email_rcv_yn" value="Y" class="blind">
+													<label for="email_rcv_yn">Receive customized information via e-mail</label>
+												</span>
+
+												<div class="normal-mt color-navy">※ You register your e-mail account, we will send you regular
+													e-mails on the recommended information for the investment field that you last searched
+													(monthly).</div>
+												<div>※ You can select up to three fields of interest when applying for the e-mail newsletter
+													service for recommended information.</div>
+												<a href="#" id="mailing-service-button" class="color-green fwr underline">[Apply for E-mail
+													Newsletter Service for Recommended Information]</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="table-btm">
+									<div class="pc-l">
+										<div class="checkbox">
+											<input type="checkbox" value="y" name="indinf_agre_yn" id="indinf_agre_yn" class="blind">
+											<label for="indinf_agre_yn">Consent Form for Collection and Use of Personal Information</label>
+											<a href="#n" class="bold underline" onclick="fn_open_popup(this,'privacy-popup');">[Go to Privacy
+												Policy]</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="btn-area">
+									<button type="button" class="btn-default bg-blue fwm" id="search-button">Search for customized
+										information</button>
+								</div>
+							</form>
+						</div>
+						<!-- //검색영역 -->
+
+						<!-- 검색상세(그린필드) -->
+						<!-- 추가사항 : <div class="search-body"> new-type 클래스 추가 -->
+						<div class="search-body new-type" data-box="radio-tab2">
+							<div class="box">
+								<ul class="link01">
+									<li>
+										<a href="#n" class="link01-1" onclick="fn_open_popup(this,'data-popup');">
+											<div class="tit">Industry information</div>
+											<div class="num">5,125</div>
+										</a>
+									</li>
+									<li>
+										<a href="#n" class="link01-2" onclick="fn_open_popup(this,'data-popup');">
+											<div class="tit">News and Information</div>
+											<div class="num">5,125</div>
+										</a>
+									</li>
+									<li>
+										<a href="#n" class="link01-3" onclick="fn_open_popup(this,'data-popup');">
+											<div class="tit">Related Menu</div>
+											<div class="num">5,125</div>
+										</a>
+									</li>
+									<li>
+										<a href="#n" class="link01-4" onclick="fn_open_popup(this,'data-popup');">
+											<div class="tit">Successful Case</div>
+											<div class="num">5,125</div>
+										</a>
+									</li>
+									<!--
+                                    <li>
+                                        <a href="#n" class="link01-5">
+                                            <div class="tit">입지정보 추천</div>
+                                            <div class="num">5,125</div>
+                                        </a>
+                                    </li>
+                                    -->
+								</ul>
+							</div>
+
+							<div class="box">
+								<div class="board list-board">
+									<div class="top">
+										<strong class="sub-tit01">Industry information</strong>
+										<div class="s-txt result-area">A total of <span class="num">247 data</span></div>
+									</div>
+									<div class="board-content">
+										<ul class="list01">
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+										</ul>
+									</div>
+									<a href="#n" class="btn-more" onclick="fn_open_popup(this,'data-popup');"><span class="blind">산업보고서
+											더보기</span></a>
+								</div>
+								<div class="board list-board">
+									<div class="top">
+										<strong class="sub-tit01">News and Information</strong>
+										<div class="s-txt result-area">A total of <span class="num">247 data</span></div>
+									</div>
+									<div class="board-content">
+										<ul class="list01">
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+										</ul>
+									</div>
+									<a href="#n" class="btn-more" onclick="fn_open_popup(this,'data-popup');"><span class="blind">각종 뉴스·정보
+											더보기</span></a>
+								</div>
+								<div class="board list-board">
+									<div class="top">
+										<strong class="sub-tit01">Related Menu</strong>
+										<div class="s-txt result-area">A total of <span class="num">247 data</span></div>
+									</div>
+									<div class="board-content">
+										<ul class="list01">
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+										</ul>
+									</div>
+									<a href="#n" class="btn-more" onclick="fn_open_popup(this,'data-popup');"><span class="blind">각종 뉴스·정보
+											더보기</span></a>
+								</div>
+								<div class="board list-board">
+									<div class="top">
+										<strong class="sub-tit01">Related Menu</strong>
+										<div class="s-txt result-area">A total of <span class="num">247 data</span></div>
+									</div>
+									<div class="board-content">
+										<ul class="list01">
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+											<li><a href="#n">Korea's Leading Industries 2020 : Shipbuildin</a><span
+													class="date">2020.08.06</span></li>
+										</ul>
+									</div>
+									<a href="#n" class="btn-more" onclick="fn_open_popup(this,'data-popup');"><span class="blind">각종 뉴스·정보
+											더보기</span></a>
+								</div>
+							</div>
+
+							<div class="box">
+								<div class="board">
+									<div class="top">
+										<strong class="sub-tit01">Offerings Recommended by IKMP</strong>
+									</div>
+									<div class="ikmp-slider">
+										<div class="slider">
+											<div class="slide">
+												<a href="#n">
+													<div class="cont">
+														<div class="category">[ICT]</div>
+														<div class="tit">3D Modeling Technology</div>
+														<div class="desc">Source technology for 3D modeling engine – The company is the only one in
+															Korea that has the original technology for the 3D modeling engine. Based on this
+															technology, the company developed</div>
+													</div>
+													<div class="btm">
+														<div class="l">Fundrasing Target</div>
+														<div class="r">USD<span>1M</span></div>
+													</div>
+												</a>
+											</div>
+											<div class="slide">
+												<a href="#n">
+													<div class="cont">
+														<div class="category">[ICT]</div>
+														<div class="tit">3D Modeling Technology</div>
+														<div class="desc">Source technology for 3D modeling engine – The company is the only one in
+															Korea that has the original technology for the 3D modeling engine. Based on this
+															technology, the company developed</div>
+													</div>
+													<div class="btm">
+														<div class="l">Fundrasing Target</div>
+														<div class="r">USD<span>1M</span></div>
+													</div>
+												</a>
+											</div>
+											<div class="slide">
+												<a href="#n">
+													<div class="cont">
+														<div class="category">[ICT]</div>
+														<div class="tit">3D Modeling Technology</div>
+														<div class="desc">Source technology for 3D modeling engine – The company is the only one in
+															Korea that has the original technology for the 3D modeling engine. Based on this
+															technology, the company developed</div>
+													</div>
+													<div class="btm">
+														<div class="l">Fundrasing Target</div>
+														<div class="r">USD<span>1M</span></div>
+													</div>
+												</a>
+											</div>
+											<div class="slide">
+												<a href="#n">
+													<div class="cont">
+														<div class="category">[ICT]</div>
+														<div class="tit">3D Modeling Technology</div>
+														<div class="desc">Source technology for 3D modeling engine – The company is the only one in
+															Korea that has the original technology for the 3D modeling engine. Based on this
+															technology, the company developed</div>
+													</div>
+													<div class="btm">
+														<div class="l">Fundrasing Target</div>
+														<div class="r">USD<span>1M</span></div>
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="board">
+									<div class="top">
+										<strong class="sub-tit01">Recommendation of Investment Seeking Companies</strong>
+									</div>
+									<div class="invest-company">
+										<div class="inv-list">
+											<a href="#n">
+												<div class="pic">
+													<img src="../../images/ik-kr/new_20220216/logo_geistkorea.gif" alt="">
+												</div>
+												<div class="cont">
+													<strong class="tit">
+														<div class="color-blue">[Pharma / Healthcare]</div>
+														GEISTKOREA
+													</strong>
+													<ul class="list01">
+														<li>Wireless Hand Type</li>
+														<li>재무적투자(FI), 전략 재무적투자(FI), 전략</li>
+														<li>투자규모 : 100~500M 100~500M</li>
+													</ul>
+													<div class="btn-area">
+														<button class="com-btn btn-default-s">Series_1</button>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="inv-list">
+											<a href="#;">
+												<div class="pic">
+													<img src="../../images/ik-kr/new_20220216/logo_samsung.gif" alt="">
+												</div>
+												<div class="cont">
+													<strong class="tit">
+														<div class="color-blue">[Pharma / Healthcare]</div>
+														Samsung Display
+													</strong>
+													<ul class="list01">
+														<li>Wireless Hand Type</li>
+														<li>M&amp;A, 직접진출, 재무적투자(FI)</li>
+														<li>투자규모 : 100~500M</li>
+													</ul>
+												</div>
+											</a>
+										</div>
+										<div class="inv-list">
+											<a href="#;">
+												<div class="pic">
+													<img src="../../images/ik-kr/new_20220216/logo_marketkurly.gif" alt="">
+												</div>
+												<div class="cont">
+													<strong class="tit">
+														<div class="color-blue">[ICT]</div>
+														Market Kurly
+													</strong>
+													<ul class="list01">
+														<li>Wireless Hand Type Drug Infusion Device</li>
+														<li>재무적투자(FI), 전략적투자(SI)</li>
+														<li>투자규모 : 100~500M</li>
+													</ul>
+													<div class="btn-area">
+														<button href="#n" class="com-btn btn-default-s">Series_2</button>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="inv-list">
+											<a href="#n">
+												<div class="pic">
+													<img src="../../images/ik-kr/new_20220216/logo_geistkorea.gif" alt="">
+												</div>
+												<div class="cont">
+													<strong class="tit">
+														<div class="color-blue">[Pharma / Healthcare]</div>
+														GEISTKOREA
+													</strong>
+													<ul class="list01">
+														<li>Wireless Hand Type</li>
+														<li>재무적투자(FI), 전략 재무적투자(FI), 전략</li>
+														<li>투자규모 : 100~500M 100~500M</li>
+													</ul>
+													<div class="btn-area">
+														<button class="com-btn btn-default-s">Series_1</button>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="inv-list">
+											<a href="#;">
+												<div class="pic">
+													<img src="../../images/ik-kr/new_20220216/logo_samsung.gif" alt="">
+												</div>
+												<div class="cont">
+													<strong class="tit">
+														<div class="color-blue">[Pharma / Healthcare]</div>
+														Samsung Display
+													</strong>
+													<ul class="list01">
+														<li>Wireless Hand Type</li>
+														<li>M&amp;A, 직접진출, 재무적투자(FI)</li>
+														<li>투자규모 : 100~500M</li>
+													</ul>
+												</div>
+											</a>
+										</div>
+										<div class="inv-list">
+											<a href="#;">
+												<div class="pic">
+													<img src="../../images/ik-kr/new_20220216/logo_marketkurly.gif" alt="">
+												</div>
+												<div class="cont">
+													<strong class="tit">
+														<div class="color-blue">[ICT]</div>
+														Market Kurly
+													</strong>
+													<ul class="list01">
+														<li>Wireless Hand Type Drug Infusion Device</li>
+														<li>재무적투자(FI), 전략적투자(SI)</li>
+														<li>투자규모 : 100~500M</li>
+													</ul>
+													<div class="btn-area">
+														<button href="#n" class="com-btn btn-default-s">Series_2</button>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<script>
+									// 투자희망기업 추천 슬라이드 목록
+									$(".invest-company").slick({
+										autoplay: false,
+										autoplaySpeed: 5000,
+										speed: 1000,
+										infinite: true,
+										arrows: true,
+										dots: true,
+										responsive: [{
+												breakpoint: 2000,
+												settings: {
+													slidesToShow: 3,
+													slidesToScroll: 3,
+												}
+											},
+											{
+												breakpoint: 1200,
+												settings: {
+													variableWidth: true
+												}
+											}
+										]
+									});
+
+									$(".invest-company .slick-prev").css({
+										'left': $('.invest-company .slick-dots').position().left,
+										'top': $('.invest-company .slick-dots').position().top
+									})
+									$(".invest-company .slick-next").css({
+										'left': $('.invest-company .slick-dots').position().left + $('.invest-company .slick-dots')
+											.width() + $('.invest-company .slick-next').width(),
+										'top': $('.invest-company .slick-dots').position().top
+									});
+
+									$(window).on("resizeEnd", function () {
+										$(".invest-company .slick-prev").css({
+											'left': $('.invest-company .slick-dots').position().left,
+											'top': $('.invest-company .slick-dots').position().top
+										})
+										$(".invest-company .slick-next").css({
+											'left': $('.invest-company .slick-dots').position().left + $('.invest-company .slick-dots')
+												.width() + $('.invest-company .slick-next').width(),
+											'top': $('.invest-company .slick-dots').position().top
+										});
+									});
+								</script>
+							</div>
+						</div>
+						<!-- //검색상세 -->
+
+						<!-- 레이어팝업 -->
+						<!-- 표준산업분류 선택 -->
+						<div class="layer-popup-box" data-popup="category-popup">
+							<div class="popup pop-size-1070">
+								<div class="top">
+									<div class="tit">
+										표준산업분류 선택
+									</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('category-popup');"><span
+											class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<div class="category-area">
+										<div class="top-area">
+											<ul>
+												<li><span>01.</span>대분류 선택</li>
+												<li><span>02.</span>중분류 선택</li>
+												<li><span>03.</span>소분류 선택</li>
+											</ul>
+										</div>
+										<div class="category-box-wrap">
+											<div class="category-box">
+												<strong class="sub-tit03">01.대분류선택</strong>
+												<ul>
+													<li><a href="#n">정보통신</a></li>
+													<li><a href="#n" class="active">정보통신</a></li>
+													<li><a href="#n">정보통신</a></li>
+												</ul>
+											</div>
+											<!--
+                                            <div class="category-box">
+                                                <strong class="sub-tit03">02.중분류선택</strong>
+                                                <ul>
+                                                    <li><a href="#n" class="active">우편 및 통신업</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-box">
+                                                <strong class="sub-tit03">03.소분류선택</strong>
+                                                <ul>
+                                                    <li><a href="#n">전기 통신업</a></li>
+                                                    <li><a href="#n">전기 통신업</a></li>
+                                                    <li><a href="#n" class="active">전기 통신업</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="category-box">
+                                                <strong class="sub-tit03">04.세분류선택</strong>
+                                                <ul>
+                                                    <li><a href="#n">유선 통신업</a></li>
+                                                    <li><a href="#n" class="active">유선 통신업</a></li>
+                                                    <li><a href="#n">유선 통신업</a></li>
+                                                </ul>
+                                            </div>
+                                            -->
+										</div>
+									</div>
+
+									<div class="btn-area">
+										<div class="r">
+											<button type="button" class="btn-default bg-blue">선택</button>
+											<button type="button" class="btn-default" onclick="fn_hide_popup('category-popup');">취소</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //표준산업분류 선택 -->
+
+						<!-- 산업단지 정보 -->
+						<div class="layer-popup-box" data-popup="info-popup">
+							<div class="popup pop-size-1000">
+								<div class="top">
+									<div class="tit">
+										산업단지 정보
+									</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('info-popup');"><span
+											class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<strong class="sub-tit01">[광주광역시] 광주첨단과학산업단지</strong>
+									<div class="info-box">
+										<div class="tit">세부정보 바로가기를 클릭하시면 산업단지공단의 Smart K-Factory 서비스의 해당 정보 화면으로 이동합니다.</div>
+										<div class="btn">
+											<a href="#n" class="btn-default-s btn-new-window bg-blue">세부정보 바로가기</a>
+										</div>
+									</div>
+									<div class="normal-table02 wid-v2">
+										<ul>
+											<li>
+												<div class="data">
+													<div class="tit">단지명</div>
+													<div class="cont">안성무능산업단지</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">최초지정일</div>
+													<div class="cont">2000.01.01</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">지정면적(km2)</div>
+													<div class="cont">5.3</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">관리기관</div>
+													<div class="cont">경기도 안성시</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">인근철도역</div>
+													<div class="cont">평택역</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">역과 거리(km)</div>
+													<div class="cont">30</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">인근공항</div>
+													<div class="cont">청주공항</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">공항과의 거리(km)</div>
+													<div class="cont">50</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">공업용수 공급용량(톤/일)</div>
+													<div class="cont">10,000</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">가정용수 공급용량(톤/일)</div>
+													<div class="cont">1,000</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">소속 기초 지자체</div>
+													<div class="cont">경기도 안성시</div>
+												</div>
+											</li>
+											<li>
+												<div class="data">
+													<div class="tit">인구수(명)</div>
+													<div class="cont">150,000</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="btn-area">
+										<div class="r">
+											<button type="button" class="btn-default bg-blue">선택</button>
+											<button type="button" class="btn-default" onclick="fn_hide_popup('info-popup');">취소</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //산업단지 정보 -->
+
+						<!-- 주요 자료별 검색결과 -->
+						<div class="layer-popup-box" data-popup="data-popup">
+							<div class="popup pop-size-1000">
+								<div class="top">
+									<div class="tit">
+										주요 자료별 검색결과
+									</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('data-popup');"><span
+											class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<div class="table-top">
+										<div class="l item-num">전체 : <span>235</span>건 [<span>1</span>/23페이지]</div>
+										<div class="r">
+											<select name="" id="" class="item-view" title="리스트 개수 선택">
+												<option value="">10개씩</option>
+											</select>
+											<button type="button" class="btn-default-s">보기</button>
+										</div>
+									</div>
+
+									<!-- 리스트 -->
+									<ul class="normal-board move-board">
+										<li>
+											<div class="num-area">No.<span>1,785</span></div>
+											<div class="txt-area">
+												<strong class="tit"><span class="category">[투자뉴스]</span>전기차와 자율차 개발에 역량 집중</strong>
+												<div class="board-list-box">
+													<ul class="list01">
+														<li><span class="bold">작성자 : </span>운영자</li>
+														<li><span class="bold">작성일 : </span>2020.06.20</li>
+														<li><span class="bold">조회수 : </span>1,852</li>
+													</ul>
+												</div>
+												<a href="#n" class="btn-go">바로가기</a>
+											</div>
+										</li>
+									</ul>
+									<!-- //리스트 -->
+
+									<!-- 페이징 -->
+									<div class="paging">
+										<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로 이동</span></a>
+										<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로 이동</span></a>
+										<span>
+											<strong>1</strong>
+											<a href="#n">2</a>
+											<a href="#n">3</a>
+											<a href="#n">4</a>
+											<a href="#n">5</a>
+										</span>
+										<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로 이동</span></a>
+										<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로 이동</span></a>
+									</div>
+									<!-- //페이징 -->
+
+									<div class="btn-area">
+										<div class="r">
+											<button type="button" class="btn-default" onclick="fn_hide_popup('data-popup');">닫기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //주요 자료별 검색결과 -->
+						<!-- //레이어팝업 -->
+
+						<script>
+							// MnA(지분), 그린필드 선택 시
+							$(document).on("click", ".mna-cont", function () {
+								$(".search-body").hide();
+								$("#mna-cont").show();
+								$("#greenfiled-cont").hide();
+								$(".ikmp-slider .slider").slick("unslick");
+								$(".position-slider .slider").slick("unslick");
+							})
+							$(document).on("click", ".greenfiled-cont", function () {
+								$(".search-body").hide();
+								$("#greenfiled-cont").show();
+								$("#mna-cont").hide();
+								$(".ikmp-slider .slider").slick("unslick");
+								$(".position-slider .slider").slick("unslick");
+							})
+
+							// 한국내 주요 수요처 정보 YES 선택시
+							$(document).on("click", "#radio-yes", function () {
+								$(".toggle-content").hide();
+								$(".yes").show();
+							});
+
+							// 한국내 주요 수요처 정보 No 선택시
+							$(document).on("click", "#radio-no", function () {
+								$(".toggle-content").hide();
+								$(".no").show();
+							});
+
+							// 투자목적 수출 선택 시 판매도시 비활성화
+							$(document).on("click", ".purpose-content .form-box input", function () {
+								if ($(this).parent(".form-box").hasClass("export")) {
+									$(".sale-city").attr("disabled", true)
+								} else {
+									$(".sale-city").attr("disabled", false)
+								}
+							})
+
+							// IKMP 매물추천 슬라이더
+							var Slider = {
+								autoplay: false,
+								autoplaySpeed: 5000,
+								speed: 1000,
+								infinite: true,
+								arrows: true,
+								dots: true,
+								responsive: [{
+										breakpoint: 2000,
+										settings: {
+											slidesToShow: 3,
+											slidesToScroll: 3,
+										}
+									},
+									{
+										breakpoint: 1200,
+										settings: {
+											variableWidth: true
+										}
+									}
+								]
+							}
+
+							function searchBodyOpen() {
+								var radioCheck = $(".items2 input[type='radio']:checked").attr("id");
+								$(".search-body[data-box=" + radioCheck + "]").show();
+								$(".ikmp-slider .slider").slick(Slider);
+
+								var sliderLeft = $('.ikmp-slider .slider .slick-dots').position().left;
+								var sliderRight = $('.ikmp-slider .slider .slick-dots').position().left + $('.ikmp-slider .slider .slick-dots')
+									.width() + $('.ikmp-slider .slider .slick-next').width();
+								var sliderTop = $('.ikmp-slider .slider .slick-dots').position().top;
+
+								$(".ikmp-slider .slider .slick-prev").css({
+									'left': sliderLeft,
+									'top': sliderTop
+								})
+								$(".ikmp-slider .slider .slick-next").css({
+									'left': sliderRight,
+									'top': sliderTop
+								})
+							}
+
+							// 리사이즈 했을 경우
+							$(window).resize(function () {
+								if (this.resizeTO) {
+									clearTimeout(this.resizeTO);
+								}
+								this.resizeTO = setTimeout(function () {
+									$(this).trigger('resizeEnd');
+								}, 100);
+							});
+
+							// 리사이즈가 끝났을 경우
+							$(window).on("resizeEnd", function () {
+								var sliderLeft = $('.ikmp-slider .slider .slick-dots').position().left;
+								var sliderRight = $('.ikmp-slider .slider .slick-dots').position().left + $(
+									'.ikmp-slider .slider .slick-dots').width() + $('.ikmp-slider .slider .slick-next').width();
+								var sliderTop = $('.ikmp-slider .slider .slick-dots').position().top;
+								var sliderLeft2 = $('.position-slider .slider .slick-dots').position().left;
+								var sliderRight2 = $('.position-slider .slider .slick-dots').position().left + $(
+									'.position-slider .slider .slick-dots').width() + $('.position-slider .slider .slick-next').width();
+								var sliderTop2 = $('.position-slider .slider .slick-dots').position().top;
+
+								$(".ikmp-slider .slider .slick-prev").css({
+									'left': sliderLeft,
+									'top': sliderTop
+								})
+								$(".ikmp-slider .slider .slick-next").css({
+									'left': sliderRight,
+									'top': sliderTop
+								})
+								$(".position-slider .slider .slick-prev").css({
+									'left': sliderLeft2,
+									'top': sliderTop2
+								})
+								$(".position-slider .slider .slick-next").css({
+									'left': sliderRight2,
+									'top': sliderTop2
+								})
+							});
+
+							searchBodyOpen();
+						</script>
+					</div>
+				</div>
+				<!-- //content -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

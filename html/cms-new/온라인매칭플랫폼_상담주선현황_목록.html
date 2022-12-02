@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">온라인매칭플랫폼</a>
+				<span>&gt;</span>
+				<strong>상담주선 현황</strong>
+			</p>
+
+			<h2 id="tit_page">상담주선 현황</h2>
+
+			<div class="search_area">
+				<table class="tb_search">
+					<colgroup>
+						<col style="width:12%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>날짜</th>
+							<td>
+								<select name="" id="" style="width:150px">
+									<option value="">검색조건 선택</option>
+								</select>
+								<input type="text" name="bgnde" id="bgnde" style="width:100px;" readonly="readonly">
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+								<input type="text" name="endde" id="endde" style="width:100px;" readonly="readonly" title="종료일">
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+							</td>
+						</tr>
+						<tr>
+							<th>국가/관할무역관</th>
+							<td>
+								<select name="" id="" style="width:150px">
+									<option value="">국가전체</option>
+								</select>
+								<select name="" id="" style="width:200px">
+									<option value="">관할무역관 전체</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>구분</th>
+							<td>
+								<select name="" id="" style="width:150px">
+									<option value="">전체</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>상태</th>
+							<td>
+								<select name="" id="" style="width:150px">
+									<option value="">전체</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>검색</th>
+							<td>
+								<select name="" style="width:160px;">
+									<option value="">검색조건 선택</option>
+								</select>
+								<input type="text" title="검색어" name="" id="" value="" placeholder="검색어를 입력해주세요" style="width:32%;">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn_area">
+					<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+				</div>
+			</div>
+
+			<div class="list_status">
+				<p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+				<div class="fr">
+					<select class="post_num" name="pageItm" id="pageItm">
+						<option value="10">10</option>
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+						<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80">80</option>
+						<option value="90">90</option>
+						<option value="100">100</option>
+					</select>
+					<button type="button" class="btn" id="btnPageItm">적용</button>
+				</div>
+			</div>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<colgroup>
+						<col style="width:80px">
+						<col>
+						<col style="width:80px">
+						<col>
+						<col style="width:80px">
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>투자유치 희망기업</th>
+							<th>구분</th>
+							<th>투자가</th>
+							<th>국가</th>
+							<th>관할무역관</th>
+							<th>작성일</th>
+							<th>상태</th>
+							<th>상태처리일</th>
+							<th>확정상담일시</th>
+							<th>상세정보</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>5</td>
+							<td>GEISTKOREA</td>
+							<td><img src="../../images/cms/ico_arr_red.png" alt="투자가 요청"></td>
+							<td>Huayi Brothers Investment</td>
+							<td>China</td>
+							<td>베이징무역관</td>
+							<td>2022-02-02</td>
+							<td><span class="color-blue bold">상담요청</span></td>
+							<td>2022-02-03</td>
+							<td></td>
+							<td>
+								<a href="#n" type="button" class="btn btn_sm nav">보기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>Samsung Display</td>
+							<td><img src="../../images/cms/ico_arr_blue.png" alt="투자희망기업 요청"></td>
+							<td>NETFLIX</td>
+							<td>USA</td>
+							<td>뉴욕무역관</td>
+							<td>2022-02-02</td>
+							<td><span class="color-black bold">요청취소</span></td>
+							<td>2022-02-03</td>
+							<td></td>
+							<td>
+								<a href="#n" type="button" class="btn btn_sm nav">보기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Market Kurly</td>
+							<td><img src="../../images/cms/ico_arr_blue.png" alt="투자희망기업 요청"></td>
+							<td>Huayi Brothers Investment</td>
+							<td>China</td>
+							<td>베이징무역관</td>
+							<td>2022-02-02</td>
+							<td><span class="color-red bold">상담거절</span></td>
+							<td>2022-02-03</td>
+							<td></td>
+							<td>
+								<a href="#layer02" class="btn btn_sm nav" onclick="openLayer(this);">보기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-02-02</td>
+							<td><span class="color-green bold">상담수락</span></td>
+							<td>2022-02-03</td>
+							<td>2022-02-03</td>
+							<td>
+								<a href="#layer01" class="btn btn_sm nav" onclick="openLayer(this);">보기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-02-02</td>
+							<td><span class="color-orange bold">상담종료</span></td>
+							<td>2022-02-03</td>
+							<td>2022-02-03</td>
+							<td>
+								<a href="#n" type="button" class="btn btn_sm nav">보기</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="pagination">
+				<strong>1</strong>
+				<a
+					href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+				<a
+					href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a>
+			</div>
+
+			<!-- s: 상담수락 내용 작성 -->
+			<div id="layer01" class="layer_popup modal" style="width:800px;">
+				<div class="bg"></div>
+				<h2 class="tit_layer">상담수락 내용 작성</h2>
+				<div class="layer_cont">
+					<h3 class="tit2">상담요청</h3>
+					<table class="tb_write">
+						<caption>상담요청</caption>
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="text-left">※ 상담 가능한 날짜와 시간을 선택해주세요</th>
+							</tr>
+							<tr>
+								<td>
+									<div class="scroll_y">
+										<div class="bg_gray_box">
+											<input type="radio" name="chk1" id="chk1-1" checked>
+											<label for="chk1-1">
+												2022년 01월 21일 10시 00분 <span class="color-red">[Japan, Korea Time]</span><br>
+												2022년 01월 21일 09시 00분 <span class="color-red">[China, Singapore, Perth]</span>
+											</label>
+										</div>
+										<div class="bg_gray_box">
+											<input type="radio" name="chk1" id="chk1-2">
+											<label for="chk1-2">
+												2022년 01월 21일 10시 00분 <span class="color-red">[Japan, Korea Time]</span><br>
+												2022년 01월 21일 09시 00분 <span class="color-red">[China, Singapore, Perth]</span>
+											</label>
+										</div>
+										<div class="bg_gray_box">
+											<input type="radio" name="chk1" id="chk1-3">
+											<label for="chk1-3">
+												2022년 01월 21일 10시 00분 <span class="color-red">[Japan, Korea Time]</span><br>
+												2022년 01월 21일 09시 00분 <span class="color-red">[China, Singapore, Perth]</span>
+											</label>
+										</div>
+										<div class="bg_gray_box">
+											<input type="radio" name="chk1" id="chk1-4">
+											<label for="chk1-4">
+												2022년 01월 21일 10시 00분 <span class="color-red">[Japan, Korea Time]</span><br>
+												2022년 01월 21일 09시 00분 <span class="color-red">[China, Singapore, Perth]</span>
+											</label>
+										</div>
+										<div class="bg_gray_box">
+											<input type="radio" name="chk1" id="chk1-5">
+											<label for="chk1-5">
+												2022년 01월 21일 10시 00분 <span class="color-red">[Japan, Korea Time]</span><br>
+												2022년 01월 21일 09시 00분 <span class="color-red">[China, Singapore, Perth]</span>
+											</label>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="text-left">※ 요청하실 내용이나 상담 전 확인이 필요한 정보가 있다면 간단히 작성해주세요.</th>
+							</tr>
+							<tr>
+								<td>
+									<textarea name="" id="" class="txt_area" placeholder="요청하실 내용을 간단히 작성해주세요."></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3 class="tit2 mt25">참석인원</h3>
+					<table class="tb_write">
+						<caption>상담요청</caption>
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="text-left">※ 화상회의 참석 요청 메일발송을 위해 이메일 주소를 반드시 입력해주세요</th>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<input type="text" placeholder="참석자 성명">
+										<input type="text" style="width:300px;" placeholder="예) leehee43@naver.com">
+									</div>
+									<div class="mt5">
+										<input type="text" placeholder="참석자 성명">
+										<input type="text" style="width:300px;" placeholder="예) leehee43@naver.com">
+									</div>
+									<div class="mt5">
+										<input type="text" placeholder="참석자 성명">
+										<input type="text" style="width:300px;" placeholder="예) leehee43@naver.com">
+									</div>
+									<div class="mt5">
+										<input type="text" placeholder="참석자 성명">
+										<input type="text" style="width:300px;" placeholder="예) leehee43@naver.com">
+									</div>
+									<div class="mt5">
+										<input type="text" placeholder="참석자 성명">
+										<input type="text" style="width:300px;" placeholder="예) leehee43@naver.com">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_area">
+						<a href="#" class="btn btn_lg bg_green" onclick="closeLayer(this);"><i class="fa fa-arrow-left"></i> 취소</a>
+						<a href="#" class="btn btn_lg act">제출</a>
+					</div>
+				</div>
+				<button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+			</div>
+			<!-- e: 상담수락 내용 작성 -->
+
+			<!-- s: 상담거절 내용 작성 -->
+			<div id="layer02" class="layer_popup modal" style="width:800px;">
+				<div class="bg"></div>
+				<h2 class="tit_layer">상담거절 내용 작성</h2>
+				<div class="layer_cont">
+					<h3 class="tit2">상담거절 사유</h3>
+					<table class="tb_write">
+						<caption>상담거절 사유</caption>
+						<colgroup>
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="text-left">※ 상담거절 사유가 있다면 간단히 작성해 주세요.</th>
+							</tr>
+							<tr>
+								<td>
+									<textarea name="" id="" class="txt_area" placeholder="요청하실 내용을 간단히 작성해주세요."></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_area">
+						<a href="#" class="btn btn_lg bg_green" onclick="closeLayer(this);"><i class="fa fa-arrow-left"></i> 취소</a>
+						<a href="#" class="btn btn_lg act">제출</a>
+					</div>
+				</div>
+				<button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+			</div>
+			<!-- e: 상담거절 내용 작성 -->
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

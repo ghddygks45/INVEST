@@ -1,0 +1,30 @@
+/* 트리 */
+.tree_area {
+	border: 3px solid $border-color-base;
+
+	.tree_ctrl {
+		padding: 7px 0;
+		border-bottom: 1px solid $border-color-base;
+		text-align: center;
+		background: $bg-lightgray;
+	}
+
+	.scroll_area {
+		box-sizing: border-box;
+		/* height:367px; */
+		height: 530px;
+		padding: 10px;
+		overflow: auto;
+	}
+
+	.menu_ctrl {
+		padding: 7px 0;
+		border-top: 1px solid $border-color-base;
+		text-align: center;
+		background: $bg-lightgray;
+	}
+
+	.chk_list label {
+		margin-right: 10px;
+	}
+}

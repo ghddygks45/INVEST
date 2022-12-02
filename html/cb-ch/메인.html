@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/cb-ch/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/cb-ch/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/gwn-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/gwn-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>매인페이지 | 忠北</title>
+
+</head>
+<body>
+	<div class="wrap cb-wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container" id="content">
+			<div id="visual_wrap">
+                <div class="main_slider">
+                    <div><a href="#n">
+                        <img src="../../images/cb-ch/visual.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/cb-ch/visual_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                    <div><a href="#n">
+                        <img src="../../images/cb-ch/visual.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/cb-ch/visual_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                </div>
+                <div class="slider_btn">
+                    <span class="count">
+                        <strong>1</strong>/<span id="total"></span>
+                    </span>
+                    <div class="slider_arrow">
+                        <button class="slide_prev"><span class="blind">이전</span></button>
+                        <button class="slide_stop" onclick="sliderStop(this);"><span class="blind">정지</span></button>
+                        <button class="slide_play" onclick="sliderPlay(this);"><span class="blind">재생</span></button>
+                        <button class="slide_next"><span class="blind">다음</span></button>
+                    </div>
+                </div>
+                <ul class="visual_link">
+                    <li><a href="#n" class="list01">投资咨询</a></li>
+                    <li><a href="#n" class="list02">朝阳企业</a></li>
+                    <li><a href="#n" class="list03">新闻及活动</a></li>
+                    <li><a href="#n" class="list04">出版物</a></li>
+                    <li><a href="#n" class="list05">宣传影片</a></li>
+                    <li><a href="#n" class="list06">投资项目</a></li>
+                    <li><a href="#n" class="list07">有用的链接</a></li>
+                </ul>
+            </div>
+            <!--// visual_wrap -->
+            <div id="contents">
+                <div class="inner">
+                    <div class="section1">
+                        <h2 class="h2_tit">新闻及活动<a href="#n"></a></h2>
+                        <ul>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>05</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                춘천시 로컬푸드 우수지자체 선정…먹거리 통합지원 성과
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>03</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                강원 완성형 전기차 ‘포트로’ 첫 출고…유럽, 베트남을 누빈다…
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>29</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                강원 폐광지역 그린뉴딜 추진… 7개 사업1천326억원 투입
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>22</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                강원의료기기전시회 온라인 상담회사 500만달러 수출계약
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="section2 main_section">
+                        <h2 class="h2_tit">出版物<a href="#n"></a></h2>
+                        <a href="#n">
+                            <div class="img"><img src="../../images/cb-ch/main_img01.jpg" alt="강원 투자 가이드"></div>
+                            <div class="txt">
+                                <h3>강원 투자 가이드</h3>
+                                <p>(Gangwon Investment...</p>
+                                <span>2020.06.18</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="section3 main_section">
+                        <h2 class="h2_tit">宣传影片<a href="#n"></a></h2>
+                        <a href="#n">
+                            <img src="../../images/cb-ch/main_img02.jpg" alt="East Coast Free Economic Zone Investment Promotion IR">
+                            <h3>East Coast Free Economic</h3>
+                            <p>Zone Investment Promoti...</p>
+                            <span>2020.06.18</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--// contents -->
+		</div>
+        <!-- //container -->
+        <script>
+            /* 비주얼 롤링 */
+            $('.main_slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                prevArrow:$('.slide_prev'),
+                nextArrow:$('.slide_next'),
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                        }
+                    }
+                ]
+            });
+            $('#total').text($('.main_slider .slick-slide:not(.slick-cloned)').length);
+            $('.main_slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                $('.slider_btn .count > strong').html(nextSlide + 1);
+            });
+            
+            
+            function sliderStop(obj){
+                $(obj).hide().next().css('display','inline-block');
+                $('.main_slider').slick('slickPause');
+            }
+
+            
+            function sliderPlay(obj){
+                $(obj).hide().prev().css('display','inline-block');
+                $('.main_slider').slick('slickPlay');
+            }
+
+            $('.visual_link').slick({
+                infinite: true,
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: false,
+                arrows:false,
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                            arrows:true,
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        </script>
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">IKMP</a>
+                <span>&gt;</span>
+                <strong>IKMP 사업신청내역 관리</strong>
+            </p>
+    
+            <h2 id="tit_page">IKMP 사업신청내역 관리</h2>
+            
+            <ul class="tab_menu">
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_상태관리.html">상태관리</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_기업현황.html">기업현황</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_회사의주요연혁.html">회사 주요연혁</a></li>
+                <li class="on"><a href="운영_IKMP_IKMP사업신청내역관리_경영진및주주현황.html">경영진 및 주주현황</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_투자유치희망방식.html">투자유치 희망방식</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_주요재무정보.html">주요 재무정보</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_사업개요및핵심기술.html">사업개요 및 핵심기술</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_제품및기술설명서.html">제품 및 기술설명서</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_기타첨부서류.html">기타 첨부서류</a></li>
+            </ul>
+
+            <!-- 경영진 -->
+            <div class="list_status">
+                <div class="fl"><h3 class="tit1">경영진</h3></div>
+                <div class="fr"><button type="button" class="btn btn-add">경영진추가</button></div>
+            </div>
+            <table class="tb_data">
+				<colgroup>
+					<col style="width:160px">
+					<col style="width:160px">
+					<col style="width:130px">
+					<col style="width:200px">
+					<col>
+					<col style="width:130px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>경영진</th>
+                        <th>성명</th>
+                        <th>나이</th>
+                        <th>소유주식(금액)</th>
+                        <th>주요경력</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+				<tbody>
+                    <tr>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:80%"> 세</td>
+                        <td><input type="text" style="width:80%"> 원</td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+				</tbody>
+            </table>
+            <!-- //경영진 -->
+
+            <!-- 주주 -->
+            <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">주주</h3></div>
+                <div class="fr"><button type="button" class="btn btn-add">주주추가</button></div>
+            </div>
+            <table class="tb_data">
+                <colgroup>
+                    <col style="width:160px">
+                    <col style="width:160px">
+                    <col style="width:130px">
+                    <col style="width:200px">
+                    <col>
+                    <col style="width:130px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>경영진</th>
+                        <th>성명</th>
+                        <th>나이</th>
+                        <th>소유주식(금액)</th>
+                        <th>주요경력</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:80%"> 세</td>
+                        <td><input type="text" style="width:80%"> 원</td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //주주 -->
+
+            <div class="btn_area">
+                <button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-save"></i> 저장</button>
+            </div>
+        </div>
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+/* 웹콘텐츠 관리 */
+.site-list {
+	margin: -3px -3px 22px;
+	font-size: 0;
+
+	label {
+		display: inline-block;
+		margin: 3px;
+		cursor: pointer;
+
+		input {
+			display: none;
+		}
+
+		.site-name {
+			position: relative;
+			display: block;
+			padding: 6px 25px 8px;
+			border: 1px solid #999;
+			font-size: 14px;
+			text-align: center;
+			white-space: nowrap;
+			background-color: #fff;
+			text-decoration: none;
+
+			.site-id {
+				display: block;
+				font-size: 12px;
+				line-height: 1;
+				opacity: .7;
+			}
+		}
+
+		:checked+.site-name {
+			color: #fff;
+			border-color: transparent;
+			background-color: $color-primary;
+
+			&:after {
+				display: block;
+				position: absolute;
+				left: 50%;
+				bottom: -8px;
+				width: 0;
+				height: 0;
+				margin-left: -8px;
+				border-left: 8px solid transparent;
+				border-top: 8px solid $color-primary;
+				border-right: 8px solid transparent;
+				content: '';
+			}
+		}
+	}
+
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+}
+
+.webcontents-guide {
+	$bg-color: #999;
+	max-width: 300px;
+	margin-top: 30px;
+	position: relative;
+	padding: 25px 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 12px;
+	border-radius: 15px;
+	color: #fff;
+	box-shadow: 1px 5px 5px rgba(0, 0, 0, .1);
+	background-color: $bg-color;
+
+	.fa {
+		color: #fff;
+		// opacity: .5;
+		margin-bottom: 12px;
+	}
+
+	&:after {
+		display: block;
+		position: absolute;
+		left: 50px;
+		top: -8px;
+		width: 0;
+		height: 0;
+		border-left: 8px solid transparent;
+		border-bottom: 8px solid $bg-color;
+		border-right: 8px solid transparent;
+		content: '';
+	}
+}
+
+.search_area+.webcontents-guide {
+	margin: 30px auto 0;
+}

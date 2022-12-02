@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">검색서비스</a>
+                <span>&gt;</span>
+                <strong>맞춤정보 검색내역</strong>
+            </p>
+    
+            <h2 id="tit_page">맞춤정보 검색내역</h2>
+            
+            <ul class="tab_menu">
+                <li><a href="운영_검색서비스_맞춤정보검색내역_M&A.html">M&amp;A(지분)</a></li>
+                <li class="on"><a href="운영_검색서비스_맞춤정보검색내역_그린필드.html">그린필드</a></li>
+            </ul>
+
+            <div class="search_area">
+                <table class="tb_search">
+                    <colgroup>
+                        <col style="width:12%">
+                        <col>
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검색일</th>
+                            <td>
+                                <input type="text" name="bgnde" id="bgnde" style="width:100px;" readonly="readonly">
+                                <a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+                                <input type="text" name="endde" id="endde" style="width:100px;" readonly="readonly" title="종료일">
+                                <a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+                            </td>
+                            <th>국적</th>
+                            <td>
+                                <select name="" id="" style="width:200px">
+                                    <option value="">국가선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>업종</th>
+                            <td>
+                                <input type="text" style="width:300px" placeholder="업종을 선택해주세요">
+                                <a href="#n" class="btn"><i class="fa fa-search"></i> 찾아보기</a>
+                            </td>
+                            <th>투자금액</th>
+                            <td>
+                                <input type="radio" name="radio1" id="radio1-1"><label for="radio1-1">200만불 미만</label>
+                                <input type="radio" name="radio1" id="radio1-2"><label for="radio1-2">1,000만불 이상</label>
+                                <input type="radio" name="radio1" id="radio1-3"><label for="radio1-3">2,000만불 이상</label>
+                                <input type="radio" name="radio1" id="radio1-4"><label for="radio1-4">3,000만불 이상</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>투자목적</th>
+                            <td>
+                                <input type="radio" name="radio2" id="radio2-1"><label for="radio2-1">내수</label>
+                                <input type="radio" name="radio2" id="radio2-2"><label for="radio2-2">수출</label>
+                                <input type="radio" name="radio2" id="radio2-3"><label for="radio2-3">내수 및 수출</label>
+                            </td>
+                            <th>판매도시</th>
+                            <td>
+                                <select name="" id="" style="width:250px">
+                                    <option value="">판매도시 선택(도, 광역시)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검색</th>
+                            <td colspan="3">
+                                <select name="" style="width:160px;">
+                                    <option value="">검색조건 선택</option>
+                                </select>
+                                <input type="text" title="검색어" name="" id="" placeholder="검색어를 입력해주세요" style="width:32%;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_area">
+                    <button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+                    <button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+                </div>
+            </div>
+
+            <div class="list_status">
+                <p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+                <div class="fr">
+                    <button type="button" class="btn xls" id="inseqcmsExcel">맞춤정보 검색 내역 엑셀 파일로 다운로드</button>
+                    <select class="post_num" name="pageItm" id="pageItm">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>               
+                        <option value="80">80</option>                             
+                        <option value="90">90</option>                                
+                        <option value="100">100</option>
+                    </select>
+                    <button type="button" class="btn" id="btnPageItm">적용</button>
+                </div>
+            </div>
+
+            <div class="tb-scroll-x">
+                <table class="tb_list">
+                <colgroup>
+                    <col style="width:75px">
+                    <col style="width:60px">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col style="width:100px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th><input type="checkbox" name="ck1"></th>
+                        <th>검색일시</th>
+                        <th>기업명</th>
+                        <th>국가</th>
+                        <th>업종</th>
+                        <th>투자금액</th>
+                        <th>생산품</th>
+                        <th>투자목적</th>
+                        <th>판매도시</th>
+                        <th>이메일</th>
+                        <th>관리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox" name="ck1"></td>
+                        <td>2021-01-31 15:35</td>
+                        <td>MicroSoft</td>
+                        <td>국가명</td>
+                        <td>대분류>중분류>소분류>세분류</td>
+                        <td>200만불 미만</td>
+                        <td>내수 및 수출</td>
+                        <td>반도체 제조</td>
+                        <td>서울특별시</td>
+                        <td>naver@naver.com</td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    
+            <div class="pagination">
+                <strong>1</strong>
+                <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+                <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> 
+            </div>
+
+            <div class="btn_area">
+                <button type="button" class="btn">선택삭제</button>
+            </div>
+        
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

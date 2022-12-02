@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">IK 서비스</a>
+                <span>&gt;</span>
+                <strong>IK 캘린더</strong>
+            </p>
+    
+            <h2 id="tit_page">IK 캘린더</h2>
+
+            <div class="search_area">
+                <table class="tb_search">
+                    <colgroup>
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>언어</th>
+                            <td>
+                                <input type="radio" name="radio1" id="radio1-1">
+                                <label for="radio1-1">국문</label>
+                                <input type="radio" name="radio1" id="radio1-2">
+                                <label for="radio1-2">영문</label>
+                                <input type="radio" name="radio1" id="radio1-3">
+                                <label for="radio1-3">중문</label>
+                                <input type="radio" name="radio1" id="radio1-4">
+                                <label for="radio1-4">일문</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검색</th>
+                            <td>
+                                <select name="" style="width:160px;">
+                                    <option value="">검색조건 선택</option>
+                                </select>
+                                <input type="text" title="검색어" name="" id="" value="" placeholder="검색어를 입력해주세요" style="width:32%;">
+                            </td>
+                        </tr>            
+                    </tbody>
+                </table>
+
+                <div class="btn_area">
+                    <button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+                    <button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+                </div>
+            </div>
+
+            <div class="list_status">
+                <p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+                <div class="fr">
+                    <select class="post_num" name="pageItm" id="pageItm">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>               
+                        <option value="80">80</option>                             
+                        <option value="90">90</option>                                
+                        <option value="100">100</option>
+                    </select>
+                    <button type="button" class="btn" id="btnPageItm">적용</button>
+                </div>
+            </div>
+
+            <div class="tb-scroll-x">
+                <table class="tb_list">
+                    <colgroup>
+                        <col style="width:75px">
+                        <col style="width:75px">
+                        <col style="width:200px">
+                        <col>
+                        <col style="width:180px">
+                        <col style="width:140px">
+                        <col style="width:180px">
+                        <col style="width:100px">
+                        <col style="width:140px">
+                        <col style="width:90px">
+                        <col style="width:100px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>언어</th>
+                            <th>행사명(달력에 노출)</th>
+                            <th>제목</th>
+                            <th>일정</th>
+                            <th>시간</th>
+                            <th>장소</th>
+                            <th>작성자</th>
+                            <th>등록일</th>
+                            <th>조회수</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>국문</td>
+                            <td>2020년 IK포럼</td>
+                            <td class="text-left"><a href="운영_IK서비스_IK캘린더_상세.html">2020년 IK 포럼 Webinar를 개최합니다.</a></td>
+                            <td>2020.7.8 ~ 2020. 7. 10</td>
+                            <td>14:00 ~ 15:55</td>
+                            <td>Webinar(온라인 생중계)</td>
+                            <td>홍길동</td>
+                            <td>2020-06-20</td>
+                            <td>250</td>
+                            <td><span class="color-blue bold">게시</span></td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </div>
+    
+            <div class="pagination">
+                <strong>1</strong>
+                <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+                <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> 
+            </div>
+            
+            <div class="btn_area">
+                <a href="운영_IK서비스_IK캘린더_등록.html" class="btn btn_lg act"><i class="fa fa-pencil"></i> 등록</a>
+            </div>
+        
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+/* 메인화면설정 */
+.main_setting {
+	overflow: hidden;
+
+	.tree_area {
+		float: left;
+		width: 350px;
+	}
+
+	.tb_area {
+		float: right;
+		width: calc(100% - 375px);
+		margin-bottom: 30px;
+	}
+}

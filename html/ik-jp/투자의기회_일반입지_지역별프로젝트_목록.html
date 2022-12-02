@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-ch/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-ch/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-ch/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-ch/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>地域別プロジェクト &lt; 일반입지 &lt; 투자의 기회 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(2,2,2)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb10.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>地域別プロジェクト</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>투자의 기회</li>
+						<li>일반입지</li>
+						<li>地域別プロジェクト</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="section">
+							<h4 class="sub-tit01">地方自治体</h4>
+							<div class="search-area">
+								<div class="form-area m-version">
+									<div class="in">
+										<span class="select-type3 mr5">
+											<select name="" id="local_choice" title="地方自治体">
+												<option value="map_00">全体</option>
+												<option value="map_01">ソウル市</option>
+												<option value="map_02">仁川市</option>
+												<option value="map_03">京畿道</option>
+												<option value="map_04">江原道</option>
+												<option value="map_05">忠清北道</option>
+												<option value="map_06">忠清南道</option>
+												<option value="map_17">世宗市</option>
+												<option value="map_07">大田市</option>
+												<option value="map_08">慶尚北道</option>
+												<option value="map_09">全羅北道</option>
+												<option value="map_10">大邱市</option>
+												<option value="map_11">光州市</option>
+												<option value="map_12">全羅南道</option>
+												<option value="map_13">慶尚南道</option>
+												<option value="map_14">蔚山市</option>
+												<option value="map_15">釜山市</option>
+												<option value="map_16">済州道</option>
+											</select>
+										</span>
+										<button type="button" class="btn-default-s" onclick="localMapTrans();">보기</button>	
+									</div>
+								</div>
+								<div class="sel-local-box">
+									<div class="l">地域を選択</div>
+									<div class="r">
+										<ul>
+											<li><button type="button" class="btn-default-s">全体</button></li>
+											<li><button type="button" class="btn-default-s">ソウル市</button></li>
+											<li><button type="button" class="btn-default-s">仁川市</button></li>
+											<li><button type="button" class="btn-default-s">京畿道</button></li>
+											<li><button type="button" class="btn-default-s">江原道</button></li>
+											<li><button type="button" class="btn-default-s">忠清北道</button></li>
+											<li><button type="button" class="btn-default-s">忠清南道</button></li>
+											<li><button type="button" class="btn-default-s">世宗市</button></li>
+											<li><button type="button" class="btn-default-s">大田市</button></li>
+											<li><button type="button" class="btn-default-s">慶尚北道</button></li>
+											<li><button type="button" class="btn-default-s">全羅北道</button></li>
+											<li><button type="button" class="btn-default-s">大邱市</button></li>
+											<li><button type="button" class="btn-default-s">光州市</button></li>
+											<li><button type="button" class="btn-default-s">全羅南道</button></li>
+											<li><button type="button" class="btn-default-s">慶尚南道</button></li>
+											<li><button type="button" class="btn-default-s">蔚山市</button></li>
+											<li><button type="button" class="btn-default-s">釜山市</button></li>
+											<li><button type="button" class="btn-default-s">済州道</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="map-area-box">
+								<div class="map-l">
+									<img src="../../images/ik-jp/img_map_korea.gif" alt="地方自治体">
+									<img src="../../images/ik-jp/img_map_seoul.gif" alt="ソウル市">
+									<img src="../../images/ik-jp/img_map_incheon.gif" alt="仁川市">
+									<img src="../../images/ik-jp/img_map_gyeonggi.gif" alt="京畿道">
+									<img src="../../images/ik-jp/img_map_gangwon.gif" alt="江原道">
+									<img src="../../images/ik-jp/img_map_n_chungcheong.gif" alt="忠清北道">
+									<img src="../../images/ik-jp/img_map_s_chungcheong.gif" alt="忠清南道">
+									<img src="../../images/ik-jp/img_map_sejong.gif" alt="世宗市">
+									<img src="../../images/ik-jp/img_map_daejeon.gif" alt="大田市">
+									<img src="../../images/ik-jp/img_map_n_gyeongsang.gif" alt="慶尚北道">
+									<img src="../../images/ik-jp/img_map_n_jeolla.gif" alt="全羅北道">
+									<img src="../../images/ik-jp/img_map_daegu.gif" alt="大邱市">
+									<img src="../../images/ik-jp/img_map_gwangju.gif" alt="光州市">
+									<img src="../../images/ik-jp/img_map_s_jeolla.gif" alt="全羅南道">
+									<img src="../../images/ik-jp/img_map_s_gyeongsang.gif" alt="慶尚南道">
+									<img src="../../images/ik-jp/img_map_ulsan.gif" alt="蔚山市">
+									<img src="../../images/ik-jp/img_map_busan.gif" alt="釜山市">
+									<img src="../../images/ik-jp/img_map_jeju.gif" alt="済州道">
+								</div>
+									
+								<div class="map-r">
+									<div class="local_info korea">
+										<div class="normal_txt info">
+											韓国の<span class="color-green">17の広域自治体</span>は<br class="pc-content">
+											それぞれ<span class="color-green">特化した</span><br class="pc-content">
+											<span class="color-green">投資環境とサービス</span>を<br class="pc-content">
+											提供しています。
+										</div>
+									</div>
+									<div class="local_info seoul">
+										<img src="../../images/ik-jp/img_logo_seoul.png" alt="ソウル市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												韓国の首都、<br class="pc-content">
+												北東アジアのビジネス中心地
+											</p>
+										</div>
+										<div class="normal-txt">
+											韓国の首都、ソウルは北東アジアにおけるビジネスの中心地であり、
+
+											韓国産業の集積地として、アジア最大市場の中国と日本の間に
+											
+											位置しています。ソウルの面積は全国土の0.6%に過ぎないものの、
+											
+											韓国GDPの21%はソウルから生み出され、金融の50%以上がソウルに
+											
+											集中しています。                                        
+										</div>
+										<div class="btn-area">
+											<a href="http://japanese.seoul.go.kr/" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info incheon">
+										<img src="../../images/ik-jp/img_logo_incheon.png" alt="仁川市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												首都ソウルからわずか28km<br class="pc-content"> 開発と成長を続ける都市
+											</p>
+										</div>
+										<div class="normal-txt">
+											大韓民国の首都、ソウルから28kmの距離にある仁川は、仁川港の
+
+											拡張と仁川国際空港の開港(2001.3)、各種産業・物流団地の構築、
+											
+											観光・レジャー団地と新しい住宅団地の建設、松島新都市の開発と
+											
+											経済自由区域庁の開庁(2003.10)、青羅・永宗地区開発と都市再生
+											
+											事業、2014アジア競技大会の開催など、開発と成長を続けています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.incheon.go.kr/jp/index" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info gyeonggi">
+										<img src="../../images/ik-jp/img_logo_gyeonggi.png" alt="경기">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												東アジアと太平洋地域を<br class="pc-content">
+
+												つなぐ地理的要衝
+											</p>
+										</div>
+										<div class="normal-txt">
+											京畿道は、世界トップの韓国企業のみならず、世界有数のグローバル
+
+											企業が集まっている北東アジア最大の生産基地です。北東アジアの
+											
+											中心ともいえる京畿道は、中国と世界への橋頭堡として、ビジネスに
+											
+											最適な環境を備えています。空港と港湾、東アジアと太平洋地域を
+											
+											つなぐ地理的要衝であり、投資誘致支援サービスなど企業のニーズに
+											
+											合わせた各種の行政サービスを提供しています。                                        
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://japanese.gg.go.kr/" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info gangwon">
+										<img src="../../images/ik-jp/img_logo_gangwon.png" alt="강원">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												大規模な生産施設に <br class="pc-content">
+
+												求められる <br class="pc-content">
+												
+												多様な産業インフラを構築                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											襄陽国際空港、東海港とともに様々な高速道路の開通により、
+
+											ソウルだけでなく韓国の主要大都市へ容易にアプローチできるように
+											
+											なりました。また、交通インフラだけでなく、大規模な生産施設に
+											
+											求められる多様な産業インフラが構築されており、企業活動の便宜を
+											
+											提供しています。さらに江原道は2018年平昌冬季五輪を誘致するなど、
+											
+											韓国観光レジャー産業の中心地となっています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/gwn-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info n_chungcheong">
+										<img src="../../images/ik-jp/img_logo_n_chungcheong.png" alt="忠清北道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												行政中心複合都市への
+
+												ゲートウェイ<br class="pc-content">
+												
+												先端産業とインフラを保有
+											</p>
+										</div>
+										<div class="normal-txt">
+											忠清北道は、行政中心複合都市へのゲートウェイともいえる清州国際
+
+											空港とKTX(韓国高速鉄道)五松駅、格子型高速道路など 交通網が
+											
+											充実しています。また、五松・梧倉団地を軸とする韓国最高のIT・BT
+											
+											先端産業とインフラ、最高の立地条件、優秀で豊富な人材を保有しています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/cb-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info s_chungcheong">
+										<img src="../../images/ik-jp/img_logo_s_chungcheong.png" alt="忠清南道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												韓国の中心部 
+
+												最高の地理的条件
+											</p>
+										</div>
+										<div class="normal-txt">
+											忠清南道は韓国の中心部に位置しており、全国どこからも2時間以内
+
+											にアクセスできる最高の地理的条件を備えています。
+											
+											忠清南道は豊富な人的資源や充実した社会インフラ、低コストで
+											
+											開発できる土地、そして世界で最も低廉で安定的な電力と豊富な
+											
+											産業用水などを備えた魅力的な投資先です。                                        
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="kotra/html/chn-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info sejong">
+										<img src="../../images/ik-jp/img_logo_sejong.png" alt="世宗市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												科学とビジネスが融合した
+
+												国の成長ネットワークづくりの
+												
+												中心地                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											韓国の実質的な行政首都である世宗特別自治市は、首都圏への一極集中による副作用を解消し、国のバランスの取れた発展と競争力強化に資するために構築されました。また、「国際科学ビジネスベルト事業」を通じて世界中の優秀な頭脳が集まっており、科学とビジネスが融合した国の成長ネットワークづくりの中心地となっています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.sejong.go.kr/jpa.do" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info daejeon">
+										<img src="../../images/ik-jp/img_logo_daejeon.png" alt="大田市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												世宗市(行政中心複合都市)<br class="pc-content"> に隣接する交通の中心地
+											</p>
+										</div>
+										<div class="normal-txt">
+											大田は新しく開発中の世宗市(行政中心複合都市)に隣接しており、
+
+											交通の中心地というメリットがあります。
+											
+											大田は大徳研究団地を通じて科学都市に成長し、政府大田庁舎
+											
+											(統計庁・調達庁をはじめとする10の政府機関が所在）が位置する
+											
+											行政中心都市としての役割を果たしています。                                        
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/dj-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info n_gyeongsang">
+										<img src="../../images/ik-jp/img_logo_n_gyeongsang.png" alt="慶尚北道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												世界の電子・繊維産業の 
+
+												中心地
+											</p>
+										</div>
+										<div class="normal-txt">
+											慶尚北道は世界の電子・繊維産業の中心地として、韓国の経済成長を
+
+											牽引してきました。また、首都圏に次ぐ多くの大学（47校）が所在して
+											
+											おり、豊富な研究人材と技術力を保有しています。
+											
+											慶尚北道は高速道路、鉄道、空港など便利な交通網、豊かな産業
+											
+											用地、質の高い優秀な産業人材、地域別の独特な産業戦略で、
+											
+											企業誘致に最適な環境を構築しています。                                        
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.gb.go.kr/Main/open_contents/section/jpn/index.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info n_jeolla">
+										<img src="../../images/ik-jp/img_logo_n_jeolla.png" alt="慶尚南道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												セマングム・群長新港開発 
+
+												事業などを推進 <br class="pc-content"> 
+												
+												対中国貿易の中心地 
+											</p>
+										</div>
+										<div class="normal-txt">
+											全羅北道は華やかな歴史と文化、韓国固有の伝統が受け継がれた
+
+											地域です。
+											
+											セマングムや群長新港開発事業などが推進されている対中国貿易の
+											
+											中心地であり、現在は紙・繊維から自動車・造船産業へと産業が多様化
+											
+											しています。2007年からは部品素材、食品、再生エネルギーなど新たな
+											
+											成長エンジン産業を中心に高度化が進んでいます。                                        
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/jnbk-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info daegu">
+										<img src="../../images/ik-jp/img_logo_daegu.png" alt="大邱市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												産業インフラが充実している 先端産業都市
+											</p>
+										</div>
+										<div class="normal-txt">
+											産業インフラが充実している先端産業都市の大邱は、R&D(研究開発)特区の指定、知識創造型経済自由区域の開発、国家科学産業団地・テクノポリス・先端医療複合団地・ロボット産業クラスターの造成など、数多くの国策事業と地域発展事業を積極的に推進しています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/dg-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info gwangju">
+										<img src="../../images/ik-jp/img_logo_gwangju.png" alt="光州市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												<span class="color-green">ビジネス</span>しやすい<span class="color-green">働きがい</span>の<br class="pc-content">
+												ある <span class="color-green">正義感溢れる豊かな</span>都市
+											</p>
+										</div>
+										<div class="normal-txt">
+											光州の正義感が豊かな光州を作ります。開放的で包容的な都市へ跳躍し、優れた技術さえ備えれば、誰でも成功できる経済生態系を構築しています。自動車、電池、光産業、金型産業を融合・複合し、新しい技術を組み合わせ競争力を向上させる一方、エネルギー新産業と文化コンテンツ産業を第4次産業革命時代の成長エンジンとして育成してまいります。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/gj-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info s_jeolla">
+										<img src="../../images/ik-jp/img_logo_s_jeolla.png" alt="全羅南道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												大陸への起点、<br class="pc-content">
+
+												太平洋への橋頭堡                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											1世紀、北東アジアは世界の物流・貿易において最も重要な役割を担う
+
+											地域として注目を集めています。このような北東アジア経済圏の中心
+											
+											には、全羅南道があります。大陸への起点として、また太平洋への
+											
+											橋頭堡として、大佛自由貿易地域とともに光陽湾圏経済自由区域が
+											
+											指定されるなど、投資環境は画期的に改善しており、ビジネスに最適な
+											
+											環境を備えた地域として成長しています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.jeonnam.go.kr/main.do?menuId=japanese0000000000" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info s_gyeongsang">
+										<img src="../../images/ik-jp/img_logo_s_gyeongsang.png" alt="慶尚南道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												人口1,500万人の
+
+												巨大な消費市場                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											慶尚南道は東南圏の産業集積地、釜山、光陽・晉州、大邱・浦項の
+
+											大都市圏などに隣接しており、道内人口1,500万人という巨大な消費
+											
+											市場を抱えています。また、韓国最大の輸送装備密集産業地帯、
+											
+											先端防衛産業の集積地であり、国家研究機関、大学、企業研究所
+											
+											などの研究開発インフラが充実しています。                                        
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="http://www.gyeongnam.go.kr/japan/index.gyeong" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info ulsan">
+										<img src="../../images/ik-jp/img_logo_ulsan.png" alt="蔚山市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												アジアの4大生産都市で、<br class="pc-content">
+
+												韓国最大の産業都市                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											蔚山はアジアの4大生産都市として韓国工業生産額の15.23%(2012年、
+
+											全国2位)を占めており、輸出額1,015億ドル(2011年、全国1位)、
+											
+											1人当たりGRDP56,170ドル(2012年、全国1位)を誇る、韓国最大の産業
+											
+											都市です。巨大な消費市場、豊富な産業ユーティリティ、充実した物流
+											
+											インフラ、優秀な人材、先端研究施設などを備えており、韓国で最も
+											
+											ビジネスしやすい都市として挙げられています。 
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/us-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info busan">
+										<img src="../../images/ik-jp/img_logo_busan.png" alt="釜山市">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												コンテナ取扱量世界第5位<br class="pc-content">
+
+												太平洋とユーラシアをつな ぐ経済的な窓口                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											韓国の東南部に位置する商業・産業都市の釜山は、400万の人口を
+
+											抱えており、世界の著名な港町と肩を並べる美しい山や海、川を
+											
+											誇ります。
+											
+											さらに釜山は韓国におけるコンテナ輸送量の約90%を担当し、コンテナ
+											
+											取扱量では世界第5位になっているなど、太平洋とユーラシアをつなぐ
+											
+											経済的な窓口として重要な役割を果たしています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/bsn-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+									<div class="local_info jeju">
+										<img src="../../images/ik-jp/img_logo_jeju.png" alt="済州道">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												世界的に認められている<br class="pc-content">
+
+												約束の地                                            
+											</p>
+										</div>
+										<div class="normal-txt">
+											火山島の済州と溶岩洞はユネスコの世界自然遺産に登録されるなど、その自然の価値を世界的に認められています。2002年国際自由都市に、2006年特別自治道に指定され、国内外の資本を活用して中核産業の開発に力を注いでいます。また済州は、国内外資本に対する差別のない租税減免など、積極的な行政サービスを提供しています。
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/jj-jp/메인.html" class="btn-link btn-default-s bg-green" title="新しいウィンドウで開きます" target="_blank"><span>各ホームページへ移動</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$('.btn-default-s').trigger('click');
+
+								// 모바일 일때 지자체 변경
+								function localMapTrans(){
+									var sel_midx = $("#local_choice option").index($("#local_choice option:selected"));
+									
+									$('.map-l > img').removeClass('active').eq(sel_midx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_midx).addClass('active');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$('.sel-local-box ul>li').eq(sel_midx).find('button').addClass('active');
+								}
+								
+								// pc 일때 지자체 변경
+								$('.sel-local-box ul>li>button').on('click', function(){
+									var sel_pcidx = $(this).closest('li').index();
+									
+									$("#local_choice option").eq(sel_pcidx).attr('selected','selected');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$(this).addClass('active');
+									$('.map-l > img').removeClass('active').eq(sel_pcidx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_pcidx).addClass('active');
+								})
+							</script>
+						</div>
+						<div class="section">
+							<!-- 검색 -->
+							<div class="search-area">
+								<div class="form-area">
+									<div class="in">
+										<span class="select-type2">
+											<select name="" id="" title="지역선택 선택">
+												<option value="">지역선택</option>
+											</select>
+										</span>
+										<span class="select-type2">
+											<select name="" id="" title="검색구분 선택">
+												<option value="">검색구분</option>
+											</select>
+										</span>
+										<span class="input-type2"><input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요."></span>
+										<button type="submit" class="btn-default-s">검색</button>	
+									</div>
+								</div>
+							</div>
+							<!-- //검색 -->
+
+							<div class="table-top">
+								<div class="l item-num">전체 : <span>235</span>건 [<span>1</span>/23페이지]</div>
+								<div class="r">
+									<select name="" id="" class="item-view" title="리스트 개수 선택">
+										<option value="">10개씩</option>
+									</select>
+									<button type="button" class="btn-default-s">보기</button>
+								</div>
+							</div>
+							
+							<!-- 리스트 -->
+							<ul class="normal-board">
+								<li>
+									<div class="num-area">No.<span>1,785</span></div>
+									<div class="txt-area">
+										<a href="투자의기회_일반입지_지역별프로젝트_상세.html">
+											<strong class="tit">안산 첨단 국방산업단지<span class="icon-new">새로운 글</span></strong>
+											<div class="board-list-box">
+												<ul class="list01">
+													<li><span class="bold">작성자 : </span>운영자</li>
+													<li><span class="bold">작성일 : </span>2020.06.20</li>
+													<li><span class="bold">조회수 : </span>1,852</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+								</li>
+							</ul>
+							<!-- //리스트 -->
+
+							<!-- 페이징 -->
+							<div class="paging">
+								<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로 이동</span></a>
+								<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로 이동</span></a>
+								<span>
+									<strong>1</strong>
+									<a href="#n">2</a>
+									<a href="#n">3</a>
+									<a href="#n">4</a>
+									<a href="#n">5</a>
+								</span>
+								<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로 이동</span></a>
+								<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로 이동</span></a>
+							</div>
+							<!-- 페이징 -->
+						</div>
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

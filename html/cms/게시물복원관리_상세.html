@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#" class="ico_home">HOME</a>
+                <span>&gt;</span> 
+                <a href="">인시퀀스</a>
+                <span>&gt;</span> 
+                <strong>웹진형 게시판</strong>
+            </p>
+    
+            <h2 id="tit_page">웹진형 게시판</h2>
+
+            <table class="tb_write">
+                <caption>웹진형 게시판 상세보기</caption>
+                <colgroup>
+                    <col style="width:120px">
+                    <col>
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <!-- 게시여부, 공지여부 -->
+                    
+                    <tr>
+                        <th scope="row"><span class="req">필수입력</span>게시여부</th>
+                        <td colspan="3">
+                            <input type="radio" name="data_sttus" id="data_sttus1" value="A" checked="checked" disabled="disabled">
+                            <label for="data_sttus1">게시</label>
+                            <input type="radio" name="data_sttus" id="data_sttus2" value="H"  disabled="disabled">
+                            <label for="data_sttus2">미게시</label>
+                        </td>
+                    </tr>
+                    
+                    <!-- 등록일 // 수정일 , 조회수 -->
+                    <tr>
+                        <th scope="row">등록일시</th>
+                        <td>2019-10-02</td>
+                        <th scope="row">수정일시</th>
+                        <td></td>
+                    </tr>
+                    <!-- 조회수, 게시순위  -->
+                    <tr>
+                        <th scope="row">조회수</th>
+                        <td>0</td>
+                        <th scope="row">게시순위</th>
+                        <td>17</td>
+                    </tr>
+                    <!-- 분류1,분류2 -->
+                    
+                    <tr>
+                        <th scope="row"><label for="cl1_itm"><span class="req">필수입력</span> 분류1</label></th>
+                        <td colspan="3">
+                            <select name="cl1_itm" id="cl1_itm" disabled="disabled">
+                                <option value="1" selected="selected">국문</option>
+                                <option value="2" >영문</option>
+                                <option value="3" >일어</option>
+                            </select> <i class="fa fa-warning color-warning"></i> 코드관리설정(SITENOTICE)
+                        </td>
+                    </tr>
+                    
+                    <!-- 분류2 -->
+                    
+                    <tr>
+                        <th scope="row"><label for="cl2_itm"><span class="req">필수입력</span> 분류2</label></th>
+                        <td colspan="3">
+                            <select name="cl2_itm" id="cl2_itm" disabled="disabled">
+                                <option value="1" selected="selected">산하기관</option>
+                                <option value="2" >정부기관</option>
+                                <option value="3" >관련기관</option>
+                            </select> <i class="fa fa-warning color-warning"></i> 코드관리설정(FAMILY)
+                        </td>
+                    </tr>
+                        
+                    <!-- 다중항목 -->
+                        
+                    <!-- 제목 -->
+                    <tr>
+                        <th scope="row"><span class="req">필수입력</span> 제목</th>
+                        <td colspan="3">234234324</td>
+                    </tr>		
+                    <!-- 부서, 등록자 -->
+                    
+                    <!-- 연락처(전화), 이메일 -->
+                    
+                    <!-- 휴대폰, FAX 수신여부 -->
+                    
+                    <!-- SMS 수신여부  : SMS 연동기능이 되어있을경우 사용처리한다 -->
+                    
+                    <!-- 작성기관, 접수기간(pd : 시작일 bgnde, 종료일 endde) -->
+                    
+                    <!-- 엠바고설정 -->
+                    
+                    <!-- 우편번호, 주소, 주소상세 -->
+                    
+                    <!-- url -->
+                    
+                    
+                    <!-- 포토형,동영상,블로그 이미지 -->
+                    
+                    <tr>
+                        <th scope="row"><span class="req">필수입력</span> 대표이미지</th>
+                        <td colspan="3">
+                            <a href="./down.do?bbs_id=blog&amp;seq=17&amp;data_type=A&amp;file_seq=1" target="_blank">
+                                <i class="fa fa-file-image-o" aria-hidden="true"></i> 
+                                비트베리, 사용자끼리 토큰 직거래하는 안전거래 서비스 공개.PNG
+                            </a>
+                            <a href="#layer_sample" class="btn" onclick="openLayer(this);"> 이미지보기<i class="fa fa-external-link"></i></a>
+                            <!-- // 레이어 이미지 -->
+                            <div id="layer_sample" class="layer_popup modal"><!-- // 레이어 크기 변경시 사이즈 지정 style="width:600px; height:500px;" -->
+                                <div class="bg"></div>
+                                <h2 class="tit_layer">[웹진형 게시판] 234234324</h2>
+                                <div class="layer_cont">
+                                    <p><img src="/upload/bbs/blog/20191002072451709.PNG" alt="" /></p>
+                                </div>
+                                <button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+                            </div>
+                            <!-- // 레이어 이미지 -->
+                        </td>
+                    </tr>
+                    
+                    
+                    <!-- 동영상 -->
+                        
+                    
+                    <!-- 첨부파일 -->
+                    
+                    
+                    
+                    
+                    <!-- 기타1 -->
+                    
+                    
+                    <!-- 기타2 -->
+                    
+                    
+                    <!-- 기타3 -->
+                    
+                    
+                    <!-- 기타4 -->
+                    
+                    
+                    <!-- 기타5 -->
+                    
+                    
+                    <!-- 기타6 -->
+                    
+                    
+                    <!-- 기타7 -->
+                    
+                    
+                    <!-- 기타8 -->
+                </tbody>
+            </table>
+            
+            <!-- 요약 -->
+            
+            
+            <!-- 첨부이미지 -->
+            
+            <!-- 내용 -->
+            <h3 class="tit1">내용</h3>
+            <div class="bbs_article"><p>234324234324</p></div>
+            
+            <!-- 버튼처리 -->
+            <div class="btn_area">
+                <a href="./updt.do?seq=17" class="btn btn_lg" ><i class="fa fa-save"></i> 수정</a>
+                <a href="./delt.do?seq=17" sj="234234324" class="btn btn_lg act" id="btnDelt"><i class="fa fa-trash-o"></i> 삭제</a>
+                <a href="./list.do" class="btn btn_lg basic"><i class="fa fa-list-ul"></i> 목록</a>
+            </div>
+        
+            <!--  다음글/이전글  -->
+            <table class="tb_view mt30">
+                <caption>웹진형 게시판 다음글/이전글 제공</caption>
+                <colgroup>
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>다음글</th>
+                        <td> -</td>
+                    </tr>
+                    <tr>
+                        <th>이전글</th>
+                        <td>
+                            <a href="./show.do?seq=15">관산도서관 부모학교 [미래인재가 되는 진로지능 높이기] 안내</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- 코멘트 입력영역 Start -->
+    
+            <h3 class="tit1 mt50">댓글 코멘트</h3>
+            <div class="comment_input">
+                <form action="#">
+                    <fieldset>
+                        <legend class="tts">댓글등록</legend>
+                        <div class="author_input">
+                            <label for="commentCn">
+                                <strong><i class="fa fa-user"></i> 작성자명</strong>(짙은)
+                            </label>
+                        </div>		
+                        <textarea id="commentCn" name="cn" placeholder="댓글을 입력해주세요."></textarea>
+                        <button type="button" class="btn_comm_write" id="btnCommentSave">댓글<br>등록</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- 코멘트 입력영역 End -->
+         </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

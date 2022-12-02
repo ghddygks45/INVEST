@@ -1,0 +1,69 @@
+/* 아이콘 */
+.ico {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	text-indent: 100%;
+	vertical-align: middle;
+	white-space: nowrap;
+	overflow: hidden;
+
+	&:after {
+		display: inline;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		font-family: 'FontAwesome';
+		text-indent: 0;
+	}
+}
+
+.ico-sort {
+	width: 16px;
+	height: 16px;
+	font-size: 12px;
+	line-height: 16px;
+
+	&:after {
+		content: '\f0dd';
+		top: -2px;
+	}
+
+	&.ico-sort-asc:after {
+		content: '\f0de';
+		top: 2px;
+	}
+}
+
+.ico_new {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: -2px 0 0 2px;
+	border-radius: 2px;
+	color: #fff;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: $color-primary;
+	overflow: hidden;
+}
+
+.ico-new-window {
+	.table a[target=_blank] {
+		text-decoration: none;
+	}
+
+	&:after {
+		display: inline;
+		content: ' \f08e';
+		font-weight: normal;
+		font-family: 'FontAwesome';
+		text-decoration: none;
+	}
+}

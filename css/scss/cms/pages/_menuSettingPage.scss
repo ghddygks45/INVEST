@@ -1,0 +1,83 @@
+/* 메뉴관리 */
+.mng_menu {
+	overflow: hidden;
+
+	.tree_area {
+		float: left;
+		width: 280px;
+		border: 3px solid $border-color-base;
+
+		.select_site {
+			padding: 5px;
+			border-bottom: 1px solid $border-color-base;
+
+			select {
+				width: 100%;
+			}
+		}
+
+		.site_scroll {
+			min-height: 220px;
+			max-height: 400px;
+			overflow: auto;
+		}
+
+		.tree_scroll {
+			min-height: 420px;
+			max-height: 700px;
+			overflow: auto;
+
+			.dtree {
+				padding: 15px;
+				line-height: 1;
+
+				.clip {
+					overflow: visible;
+				}
+
+				a {
+					vertical-align: middle;
+
+					&.node:hover {
+						font-weight: bold;
+						color: inherit;
+					}
+
+					&.nodeSel {
+						&:hover {
+							font-weight: bold;
+							color: inherit;
+						}
+
+						font-weight: bold;
+						color: #3572c5;
+					}
+				}
+			}
+		}
+	}
+
+	.input_area {
+		float: right;
+		width: calc(100% - 295px);
+	}
+
+	&.category {
+		margin-top: 40px;
+	}
+
+	.menu_container {
+		overflow: hidden;
+
+		+.menu_container {
+			margin-top: 30px;
+			border-top: 1px solid $border-color-base;
+			padding-top: 30px;
+		}
+	}
+
+	&.category .tree_area .tree_scroll {
+		min-height: 260px;
+		max-height: 500px;
+	}
+}

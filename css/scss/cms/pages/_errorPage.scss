@@ -1,0 +1,71 @@
+/* 오류안내 */
+#error-page {
+	background-color: #f2f2f2;
+
+	#logo img {
+		max-height: 30px;
+	}
+
+	#footer {
+		width: auto;
+		margin-top: 0;
+		border-top: 0;
+		background: none;
+
+		address {
+			color: #767676;
+			font-style: normal;
+			line-height: 30px;
+		}
+	}
+}
+
+.error-area {
+	width: 720px;
+	margin: auto;
+	padding: 75px 0;
+}
+
+.error-guide {
+	width: 720px;
+	margin: 15px 0 0;
+	padding: 50px 30px 60px;
+	text-align: center;
+
+	.info {
+		font-size: 16px;
+	}
+
+	.error-title {
+		margin-bottom: 18px;
+		font-weight: 500;
+		font-size: 30px;
+		line-height: 40px;
+		letter-spacing: -0.5px;
+
+		.fa {
+			font-size: 80px;
+			margin-bottom: 20px;
+			display: block;
+			color: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	p {
+		color: #ed6d41;
+	}
+
+	ul {
+		margin-top: 20px;
+		font-size: $font-size-base;
+	}
+
+	.btn_area {
+		text-align: center;
+		margin-top: 30px;
+
+		.btn+.btn {
+			margin-left: 5px;
+		}
+	}
+}

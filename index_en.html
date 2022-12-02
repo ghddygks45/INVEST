@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta property="og:description" content=""/>
+    <link rel="stylesheet" href="css/ik-en/style.css">
+	<link rel="stylesheet" href="resources/plugins/billboard/billboard.min.css">
+    <script src="js/common/jquery-1.11.2.min.js"></script>
+    <script src="js/common/jquery-ui.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="resources/plugins/slick.min.js"></script>
+	<script src="resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="resources/plugins/es6-promise.auto.js"></script>
+	<script src="resources/plugins/html2canvas.min.js"></script>
+	<script src="resources/plugins/jspdf.min.js"></script>
+    <script src="resources/plugins/canvg.min.js"></script>
+    <script src="resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="resources/plugins/billboard/billboard.min.js"></script>
+	<script src="js/ik-en/Common.js"></script>
+    <!-- 퍼블용 임시 include 개발 시 삭제 -->
+    <script src="js/ik-en/main.js"></script>
+    <script src="js/common/pub.js"></script>
+    
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+    <title>KOTRA</title>
+    
+</head>
+<body>
+	<div class="wrap main">
+
+        <div class="main-layer-popup" id="popup1" style="top: 50px; left: 100px;" tabindex="0"> <!-- id값은 팝업마다 다르게 줘야함 -->
+            <div class="layer-popup">
+                <div class="top">
+                    코로나 바이러스
+                    <a href="#n" onclick="closePopup(this);return false;"><span class="blind">닫기</span></a>
+                </div>
+                <div class="pop-content">
+                    <a href="#"><img src="images/ik-kr/pop_img.gif" alt=""></a>
+                    <div class="btm">
+                        <a href="#n" onclick="PopupCloseDay(this);return false;">오늘 하루 보이지 않기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-layer-popup" id="popup2" style="top: 50px; left: 430px;" tabindex="0"> <!-- id값은 팝업마다 다르게 줘야함 -->
+            <div class="layer-popup">
+                <div class="top">
+                    코로나 바이러스
+                    <a href="#n" onclick="closePopup(this);return false;"><span class="blind">닫기</span></a>
+                </div>
+                <div class="pop-content">
+                    <a href="#"><img src="images/ik-kr/pop_img.gif" alt=""></a>
+                    <div class="btm">
+                        <a href="#n" onclick="PopupCloseDay(this);return false;">오늘 하루 보이지 않기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div class="skip-nav">
+            <a href="#content">Shortcut to Body</a>
+            <a href="#gnb">Shortcut to main menu</a>
+        </div>
+        
+        <header class="header">
+            <div class="header-link">
+                <div class="inner">
+                    <ul class="lang">
+                        <li><a href="#n" class="active">KOR</a></li>
+                        <li><a href="#n">ENG</a></li>
+                        <li><a href="#n">CHN</a></li>
+                        <li><a href="#n">JPN</a></li>
+                    </ul>
+                    <ul class="sns">
+                        <li><a href="#n" class="facebook" target="_blank" title="open window"><span class="blind">Shortcut to facebook</span></a></li>
+                        <li><a href="#n" class="youtube" target="_blank" title="open window"><span class="blind">Shortcut to youtube</span></a></li>
+                        <li><a href="#n" class="twitter" target="_blank" title="open window"><span class="blind">Shortcut to twitter</span></a></li>
+                        <li><a href="#n" class="rss" target="_blank" title="open window"><span class="blind">Shortcut to rss</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-content">
+                <div class="inner">
+                    <h1 class="logo">
+                        <a href="#n"><span class="blind">Invest Korea</span></a>
+                    </h1>				
+                    <div class="top-search-wrap">
+                        <button type="button" class="btn-search"><span class="blind">Open the search area</span></button>
+                        <div class="top-search-area">
+                            <div class="search-tit">Search</div>
+                            <div class="inner">
+                                <div class="top-search-form">
+                                    <input type="text" title="Enter Keyword to Search" placeholder="Enter Keyword to Search">
+                                    <button type="submit" class="btn"><span class="blind">Search</span></button>
+                                </div>
+                                <!-- 추천검색어 기능 사용안함 (추후 변경 가능성 있음)
+                                <div class="recommend">
+                                    <strong class="tit">추천검색어</strong>
+                                    <div class="recommend-slider-wrap">
+                                        <ul class="slider">
+                                            <li><a href="#n">Investment</a></li>
+                                            <li><a href="#n">Investment</a></li>
+                                            <li><a href="#n">Investment</a></li>
+                                            <li><a href="#n">Investment</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                -->
+                            </div>
+                            <button type="button" class="btn-search-close"><span class="blind">Close the search area</span></button>
+                        </div>
+                    </div>
+                    <a href="#n" class="btn-sitemap"><span class="blind">Shortcut to Site Map</span></a>
+                </div>
+            </div>
+            <div class="navi-wrap">
+                <button type="button" class="btn-menu"><span class="blind">Open menu</span></button>
+                <div class="gnb-wrap">
+                    <div class="gnb-tit">Whole Menu</div>
+                    <!-- 해당 페이지에 1depth, 2depth, 3depth에 해당하는 a태그에 active 클래스를 넣어주세요. -->
+                    <nav id="gnb" class="gnb">
+                        <ul>
+                            <li>
+                                <a href="WhyKOREA_온라인IR_목록.html">Why KOREA</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>Why KOREA</span></strong>
+                                                <div class="tit-content">
+                                                    <div class="txt">
+                                                        <div class="l">한국거시경제지표</div>
+                                                        <div class="r">
+                                                            <a href="#n" class="link"><span class="blind">바로가기</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li><a href="WhyKOREA_온라인IR_목록.html">온라인 IR</a></li>
+                                                <li><a href="WhyKOREA_경제.html">경제</a></li>
+                                                <li>
+                                                    <a href="WhyKOREA_인프라_디지털.html">인프라</a>
+                                                    <ul>
+                                                        <li><a href="WhyKOREA_인프라_디지털.html">디지털</a></li>
+                                                        <li><a href="WhyKOREA_인프라_혁신.html">혁신</a></li>
+                                                        <li><a href="WhyKOREA_인프라_물류.html">물류</a></li>
+                                                        <li><a href="WhyKOREA_인프라_유틸리티.html">유틸리티</a></li>
+                                                        <li><a href="WhyKOREA_인프라_의료.html">의료</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="WhyKOREA_시장_내수시장.html">시장</a>
+                                                    <ul>
+                                                        <li><a href="WhyKOREA_시장_내수시장.html">내수시장</a></li>
+                                                        <li><a href="WhyKOREA_시장_대외무역.html">대외무역</a></li>
+                                                        <li><a href="WhyKOREA_시장_전자상거래.html">전자상거래</a></li>
+                                                        <li><a href="WhyKOREA_시장_지식재산권.html">지식재산권</a></li>
+                                                    </ul>
+                                                </li>									
+                                                <li>
+                                                    <a href="WhyKOREA_산업_산업동향_목록.html">산업</a>
+                                                    <ul>
+                                                        <li><a href="WhyKOREA_산업_산업동향_목록.html">산업동향</a></li>
+                                                        <li><a href="#n">의약·바이오</a></li>
+                                                        <li><a href="#n">정보통신ICT</a></li>
+                                                        <li><a href="#n">정밀화학</a></li>
+                                                        <li><a href="#n">반도체·디스플레이</a></li>
+                                                        <li><a href="#n">항공우주</a></li>
+                                                        <li><a href="#n">자동차부품</a></li>
+                                                        <li><a href="#n">기계산업</a></li>
+                                                        <li><a href="#n">식품</a></li>
+                                                        <li><a href="#n">패션·뷰티</a></li>
+                                                        <li><a href="#n">조선해양</a></li>
+                                                        <li><a href="#n">신재생에너지</a></li>
+                                                        <li><a href="#n">관광</a></li>
+                                                        <li><a href="#n">유통·물류</a></li>
+                                                        <li><a href="#n">금융</a></li>
+                                                        <li><a href="#n">문화 콘텐츠</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="투자의기회_기업정보_사업소개.html">유망산업입지</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>유망산업입지</span></strong>
+                                                <div class="tit-content">
+                                                    <div class="txt">
+                                                        <div class="l">지역별 프로젝트</div>
+                                                        <div class="r">
+                                                            <a href="#n" class="link"><span class="blind">바로가기</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li>
+                                                    <a href="투자의기회_기업정보_사업소개.html">기업정보</a>
+                                                    <ul>
+                                                        <li><a href="투자의기회_기업정보_사업소개.html">사업소개</a></li>
+                                                        <li><a href="투자의기회_기업정보_IKMP사업신청_목록.html">IKMP 사업신청</a></li>
+                                                        <li><a href="투자의기회_기업정보_IKMP사업참여현황_목록.html">IKMP 사업참여현황</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="투자의기회_일반입지_지자체.html">일반입지</a>
+                                                    <ul>
+                                                        <li><a href="투자의기회_일반입지_지자체.html">지자체</a></li>
+                                                        <li><a href="투자의기회_일반입지_지역별프로젝트_목록.html">지역별 프로젝트</a></li>
+                                                        <li><a href="투자의기회_일반입지_지역별홍보자료_목록.html">지역별 홍보자료</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="투자의기회_외국인투자기업중점유치지역_경제자유구역.html">외국인투자기업 중점유치 지역</a>
+                                                    <ul>
+                                                        <li><a href="투자의기회_외국인투자기업중점유치지역_경제자유구역.html">경제자유구역</a></li>
+                                                        <li><a href="투자의기회_외국인투자기업중점유치지역_외국인투자지역.html">외국인투자지역</a></li>
+                                                        <li><a href="투자의기회_외국인투자기업중점유치지역_자유무역지역.html">자유무역지역</a></li>
+                                                        <li><a href="투자의기회_외국인투자기업중점유치지역_새만금_사업개요.html">새만금</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="투자의기회_성공사례_목록.html">성공사례</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="투자의시작_인정요건_외국인직접투자(FDI)정의.html">M&A 투자 기회</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>M&A 투자 기회</span></strong>
+                                                <div class="tit-content">
+                                                    <a href="#n"><div class="img">Invest KOREA<br>Market Place(IKMP)</div></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li>
+                                                    <a href="투자의시작_인정요건_외국인직접투자(FDI)정의.html">인정요건</a>
+                                                    <ul>
+                                                        <li><a href="투자의시작_인정요건_외국인직접투자(FDI)정의.html">외국인직접투자(FDI) 정의</a></li>
+                                                        <li><a href="투자의시작_인정요건_투자가능업종.html">투자가능 업종</a></li>
+                                                        <li><a href="투자의시작_인정요건_외국인투자의유형.html">외국인 투자의 유형</a></li>
+                                                        <li><a href="투자의시작_인정요건_출자가능한자산(출자목적물).html">출자가능한 자산(출자목적물)</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="투자의시작_기업형태_법인유형.html">기업형태</a>
+                                                    <ul>
+                                                        <li><a href="투자의시작_기업형태_법인유형.html">법인유형</a></li>
+                                                        <li><a href="투자의시작_기업형태_법인형태.html">법인형태</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- <li>
+                                                    <a href="투자의시작_입지선정_제조업의입지유형.html">입지선정</a>
+                                                    <ul>
+                                                        <li><a href="투자의시작_입지선정_제조업의입지유형.html">제조업의 입지유형</a></li>
+                                                        <li><a href="투자의시작_입지선정_비제조업의입지유형.html">비제조업의 입지유형</a></li>
+                                                        <li><a href="투자의시작_입지선정_외국인투자기업중점유치지역_경제자유구역.html">외국인투자기업 중점유치 지역</a></li>
+                                                    </ul>
+                                                </li> -->
+                                                <li>
+                                                    <a href="투자의시작_투자방법_유형별외국인투자절차.html">투자방법</a>
+                                                    <ul>
+                                                        <li><a href="투자의시작_투자방법_유형별외국인투자절차.html">유형별 외국인투자 절차</a></li>
+                                                        <li><a href="투자의시작_투자방법_기업설립.html">기업설립</a></li>
+                                                        <li><a href="투자의시작_투자방법_증자.html">증자</a></li>
+                                                        <li><a href="투자의시작_투자방법_기존주취득.html">기존주 취득</a></li>
+                                                        <li><a href="투자의시작_투자방법_장기차관.html">장기차관</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="투자의시작_비자·체류_입국.html">비자·체류</a>
+                                                    <ul>
+                                                        <li><a href="투자의시작_비자·체류_입국.html">입국</a></li>
+                                                        <li><a href="투자의시작_비자·체류_기업투자사증발급및체류절차.html">기업투자 사증발급 및 체류절차</a></li>
+                                                        <li><a href="투자의시작_비자·체류_외국인체류지원서비스.html">외국인 체류지원 서비스</a></li>
+                                                        <li><a href="투자의시작_비자·체류_체류자격별사증신청.html">체류자격별 사증신청</a></li>
+                                                        <li><a href="투자의시작_비자·체류_출입국우대제도.html">출입국 우대제도</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="인센티브_조세감면_지원대상.html">투자가이드</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>투자가이드</span></strong>
+                                                <div class="tit-content">
+                                                    <div class="txt">
+                                                        투자가이드 2020
+                                                        <div class="link-area"><a href="#n" class="link"><span class="blind">바로가기</span></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li>
+                                                    <a href="인센티브_조세감면_지원대상.html">조세감면</a>
+                                                    <ul>
+                                                        <li><a href="인센티브_조세감면_지원대상.html">지원대상</a></li>
+                                                        <li><a href="인센티브_조세감면_절차.html">절차</a></li>
+                                                        <li><a href="인센티브_조세감면_감면혜택_취득세·감면세.html">감면혜택</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="인센티브_입지지원_외국인투자기업중점유치지역.html">입지지원</a>
+                                                    <ul>
+                                                        <li><a href="인센티브_입지지원_외국인투자기업중점유치지역.html">외국인투자기업 중점유치 지역</a></li>
+                                                        <li><a href="인센티브_입지지원_외국인투자지역.html">외국인투자지역</a></li>
+                                                        <li><a href="인센티브_입지지원_경제자유구역.html">경제자유구역</a></li>
+                                                        <li><a href="인센티브_입지지원_자유무역지역.html">자유무역지역</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="인센티브_현금지원_지원대상.html">현금지원</a>
+                                                    <ul>
+                                                        <li><a href="인센티브_현금지원_지원대상.html">지원대상</a></li>
+                                                        <li><a href="인센티브_현금지원_지원항목.html">지원항목</a></li>
+                                                        <li><a href="인센티브_현금지원_신청절차및방법.html">신청절차 및 방법</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="인센티브_R&D센터_기업부설연구소등.html">R&D센터 특례</a>
+                                                    <ul>
+                                                        <li><a href="인센티브_R&D센터_기업부설연구소등.html">기업부설연구소 등</a></li>
+                                                        <li><a href="인센티브_R&D센터_연구개발서비스업.html">연구개발서비스업</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="경영·생활_조세제도_주요세금의종류.html">인센티브</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>인센티브</span></strong>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li>
+                                                    <a href="경영·생활_조세제도_주요세금의종류.html">조세제도</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_조세제도_주요세금의종류.html">주요세금의 종류</a></li>
+                                                        <li><a href="경영·생활_조세제도_국세_법인세.html">국세</a></li>
+                                                        <li><a href="경영·생활_조세제도_지방세.html">지방세</a></li>
+                                                        <li><a href="경영·생활_조세제도_이전가격세제.html">이전가격세제</a></li>
+                                                        <li><a href="경영·생활_조세제도_과소자본과세제도.html">과소자본과세제도</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="경영·생활_통관_통관절차.html">통관</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_통관_통관절차.html">통관절차</a></li>
+                                                        <li><a href="경영·생활_통관_관세납부와환급.html">관세납부와 환급</a></li>
+                                                        <li><a href="경영·생활_통관_자본재도입.html">자본재 도입</a></li>
+                                                    </ul>
+                                                </li>									
+                                                <li>
+                                                    <a href="경영·생활_인사·노무_채용및해고.html">인사·노무</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_인사·노무_채용및해고.html">채용 및 해고</a></li>
+                                                        <li><a href="경영·생활_인사·노무_근로조건_임금.html">근로조건</a></li>
+                                                        <li><a href="경영·생활_인사·노무_취업규칙.html">취업규칙</a></li>
+                                                        <li><a href="경영·생활_인사·노무_일·가정양립지원.html">일·가정 양립지원</a></li>									
+                                                        
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="경영·생활_지식재산권_지식재산제도.html">지식재산권</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_지식재산권_지식재산제도.html">지식재산제도</a></li>
+                                                        <li><a href="경영·생활_지식재산권_특허청주요서비스.html">특허청 주요 서비스</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="경영·생활_공장설립_산업입지와_개별입지.html">공장설립</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_공장설립_산업입지와_개별입지.html">산업입지와 개별입지</a></li>
+                                                        <li><a href="경영·생활_공장설립_설립절차.html">설립절차</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="경영·생활_부동산취득_관련법령.html">부동산 취득</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_부동산취득_관련법령.html">관련법령</a></li>
+                                                        <li><a href="경영·생활_부동산취득_절차및필요서류.html">절차 및 필요서류</a></li>
+                                                        <li><a href="경영·생활_부동산취득_부동산매매대금반출.html">부동산 매매대금 반출</a></li>
+                                                        <li><a href="경영·생활_부동산취득_관련세금.html">관련세금</a></li>
+                                                        <li><a href="경영·생활_부동산취득_부동산중개수수료.html">부동산중개수수료</a></li>
+                                                    </ul>
+                                                </li>																														
+                                                <li>
+                                                    <a href="경영·생활_해산및청산_해산.html">해산 및 청산</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_해산및청산_해산.html">해산</a></li>
+                                                        <li><a href="경영·생활_해산및청산_청산.html">청산</a></li>
+                                                        <li><a href="경영·생활_해산및청산_인허가,사업자등록말소.html">인허가, 사업자등록 말소</a></li>
+                                                    </ul>
+                                                </li>									
+                                                <li>
+                                                    <a href="경영·생활_생활정보_대한민국소개.html">생활정보</a>
+                                                    <ul>
+                                                        <li><a href="경영·생활_생활정보_대한민국소개.html">대한민국 소개</a></li>
+                                                        <li><a href="경영·생활_생활정보_주거생활_주거형태.html">주거생활</a></li>
+                                                        <li><a href="경영·생활_생활정보_교통및공공·편의시설_교통.html">교통 및 공공·편의시설</a></li>
+                                                        <li><a href="경영·생활_생활정보_교육및취업_교육.html">교육 및 취업</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="경영·생활_업무대행기업_수탁기관.html">업무 대행기업</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- <li>
+                                <a href="IKMP(국문)_사업소개.html">IKMP</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>IKMP</span></strong>
+                                                <div class="tit-content">
+                                                    <div class="img">Invest KOREA<br>Market Place</div>
+                                                    <div class="txt">
+                                                        <a href="#n" class="link">[신청하기]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li><a href="IKMP(국문)_사업소개.html">IKMP 사업소개</a></li>
+                                                <li><a href="IKMP(국문)_IKMP사업신청_목록.html">IKMP 사업신청</a></li>
+                                                <li><a href="IKMP(국문)_IKMP사업참여현황_목록.html">IKMP 사업참여현황</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> -->
+                            <li>
+                                <a href="국내복귀기업지원_사업소개_지원대상.html">국내복귀기업지원</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>국내복귀기업지원</span></strong>
+                                                <div class="tit-content">
+                                                    <ul class="link-list">
+                                                        <li><a href="#n" class="bg-green">복귀기업지원신청</a></li>
+                                                        <li><a href="#n" class="bg-blue">구조조정 컨설팅 신청</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li>
+                                                    <a href="국내복귀기업지원_사업소개_지원대상.html">사업소개</a>
+                                                    <ul>
+                                                        <li><a href="국내복귀기업지원_사업소개_지원대상.html">지원대상</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_지원센터.html">지원센터</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_지원제도.html">지원제도</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_입지·설비보조금.html">입지/설비 보조금</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_세제지원.html">세제 지원</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_고용창출장려금.html">고용창출 장려금</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_해외인력고용지원.html">해외인력 고용지원</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_보증·보험지원.html">보증‧보험지원</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_금융지원.html">금융지원</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_입지지원.html">입지지원</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_지적재산권지원.html">지식재산권 지원</a></li>
+                                                        <li><a href="국내복귀기업지원_사업소개_구조조정컨설팅.html">구조조정 컨설팅</a></li>                
+                                        
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="국내복귀기업지원_로그인.html">사업신청</a>
+                                                    <ul>
+                                                        <li><a href="국내복귀기업지원_로그인.html">지원대상 국내복귀 기업 신청</a></li>                
+                                                        <li><a href="국내복귀기업지원_사업신청_구조조정컨설팅신청_소개.html">구조조정 컨설팅 신청</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="국내복귀기업지원_신청내역확인_지원대상국내복귀기업신청내역.html">신청내역 확인</a></li>
+                                                <li><a href="국내복귀기업지원_공지·홍보_목록.html">공지·홍보</a></li>
+                                                <li><a href="국내복귀기업지원_FAQ.html">FAQ</a></li>
+                                                <li><a href="국내복귀기업지원_Q&A_목록.html">Q&A</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>							
+                            <li>
+                                <a href="IK서비스_IK소개_InvestKorea.html">IK 소개</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>IK 소개</span></strong>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li>
+                                                    <a href="IK서비스_IK소개_InvestKorea.html">IK소개</a>
+                                                    <ul>
+                                                        <li><a href="IK서비스_IK소개_InvestKorea.html">Invest Korea</a></li>
+                                                        <li><a href="IK서비스_IK소개_투자종합상담실(ICC).html">투자종합상담실(ICC)</a></li> 
+                                                        <li><a href="IK서비스_IK소개_외국인투자옴브즈만.html">외국인투자 옴브즈만</a></li>
+                                                        <li><a href="IK서비스_IK소개_본사및글로벌네트워크_본사.html">본사 및 글로벌 네트워크</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="IK서비스_주요사업_인큐베이팅(IKP).html">주요 사업</a>
+                                                    <ul>
+                                                        <li><a href="IK서비스_주요사업_인큐베이팅(IKP).html">인큐베이팅(IKP)</a></li>
+                                                        <li><a href="IK서비스_주요사업_교육훈련보조금및고용보조금지원.html">교육훈련보조금 및 고용보조금 지원</a></li>
+                                                        <li><a href="IK서비스_주요사업_채용지원.html">채용지원</a></li>
+                                                        <li><a href="IK서비스_주요사업_출입국지원(출입국지원레드카펫서비스).html">출입국지원(출입국지원 레드카펫 서비스)</a></li>
+                                                        <li><a href="IK서비스_주요사업_고충처리(외국인투자옴부즈만).html">고충처리(외국인투자 옴부즈만)</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="IK서비스_공지·홍보_공지사항_목록.html">공지·홍보</a>
+                                                    <ul>
+                                                        <li><a href="IK서비스_공지·홍보_공지사항_목록.html">공지사항</a></li>
+                                                        <li><a href="IK서비스_공지·홍보_IK캘린더_달력으로보기.html">IK 캘린더</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="IK서비스_Q&A_FAQ.html">Q&A</a>
+                                                    <ul>
+                                                        <li><a href="IK서비스_Q&A_FAQ.html">FAQ</a></li>
+                                                        <li><a href="IK서비스_Q&A_Q&A.html">Q&A</a></li>
+                                                    </ul>
+                                                </li>										
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>			
+                            <li>
+                                <a href="정보센터_서식자료.html">정보센터</a>
+                                <div>
+                                    <div class="gnb-inner">
+                                        <div class="tit-box">
+                                            <div class="tit-box-inner">
+                                                <strong class="tit"><span>정보센터</span></strong>
+                                                <div class="tit-content">
+                                                    <div class="txt">
+                                                        <div class="l">Online IR</div>
+                                                        <div class="r">
+                                                            <a href="#n" class="link"><span class="blind">바로가기</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gnb-box">
+                                            <ul>
+                                                <li><a href="정보센터_서식자료.html">서식자료</a></li>
+                                                <li><a href="정보센터_관련법령.html">관령법령</a></li>
+                                                <li><a href="정보센터_투자뉴스_목록.html">투자뉴스</a></li>
+                                                <li>
+                                                    <a href="정보센터_KOTRAExpress_KOTRAExpress_목록.html">KOTRA Express</a>
+                                                    <ul>
+                                                        <li><a href="정보센터_KOTRAExpress_KOTRAExpress_목록.html">KOTRA Express</a></li>
+                                                        <li><a href="정보센터_KOTRAExpress_KOTRAExpress구독신청_등록.html">KOTRA Express 구독신청</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="정보센터_지방자치단체홍보자료_지역별프로젝트_목록.html">지방자치단체 홍보자료</a>
+                                                    <ul>
+                                                        <li><a href="정보센터_지방자치단체홍보자료_지역별프로젝트_목록.html">지역별 프로젝트</a></li>
+                                                        <li><a href="정보센터_지방자치단체홍보자료_지역별홍보자료_목록.html">지역별 홍보자료</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="정보센터_성공사례_목록.html">성공사례</a></li>
+                                                <li><a href="정보센터_FDI연구보고서.html">FDI 연구보고서</a></li>
+                                                <li><a href="정보센터_발간물.html">발간물</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button type="button" class="btn-close"><span class="blind">메뉴닫기</span></button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container" id="content" style="width: 100%;">
+
+            <!-- 01섹션 -->
+            <div class="sec01">
+                <div class="visual-wrap">
+                    <div class="visual-box">
+                        <div class="slide">
+                            <a href="#n">
+                                <img src="images/main/img_visual01_m.jpg" alt="" class="m-content">
+                                <video class="bgvid pc-content" id="vid0" autoplay="" loop="" muted="" playsinline="">
+                                    <source src="images/main/KOTRA_main_video.mp4" type="video/mp4">
+                                </video>
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="#n">
+                               <img src="images/main/img_visual01_m.jpg" alt="" class="m-content">
+                               <img src="images/main/img_visual01.jpg" alt=""  class="pc-content">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="#n">
+                                <img src="images/main/img_visual01_m.jpg" alt=""  class="m-content">
+                                <img src="images/main/img_visual01.jpg" alt=""  class="pc-content">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="#n">
+                                <img src="images/main/img_visual01_m.jpg" alt=""  class="m-content">
+                                <img src="images/main/img_visual01.jpg" alt=""  class="pc-content">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="quik-menu-wrap">
+                    <ul>
+                        <li><a href="#n">Invest Korea Market Place</a></li>
+                        <li><a href="#n">KOTRA Express</a></li>
+                        <li><a href="#n">Foreign Investment Ombudsman</a></li>
+                        <li><a href="#n">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="sc-btn-wrap">
+                    <button class="scroll-btn"><span class='blind'>아래로 이동</span></button>
+                </div>
+
+                <script>
+
+                    /* 비주얼 롤링 */
+                    $('.visual-box').slick({
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        arrows: false,
+                        pauseOnFocus: false
+                    });
+
+                    $('.slick-dots').wrap("<div class=\"dots_wrap\">");
+                    $('.dots_wrap').append("<button type=\"button\" class=\"btn_stop\"onclick=\"SliderStop(this);\"><span class=\"blind\">정지<\/span><\/button>");
+                    $('.dots_wrap').append("<button type=\"button\" class=\"btn_play\"onclick=\"SliderPlay(this);\"><span class=\"blind\">시작<\/span><\/button>");
+                    
+                    function SliderStop(obj){
+                        $(obj).hide().next().css('display','inline-block');
+                        $('.visual-box').slick('slickPause');
+                        $('.btn_play').attr("tabindex", -1).focus();
+                    }
+
+                    function SliderPlay(obj){
+                        $(obj).hide().prev().css('display','inline-block');
+                        $('.visual-box').slick('slickPlay').focus();
+                        $('.btn_stop').attr("tabindex", -1).focus();
+                    }
+
+                </script>
+            </div>
+            <!-- // 01섹션 -->
+
+            <!-- 02섹션 -->
+            <div class="sec02">
+                <div class="inner-sec">
+                    <div class="box-area">
+                        <div class="l-box">
+                            <h2 class="main-title">Customized Search</h2>
+                            <div class="text-box">
+                                Invest KOREA provides investors interested in Korea<br>
+                                with customized information by investment type.
+                            </div>
+                        </div>
+                        <div class="r-box">
+                            <h3 class="sub-tt">Investment Type :</h3>
+                            <div class="sub-box">
+                                <a href="#n" class="btn01 active" onclick="tabBtn(this);">M&amp;A (equity)</a>
+                                <a href="#n" class="btn01" onclick="tabBtn(this);">GreenField</a>
+                                <a href="#n" class="btn02">Search</a>
+                            </div>
+                            <div class="sub-box">
+                                If you register your e-mail account when searching for
+                                customized information, we will send you regular
+                                newsletters on recommended information by field.
+                                <div class="btn-box">
+                                    <a href="#n" class="main-font-col-green main-link-btn">[Apply for Newsletter Service]</a>
+                                </div>
+                            </div>
+                            <script>
+                                // 탭 버튼
+                                function tabBtn(obj){
+                                    $(obj).siblings().removeClass('active');
+                                    $(obj).addClass('active');
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- // 02섹션 -->
+            
+            <!-- 03섹션 -->
+            <div class="sec03">
+                <div class="inner-sec">
+                    <h2 class="main-title">What's New</h2>
+                    <div class="box-area">
+                        <!-- 왼쪽 컨텐츠 -->
+                        <div class="l-box">
+                            <div class="tab-area notice">
+                                <ul class="tab-menu">
+                                    <li class="active"><a href="#n">Success Stories</a></li>
+                                    <li><a href="#n">Future Unicorn</a></li>
+                                    <li><a href="#n">Location Report</a></li>
+                                    <li><a href="#n">Online IR</a></li>
+                                </ul>
+                                <div class="tab-box">
+                                    <div class="tab-contents active">
+                                        <div class="slide">
+                                            <a href="#n" style="display: block;">
+                                                <div class="cont-box">
+                                                    <div class="pic">
+                                                        <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <ul class="info">
+                                                            <li>2020.10.14</li>
+                                                            <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                        </ul>
+                                                        <div class="cont-title">
+                                                            <span class="tt text-el02-03">
+                                                                Learning Must Go On: Uninterrupted Education amid COVID-19COVID-19COVID-19 
+                                                            </span>
+                                                        </div>
+                                                        <div class="cont-text text-el04-05">
+                                                            Dulwich College is one of the oldest independent
+                                                            schools in the UK, founded in South London as a
+                                                            boys’ school in 1619. Dulwich College International
+                                                            (DCI) was established to bring the Dulwich
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" style="display: block;">
+                                                <div class="cont-box">
+                                                    <div class="pic">
+                                                        <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <ul class="info">
+                                                            <li>2020.10.14</li>
+                                                            <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                        </ul>
+                                                        <div class="cont-title">
+                                                            <span class="tt text-el02-03">
+                                                                Learning Must Go On: Uninterrupted Education amid COVID-19COVID-19COVID-19 
+                                                            </span>
+                                                        </div>
+                                                        <div class="cont-text text-el04-05">
+                                                            Dulwich College is one of the oldest independent
+                                                            schools in the UK, founded in South London as a
+                                                            boys’ school in 1619. Dulwich College International
+                                                            (DCI) was established to bring the Dulwich
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" style="display: block;">
+                                                <div class="cont-box">
+                                                    <div class="pic">
+                                                        <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <ul class="info">
+                                                            <li>2020.10.14</li>
+                                                            <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                        </ul>
+                                                        <div class="cont-title">
+                                                            <span class="tt text-el02-03">
+                                                                Learning Must Go On: Uninterrupted Education amid COVID-19COVID-19COVID-19 
+                                                            </span>
+                                                        </div>
+                                                        <div class="cont-text text-el04-05">
+                                                            Dulwich College is one of the oldest independent
+                                                            schools in the UK, founded in South London as a
+                                                            boys’ school in 1619. Dulwich College International
+                                                            (DCI) was established to bring the Dulwich
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" style="display: block;">
+                                                <div class="cont-box">
+                                                    <div class="pic">
+                                                        <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <ul class="info">
+                                                            <li>2020.10.14</li>
+                                                            <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                        </ul>
+                                                        <div class="cont-title">
+                                                            <span class="tt text-el02-03">
+                                                                Learning Must Go On: Uninterrupted Education amid COVID-19COVID-19COVID-19 
+                                                            </span>
+                                                        </div>
+                                                        <div class="cont-text text-el04-05">
+                                                            Dulwich College is one of the oldest independent
+                                                            schools in the UK, founded in South London as a
+                                                            boys’ school in 1619. Dulwich College International
+                                                            (DCI) was established to bring the Dulwich
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" style="display: block;">
+                                                <div class="cont-box">
+                                                    <div class="pic">
+                                                        <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <ul class="info">
+                                                            <li>2020.10.14</li>
+                                                            <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                        </ul>
+                                                        <div class="cont-title">
+                                                            <span class="tt text-el02-03">
+                                                                Learning Must Go On: Uninterrupted Education amid COVID-19COVID-19COVID-19 
+                                                            </span>
+                                                        </div>
+                                                        <div class="cont-text text-el04-05">
+                                                            Dulwich College is one of the oldest independent
+                                                            schools in the UK, founded in South London as a
+                                                            boys’ school in 1619. Dulwich College International
+                                                            (DCI) was established to bring the Dulwich
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="slide">
+                                            <div class="cont-box">
+                                                <div class="pic">
+                                                    <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                </div>
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <a href="#n" class="tt text-el02-03">
+                                                            Learning Must Go On: Uninterrupted Education amid COVID-19
+                                                        </a>
+                                                    </div>
+                                                    <div class="cont-text text-el04-05">
+                                                        Dulwich College is one of the oldest independent
+                                                        schools in the UK, founded in South London as a
+                                                        boys’ school in 1619. Dulwich College International
+                                                        (DCI) was established to bring the Dulwich
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide">
+                                            <div class="cont-box">
+                                                <div class="pic">
+                                                    <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                </div>
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <a href="#n" class="tt text-el02-03">
+                                                            Learning Must Go On: Uninterrupted Education amid COVID-19
+                                                        </a>
+                                                    </div>
+                                                    <div class="cont-text text-el04-05">
+                                                        Dulwich College is one of the oldest independent
+                                                        schools in the UK, founded in South London as a
+                                                        boys’ school in 1619. Dulwich College International
+                                                        (DCI) was established to bring the Dulwich
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="slide">
+                                            <div class="cont-box">
+                                                <div class="pic">
+                                                    <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                </div>
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.12.14</li>
+                                                        <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <a href="#n" class="tt text-el02-03">
+                                                            Learning Must Go On: Uninterrupted Education amid COVID-19
+                                                        </a>
+                                                    </div>
+                                                    <div class="cont-text text-el04-05">
+                                                        Dulwich College is one of the oldest independent
+                                                        schools in the UK, founded in South London as a
+                                                        boys’ school in 1619. Dulwich College International
+                                                        (DCI) was established to bring the Dulwich
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide">
+                                            <div class="cont-box">
+                                                <div class="pic">
+                                                    <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                </div>
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.12.14</li>
+                                                        <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <a href="#n" class="tt text-el02-03">
+                                                            Learning Must Go On: Uninterrupted Education amid COVID-19
+                                                        </a>
+                                                    </div>
+                                                    <div class="cont-text text-el04-05">
+                                                        Dulwich College is one of the oldest independent
+                                                        schools in the UK, founded in South London as a
+                                                        boys’ school in 1619. Dulwich College International
+                                                        (DCI) was established to bring the Dulwich
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="slide">
+                                            <div class="cont-box">
+                                                <div class="pic">
+                                                    <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                </div>
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2021.10.14</li>
+                                                        <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <a href="#n" class="tt text-el02-03">
+                                                            Learning Must Go On: Uninterrupted Education amid COVID-19
+                                                        </a>
+                                                    </div>
+                                                    <div class="cont-text text-el04-05">
+                                                        Dulwich College is one of the oldest independent
+                                                        schools in the UK, founded in South London as a
+                                                        boys’ school in 1619. Dulwich College International
+                                                        (DCI) was established to bring the Dulwich
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide">
+                                            <div class="cont-box">
+                                                <div class="pic">
+                                                    <img src="images/main/img_notice_slide01.jpg" alt="">
+                                                </div>
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2021.10.14</li>
+                                                        <li><span class="main-font-col-blue">Success Stories</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <a href="#n" class="tt text-el02-03">
+                                                            Learning Must Go On: Uninterrupted Education amid COVID-19
+                                                        </a>
+                                                    </div>
+                                                    <div class="cont-text text-el04-05">
+                                                        Dulwich College is one of the oldest independent
+                                                        schools in the UK, founded in South London as a
+                                                        boys’ school in 1619. Dulwich College International
+                                                        (DCI) was established to bring the Dulwich
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 왼쪽 컨텐츠 -->
+
+                        <!-- 오른쪽 컨텐츠 -->
+                        <div class="r-box">
+                            <div class="tab-area notice type02">
+                                <ul class="tab-menu">
+                                    <li class="active"><a href="#n">Newsroom</a></li>
+                                    <li><a href="#n">Industries Trends</a></li>
+                                    <li><a href="#n">Publications</a></li>
+                                </ul>
+                                <div class="tab-box">
+                                    <div class="tab-contents active">
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.10.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02">
+                                                            S. Korea unveils huge investment plan for biohealth industry investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.12.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2021.01.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2021.02.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.10.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2020.11.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2021.03.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="slide">
+                                            <a href="#n" class="cont-box">
+                                                <div class="cont">
+                                                    <ul class="info">
+                                                        <li>2021.03.14</li>
+                                                        <li><span class="main-font-col-green">Investment News</span></li>
+                                                    </ul>
+                                                    <div class="cont-title">
+                                                        <div class="tt text-el02"> 
+                                                            S. Korea unveils huge investment plan for biohealth industry
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 오른쪽 컨텐츠 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //03섹션 -->
+
+            <!-- 04섹션 -->
+            <div class="sec04">
+                <div class="inner-sec">
+                    <div class="tab-area project">
+                        <div class="t-box">
+                            <div class="pre">Invest Korea Market Place</div>
+                            <h2 class="main-title">Equity Investment</h2>
+                            <div class="text-box">
+                                <span>Invest Korea Market Place(IKMP)</span> is a platform which supports global investors<br class="pc-br">
+                                in identifying suitable Korean companies seeking foreign investment.
+                            </div>
+                            <ul class="tab-menu">
+                                <li class="active"><a href="#n">Projects</a></li>
+                                <li><a href="#n">Inquiry</a></li>
+                            </ul>
+                        </div>
+                        <!-- 슬라이드 -->
+                        <div class="tab-box">
+                            <ul class="tab-contents active">
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Chemical/Material</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr01">
+                                            <img src="images/main/ico_pr01.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Renewable Energy/
+                                            Environment</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Cancer Diagnostic Device</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr02">
+                                            <img src="images/main/ico_pr02.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Automobile/Machine/
+                                            Parts</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr03">
+                                            <img src="images/main/ico_pr03.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Aviation/Space/Ship</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr04">
+                                            <img src="images/main/ico_pr04.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Consumer Goods &
+                                            Primary Industry</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr05">
+                                            <img src="images/main/ico_pr05.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Real Estate/Tourism</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr06">
+                                            <img src="images/main/ico_pr06.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Renewable Energy/
+                                            Environment</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr07">
+                                            <img src="images/main/ico_pr07.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Business Service</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr08">
+                                            <img src="images/main/ico_pr08.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Finance</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr09">
+                                            <img src="images/main/ico_pr09.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Pharma/Healthcare</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr10">
+                                            <img src="images/main/ico_pr10.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Robot</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr11">
+                                            <img src="images/main/ico_pr11.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Renewable Energy/
+                                            Environment</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr12">
+                                            <img src="images/main/ico_pr12.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">ICT</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr13">
+                                            <img src="images/main/ico_pr13.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Culture & Contests</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr14">
+                                            <img src="images/main/ico_pr14.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Etc.</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr15">
+                                            <img src="images/main/ico_pr15.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="tab-contents">
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">2번</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr01">
+                                            <img src="images/main/ico_pr01.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">2번</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Cancer Diagnostic Device</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr02">
+                                            <img src="images/main/ico_pr02.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Automobile/Machine/
+                                            Parts</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr03">
+                                            <img src="images/main/ico_pr03.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Aviation/Space/Ship</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr04">
+                                            <img src="images/main/ico_pr04.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Consumer Goods &
+                                            Primary Industry</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr05">
+                                            <img src="images/main/ico_pr05.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Real Estate/Tourism</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr06">
+                                            <img src="images/main/ico_pr06.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Renewable Energy/
+                                            Environment</div>
+                                        <div class="sub-pre">Cancer Diagnostic Device</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr07">
+                                            <img src="images/main/ico_pr07.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Business Service</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr08">
+                                            <img src="images/main/ico_pr08.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Finance</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr09">
+                                            <img src="images/main/ico_pr09.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Pharma/Healthcare</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr10">
+                                            <img src="images/main/ico_pr10.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Robot</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr11">
+                                            <img src="images/main/ico_pr11.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Renewable Energy/
+                                            Environment</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr12">
+                                            <img src="images/main/ico_pr12.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">ICT</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr13">
+                                            <img src="images/main/ico_pr13.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Culture & Contests</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr14">
+                                            <img src="images/main/ico_pr14.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a href="#n" class="item-box">
+                                        <div class="name">Etc.</div>
+                                        <div class="sub-pre">Full-Face Mask</div>
+                                        <div class="target-box">
+                                            <ul>
+                                                <li>Fundrasing Target</li>
+                                                <li class="money"><span class="dal">USD</span> 100M</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ico-box pr15">
+                                            <img src="images/main/ico_pr15.png" alt="">
+                                        </div>
+                                        <div class="link-txt">See more</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- // 슬라이드  -->
+                    </div>
+                </div>
+            </div>
+            <!-- // 04섹션 -->
+
+            <!-- 05섹션 -->
+            <div class="sec05">
+                <div class="inner-sec">
+                    <div class="box-area">
+                        <!-- 왼쪽 컨텐츠 -->
+                        <div class="box-l">
+                            <h3 class="main-title">Sites Info</h3>
+                            <div class="pre main-font-col-white">
+                                Local governments in Korea offer their own specialized<br>
+                                investment systems and services.
+                            </div>
+                            <div class="info-select-box">
+                                <span>
+                                    <select name="" id="local-choice" title="Local Governments select">
+                                        <option value="default">Local governments</option>
+                                        <option value="seoul">Seoul City</option>
+                                        <option value="incheon">Incheon City</option>
+                                        <option value="gyeonggi">Gyeonggi Province</option>
+                                        <option value="gangwon">Gangwon Province</option>
+                                        <option value="daejeon">Daejeon City</option>
+                                        <option value="sejong">Sejong City</option>
+                                        <option value="s_chungcheong">South Chungcheong Province</option>
+                                        <option value="n_chungcheong">North Chungcheong Province</option>
+                                        <option value="n_gyeongsang">North Gyeongsang Province</option>
+                                        <option value="n_jeolla">North Jeolla Province</option>
+                                        <option value="daegu">Daegu City</option>
+                                        <option value="gwangju">Gwangju City</option>
+                                        <option value="s_jeolla">South Jeolla Province</option>
+                                        <option value="s_gyeongsang">South Gyeongsang Province</option>
+                                        <option value="ulsan">Ulsan City</option>
+                                        <option value="busan">Busan City</option>
+                                        <option value="jeju">Jeju Island</option>
+                                    </select>
+                                </span>
+                                <button type="button" class="sel-btn" onclick="localBoxTrans();">Select</button>
+                            </div>
+                            <div class="city-wrap">
+                                <!-- 로컬 -->
+                                <div class="city-box default active">
+                                    <h3 class="city-title">
+                                        Korea’s 17 local governments<br>
+                                        provide specialized investment<br>
+                                        environments and services.
+                                    </h3>
+                                    <div class="alim">
+                                        Click the map to find out the investment<br> information of each region.
+                                    </div>
+                                </div>
+                                <!-- // 로컬 -->
+                                <!-- 서울 정보 -->
+                                <div class="city-box seoul">
+                                    <h3 class="city-title">Seoul Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 서울 -->
+                                <!-- 인천 정보 -->
+                                <div class="city-box incheon">
+                                    <h3 class="city-title">Incheon Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 인천 정보 -->
+                                <!-- 경기 정보 -->
+                                <div class="city-box gyeonggi">
+                                    <h3 class="city-title">Gyeonggi Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 경기 정보 -->
+                                <!-- 강원 정보 -->
+                                <div class="city-box gangwon">
+                                    <h3 class="city-title">Gangwon Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 강원 정보 -->
+                                <!-- 대전 정보 -->
+                                <div class="city-box daejeon">
+                                    <h3 class="city-title">Daejeon Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 대전 정보 -->
+                                <!-- 세종 정보 -->
+                                <div class="city-box sejong">
+                                    <h3 class="city-title">Sejong Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 세종 정보 -->
+                                <!-- 충남 정보 -->
+                                <div class="city-box s_chungcheong">
+                                    <h3 class="city-title">Chungnam Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 충남 정보 -->
+                                <!-- 충북 정보 -->
+                                <div class="city-box n_chungcheong">
+                                    <h3 class="city-title">Chungbuk Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 충북 정보 -->
+                                <!-- 경북 정보 -->
+                                <div class="city-box n_gyeongsang">
+                                    <h3 class="city-title">Gyeongbuk Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 경북 정보 -->
+                                <!-- 전북 정보 -->
+                                <div class="city-box n_jeolla">
+                                    <h3 class="city-title">Jeonbuk Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 전북 정보 -->
+                                <!-- 대구 정보 -->
+                                <div class="city-box daegu">
+                                    <h3 class="city-title">Daegu Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 대구 정보 -->
+                                <!-- 광주 정보 -->
+                                <div class="city-box gwangju">
+                                    <h3 class="city-title">Gwangju Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 광주 정보 -->
+                                <!-- 전남 정보 -->
+                                <div class="city-box s_jeolla">
+                                    <h3 class="city-title">Jeonnam Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 전남 정보 -->
+                                <!-- 경남 정보 -->
+                                <div class="city-box s_gyeongsang">
+                                    <h3 class="city-title">Gyeongnam Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 경남 정보 -->
+                                <!-- 울산 정보 -->
+                                <div class="city-box ulsan">
+                                    <h3 class="city-title">Ulsan Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 울산 정보 -->
+                                <!-- 부산 정보 -->
+                                <div class="city-box busan">
+                                    <h3 class="city-title">Busan Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 부산 정보 -->
+                                <!-- 제주 정보 -->
+                                <div class="city-box jeju">
+                                    <h3 class="city-title">Jeju Island Metropolitan City</h3>
+                                    <ul class="info-list">
+                                        <li><span class="bold">Population</span> : 1.49 million</li>
+                                        <li><span class="bold">Key Industries</span> : Motor, energy, culture, and bio</li>
+                                        <li><span class="bold">Number of Companies</span> : 2,712</li>
+                                        <li><span class="bold">Employees</span> : 64,660</li>
+                                        <li><span class="bold">Amount of Production</span> : USD 2,521,567.5</li>
+                                    </ul>
+                                    <div class="btn-box">
+                                        <a href="#n" class="btn-link">Go to Website</a>
+                                        <a href="#n" class="btn-link">Customized Search</a>
+                                    </div>
+                                </div>
+                                <!-- // 제주 정보 -->
+                            </div>
+                        </div>
+                        <!-- // 왼쪽 컨텐츠 -->
+
+                        <!-- 오른쪽 컨텐츠 -->
+                        <div class="box-r">
+                            <div class="map-area">
+                                <img src="images/main/img_map_default.png" usemap="#image-map" class="tr-img" alt="대한민국">
+
+                                <map name="image-map">
+                                    <area title="서울" href="#n" coords="115,129,20" shape="circle" class="seoul" alt="서울" 
+                                        onmouseover="changeImg('seoul');"
+                                    > 
+                                    <area title="인천" href="#n" coords="111,153,97,133,77,131,51,89,26,103,45,164,49,187,74,193" shape="poly" class="incheon" alt="인천"
+                                        onmouseover="changeImg('incheon');"
+                                    >
+                                    <area title="경기" href="#n" coords="95,173,90,206,148,211,190,175,191,127,152,62,119,47,77,82,69,108,90,126,104,99,139,110,141,136,134,151" shape="poly" class="gyeonggi" alt="경기" 
+                                        onmouseover="changeImg('gyeonggi');"
+                                    >
+                                    <area title="강원" href="#n" coords="120,43,194,124,198,172,296,190,361,181,257,4,164,25" shape="poly" class="gangwon" alt="강원" 
+                                        onmouseover="changeImg('gangwon');" 
+                                    >
+                                    <area title="대전" href="#n" coords="154,286,26" shape="circle" class="daejeon" alt="대전" 
+                                        onmouseover="changeImg('daejeon');" 
+                                    >
+                                    <area title="세종" href="#n" coords="143,252,25" shape="circle" class="sejong" alt="세종" 
+                                        onmouseover="changeImg('sejong');"
+                                    >
+                                    <area title="충남" href="#n" coords="94,203,42,203,30,234,49,315,81,331,124,320,162,324,177,310,159,230,146,208" shape="poly" alt="충남" class="s_chungcheong"
+                                        onmouseover="changeImg('s_chungcheong');"
+                                    >
+                                    <area title="충북" href="#n" coords="174,317,203,324,222,310,212,285,213,248,255,229,278,190,214,163,186,172,147,205,166,261" shape="poly" alt="충북" class="n_chungcheong"
+                                        onmouseover="changeImg('n_chungcheong');"
+                                    >
+                                    <area title="경북" href="#n" coords="361,182,363,304,372,319,370,343,333,338,331,358,285,376,270,371,291,331,280,319,258,335,245,342,244,364,232,369,204,342,207,320,223,308,214,251,256,226,276,190" shape="poly" class="n_gyeongsang" alt="경북"
+                                        onmouseover="changeImg('n_gyeongsang');"
+                                    >
+                                    <area title="전북" href="#n" coords="177,318,147,321,80,329,74,349,38,369,54,405,75,411,112,398,128,406,179,407,183,354,203,325" shape="poly" class="n_jeolla" alt="전북"
+                                        onmouseover="changeImg('n_jeolla');" 
+                                    >
+                                    <area title="대구" href="#n" coords="267,350,33" shape="circle" class="daegu" alt="대구"
+                                        onmouseover="changeImg('daegu');" 
+                                    >
+                                    <area title="광주" href="#n" class="gwangju" coords="100,443,52,415,62,402,112,392,172,406,178,426" shape="poly"
+                                        onmouseover="changeImg('gwangju');" 
+                                    >
+                                    <area title="전남" href="#n" class="s_jeolla" coords="53,416,25,434,2,494,18,540,85,569,198,513,215,475,180,427,103,443" shape="poly"
+                                        onmouseover="changeImg('s_jeolla');" 
+                                    >
+                                    <area title="경남" href="#n" coords="202,341,180,357,175,408,207,498,306,480,345,442,318,397,336,362,259,380" shape="poly" class="s_gyeongsang"
+                                        onmouseover="changeImg('s_gyeongsang');" alt="경남" 
+                                    >
+                                    <area title="울산" href="#n" coords="350,353,27" shape="circle" class="ulsan" alt="울산"
+                                        onmouseover="changeImg('ulsan');"
+                                    >
+                                    <area title="부산" href="#n" coords="337,397,31" shape="circle" class="busan"
+                                        onmouseover="changeImg('busan');" alt="부산"
+                                    >
+                                    <area title="제주" href="#n" coords="27,631,51,615,97,615,111,629,111,653,74,658,26,658" shape="poly" class="jeju" alt="제주"
+                                        onmouseover="changeImg('jeju');"
+                                    >
+                                </map>
+                            </div>
+
+                            <div class="local-name-box">
+                                <ul>
+                                    <li class="seoul">Seoul</li>
+                                    <li class="incheon">Incheon</li>
+                                    <li class="gyeonggi">Gyeonggi</li>
+                                    <li class="gangwon">Gangwon</li>
+                                    <li class="daejeon">Daejeon</li>
+                                    <li class="sejong">Sejong</li>
+                                    <li class="s_chungcheong">Chungnam</li>
+                                    <li class="n_chungcheong">Chungbuk</li>
+                                    <li class="n_gyeongsang">Gyeongbuk</li>
+                                    <li class="n_jeolla">Jeonbuk</li>
+                                    <li class="daegu">Daegu</li>
+                                    <li class="gwangju">Gwangju</li>
+                                    <li class="s_jeolla">Jeonnam</li>
+                                    <li class="s_gyeongsang">Gyeongnam</li>
+                                    <li class="ulsan">Ulsan</li>
+                                    <li class="busan">Busan</li>
+                                    <li class="jeju">Jeju Island</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- // 오른쪽 컨텐츠 -->
+                    </div>
+                </div>
+
+                <script>
+                    
+                    // 지역에 대한 내용 box 체인지
+                    function localBoxTrans(){
+                        var sel_idx = $("#local-choice option").index($("#local-choice option:selected"));
+                        $('.city-wrap .city-box').removeClass('active').eq(sel_idx).addClass('active');
+
+                        var localName = $("#local-choice option:selected").val();
+                        
+                        $('.map-area .tr-img').attr('src','images/main/img_map_'+localName+'.png');
+                        $('.local-name-box>ul>li').removeClass('active');
+                        $(".local-name-box>ul>li[class="+localName+"]").addClass('active');
+
+                        // 접근성 포커스
+                        $(".city-box.active").attr('tabindex', -1).focus();
+
+                    }
+
+                    // 지도 이미지 체인지
+                    function changeImg(country){
+                        $('.map-area .tr-img').attr('src','images/main/img_map_'+country+'.png');
+                        $('.local-name-box>ul>li').removeClass('active');
+                        $(".local-name-box>ul>li[class="+country+"]").addClass('active');
+                    }
+                    
+                    // 이미지 클릭 시 해당 정보 박스 active
+                    $("map>area").on('click', function(){
+                        var map_idx = $(this).index();
+                        var country = $(this).attr('class');
+
+                        $("#local-choice option").prop('selected','false');
+                        $("#local-choice option").eq(map_idx + 1).prop('selected','true');
+                        
+                        $('.map-area .tr-img').attr('src','images/main/img_map_'+country+'.png');
+
+                        $('.info-select-box .sel-btn').trigger('click');
+
+                        // 접근성 포커스
+                        $(".city-box.active").attr('tabindex', -1).focus();
+                    })
+
+                </script>
+
+            </div>
+            <!-- // 05섹션 -->
+
+            <!-- 퀵메뉴 -->
+            <div class="sc-quik-menu-wrap">
+                <div class="sc-quik-menu-box">
+                    <ul>
+                        <li><a href="#n">Investment Process</a></li>
+                        <li><a href="#n">Site Info</a></li>
+                        <li><a href="#n">Success Stories</a></li>
+                        <li><a href="#n">FAQ</a></li>
+                        <li><a href="#n">Forms</a></li>
+                        <li><a href="#n">Customized Newsletter Service</a></li>
+                    </ul>
+                    <button class="sc-top-btn" type="button"><span>TOP</span></button>
+                </div>
+                <script>
+                    var quickT = parseInt($('.sc-quik-menu-wrap').css('top'));
+                    $(window).height()
+                    $(window).scroll(function(){
+                        var scrollT = $(window).scrollTop();
+                        $('.sc-quik-menu-wrap').stop().animate({
+                                "top":quickT + scrollT + "px"
+                            },800);
+                            if($(window).height() < 840){
+                                $('.sc-quik-menu-wrap').addClass('fixed');
+                                $('.sc-quik-menu-wrap').stop().animate({
+                                    "top":162 + "px"
+                                },800);
+                            } else{
+                                $('.sc-quik-menu-wrap').removeClass('fixed');
+                            }
+                    });
+                    $('.sc-top-btn').click(function(){
+                        $('html, body').animate({
+                            scrollTop:0
+                        },700)
+                        return false;
+                    }) 
+                </script>
+            </div>
+            <!-- // 퀵메뉴 -->
+
+		</div>
+        <!-- //container -->
+
+        <!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="html/ik-en/include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+
+	</div>
+</body>
+</html>

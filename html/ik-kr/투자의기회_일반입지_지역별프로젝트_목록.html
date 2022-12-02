@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>지역별 프로젝트 &lt; 일반입지 &lt; 투자의 기회 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(2,2,2)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb11.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>지역별 프로젝트</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>투자의 기회</li>
+						<li>일반입지</li>
+						<li>지역별 프로젝트</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="section">
+							<h4 class="sub-tit01">지방자치단체</h4>
+							<div class="search-area">
+								<div class="form-area m-version">
+									<div class="in">
+										<span class="select-type3 mr5">
+											<select name="" id="local_choice" title="지방자치단체 선택">
+												<option value="map_00">전체</option>
+												<option value="map_01">서울</option>
+												<option value="map_02">인천</option>
+												<option value="map_03">경기</option>
+												<option value="map_04">강원</option>
+												<option value="map_05">충남</option>
+												<option value="map_06">대전</option>
+												<option value="map_17">세종</option>
+												<option value="map_07">충북</option>
+												<option value="map_08">경북</option>
+												<option value="map_09">전북</option>
+												<option value="map_10">대구</option>
+												<option value="map_11">광주</option>
+												<option value="map_12">전남</option>
+												<option value="map_13">경남</option>
+												<option value="map_14">울산</option>
+												<option value="map_15">부산</option>
+												<option value="map_16">제주</option>
+											</select>
+										</span>
+										<button type="button" class="btn-default-s" onclick="localMapTrans();">보기</button>	
+									</div>
+								</div>
+								<div class="sel-local-box">
+									<div class="l">지역선택</div>
+									<div class="r">
+										<ul>
+											<li><button type="button" class="btn-default-s">전체</button></li>
+											<li><button type="button" class="btn-default-s">서울</button></li>
+											<li><button type="button" class="btn-default-s">인천</button></li>
+											<li><button type="button" class="btn-default-s">경기</button></li>
+											<li><button type="button" class="btn-default-s">강원</button></li>
+											<li><button type="button" class="btn-default-s">충남</button></li>
+											<li><button type="button" class="btn-default-s">대전</button></li>
+											<li><button type="button" class="btn-default-s">세종</button></li>
+											<li><button type="button" class="btn-default-s">충북</button></li>
+											<li><button type="button" class="btn-default-s">경북</button></li>
+											<li><button type="button" class="btn-default-s">전북</button></li>
+											<li><button type="button" class="btn-default-s">대구</button></li>
+											<li><button type="button" class="btn-default-s">광주</button></li>
+											<li><button type="button" class="btn-default-s">전남</button></li>
+											<li><button type="button" class="btn-default-s">경남</button></li>
+											<li><button type="button" class="btn-default-s">울산</button></li>
+											<li><button type="button" class="btn-default-s">부산</button></li>
+											<li><button type="button" class="btn-default-s">제주</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="map-area-box">
+								<div class="map-l">
+									<img src="../../images/ik-kr/img_map_korea.gif" alt="대한민국">
+									<img src="../../images/ik-kr/img_map_seoul.gif" alt="서울">
+									<img src="../../images/ik-kr/img_map_incheon.gif" alt="인천">
+									<img src="../../images/ik-kr/img_map_gyeonggi.gif" alt="경기">
+									<img src="../../images/ik-kr/img_map_gangwon.gif" alt="강원">
+									<img src="../../images/ik-kr/img_map_s_chungcheong.gif" alt="충남">
+									<img src="../../images/ik-kr/img_map_daejeon.gif" alt="대전">
+									<img src="../../images/ik-kr/img_map_sejong.gif" alt="세종">
+									<img src="../../images/ik-kr/img_map_n_chungcheong.gif" alt="충북">
+									<img src="../../images/ik-kr/img_map_n_gyeongsang.gif" alt="경북">
+									<img src="../../images/ik-kr/img_map_n_jeolla.gif" alt="전북">
+									<img src="../../images/ik-kr/img_map_daegu.gif" alt="대구">
+									<img src="../../images/ik-kr/img_map_gwangju.gif" alt="광주">
+									<img src="../../images/ik-kr/img_map_s_jeolla.gif" alt="전남">
+									<img src="../../images/ik-kr/img_map_s_gyeongsang.gif" alt="경남">
+									<img src="../../images/ik-kr/img_map_ulsan.gif" alt="울산">
+									<img src="../../images/ik-kr/img_map_busan.gif" alt="부산">
+									<img src="../../images/ik-kr/img_map_jeju.gif" alt="제주">
+								</div>
+									
+								<div class="map-r">
+									<div class="local_info korea active">
+										<div class="normal_txt info">
+											한국의<br class="pc-content">
+											<span class="color-green">17개 광역자치단체</span>는<br class='pc-content'>
+											각각 <span class="color-green">특성화된 투자환경과</span><br class="pc-content">
+											<span class="color-green">서비스</span>를 제공하고<br class='pc-content'>
+											있습니다.
+										</div>
+									</div>
+									<div class="local_info seoul">
+										<img src="../../images/ik-kr/img_logo_seoul.png" alt="서울">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												대한민국의 <span class="color-green">수도</span>이자<br class="pc-content">
+												<span class="color-green">동북아 비즈니스의 중심지</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											대한민국의 수도인 서울은 아시아 최대 시장인 중국과 일본 
+											사이에 위치한 동북아 비즈니스의 중심지입니다. 
+											면적은 전 국토의 0.6%이지만 한국 GDP의 21%를 창출하고 
+											금융의 50% 이상이 집중된 한국의 산업 중심지입니다. 
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.seoul.go.kr/main/index.jsp" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info incheon">
+										<img src="../../images/ik-kr/img_logo_incheon.png" alt="인천">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												수도인 서울과 <span class="color-green">28km</span>거리<br class="pc-content">
+												<span class="color-green">인천국제공항, IFEZ 입지</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											대한민국의 수도인 서울에서 28km에 위치한 인천은 
+											세계적으로 인정받는 인천국제공항이 입지한 인구 규모 3위의 
+											주요도시입니다.<br>
+											이 외에도 송도국제도시, 청라∙영종지구로 구분되는 대한민국 
+											1위 경제자유구역인 인천경제자유구역(IFEZ) 개발, 
+											2014 아시안게임 개최, 각종 산업 및 물류단지 조성사업을 
+											지속하며 경제수도로 발돋움하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.incheon.go.kr/intro/index" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info gyeonggi">
+										<img src="../../images/ik-kr/img_logo_gyeonggi.png" alt="경기">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												<span class="color-green">동아시아</span>와 <span class="color-green">태평양</span>이<br class='pc-content'>
+												연결되는 <span class="color-green">지리적 요충지</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											경기도는 한국의 일류 기업과 유수한 글로벌 기업들이
+											활동하고 있는 동북아시아 최대 생산기지입니다. 동북아의
+											중심인 경기도는 중국과 세계로 나가는 전초기지로서, 공항과 
+											항만, 동아시아와 태평양이 연결되는 지리적 요충지이며, 
+											투자유치 지원서비스 등 기업을 위한 맞춤형 행정을 제공하고 
+											있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://invest.gg.go.kr" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info gangwon">
+										<img src="../../images/ik-kr/img_logo_gangwon.png" alt="강원">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												편리한 교통 및<span class="color-green">산업인프라<br class='pc-content'>
+												2018년 평창동계올림픽 개최지</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											강원도는 양양국제공항, 동해항, 고속도로 등 교통 인프라와 
+											대규모 생산시설에 필요한 여러 산업인프라가 구축되어 있어 
+											편리한 기업활동을 지원하고 있습니다.
+											또한 강원도는 2018년 평창동계올림픽 개최지로 한국 관광레저 
+											산업의 메카로 발돋움할 것입니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/gwn-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info s_chungcheong">
+										<img src="../../images/ik-kr/img_logo_s_chungcheong.png" alt="충남">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												한국의 <span class="color-green">중심부</span>에 위치판<br class='pc-content'>
+												<span class="color-green">투자최적지</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											충청남도는 한국의 중심부에 위치하여 전국 어느 곳에서나
+											2시간 이내에 접근이 가능하여 역동적인 산업활동과 경제발전이 
+											이루어지고 있는 교통, 물류, 경제의 중심지입니다.
+											또한 풍부한 인적자원과 잘 갖춰진 사회간접시설, 저렴한 
+											비용으로 개발이 가능한 토지, 안정된 전력과 풍부한 산업용수 
+											등을 갖춘 투자의 최적지입니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="kotra/html/chn-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info daejeon">
+										<img src="../../images/ik-kr/img_logo_daejeon.png" alt="대전">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												대한민국 대표 <span class="color-green">과학도시</span><br class='pc-content'>
+												세종시에 인접한 <span class="color-green">행정중심도시</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											대전은 대전EXPO 개최와 대덕연구개발특구 지정을 통해 
+											대한민국을 대표하는 과학도시로 성장했습니다.
+											또한 정부 대전청사(통계청‧조달청을 비롯한 10개의 정부기관 
+											소재)가 위치하며, 편리한 교통망으로 세종시(행정중심복합
+											도시)에도 인접한 행정중심도시로서의 기능을 수행하고 
+											있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/dj-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info sejong">
+										<img src="../../images/ik-kr/img_logo_sejong.png" alt="세종">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												국가 <span class="color-green">균형발전</span>을 이끄는<br class='pc-content'>
+												<span class="color-green">실질적인 행정수도</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											세종특별자치시는 한국의 실질적인 행정수도로서 수도권의
+											과도한 집중에 따른 부작용을 시정하고 국가균형발전 및
+											국가경쟁력 강화에 이바지 하는 것을 목적으로 건설되었습니다.
+											또한 국제과학 비즈니스 벨트 사업을 통해 세계적 석학들을
+											불러모으고 있으며 과학과 비즈니스가 융합된 국가 성장
+											네트워크 구축의 구심점이 되고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.sejong.go.kr/" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info n_chungcheong">
+										<img src="../../images/ik-kr/img_logo_n_chungcheong.png" alt="충북">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												오송‧오창단지로 대표되는<br class="pc-content">
+												<span class="color-green">IT, BT 첨단산업과 인프라 보유</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											충북은 행정중심복합도시 세종시로 연결된 청주 국제공항과 
+											고속철도 오송역, 격자형 고속도로 등으로 교통망이 잘 갖추어져 
+											있습니다.<br>
+											또한 오송/오창단지를 축으로 하는 전국 최고 수준의 IT, BT 
+											첨단산업과 인프라, 최고의 산업용지 입지조건, 풍부한 
+											우수인력을 보유하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/cb-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info n_gyeongsang">
+										<img src="../../images/ik-kr/img_logo_n_gyeongsang.png" alt="경북">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												세계적인<br class='pc-content'>
+												<span class="color-green">전자, 섬유산업</span>의 중심지
+											</p>
+										</div>
+										<div class="normal-txt">
+											경상북도는 세계적인 전자 및 섬유산업의 중심지로서 우리나라
+											경제성장의 견인차 역할을 해 왔으며, 수도권 다음으로 많은 
+											대학(47개)이 소재하여 풍부한 연구인력과 기술력을 보유하고 
+											있습니다.<br>
+											경상북도는 고속도로, 철도, 공항 등 편리한 교통망과 다양한 
+											산업용지, 우수한 산업인력, 지역별 특색있는 산업전략으로 
+											기업이 투자하기 위한 최적의 환경을 구축하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.gb.go.kr/" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info n_jeolla">
+										<img src="../../images/ik-kr/img_logo_n_jeolla.png" alt="전북">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												새만금사업과 군장신항 등<br>
+												<span class="color-green">대중국교역의 중심지</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											전북은 찬란한 역사문화, 맛∙멋∙가락의 고유한 전통이 살아 
+											숨쉬는 청정지역으로, 새만금사업과 군장신항 등이 진행중인 
+											대중국교역의 중심지이기도 합니다.<br>
+											과거 종이, 섬유 중심산업에서 오늘날 자동차, 조선, 소재부품, 
+											식품, 신재생에너지등 성장동력산업 중심으로 산업 다변화 및 
+											고도화가 진행되고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/jnbk-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info daegu">
+										<img src="../../images/ik-kr/img_logo_daegu.png" alt="대구">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												산업인프라를 갖춘<br>
+												<span class="color-green">준비된 첨단산업도시</span>
+											</p>
+										</div>
+										<div class="normal-txt">
+											대구광역시는 산업인프라를 갖춘 준비된 첨단산업도시입니다.
+											R&D 특구지정, 지식창조형 경제자유구역 개발, 
+											국가과학산업단지, 테크노폴리스, 첨단의료복합단지, 로봇산업 
+											클러스터 조성 등 수많은 국책사업과 지역발전 사업을 
+											의욕적으로 추진하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/dg-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info gwangju">
+										<img src="../../images/ik-kr/img_logo_gwangju.png" alt="광주">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												<span class="color-green">기업하기</span> 좋고 <span class="color-green">일하기</span> 좋은<br class="pc-content">
+												<span class="color-green">정의롭고 풍요로운</span> 도시
+											</p>
+										</div>
+										<div class="normal-txt">
+											광주의 정의로움이 이제 풍요로움을 창조합니다.
+											더 개방적이고 포용적인 도시로 발돋움하며, 좋은 기술만 있으면 
+											누구나 성공할 수 있는 경제 생태계를 만들어가고 있습니다.
+											자동차와 전자, 광산업, 금형산업들을 융‧복합하고 신기술을 
+											접목시켜 경쟁력을 높이는 한편, 에너지신산업과 
+											문화콘텐츠산업을 4차 산업혁명시대의 성장동력으로 
+											육성해 나가고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/gj-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info s_jeolla">
+										<img src="../../images/ik-kr/img_logo_s_jeolla.png" alt="전남">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												<span class="color-green">대불/광양만권 자유무역지역</span>으로<br class='pc-content'>
+												대표되는 유망 투자지역
+											</p>
+										</div>
+										<div class="normal-txt">
+											세계 물류의 중추역할을 할 동북아 경제권의 중심지에 위치한 
+											전라남도는 대륙으로의 기점이자 태평양을 향한 전진기지
+											입니다.<br>
+											대불 자유무역지역, 광양만권 경제자유구역 등 투자여건이 
+											획기적으로 개선되어 비즈니스 하기에 가장 좋은 지역으로 
+											성장하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="http://www.jeonnam.go.kr/" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info s_gyeongsang">
+										<img src="../../images/ik-kr/img_logo_s_gyeongsang.png" alt="경남">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+											한국 최대 <span class="color-green">운송장비,</span><br class='pc-content'>
+											<span class="color-green">첨단 방위산업</span> 집적지
+											</p>
+										</div>
+										<div class="normal-txt">
+											경남은 동남권 산업클러스터, 부산대도시권, 광양/진주대도시권,
+											대구/포항대도시권 등과 인접하고 있어 도내 1,500만 인구의
+											거대 배후시장을 가지고 있습니다.<br>
+											또한 우리나라 최대의 운송장비 밀집 산업지대이자 첨단 
+											방위산업 집적지로서, 국가연구기관, 대학, 기업연구소 등의 
+											연구개발 인프라가 잘 구축되어 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="http://www.gyeongnam.go.kr/index.gyeong" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info ulsan">
+										<img src="../../images/ik-kr/img_logo_ulsan.png" alt="울산">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												<span class="color-green">한국 최대, 아시아 4대</span><br class="pc-content">
+												산업도시
+											</p>
+										</div>
+										<div class="normal-txt">
+											울산광역시는 아시아 4대 생산도시로 한국 공업생산액의 
+											15.23% (2012년, 전국2위), 수출액 1,015억 달러(2011년, 
+											전국1위), 1인당 GRDP 56,170달러(2012년, 전국1위)로 한국 
+											최대의  산업도시입니다. 광대한 배후시장, 풍부한 산업 
+											유틸리티, 최적의  물류인프라, 우수한 인적자원, 첨단 연구시설 
+											등을 갖추고 있어 한국에서 가장 기업하기 좋은 도시로 손꼽히고 
+											있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/us-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info busan">
+										<img src="../../images/ik-kr/img_logo_busan.png" alt="부산">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												컨테이너 처리량 <span class="color-green">세계 5위</span><br calss="pc-content">
+												태평양∙유라시아 경제연결구
+											</p>
+										</div>
+										<div class="normal-txt">
+											부산은 한반도 동남지역에 위치한 아름다운 자연환경을 가진 
+											4백만 인구의 항구 도시입니다.<br>
+											국내 컨테이너 수송량의 90%를 담당하는 것은 물론 세계 5위의 
+											컨테이너 처리량을 자랑하며 태평양∙유라시아 경제연결구로서 
+											주요한 역할을 수행하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/bsn-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+									<div class="local_info jeju">
+										<img src="../../images/ik-kr/img_logo_jeju.png" alt="제주">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												<span class="color-green">제주특별자치도 출범('06)</span>이후<br class="pc-content">
+												투자유치 활성화
+											</p>
+										</div>
+										<div class="normal-txt">
+											화산섬 제주와 용암동굴은 유네스코에서 세계자연유산으로
+											등재될 만큼 그 자연가치를 전 세계적으로 인정받고 있는 약속의
+											땅입니다. 2002년 국제자유도시 지정 및 2006년 특별자치도
+											지정으로 국내외 자본을 활용, 핵심 산업 개발에 심혈을 
+											기울이고 있습니다. 제주는 국내외 자본에 대한 차별 없는 
+											조세감면 혜택과 적극적인 행정을 지원하고 있습니다.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/jj-kr/메인.html" class="btn-link btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>지자체 홈페이지 바로가기</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$('.btn-default-s').trigger('click');
+
+								// 모바일 일때 지자체 변경
+								function localMapTrans(){
+									var sel_midx = $("#local_choice option").index($("#local_choice option:selected"));
+									
+									$('.map-l > img').removeClass('active').eq(sel_midx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_midx).addClass('active');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$('.sel-local-box ul>li').eq(sel_midx).find('button').addClass('active');
+								}
+								
+								// pc 일때 지자체 변경
+								$('.sel-local-box ul>li>button').on('click', function(){
+									var sel_pcidx = $(this).closest('li').index();
+									
+									$("#local_choice option").eq(sel_pcidx).attr('selected','selected');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$(this).addClass('active');
+									$('.map-l > img').removeClass('active').eq(sel_pcidx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_pcidx).addClass('active');
+								})
+							</script>
+						</div>
+
+						<div class="section">
+							<!-- 검색 -->
+							<div class="search-area">
+								<div class="form-area">
+									<div class="in">
+										<span class="select-type2">
+											<select name="" id="" title="지역선택 선택">
+												<option value="">지역선택</option>
+											</select>
+										</span>
+										<span class="select-type2">
+											<select name="" id="" title="검색구분 선택">
+												<option value="">검색구분</option>
+											</select>
+										</span>
+										<span class="input-type2"><input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요."></span>
+										<button type="submit" class="btn-default-s">검색</button>	
+									</div>
+								</div>
+							</div>
+							<!-- //검색 -->
+
+							<div class="table-top">
+								<div class="l item-num">전체 : <span>235</span>건 [<span>1</span>/23페이지]</div>
+								<div class="r">
+									<select name="" id="" class="item-view" title="리스트 개수 선택">
+										<option value="">10개씩</option>
+									</select>
+									<button type="button" class="btn-default-s">보기</button>
+								</div>
+							</div>
+
+							<!-- 리스트 -->
+							<ul class="normal-board">
+								<li>
+									<div class="num-area">No.<span>1,785</span></div>
+									<div class="txt-area">
+										<a href="투자의기회_일반입지_지역별프로젝트_상세.html">
+											<strong class="tit">안산 첨단 국방산업단지<span class="icon-new">새로운 글</span></strong>
+											<div class="board-list-box">
+												<ul class="list01">
+													<li><span class="bold">작성자 : </span>운영자</li>
+													<li><span class="bold">작성일 : </span>2020.06.20</li>
+													<li><span class="bold">조회수 : </span>1,852</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+								</li>
+							</ul>
+							<!-- //리스트 -->
+
+							<!-- 페이징 -->
+							<div class="paging">
+								<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로 이동</span></a>
+								<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로 이동</span></a>
+								<span>
+									<strong>1</strong>
+									<a href="#n">2</a>
+									<a href="#n">3</a>
+									<a href="#n">4</a>
+									<a href="#n">5</a>
+								</span>
+								<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로 이동</span></a>
+								<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로 이동</span></a>
+							</div>
+							<!-- 페이징 -->
+						</div>
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

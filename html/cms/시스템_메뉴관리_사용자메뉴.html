@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>   
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">시스템</a>
+				<span>&gt;</span> 
+				<a href="/system/index.do">메뉴관리</a>
+				<span>&gt;</span> 
+				<strong>사용자메뉴</strong>
+			</p>
+	
+			<h2 id="tit_page">사용자메뉴</h2>
+
+			<script type="text/javascript">
+			//<![CDATA[
+				//zTree 셋팅
+				var setting = {
+					
+					view: {
+						selectedMulti: false
+					},
+					edit: {
+						drag: {
+							autoExpandTrigger: true,
+							prev: dropPrev,
+							inner: dropInner,
+							next: dropNext
+						},
+						enable: true,
+						showRemoveBtn: false,
+						showRenameBtn: false
+					},		
+					data: {
+						simpleData: {
+							enable: true
+						}
+					},
+					
+					callback: {
+						beforeDrag: beforeDrag,
+						beforeDrop: beforeDrop,
+						beforeDragOpen: beforeDragOpen,
+						onDrag: onDrag,
+						onDrop: onDrop,
+						onExpand: onExpand,
+						beforeClick: beforeClick,
+						onClick: onClick
+					}
+					
+				};
+				
+				//메뉴트리 호출
+				var zNodes =[
+								{ siteId:"" ,id:0 ,pId:0 ,name:"사용자메뉴" ,open:true ,drag:false ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/base.gif"},
+								
+								{ siteId:"tmplat-demos",id:"69",pId:"0"
+									
+									,open:true ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/global.gif"
+									
+									
+								,name:"I.N.CMS 사용자데모",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"70",pId:"69"
+									
+									
+									
+									
+								,name:"알림·소식1",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"75",pId:"70"
+									
+									
+									
+									
+								,name:"공지사항",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"76",pId:"70"
+									
+									
+									
+									
+								,name:"보도자료",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"77",pId:"70"
+									
+									
+									
+									
+								,name:"갤러리",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"78",pId:"70"
+									
+									
+									
+									
+								,name:"홍보동영상",od:"4"},
+								
+								{ siteId:"tmplat-demos",id:"79",pId:"70"
+									
+									
+									
+									
+								,name:"주요행사일정",od:"5"},
+								
+								{ siteId:"tmplat-demos",id:"128",pId:"70"
+									
+									
+									
+									
+								,name:"테스트게시판",od:"6"},
+								
+								{ siteId:"tmplat-demos",id:"71",pId:"69"
+									
+									
+									
+									
+								,name:"참여마당",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"80",pId:"71"
+									
+									
+									
+									
+								,name:"자유게시판",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"81",pId:"71"
+									
+									
+									
+									
+								,name:"자주묻는질문",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"82",pId:"71"
+									
+									
+									
+									
+								,name:"설문조사",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"72",pId:"69"
+									
+									
+									
+									
+								,name:"기관소개",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"83",pId:"72"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"기관소개",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"84",pId:"72"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"인사말",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"85",pId:"72"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"조직도",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"86",pId:"72"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"찾아오시는길",od:"4"},
+								
+								{ siteId:"tmplat-demos",id:"87",pId:"72"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"관련사이트",od:"5"},
+								
+								{ siteId:"tmplat-demos",id:"73",pId:"69"
+									
+									
+									
+									
+								,name:"이용안내",od:"4"},
+								
+								{ siteId:"tmplat-demos",id:"124",pId:"73"
+									
+									
+									
+									
+								,name:"사이트맵",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"114",pId:"73"
+									
+									
+									
+									
+								,name:"팝업존모음",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"115",pId:"73"
+									
+									
+									
+									
+								,name:"미니팝업존모음",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"116",pId:"73"
+									
+									
+									
+									
+								,name:"배너모음",od:"4"},
+								
+								{ siteId:"tmplat-demos",id:"117",pId:"73"
+									
+									
+									
+									
+								,name:"미니배너모음",od:"5"},
+								
+								{ siteId:"tmplat-demos",id:"74",pId:"69"
+									
+									
+									
+									
+								,name:"기타",od:"5"},
+								
+								{ siteId:"tmplat-demos",id:"90",pId:"74"
+									
+									
+									
+									
+								,name:"일반(공통)게시판",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"91",pId:"74"
+									
+									
+									
+									
+								,name:"웹진형 게시판",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"92",pId:"74"
+									
+									
+									
+									
+								,name:"갤러리형 게시판",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"93",pId:"74"
+									
+									
+									
+									
+								,name:"동영상 게시판(유튜브)",od:"4"},
+								
+								{ siteId:"tmplat-demos",id:"96",pId:"74"
+									
+									
+									
+									
+								,name:"FAQ 게시판",od:"5"},
+								
+								{ siteId:"tmplat-demos",id:"94",pId:"74"
+									
+									
+									
+									
+								,name:"민원(상태)게시판",od:"6"},
+								
+								{ siteId:"tmplat-demos",id:"95",pId:"74"
+									
+									
+									
+									
+								,name:"자유(답글)게시판",od:"7"},
+								
+								{ siteId:"tmplat-demos",id:"97",pId:"74"
+									
+									
+									
+									
+								,name:"설문조사",od:"8"},
+								
+								{ siteId:"tmplat-demos",id:"98",pId:"74"
+									
+									
+									
+									
+								,name:"직원검색",od:"9"},
+								
+								{ siteId:"tmplat-demos",id:"130",pId:"74"
+									
+									
+									
+									
+								,name:"샘플 프로그램[사용자]",od:"10"},
+								
+								{ siteId:"tmplat-demos",id:"118",pId:"69"
+									
+									
+									
+									
+								,name:"회원",od:"6"},
+								
+								{ siteId:"tmplat-demos",id:"119",pId:"118"
+									
+									
+									
+									
+								,name:"회원·비회원로그인",od:"1"},
+								
+								{ siteId:"tmplat-demos",id:"120",pId:"118"
+									
+									
+									
+									
+								,name:"회원가입",od:"2"},
+								
+								{ siteId:"tmplat-demos",id:"121",pId:"118"
+									
+									
+									
+									
+								,name:"아이디찾기",od:"3"},
+								
+								{ siteId:"tmplat-demos",id:"122",pId:"118"
+									
+									
+									
+									
+								,name:"비밀번호 재발급",od:"4"},
+								
+								{ siteId:"tmplat-demos",id:"127",pId:"118"
+									
+									
+									
+									
+								,name:"회원정보수정",od:"5"},
+								
+								{ siteId:"tmplat-demos",id:"123",pId:"69"
+									
+									
+									
+									
+								,name:"통합검색",od:"7"},
+								
+								{ siteId:"tmplat-demos",id:"126",pId:"123"
+									
+									
+									
+									
+								,name:"통합검색",od:"1"},
+								
+								{ siteId:"tmplat-a",id:"9",pId:"0"
+									
+									,open:true ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/global.gif"
+									
+									
+								,name:"인시퀀스",od:"2"},
+								
+								{ siteId:"tmplat-a",id:"11",pId:"9"
+									
+									
+									
+									
+								,name:"알림·소식",od:"1"},
+								
+								{ siteId:"tmplat-a",id:"26",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"HTML ",od:"1"},
+								
+								{ siteId:"tmplat-a",id:"27",pId:"11"
+									
+									
+									
+									
+								,name:"메뉴명 2뎁스",od:"2"},
+								
+								{ siteId:"tmplat-a",id:"32",pId:"27"
+									
+									
+									
+									
+								,name:"프로그램(PGM)",od:"1"},
+								
+								{ siteId:"tmplat-a",id:"33",pId:"27"
+									
+									
+									
+									
+								,name:"게시판 가이드",od:"2"},
+								
+								{ siteId:"tmplat-a",id:"37",pId:"33"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"게시판-목록",od:"1"},
+								
+								{ siteId:"tmplat-a",id:"38",pId:"33"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"게시판-등록",od:"2"},
+								
+								{ siteId:"tmplat-a",id:"41",pId:"33"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"게시판-상세",od:"3"},
+								
+								{ siteId:"tmplat-a",id:"34",pId:"27"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"메뉴 뎁스는 무한대로 증설 가능합니다.",od:"3"},
+								
+								{ siteId:"tmplat-a",id:"35",pId:"27"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"메뉴명 가능?",od:"4"},
+								
+								{ siteId:"tmplat-a",id:"36",pId:"27"
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/10.png"
+									
+								,name:"외교부",od:"5"},
+								
+								{ siteId:"tmplat-a",id:"28",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"레이어팝업 가이드",od:"3"},
+								
+								{ siteId:"tmplat-a",id:"29",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"기본 가이드",od:"4"},
+								
+								{ siteId:"tmplat-a",id:"30",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"버튼 가이드",od:"5"},
+								
+								{ siteId:"tmplat-a",id:"31",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"기타 가이드",od:"6"},
+								
+								{ siteId:"tmplat-a",id:"39",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"박스 가이드",od:"7"},
+								
+								{ siteId:"tmplat-a",id:"40",pId:"11"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"표 가이드",od:"8"},
+								
+								{ siteId:"tmplat-a",id:"12",pId:"9"
+									
+									
+									
+									
+								,name:"참여마당",od:"2"},
+								
+								{ siteId:"tmplat-a",id:"21",pId:"12"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"Learn-seq-2depth",od:"1"},
+								
+								{ siteId:"tmplat-a",id:"22",pId:"9"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"기관소개",od:"3"},
+								
+								{ siteId:"tmplat-a",id:"24",pId:"9"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"이용안내",od:"4"},
+								
+								{ siteId:"tmplat-a",id:"25",pId:"9"
+									
+									
+									
+									
+								,name:"기타",od:"5"},
+								
+								{ siteId:"eng",id:"10",pId:"0"
+									
+									,open:true ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/global.gif"
+									
+									
+								,name:"런시퀀스",od:"3"},
+								
+								{ siteId:"eng",id:"13",pId:"10"
+									
+									
+									
+									
+								,name:"2-1",od:"1"},
+								
+								{ siteId:"eng",id:"15",pId:"13"
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/10.png"
+									
+								,name:"2-1-1",od:"1"},
+								
+								{ siteId:"eng",id:"14",pId:"10"
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/10.png"
+									
+								,name:"2-2",od:"2"},
+								
+								{ siteId:"eng",id:"23",pId:"10"
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/10.png"
+									
+								,name:"2-3",od:"3"},
+								
+								{ siteId:"tmplat-b",id:"42",pId:"0"
+									
+									,open:true ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/global.gif"
+									
+									
+								,name:"도와줘요",od:"4"},
+								
+								{ siteId:"tmplat-b",id:"43",pId:"42"
+									
+									
+									
+									
+								,name:"멘토/멘티서비스",od:"1"},
+								
+								{ siteId:"tmplat-b",id:"48",pId:"43"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"HTML 전체가이드",od:"1"},
+								
+								{ siteId:"tmplat-b",id:"44",pId:"42"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"커뮤니티",od:"2"},
+								
+								{ siteId:"tmplat-b",id:"45",pId:"42"
+									
+									
+									
+									
+								,name:"민원서비스",od:"3"},
+								
+								{ siteId:"tmplat-b",id:"46",pId:"42"
+									
+									
+									
+									
+								,name:"정보마당",od:"4"},
+								
+								{ siteId:"tmplat-b",id:"47",pId:"42"
+									
+									
+									
+									,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/2.png"
+								,name:"지원제도 소개",od:"5"},
+								
+								{ siteId:"danwon",id:"55",pId:"0"
+									
+									,open:true ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/global.gif"
+									
+									
+								,name:"테스트",od:"5"},
+								
+								{ siteId:"danwon",id:"56",pId:"55"
+									
+									
+									
+									
+								,name:"단원구청 대메뉴12",od:"1"},
+								
+							];
+					
+				function dropPrev(treeId, nodes, targetNode) {
+					var pNode = targetNode.getParentNode();
+					if (pNode && pNode.dropInner === false) {
+						return false;
+					} else {
+						for (var i=0,l=curDragNodes.length; i<l; i++) {
+							var curPNode = curDragNodes[i].getParentNode();
+							if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				function dropInner(treeId, nodes, targetNode) {
+					if (targetNode && targetNode.dropInner === false) {
+						return false;
+					} else {
+						for (var i=0,l=curDragNodes.length; i<l; i++) {
+							if (!targetNode && curDragNodes[i].dropRoot === false) {
+								return false;
+							} else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				
+				function dropNext(treeId, nodes, targetNode) {
+					var pNode = targetNode.getParentNode();
+					if (pNode && pNode.dropInner === false) {
+						return false;
+					} else {
+						for (var i=0,l=curDragNodes.length; i<l; i++) {
+							var curPNode = curDragNodes[i].getParentNode();
+							if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				
+				var log, className = "dark", curDragNodes, autoExpandNode;
+				function beforeDrag(treeId, treeNodes) {
+					className = (className === "dark" ? "":"dark");
+					showLog("[ "+getTime()+" beforeDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag: " + treeNodes.length + " nodes." );
+					for (var i=0,l=treeNodes.length; i<l; i++) {
+						if (treeNodes[i].drag === false) {
+							curDragNodes = null;
+							return false;
+						} else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
+							curDragNodes = null;
+							return false;
+						}
+					}
+					curDragNodes = treeNodes;
+					return true;
+				}
+				
+				function beforeDragOpen(treeId, treeNode) {
+					autoExpandNode = treeNode;
+					return true;
+				}
+				
+				function beforeDrop(treeId, treeNodes, targetNode, moveType, isCopy) {
+					className = (className === "dark" ? "":"dark");
+					//showLog("[ "+getTime()+" beforeDrop ]&nbsp; moveType:" + moveType);
+					//showLog("target: " + (targetNode ? targetNode.name : "root") + "  -- is "+ (isCopy==null? "cancel" : isCopy ? "copy" : "move"));
+					console.log("[ "+getTime()+" beforeDrop ]&nbsp; targetNode.siteId : " + targetNode.siteId);
+					console.log("[ "+getTime()+" beforeDrop ]&nbsp; targetNode.id : " + targetNode.id);
+					console.log("[ "+getTime()+" beforeDrop ]&nbsp; targetNode.pId : " + targetNode.pId);
+					if($('#site_id').val() ==""){
+						alert("메뉴클릭 후 순서 병경처리하세요.");
+						$('#ztree').focus();
+						return false;
+					}else if($('#site_id').val() != targetNode.siteId){
+						alert("같은사이트 내에서만 이동처리가 가능합니다.");
+						return false;
+					}
+					return true;
+				}
+				
+				function onDrag(event, treeId, treeNodes) {
+					className = (className === "dark" ? "":"dark");
+					//showLog("[ "+getTime()+" onDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag1: " + treeNodes.length + " nodes." );
+					console.log("[ "+getTime()+" onDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag1: " + treeNodes.length + " nodes." );
+				}
+				
+				function onDrop(event, treeId, treeNodes, targetNode, moveType, isCopy) {
+					className = (className === "dark" ? "":"dark");
+					showLog("[ "+getTime()+" onDrop ]&nbsp;&nbsp;&nbsp;&nbsp; moveType:" + moveType);
+					//showLog("target: " + (targetNode ? targetNode.name : "root") + "  -- is "+ (isCopy==null? "cancel" : isCopy ? "copy" : "move"))
+					
+			
+					//showLog("[ "+getTime()+" onDrop ]&nbsp; targetNode.id:" + targetNode.id);
+					//showLog("[ "+getTime()+" onDrop ]&nbsp; targetNode.siteId:" + targetNode.siteId);
+					//showLog("[ "+getTime()+" onDrop ]&nbsp; targetNode.name:" + targetNode.name);
+					//showLog("[ "+getTime()+" onDrop ]&nbsp; site_id:" + $('#site_id').val());
+					//console.log(treeNodes.length + "," + (targetNode ? (targetNode.tId + ", " + targetNode.name) : "isRoot" ));
+					//return (treeNode.click != false);
+					console.log("[ "+getTime()+" onDrop ]&nbsp;" + targetNode.siteId);
+			
+			
+				}
+				
+				function onExpand(event, treeId, treeNode) {
+					if (treeNode === autoExpandNode) {
+						className = (className === "dark" ? "":"dark");
+						//showLog("[ "+getTime()+" onExpand ]&nbsp;&nbsp;&nbsp;&nbsp;" + treeNode.name);
+					}
+				}
+				
+				function showLog(str) {
+					if (!log) log = $("#log");
+					log.append("<li class='"+className+"'>"+str+"</li>");
+					if(log.children("li").length > 8) {
+						log.get(0).removeChild(log.children("li")[0]);
+					}
+				}
+				
+				function getTime() {
+					var now= new Date(),h=now.getHours(),m=now.getMinutes(),s=now.getSeconds(),ms=now.getMilliseconds();
+					return (h+":"+m+":"+s+ " " +ms);
+				}
+				
+				function setTrigger() {
+					var zTree = $.fn.zTree.getZTreeObj("ztree");
+					zTree.setting.edit.drag.autoExpandTrigger = $("#callbackTrigger").attr("checked");
+				}
+				
+				function beforeClick(treeId, treeNode, clickFlag) {
+					className = (className === "dark" ? "":"dark");
+					return (treeNode.click != false);
+				}	
+				
+				//메뉴 전체펼침,닫힘
+				function expandNode(e) {
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					type = e.data.type,
+					nodes = zTree.getSelectedNodes();
+					if (type == "openTree") {//펼침
+						zTree.expandAll(true);
+					} else if (type == "closeTree") {//닫힘
+						zTree.expandAll(false);
+					} 
+				}	
+				
+				//메뉴트리 클릭 후 상세
+				function onClick(event, treeId, treeNode, clickFlag) {
+					var zTree = $.fn.zTree.getZTreeObj("ztree");
+					var node = zTree.getNodeByParam('id', treeNode.id);
+					var nodeNm = zTree.getNodeByParam('name', treeNode.name);
+					console.log("onClick node id:: " + node.id, node.siteId)
+					//console.log("onClick node siteId:: " + node.siteId)
+					
+					if(node.id>0 && node.siteId !=''){
+						$('#btnSch').hide();					//중복검색 숨김
+						$("#site_id").css("width","100%"); 		//input box size 확대
+						$("#site_id").prop('disabled',true);	//사이트아이디 비활성화
+						
+						$.post("user.do",{
+								type   : "show"			// type check
+								,siteId : treeNode.siteId	//사이트아이디
+								,seq    : treeNode.id		//메뉴일련
+							},
+							function(result){
+								//메뉴관리 설정
+								console.log("updt--------------");
+								console.log("result.show.cntntsAt : " + result.show.cntntsAt);
+								$('input[name=type]').val('updt');									//타입 셋팅
+								$('input[name=site_id_sch]').val('SUCCES');							//중복검색 체크값
+								$('input[name=site_id]').val(result.show.siteId);					//사이트 아이디
+								$('input[name=seq]').val(result.show.seq);							//메뉴일련
+								$('input[name=upper_seq]').val(result.show.upperSeq);				//메뉴상위일련
+								$('input[name=menu_nm]').val(result.show.menuNm);					//메뉴명
+								$('textarea[name=menu_nm_dc]').val(result.show.menuNmDc);			//메뉴설명
+								$('textarea[name=menu_nm_intrcn]').val(result.show.menuNmIntrcn);	//메뉴소개
+								$('input[name=menu_url]').val(result.show.menuUrl);					//메뉴URL
+								$('input[name=pgm_id]').val(result.show.pgmId);						//프로그램ID
+								$('input[name=old_pgm_id]').val(result.show.pgmId);					//OLD_프로그램ID
+								
+								$('input[name=cntnts_at]:radio[value='+result.show.cntntsAt+']').prop("checked",true);				//콘텐츠만족도	
+								$('input[name=sns_at]:radio[value='+result.show.snsAt+']').prop("checked",true);					//SNS사용여부	
+								$('input[name=menu_sttus]:radio[value='+result.show.menuSttus+']').prop("checked",true);			//메뉴상태
+								$('input[name=window_open_at]:radio[value='+result.show.windowOpenAt+']').prop("checked",true);		//새창여부
+								$('input[name=top_menu_at]:radio[value='+result.show.topMenuAt+']').prop("checked",true);			//대메뉴 여부
+								$('input[name=crtfc_at]:radio[value='+result.show.crtfcAt+']').prop("checked",true);				//인증 여부
+								
+								$('input[name=author_target_at]').val(result.show.authorTargetAt);	//권한관리
+								$('input[name=rpt_target_at]').val(result.show.rptTargetAt);		//리포트관리
+				
+								
+								//console.log("result.show.upperMenuNm :: " + result.show.upperMenuNm);
+								if(result.show.upperMenuNm !=''){
+									$('input[name=upper_menu_nm]').val(result.show.upperMenuNm);	//상위메뉴(일련)명
+								}else{
+									$('input[name=upper_menu_nm]').val("사용자메뉴(0)");					//상위메뉴(일련)명
+								}
+								$('input[name=menu_ordr]').val(result.show.menuOrdr);		//메뉴순서
+								$('input[name=adit_paramtr]').val(result.show.aditParamtr);	//파라미터
+								
+								//담당부서 설정
+								$('input[name=mngr_dept_nm]').val(result.show.mngrDeptNm);	//담당부서
+								$('input[name=mngr_nm]').val(result.show.mngrNm);			//담당자
+								$('input[name=mngr_tlphon]').val(result.show.mngrTlphon);	//전화번호
+								$('input[name=mngr_email]').val(result.show.mngrEmail);		//이메일
+								$('input[name=tmplat]').val(result.show.tmplat);			//템플릿 코드
+							});
+					}else if(node.id == 0 || node.siteId==''){//상세보기 대상 아님
+						$('#btnSch').show();					//중복검색 노출
+						$("#site_id").css("width","80%"); 		//input box size 축소
+						$("#site_id").prop( 'disabled', false );//사이트아이디 활성화
+						
+						var remove = $('form[name=frmMenu]');
+						remove.find('input[type="text"]').val('');
+						remove.find('textarea').val('');
+						return false;
+					}else{
+						$('#btnSch').hide();					//중복검색 숨김
+						$("#site_id").css("width","100%"); 		//input box size 확대
+						$("#site_id").prop('disabled',true);	//사이트아이디 비활성화
+					}
+			
+				}
+				
+				//메뉴트리삭제
+				function fnDelt(e) {
+					console.log("메뉴트리삭제");
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+			
+					if(treeNode){
+						console.log("treeNode.id :: " +treeNode.id);
+						console.log("nodeSiteId :: " +treeNode.siteId);
+						if(treeNode.id > 0 && treeNode.siteId !=''){
+							
+							console.log("삭제 시작 treeNode.id :: " +treeNode.id);
+							console.log("삭제 시작 treeNode.pId :: " +treeNode.pId);
+							
+							if(confirm("하위메뉴가 있다면 하위메뉴도 전부 삭제됩니다 삭제하시겠습니까?")){
+								
+								$.post("user.do",{
+										type: 'delt'				
+										,siteId : treeNode.siteId	//사이트아이디
+										,seq:treeNode.id			//메뉴일련
+										,upper_seq:treeNode.pId		//메뉴상위일련
+									},
+									function(result){
+										console.log("mngrJson delt :: " + result)
+										if(result>0){
+											alert("정상적으로 처리되었습니다.");
+											//location.reload();
+											var callbackFlag = $("#callbackTrigger").attr("checked");
+											zTree.removeNode(treeNode, callbackFlag);
+											var remove = $('form[name=frmMenu]');
+											remove.find('input[type="text"]').val('');
+											remove.find('textarea').val('');
+											return false;
+										}else{
+											alert("요청하신 정보가 실패되었습니다.");
+											return false;
+										}
+										return false;
+									}); 
+							}				
+						}else{
+							alert('해당 메뉴는 삭제 대상이 아닙니다.');
+							return false;
+						}
+					}else{
+						console.log("treeNode if=2:: " + treeNode);
+						alert("메뉴를 선택해 주세요.");
+						$('#ztree').focus();
+						return false;
+					}
+			
+				};
+				
+				
+				//메뉴추가
+				function fnAdd(e) {
+					//console.log("메뉴추가");
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					isParent = e.data.isParent,
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+					//console.log("treeNode :: " + treeNode);
+					//console.log("isParent :: " + isParent);
+					if(treeNode){
+						//사이트 생성
+						console.log("fnAdd id :: " +treeNode.id)
+						console.log("fnAdd level :: " + treeNode.level)
+			
+						//if(treeNode.id ==0 && treeNode.level==0){
+						console.log("site check site add start 셋팅:: " +treeNode.id)
+						//메뉴관리 설정(초기화)
+						$('input[name=type]').val('save');				//타입 셋팅
+						// 사이트아이디, 템플릿 코드 셋팅
+						$('input[name=site_id]').val(treeNode.siteId == ''? '': treeNode.siteId);	//사이트 아이디
+						$('input[name=tmplat]').val(treeNode.siteId == ''? '': treeNode.siteId);	//템플릿 코드
+						$('input[name=menu_nm]').val('');				//메뉴명
+						$('textarea[name=menu_nm_dc]').val('');			//메뉴설명
+						$('textarea[name=menu_nm_intrcn]').val('');		//메뉴소개
+						$('input[name=menu_url]').val('');				//메뉴URL
+						$('input[name=pgm_id]').val('');				//프로그램ID
+						$('input[name=adit_paramtr]').val('');			//파라미터
+			
+						//라디오박스
+						$('input:radio[name=cntnts_at]:input[value="Y"]').prop("checked", true);		//콘텐츠만족도(Y:사용, N:미사용)
+						$('input:radio[name=sns_at]:input[value="Y"]').prop("checked", true);			//SNS사용여부(Y:사용, N:미사용)
+						$('input:radio[name=menu_sttus]:input[value="A"]').prop("checked", true);		//메뉴상태(H:숨김, A:미숨김)
+						$('input:radio[name=window_open_at]:input[value="N"]').prop("checked", true);	//새창여부(Y:새창, N:현재창)
+						$('input:radio[name=top_menu_at]:input[value="Y"]').prop("checked", true);		//대메뉴 여부(Y:사용, N:미사용)
+						$('input:radio[name=crtfc_at]:input[value="N"]').prop("checked", true);			//인증 여부(Y:사용, N:미사용)
+			
+						$('input[name=author_target_at]').val('N');			//권한관리(Y:관리, N:미관리) 
+						$('input[name=rpt_target_at]').val('Y');			//리포트관리(Y:대상, N:미대상)	
+						
+						//담당부서 설정(초기화)
+						$('input[name=mngr_dept_nm]').val('');			//담당부서
+						$('input[name=mngr_nm]').val('');				//담당자
+						$('input[name=mngr_tlphon]').val('');			//전화번호
+						$('input[name=mngr_email]').val('');			//이메일	
+							if(treeNode.children==null)
+							$('input[name=menu_ordr]').val(1);			//메뉴순번 레벨별 최상위 셋팅
+							else
+							$('input[name=menu_ordr]').val(treeNode.children.length+1);	//메뉴순번
+							$("input[name=upper_seq]").val(treeNode.id);							//상위 일련
+							$("input[name=upper_menu_nm]").val(treeNode.name+"("+treeNode.id+")");	//상위메뉴(일련)명		
+						
+					}else{
+						alert("메뉴를 선택해 주세요.");
+						$('#ztree').focus();
+						return false;
+					}
+				};
+				
+				
+				//메뉴순선변경저장
+				$(document).on('click','#btnChange',function(){	
+						var zTree = $.fn.zTree.getZTreeObj("ztree");
+						var nodeLength=[0,0,0,0,0,0,0,0,0,0];
+						var queryArr=[];
+						
+						$.each(zTree.transformToArray(zTree.getNodes()),function(i,v){
+							if(i>0){
+								if(v.children!=null)
+								nodeLength[v.level]=0;
+								nodeLength[eval(v.level-1)]++;
+								console.log("v check: "+ v.id)
+								console.log("v siteId: "+ v.siteId)
+								var data={
+										"seq":v.id,
+										"upperSeq":v.pId,
+										"menuNm":v.name,
+										"menuOrdr":nodeLength[eval(v.level-1)]
+								}
+								console.log("---------------------")
+								console.log(data)
+								console.log("---------------------")
+								queryArr.push(data);
+							}
+						});
+			
+						if(confirm("메뉴순서를 정말로 변경저장 하시겠습니까?")){
+							$.post("user.do", {dataType:'json',type: 'change',data:JSON.stringify(queryArr)}, function(result){
+								console.log("result :: " + result)
+								if(result>0){
+									alert("정상적으로 메뉴 변경되었습니다.");
+									return false;
+								}else{
+									alert("메뉴변경이 실패되었습니다.");
+									location.reload();
+									return false;
+								}
+								return false;
+							});
+						}
+				});
+			
+				//중복검색
+				function fnSch(e) {
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+					
+					//console.log("중복검색 : " +e);
+					//console.log("중복검색 : " +e.data);		
+					//console.log("중복검색 nodes: " +nodes);
+					//console.log("중복검색 treeNode: " +treeNode);
+					
+					if(treeNode){
+						console.log("중복검색 treeNode 후: " +treeNode.id);
+						console.log("중복검색 treeNode 후 seq: " +$('#seq').val());
+						console.log("중복검색 treeNode 후 upper_seq: " +$('#upper_seq').val());
+						if($('#upper_seq').val()==''){ //사이트 초기생성시 체크
+							alert("[사용자메뉴]를 선택 후  메뉴추가버튼 클릭하세요.");
+							$('#btnAdd').focus();
+							return false;
+						}
+						var value = new MiyaValidator(document.forms["frmMenu"]);
+						value.add("site_id", {required: true, option:"engonly"});  //사이트아이디 :영문명으로만 체크
+			
+						var result = value.validate();
+						
+						if(!result){
+							alert(value.getErrorMessage()); //디폴트 label 메세지
+							value.getErrorElement().focus();
+							return false;
+						}else{//결과 실행
+							$.post("user.do",{
+									type	: "sch"
+									,siteId : $('#site_id').val()  //사이트아이디
+									},
+									function(result){
+										console.log(result)
+										if(result > 0){
+											alert("사이트아이디가 중복되었습니다.");
+											$('#site_id').val('');
+										}else{
+											alert("사용하실수 있는 사이트 아이디입니다.");
+											$('#site_id_sch').val('SUCCES');
+											$('#menu_url').val("/"+$('#site_id').val()+"/index.do");	//메뉴URL 셋팅
+											$('#pgm_id').val("index");									//프로그램 아이디 셋팅
+											$('input[name=tmplat]').val($('#site_id').val());			//tmpl 셋팅
+											$("input[name='site_id']").prop('disabled',true);			//사이트 아이디 비활성화
+											$("input[name='tmplat']").prop('disabled',true);			//템플릿 비활성화
+											
+											
+										}
+								});
+						}//result else end
+						return false;
+					}else{//treeNode
+						alert("메뉴를 선택하세요.");
+						$('#ztree').focus();
+						return false;
+					}
+					return false;
+				}
+				
+				//메뉴저장,수정
+				function fnSave(e){
+					console.log("fnSave :: " + $("input[name=upper_seq]").val());
+					
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					isParent = e.data.isParent,
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+			
+					console.log("seq :: "+$('#seq').val())
+					console.log("upper_seq :: "+$('#upper_seq').val())
+					console.log(treeNode)
+					
+					if (treeNode){//treeNode 메뉴선택 체크
+						//console.log("treeNode.id : "+ treeNode.id)
+						//console.log("treeNode.pId : "+ treeNode.pId)
+						//console.log("site_id_sch 111 : "+ $('#site_id_sch').val())
+						
+						var value = new MiyaValidator(document.forms["frmMenu"]);
+						if($('#site_id_sch').val()==""){
+							value.add("site_id_sch", {required: true, message:"사이트중복체크 하세요."});  //사이트생성시 중복체크	
+						}
+						if($('#site_id').val()==""){
+							value.add("site_id", {required: true});  //사이트아이디
+						}
+			
+						value.add("menu_nm", {required: true});  //메뉴명
+						value.add("menu_url", {required: true}); //메뉴URL
+						//value.add("pgm_id", {required: true});   //프로그램ID
+									
+						var result = value.validate();
+						
+						if(!result){
+							if($('#site_id_sch').val() !=""){
+								alert(value.getErrorMessage()); //디폴트 label 메세지
+							}else if($('#site_id_sch').val()==""){
+								alert(value.getErrorMessage("{message}")); //동적 메세지
+							}
+							value.getErrorElement().focus();
+							return false;
+						}else{
+							$("input[name=site_id]").removeAttr('disabled');	//사이트아이디 활성화
+							$("input[name=menu_ordr]").removeAttr('disabled');	//메뉴순번 활성화
+							$("input[name=tmplat]").removeAttr('disabled');		//템플릿 활성화
+							
+							console.log($('input[name=type]').val());
+							console.log("seq :: "+$('#seq').val())
+							console.log("upper_seq :: "+$('#upper_seq').val())
+							
+							var msg = $('input[name=type]').val() =="save"? '저장':'수정';
+							if($('input[name=type]').val() =='' && ($('#seq').val() =='' && $('#upper_seq').val() =='')){
+								alert(treeNode.name+"는 변경내용저장 대상이 아닙니다.\n 메뉴추가버튼을 선택하세요.");
+								$('#btnAdd').focus();
+								return false;
+							}else if(confirm("["+$('#menu_nm').val()+"] "+msg+" 하시겠습니까?")){
+								$('form[name=frmMenu]').submit();
+							}else{
+								alert("메뉴 ["+msg+"]이 취소되었습니다.");
+								$("input[name='site_id']").prop('disabled',true);	//사이트아이디 비활성화
+								$("input[name=menu_ordr]").prop('disabled',true);	//메뉴순번 비활성화
+								$("input[name=tmplat]").prop('disabled',true);		//템플릿 비활성화
+								return false;
+							}
+							$("input[name='site_id']").prop('disabled',true);	//사이트아이디 비활성화
+							$("input[name=menu_ordr]").prop('disabled',true);	//메뉴순번 비활성화
+							$("input[name=tmplat]").prop('disabled',true);		//템플릿 비활성화
+							return false;
+						}//else end
+						return false;
+						
+					}else{//treeNode end
+						alert("메뉴를 선택하세요");
+						$('#ztree').focus();
+						return false;
+					}
+					
+			
+				}
+				
+				$(document).ready(function(){
+					//1.zTree 초기셋팅
+					$.fn.zTree.init($("#ztree"), setting, zNodes);
+					//2.메뉴추가
+					$("#btnAdd").bind("click", {isParent:false}, fnAdd);
+					//3.메뉴삭제
+					$("#btnDelt").bind("click", fnDelt);
+					//4.메뉴저장
+					$("#btnSave").bind("click", {isParent:false}, fnSave);
+					//5.메뉴변경
+					$("#callbackTrigger").bind("change", {}, setTrigger);
+					//6.메뉴트리 전체 펼침
+					$("#btnOpenTree").bind("click", {type:"openTree"}, expandNode);
+					//7.메뉴트리 전체 닫힘
+					$("#btnCloseTree").bind("click", {type:"closeTree"}, expandNode);
+					//8.사이트중복검색
+					$("#btnSch").bind("click", fnSch);
+					//9.메뉴URL radio 체크
+					$('input:radio[name="menu_url_at"]').bind("click", fnMenuUrlRadio);
+			
+				});
+				
+				//메뉴xml 배포
+				$(document).on('click','#btnXml',function(){	
+					console.log("aaaa");
+					//$("input[name=site_id]").removeAttr('disabled');	//사이트아이디 활성화
+					//$("input[name='site_id']").prop('disabled',true);			//사이트 아이디 비활성화
+					console.log("site_id :: " + $('#site_id').val())
+					console.log("upper_seq :: " + $('#upper_seq').val())
+					if($('#site_id').val() !="" && $('#upper_seq').val() ==0){
+						$.post("user.do",{
+							type : "xml"
+							,site_id  : $('#site_id').val()
+							},
+							function(result){
+								console.log(result)
+								if(result > 0){
+									alert("["+$('#site_id').val()+"] 메뉴XML배포 처리가 실패되었습니다.");
+									return false;
+								}else{
+									alert("["+$('#site_id').val()+"] 메뉴XML배포 처리되었습니다.");
+									return false;
+								}
+						});
+					}else if($('#site_id').val() !="" && $('#upper_seq').val() >0){
+						alert("상위메뉴(사이트)를 선택하세요");
+						$('#ztree').focus();
+						return false;
+					}else{
+						alert("메뉴(사이트)를 선택하세요");
+						$('#ztree').focus();
+						return false;
+					}
+				});
+				
+				//메뉴URL radio 체크
+				function fnMenuUrlRadio(){
+					
+					if($("#site_id").val() !=""){
+						console.log("=" + $("#site_id").val());
+						console.log($('input:radio[name="menu_url_at"]:checked').val());
+						var choise = $('input:radio[name="menu_url_at"]:checked').val();
+						if(choise=='extends'){//extends(cms 플러그인 기능)
+							$("#menu_url").val("/"+$("#site_id").val()+"/extends/*/프로그램명.do");
+							$("#pgm_id").val('extends');
+						}else if(choise=='dir'){//디렉토리
+							$("#menu_url").val("/"+$("#site_id").val()+"/cntnts/*/dir.do");
+							$("#pgm_id").val('dir');
+						}else if(choise=='bbs'){//게시판
+							$("#menu_url").val("/"+$("#site_id").val()+"/bbs/*/list.do");
+							$("#pgm_id").val($("#old_pgm_id").val());
+							//사이즈 조정은 마음대로
+							var width  = 700;	//가로
+							var height = 700;	//높이
+							//inseqcms 공통 센터정렬 팝업창(게시판 목록)
+							inseqcms_dualpopupCenter("/system/bbs/config/popup.do?popupValue=pgm_id","winPgm",width,height,"no");
+						}else if(choise=='web'){//웹페이지
+							$("#menu_url").val("/"+$("#site_id").val()+"/cntnts/*/web.do");
+							$("#pgm_id").val('web');
+						}else if(choise=='pgm'){//pgm
+							$("#menu_url").val("/"+$("#site_id").val()+"/pgm/*/프로그램명/파일명.do");
+							$("#pgm_id").val('pgm');
+						}else if(choise=='link'){		//링크
+							$('input:radio[name=window_open_at]:input[value="Y"]').prop("checked", true);	//새창여부(Y:새창, N:현재창)
+							$("#menu_url").val('http://');
+							$("#pgm_id").val('link');
+						}else if(choise=='remove'){		//초기화
+							$("#menu_url").val('');
+							$("#pgm_id").val('');
+						}
+					}else{
+						alert("메뉴를 선택후 클릭 하실수 있습니다.");
+						$('#ztree').focus();
+						return false;
+					}
+				}
+			//]]>
+			</script>
+			<!-- 
+				<div class="search_area">
+					<table class="tb_search">
+					<caption>검색조건</caption>
+					<colgroup>
+						<col style="width:120px">
+						<col>
+					</colgroup>
+					<tbody>
+					<tr>
+						<th><label for="group">검색</label></th>
+						<td>
+							<select id="group">
+								<option>선택</option>
+							</select>
+							<span><a href="#none" class="btn">검색</a></span>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</div>
+			-->
+			<!-- 메뉴 트리 -->
+			<div class="mng_menu">
+				<div class="menu_container">
+					<!-- 사이트 상세메뉴 -->
+					<div class="tree_area">
+						<div class="tree_ctrl">
+							<a href="#none" class="btn btn_sm nav" id="btnOpenTree">+ 전체열기</a>
+							<a href="#none" class="btn btn_sm nav" id="btnCloseTree">- 전체닫기</a>
+						</div>		
+						<div class="tree_scroll">
+							<!-- id ztree 호출  -->
+							<ul id="ztree" class="ztree" tabindex="-1"></ul>
+							<!-- <ul id="log" class="log"></ul>  -->
+						</div>
+				
+						<div class="menu_ctrl">
+							<a href="#none" class="btn act" id="btnAdd">+ 메뉴추가</a>
+							<a href="#none" class="btn" id="btnDelt">- 메뉴삭제</a>
+							<a href="#none" class="btn" id="btnChange"> 순서변경</a>
+						</div>
+					</div>
+			
+					<!-- 관리자 메뉴 설정 -->
+					<form name="frmMenu" id="frmMenu" action="./user.do" method="post">
+						<input type="hidden" name="site_id_sch" id="site_id_sch"/>						<!-- 사이트 아이디 중복 체크 -->
+						<input type="hidden" name="seq" id="seq"/>										<!-- 메뉴일련 -->
+						<input type="hidden" name="upper_seq" id="upper_seq">							<!-- 메뉴상위 일련 -->
+						<input type="hidden" name="type" id="type"/>									<!-- 타입 여부 -->
+						<input type="hidden" name="author_target_at" id="author_target_at" value="N">	<!-- 권한관리 여부(Y,N) -->
+						<input type="hidden" name="rpt_target_at" id="rpt_target_at" value="Y">			<!-- 리포트관리여부 (Y,N) -->
+						<div class="input_area">
+							<table class="tb_write">
+							<caption>메뉴관리 설정</caption>
+							<colgroup>
+								<col style="width:180px">
+								<col>
+								<col style="width:150px">
+								<col>
+							</colgroup>
+							<tbody>
+							<tr>
+								<th><label for="site_id"><span class="req">필수입력</span> 사이트 아이디</label></th>
+								<td colspan="3"><input type="text" name="site_id" id="site_id" style="width:80%" placeholder="영문(소문자)로 입력하세요"> <a href="#none" class="btn" id="btnSch"><i class="fa fa-search"></i>중복검색</a></td>
+							</tr>		
+							<tr>
+								<th><label for="menu_nm"><span class="req">필수입력</span> 메뉴명</label></th>
+								<td colspan="3"><input type="text" name="menu_nm" id="menu_nm" style="width:100%"></td>
+							</tr>
+							<tr>
+								<th>메뉴 설명</th>
+								<td colspan="3"><textarea name="menu_nm_dc" cols="100" rows="3" title="메뉴 설명"></textarea></td>
+							</tr>
+							<tr>
+								<th>메뉴 소개</th>
+								<td colspan="3"><textarea name="menu_nm_intrcn" cols="100" rows="3" title="메뉴 소개"></textarea></td>
+							</tr>		
+							<tr>
+								<th><label for="menu_url_at0"><span class="req">필수입력</span> 메뉴URL</label></th>
+								<td colspan="3">
+									<div class="row">
+										<input type="radio" value="dir" name="menu_url_at" id="menu_url_at0"><label for="menu_url_at0">디렉토리</label>
+										<input type="radio" value="bbs" name="menu_url_at" id="menu_url_at1"><label for="menu_url_at1">게시판</label>
+										<input type="radio" value="web" name="menu_url_at" id="menu_url_at2"><label for="menu_url_at2">웹콘텐츠</label>
+										<input type="radio" value="pgm" name="menu_url_at" id="menu_url_at3"><label for="menu_url_at3">PGM</label>
+										<input type="radio" value="link" name="menu_url_at" id="menu_url_at4"><label for="menu_url_at4">링크(새창)</label>
+										<input type="radio" value="remove" name="menu_url_at" id="menu_url_at5"><label for="menu_url_at5">초기화</label>
+									</div>
+									
+									<div class="row">
+										<input type="text" name="menu_url" id="menu_url" style="width:100%" title="메뉴url">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="pgm_id"><span class="req">필수입력</span> 프로그램ID</label></th>
+								<td colspan="3">
+									<input type="hidden" name="old_pgm_id" id="old_pgm_id">
+									<input type="text" name="pgm_id" id="pgm_id" style="width:100%">
+								</td>
+							</tr>
+							<tr>
+								<th><span class="req">필수입력</span> 컨텐츠 만족도</th>
+								<td>
+									<input type="radio" value="Y" name="cntnts_at" id="cntnts_at1" checked="checked">
+									<label for="cntnts_at1">사용</label>
+									<input type="radio" value="N" name="cntnts_at" id="cntnts_at2">
+									<label for="cntnts_at2">미사용</label>
+								</td>
+								<th><span class="req">필수입력</span> SNS사용여부</th>
+								<td>
+									<input type="radio" value="Y" name="sns_at" id="sns_at1" checked="checked">
+									<label for="sns_at1">사용</label>
+									<input type="radio" value="N" name="sns_at" id="sns_at2">
+									<label for="sns_at2">미사용</label>
+								</td>
+							</tr>			
+							<tr>
+								<th><span class="req">필수입력</span> 숨김여부(메뉴상태)</th>
+								<td>
+									<input type="radio" value="H" name="menu_sttus" id="menu_sttus1">
+									<label for="menu_sttus1">숨김</label>
+									<input type="radio" value="A" name="menu_sttus" id="menu_stts_2" checked="checked">
+									<label for="menu_stts_2">노출</label>
+								</td>
+								<th><span class="req">필수입력</span> 새창여부</th>
+								<td>
+									<input type="radio" value="Y" name="window_open_at" id="window_open_at1">
+									<label for="window_open_at1">새창</label>
+									<input type="radio" value="N" name="window_open_at" id="window_open_at2" checked="checked">
+									<label for="window_open_at2">현재창</label>
+								</td>
+							</tr>
+				
+							<tr>
+								<th><span class="req">필수입력</span> 대메뉴여부</th>
+								<td>
+									<input type="radio" value="Y" name="top_menu_at" id="top_menu_at1" checked="checked">
+									<label for="top_menu_at1">사용</label>
+									<input type="radio" value="N" name="top_menu_at" id="top_menu_at2">
+									<label for="top_menu_at2">미사용</label>
+								</td>
+								<th><span class="req">필수입력</span> 인증여부</th>
+								<td>
+									<input type="radio" value="Y" name="crtfc_at" id="crtfc_at1">
+									<label for="crtfc_at1">사용</label>
+									<input type="radio" value="N" name="crtfc_at" id="crtfc_at2" checked="checked">
+									<label for="crtfc_at2">미사용</label>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="p_menu_nm">상위메뉴(일련)</label></th>
+								<td><input type="text" name="upper_menu_nm" id="upper_menu_nm" disabled="disabled" title="상위메뉴(일련)"></td>
+								<th><label for="menu_ordr"><span class="req">필수입력</span> 메뉴순서</label></th>
+								<td><input type="text" name="menu_ordr" id="menu_ordr" disabled="disabled"></td>				
+							</tr>
+							<tr>
+								<th><label for="add_param">파라미터</label></th>
+								<td colspan="3"><input type="text" name="adit_paramtr" id="adit_paramtr" style="width:100%" title="파라미터"></td>
+							</tr>		
+							</tbody>
+							</table>
+
+							<!-- 표준산업분류 및 주제어 및 핵심어 등록 -->
+							<h3 class="tit1 mt25">표준산업분류 및 주제어 및 핵심어 등록</h3>
+							<table class="tb_write">
+								<colgroup>
+									<col style="width:180px">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>주요산언분류코드</th>
+										<td>
+											정보통신 > 우편 및 통신업 > 전기통신업 > 유선통신업
+											<button type="button" class="btn add">추가</button>
+										</td>
+									</tr>
+									<tr>
+										<th>주제어 및 핵심어</th>
+										<td>
+											<input type="text" style="width:200px" placeholder="주제어 및 핵심어 입력">
+											<button type="button" class="btn add">추가</button>
+											<div class="tag-area">
+												<span>비대면<button class="type"><i class="fa fa-close"></i></button></span>
+												<span>비대면<button class="type"><i class="fa fa-close"></i></button></span>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //표준산업분류 및 주제어 및 핵심어 등록 -->
+
+							<!-- 추천정보 활용여부 -->
+							<h3 class="tit1 mt25">추천정보 활용여부</h3>
+							<table class="tb_write">
+								<colgroup>
+									<col style="width:300px">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>본 메뉴에서 추천정보를 활용하겠습니까?</th>
+										<td>
+											<input type="radio" name="radio1" id="radio1-1">
+											<label for="radio1-1">사용함</label>
+											<input type="radio" name="radio1" id="radio1-2">
+											<label for="radio1-2">사용안함</label>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //추천정보 활용여부 -->
+
+							<!-- 관련 FAQ -->
+							<div class="list_status mt25">
+								<div class="fl"><h3 class="tit1">관련 FAQ</h3></div>
+								<div class="fr"><button type="button" class="btn btn-add">FAQ 불러보기</button></div>
+							</div>
+							<table class="tb_data">
+								<colgroup>
+									<col style="width:75px">
+									<col style="width:100px">
+									<col style="width:200px">
+									<col>
+									<col style="width:150px">
+									<col style="width:120px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>언어</th>
+										<th>FAQ 분야</th>
+										<th>질문</th>
+										<th>순서</th>
+										<th>삭제</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>국문</td>
+										<td>투자제도 일반</td>
+										<td class="text-left">2019년 1월 1일부터 2020년 12월 31일까지 「하수도법」 제2</td>
+										<td>
+											<button class="button">&#9650;</button>
+											<button class="button">&#9660;</button>
+										</td>
+										<td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //관련 FAQ -->
+
+							<!-- IK 관련 페이지 -->
+							<div class="list_status mt25">
+								<div class="fl"><h3 class="tit1">IK 관련 페이지</h3></div>
+								<div class="fr"><button type="button" class="btn btn-add">IK 관련 페이지 추가하기</button></div>
+							</div>
+							<table class="tb_data">
+								<colgroup>
+									<col style="width:75px">
+									<col style="width:300px">
+									<col>
+									<col style="width:150px">
+									<col style="width:120px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>링크명</th>
+										<th>링크주소(URL)</th>
+										<th>순서</th>
+										<th>삭제</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>외국인투자기업 중점유치 지역</td>
+										<td class="text-left"><a href="#n">http://www.naver.com</a></td>
+										<td>
+											<button class="button">&#9650;</button>
+											<button class="button">&#9660;</button>
+										</td>
+										<td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //IK 관련 페이지 -->
+
+							<!-- 관련 외부 링크 -->
+							<div class="list_status mt25">
+								<div class="fl"><h3 class="tit1">관련 외부 링크</h3></div>
+								<div class="fr"><button type="button" class="btn btn-add">관련 외부 링크 추가하기</button></div>
+							</div>
+							<table class="tb_data">
+								<colgroup>
+									<col style="width:75px">
+									<col style="width:300px">
+									<col>
+									<col style="width:150px">
+									<col style="width:120px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>링크명</th>
+										<th>링크주소(URL)</th>
+										<th>순서</th>
+										<th>삭제</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>외국인투자기업 중점유치 지역</td>
+										<td class="text-left"><a href="#n">http://www.naver.com</a></td>
+										<td>
+											<button class="button">&#9650;</button>
+											<button class="button">&#9660;</button>
+										</td>
+										<td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+									</tr>
+								</tbody>
+							</table>							
+							<!-- //관련 외부 링크 -->
+							
+							<!-- 컨텐츠담당 설정 -->
+							<h3 class="tit1 mt25">컨텐츠담당 설정</h3>
+							<table class="tb_write">
+								<colgroup>
+									<col style="width:180px">
+									<col>
+									<col style="width:150px">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><label for="mgr_dept">담당부서</label></th>
+										<td><input type="text" name="mngr_dept_nm" id="mngr_dept_nm" title="담당부서"></td>
+										<th><label for="mngr_nm">담당자</label></th>
+										<td><input type="text" name="mngr_nm" id="mngr_nm"></td>
+									</tr>
+									<tr>
+										<th><label for="mngr_tlphon">전화번호</label></th>
+										<td><input type="text" name="mngr_tlphon" id="mngr_tlphon"></td>
+										<th><label for="mngr_email">E-MAIL</label></th>
+										<td><input type="text" name="mngr_email" id="mngr_email"></td>
+									</tr>
+									
+									<tr>
+										<th><label for="tmplat">tmpl</label></th>
+										<td colspan="3"><input type="text" name="tmplat" id="tmplat" disabled="disabled" style="width:100%"></td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //컨텐츠담당 설정 -->
+									
+							<div class="btn_area">
+								<button type="button" class="btn btn_lg" id="btnXml"><i class="fa fa-th-large" aria-hidden="true"></i> 메뉴 XML 배포</button>
+								<button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-save"></i> 변경내용저장</button>
+							</div>
+						</div>
+					</form>
+					
+				</div>
+			</div>
+	
+		
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

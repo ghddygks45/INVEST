@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-en/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-en/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-en/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-en/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>Projects per Region &lt; 일반입지 &lt; 투자의 기회 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(2,2,2)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb10.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>Projects per Region</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>투자의 기회</li>
+						<li>일반입지</li>
+						<li>Projects per Region</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="section">
+							<h4 class="sub-tit01">Local Governments</h4>
+							<div class="search-area">
+								<div class="form-area m-version">
+									<div class="in">
+										<span class="select-type-eng mr5">
+											<select name="" id="local_choice" title="Local Governments select">
+												<option value="map_00">All</option>
+												<option value="map_01">Seoul City</option>
+												<option value="map_02">Incheon City</option>
+												<option value="map_03">Gyeonggi Province</option>
+												<option value="map_04">Gangwon Province</option>
+												<option value="map_05">South Chungcheong Province</option>
+												<option value="map_06">Daejeon City</option>
+												<option value="map_17">Sejong City</option>
+												<option value="map_07">North Chungcheong Province</option>
+												<option value="map_08">North Gyeongsang Province</option>
+												<option value="map_09">North Jeolla Province</option>
+												<option value="map_10">Daegu City</option>
+												<option value="map_11">Gwangju City</option>
+												<option value="map_12">South Jeolla Province</option>
+												<option value="map_13">South Gyeongsang Province</option>
+												<option value="map_14">Ulsan City</option>
+												<option value="map_15">Busan City</option>
+												<option value="map_16">Jeju Island</option>
+											</select>
+										</span>
+										<button type="button" class="btn-default-s" onclick="localMapTrans();">GO</button>	
+									</div>
+								</div>
+								<div class="sel-local-box">
+									<div class="l">Region selection</div>
+									<div class="r">
+										<ul>
+											<li><button type="button" class="btn-default-s">All</button></li>
+											<li><button type="button" class="btn-default-s">seoul</button></li>
+											<li><button type="button" class="btn-default-s">incheon</button></li>
+											<li><button type="button" class="btn-default-s">Gyeonggi</button></li>
+											<li><button type="button" class="btn-default-s">Gangwon</button></li>
+											<li><button type="button" class="btn-default-s">South Chungcheong</button></li>
+											<li><button type="button" class="btn-default-s">Daejeon</button></li>
+											<li><button type="button" class="btn-default-s">Sejong</button></li>
+											<li><button type="button" class="btn-default-s">North Chungcheong</button></li>
+											<li><button type="button" class="btn-default-s">North Gyeongsang</button></li>
+											<li><button type="button" class="btn-default-s">North Jeolla</button></li>
+											<li><button type="button" class="btn-default-s">Daegu</button></li>
+											<li><button type="button" class="btn-default-s">Gwangju</button></li>
+											<li><button type="button" class="btn-default-s">South Jeolla</button></li>
+											<li><button type="button" class="btn-default-s">South Gyeongsang</button></li>
+											<li><button type="button" class="btn-default-s">Ulsan</button></li>
+											<li><button type="button" class="btn-default-s">Busan</button></li>
+											<li><button type="button" class="btn-default-s">Jeju</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="map-area-box">
+								<div class="map-l">
+									<img src="../../images/ik-en/img_map_korea.gif" alt="Korea">
+									<img src="../../images/ik-en/img_map_seoul.gif" alt="seoul">
+									<img src="../../images/ik-en/img_map_incheon.gif" alt="incheon">
+									<img src="../../images/ik-en/img_map_gyeonggi.gif" alt="Gyeonggi">
+									<img src="../../images/ik-en/img_map_gangwon.gif" alt="Gangwon">
+									<img src="../../images/ik-en/img_map_s_chungcheong.gif" alt="South Chungcheong">
+									<img src="../../images/ik-en/img_map_daejeon.gif" alt="Daejeon">
+									<img src="../../images/ik-en/img_map_sejong.gif" alt="Sejong">
+									<img src="../../images/ik-en/img_map_n_chungcheong.gif" alt="North Chungcheong">
+									<img src="../../images/ik-en/img_map_n_gyeongsang.gif" alt="North Gyeongsang">
+									<img src="../../images/ik-en/img_map_n_jeolla.gif" alt="North Jeolla">
+									<img src="../../images/ik-en/img_map_daegu.gif" alt="Daegu">
+									<img src="../../images/ik-en/img_map_gwangju.gif" alt="Gwangju">
+									<img src="../../images/ik-en/img_map_s_jeolla.gif" alt="South Jeolla">
+									<img src="../../images/ik-en/img_map_s_gyeongsang.gif" alt="South Gyeongsang">
+									<img src="../../images/ik-en/img_map_ulsan.gif" alt="Ulsan">
+									<img src="../../images/ik-en/img_map_busan.gif" alt="Busan">
+									<img src="../../images/ik-en/img_map_jeju.gif" alt="Jeju">
+								</div>
+									
+								<div class="map-r">
+									<div class="local_info korea">
+										<div class="normal_txt info">
+											Korea’s 17 <span class="color-green">local<br class='pc-content'>
+											governments</span> provide<br class='pc-content'>
+											<span class="color-green">specialized investment<br class='pc-content'>
+											environments and services.</span>
+										</div>
+									</div>
+									<div class="local_info seoul">
+										<img src="../../images/ik-en/img_logo_seoul.png" alt="seoul">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Seoul, emerging as the<br class="pc-content">
+												Northeast Asia’s<br class="pc-content">
+												business hub
+											</p>
+										</div>
+										<div class="normal-txt">
+											Seoul, the capital of Korea, is rising rapidly as the Northeast Asia’s business hub. It is geographically situated between Asia’s two largest economic powers including China and Japan. Although Seoul takes up a mere 0.6 percent of Korea’s territory, it accounts for 21 percent of Korea’s total GDP with more than 50 percent of financial-related industries accumulated.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="http://english.seoul.go.kr/" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info incheon">
+										<img src="../../images/ik-en/img_logo_incheon.png" alt="incheon">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Incheon, leading the<br class="pc-content">
+												economic development<br class="pc-content">
+												of Korea
+											</p>
+										</div>
+										<div class="normal-txt">
+											Only 28 kilometers away from Seoul, Incheon has led the economic development of Korea by expanding the Incheon Port, opening the Incheon International Airport in March, 2001, building various industrial, logistics, tourism and leisure complexes and new types of residential facilities, developing Songdo International City, Cheongna and Yeongjong districts, establishing the Free Economic Zone Authority in October, 2003 and hosting the 2014 Asian Games.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.incheon.go.kr/en/index" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info gyeonggi">
+										<img src="../../images/ik-en/img_logo_gyeonggi.png" alt="gyeonggi">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Gyeonggi Province, the<br class="pc-content">
+												hub connecting East<br class="pc-content">
+												Asia and the Pacific
+											</p>
+										</div>
+										<div class="normal-txt">
+											As the center of Northeast Asia, Gyeonggi Province offers a favorable investment environment for promoting business activities in China and other countries. The province also provides excellent transport infrastructure and customized support services to encourage investment to enable the companies to efficiently and successfully pursue their business activities.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://english.gg.go.kr/" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info gangwon">
+										<img src="../../images/ik-en/img_logo_gangwon.png" alt="Gangwon">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Gangwon Province, the<br class="pc-content">
+												Mecca of Korean<br class="pc-content">
+												tourism and leisure industry
+											</p>
+										</div>
+										<div class="normal-txt">
+											The expressways, Yangyang International Airport and Donghae Port provide easier access to Seoul and other metropolitan cities in Korea. Also, its transportation and other industrial infrastructure for mass production support business activities. The province helps corporations to capitalize on the professional human resources cultivated by some 140 educational institutions. As the host for the Pyeongchang Winter Olympics 2018, it is considered the Mecca of Korean tourism and leisure industry.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/gwn-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info s_chungcheong">
+										<img src="../../images/ik-en/img_logo_s_chungcheong.png" alt="South Chungcheong">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												South Chungcheong<br class="pc-content">
+												Province, located at the<br class="pc-content">
+												center of Korea
+											</p>
+										</div>
+										<div class="normal-txt">
+											South Chungcheong Province, located at the center of Korea, can reach any regions in Korea within two hours. The province boasts its optimal investment environment with abundant human resources, perfect social overhead capital, reasonably priced land, the cheapest and most stable electricity supply and enough industrial water.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="kotra/html/chn-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info daejeon">
+										<img src="../../images/ik-en/img_logo_daejeon.png" alt="daejeon">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Daejeon, the<br class="pc-content">
+												transportation hub of<br class="pc-content">
+												Korea
+											</p>
+										</div>
+										<div class="normal-txt">
+											Daejeon has the advantage of being adjacent to the recently developing Multifunctional Administrative City of Sejong and having an easy access to transportation infrastructure. While the city is transforming into a science city with the establishment of Daedeok Research Complex, it is playing its role as an administrative city with the Government Complex Daejeon.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/dj-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info sejong">
+										<img src="../../images/ik-en/img_logo_sejong.png" alt="sejong">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Sejong Special Self-<br class="pc-content">
+												Governing City is the<br class="pc-content">
+												administrative capital of<br class="pc-content">
+												Korea.
+											</p>
+										</div>
+										<div class="normal-txt">
+											The city was built to balance the national development and enhance the national competitiveness by resolving the adverse effects caused by the excessive concentration in Seoul. With the international science business belt project, the city is attracting scholars around the world. It is also becoming the pivot of the national growth network by converging science and business.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.sejong.go.kr/eng.do" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info n_chungcheong">
+										<img src="../../images/ik-en/img_logo_n_chungcheong.png" alt="North chungcheong">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												North Chungcheong<br class="pc-content">
+												Province, a gateway to<br class="pc-content">
+												Sejong City
+											</p>
+										</div>
+										<div class="normal-txt">
+											North Chungcheong Province boasts its well-established transport infrastructure including Cheongju International Airport, KTX Osong Station and grid highways. The province is also known for its best IT and BT industry, industrial complexes in Osong and Ochang, excellent infrastructure, optimal industrial sites and skilled workers. 
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/cb-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info n_gyeongsang">
+										<img src="../../images/ik-en/img_logo_n_gyeongsang.png" alt="North gyeongsang">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												North Gyeongsang<br class="pc-content">
+												Province, the hub of the<br class="pc-content">
+												global electronic and<br class="pc-content">
+												textile industry
+											</p>
+										</div>
+										<div class="normal-txt">
+											North Gyeongsang Province has driven the Korean economy as the hub of the global electronic and textile industry. It has abundant human resources in research and development. It is also home to 47 universities, the second largest following Seoul. The province is the perfect place for investment with its well-established transportation network including expressways, railways and airports, abundant land for industrial use, talented industrial human resources and business strategies.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.gb.go.kr/Main/open_contents/section/eng/index.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info n_jeolla">
+										<img src="../../images/ik-en/img_logo_n_jeolla.png" alt="North jeolla">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												North Jeolla Province,<br class="pc-content">
+												playing a central role in<br class="pc-content">
+												Korea’s trade with<br class="pc-content">
+												China
+											</p>
+										</div>
+										<div class="normal-txt">
+											North Jeolla Province boasts its clean environment, prosperous history and culture and unique traditional food, fashion and music. Its on-going projects including Saemangeum Project and New Gunjang Port make the province play a central role in Korea’s trade with China. It is diversifying its businesses from paper and textile to automobile and shipbuilding. Since 2007, it has been developing new growth engines such as components and materials, food and renewable energy.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/jnbk-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info daegu">
+										<img src="../../images/ik-en/img_logo_daegu.png" alt="daegu">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Daegu, a high-tech<br class="pc-content">
+												industry city based on<br class="pc-content">
+												industrial infrastructure
+											</p>
+										</div>
+										<div class="normal-txt">
+											Daegu City is renowned for its cutting edge industry based on its well-established industrial infrastructure. The city has been actively engaged in various national projects, such as designation of special R&D zone, development of knowledge-creation free economic zone and establishment of national science industrial complex, technopolis, comprehensive cutting edge medical complex and robotic industry cluster, and regional development project.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/dg-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info gwangju">
+										<img src="../../images/ik-en/img_logo_gwangju.png" alt="gwangju">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Gwangju, a good place<br class="pc-content">
+												to do business and<br class="pc-content">
+												work in, and the city of<br class="pc-content">
+												justice and abundance
+											</p>
+										</div>
+										<div class="normal-txt">
+											The justice of Gwanju will now create abundance. It is taking another leap towards more open and embracing city and economic ecosystem where anyone with great technology can succeed. While the competitiveness of automobile, electronics, photonics and mold & die industries are reinforced through convergence and integration with new technologies, new businesses of energy industry and cultural contents industry are developed as growth engines in the era of the Fourth Industrial Revolution.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/gj-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info s_jeolla">
+										<img src="../../images/ik-en/img_logo_s_jeolla.png" alt="South jeolla">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												South Jeolla Province, a<br class="pc-content">
+												gateway to China
+											</p>
+										</div>
+										<div class="normal-txt">
+											Northeast Asia is expected to play a pivotal role in the global trade and logistics in the 21st Century. At the center of Northeast Asia lies South Jeolla Province boasting a business-friendly environment including the designation of Daebul Free Economic Zone and Gwangyang Bay Area Free Economic Zone. It is serving as a gateway to China by helping local companies expand their businesses to the Pacific region.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="https://www.jeonnam.go.kr/main.do?menuId=english0000000000" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info s_gyeongsang">
+										<img src="../../images/ik-en/img_logo_s_gyeongsang.png" alt="South gyeongsang">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												South Gyeongsang<br class="pc-content">
+												Province, a massive<br class="pc-content">
+												consumer market of 15<br class="pc-content">
+												million people
+											</p>
+										</div>
+										<div class="normal-txt">
+											South Gyeongsang Province has a massive consumer market of 15 million people with its advantage of being adjacent to the Southeastern industrial cluster, Busan Metropolitan City, Gwangyang-Jinju metropolitan area and Daegu-Pohang metropolitan area. Also, the province is well-known for its largest industrial complex for transportation equipment and cutting-edge defense industry with the well-established R&D infrastructure including national research institutes, universities and corporate research institutes.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="http://www.gyeongnam.go.kr/english/index.gyeong" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info ulsan">
+										<img src="../../images/ik-en/img_logo_ulsan.png" alt="ulsan">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Ulsan,<br class="pc-content">
+												Asia’s 4th largest<br class="pc-content">
+												production city
+											</p>
+										</div>
+										<div class="normal-txt">
+											Ulsan City, the largest industrial city in Korea, ranked 4th in production among Asian countries. It accounts for 15.23% (2012, ranked No.2 in the nation) of Korean industrial production and recorded 101.5 billion dollars (2011, ranked No.1 in the nation) and 56,170 dollars (2012, ranked No.1 in the nation) in exports and per capita GRDP, respectively. Cheap land for industrial use, abundant workforces and great industrial infrastructure have enabled the city to be evaluated as the most corporate-friendly city in Korea based on its 50 years of history as an industrial city. 
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/us-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info busan">
+										<img src="../../images/ik-en/img_logo_busan.png" alt="busan">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Busan,<br class="pc-content">
+												World’s 5th largest<br class="pc-content">
+												cargo port
+											</p>
+										</div>
+										<div class="normal-txt">
+											Busan, with a population of 4 million, is located in the Northeast part of Korea. Along with its magnificent scenery, Busan is called the city of commerce and industry. Busan Port has maintained its status as the leading trading port in Northeast Asia since its opening as an international port in 1876. In addition, the city accounts for 90% of the container shipment and is the world’s 5th largest cargo port.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/bsn-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+									<div class="local_info jeju">
+										<img src="../../images/ik-en/img_logo_jeju.png" alt="jeju">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Jeju Island, the land of<br class="pc-content">
+												promise
+											</p>
+										</div>
+										<div class="normal-txt">
+											The volcanic island Jeju and lava caves are recognized all around the world as they have been listed on the UNESCO World Heritage Site. The Korean government designated Jeju as the Free International City in 2002. In 2006, the government designated the island as the special self-governing province so to allow Jeju to exercise all administrative authority except for defense, diplomacy and jurisdiction. Anyone can benefit from tax breaks and realize their future with the proactive administrative support from the island.
+										</div>
+										<div class="normal-txt">
+											<ul class="list01">
+												<li><span class="bold">행정구역 : </span>5개 자치구</li>
+												<li><span class="bold">주요산업 : </span>자동차, 에너지 문화산업, 바이오</li>
+												<li><span class="bold">업체수 : </span>2,172개</li>
+												<li><span class="bold">고용인원 : </span>64,660명</li>
+												<li><span class="bold">생산액 : </span>293,339억원</li>
+											</ul>
+										</div>
+										<div class="btn-area">
+											<a href="/kotra/html/jj-en/메인.html" class="btn-link btn-default-s bg-green" title="open window" target="_blank"><span>Get in touch now</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$('.btn-default-s').trigger('click');
+
+								// 모바일 일때 지자체 변경
+								function localMapTrans(){
+									var sel_midx = $("#local_choice option").index($("#local_choice option:selected"));
+									
+									$('.map-l > img').removeClass('active').eq(sel_midx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_midx).addClass('active');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$('.sel-local-box ul>li').eq(sel_midx).find('button').addClass('active');
+								}
+								
+								// pc 일때 지자체 변경
+								$('.sel-local-box ul>li>button').on('click', function(){
+									var sel_pcidx = $(this).closest('li').index();
+									
+									$("#local_choice option").eq(sel_pcidx).attr('selected','selected');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$(this).addClass('active');
+									$('.map-l > img').removeClass('active').eq(sel_pcidx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_pcidx).addClass('active');
+								})
+							</script>
+						</div>
+						
+						<div class="section">
+							<!-- 검색 -->
+							<div class="search-area">
+								<div class="form-area">
+									<div class="in">
+										<span class="select-type2">
+											<select name="" id="" title="지역선택 선택">
+												<option value="">지역선택</option>
+											</select>
+										</span>
+										<span class="select-type2">
+											<select name="" id="" title="검색구분 선택">
+												<option value="">검색구분</option>
+											</select>
+										</span>
+										<span class="input-type2"><input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요."></span>
+										<button type="submit" class="btn-default-s">검색</button>	
+									</div>
+								</div>
+							</div>
+							<!-- //검색 -->
+	
+							<div class="table-top">
+								<div class="l item-num">전체 : <span>235</span>건 [<span>1</span>/23페이지]</div>
+								<div class="r">
+									<select name="" id="" class="item-view" title="리스트 개수 선택">
+										<option value="">10개씩</option>
+									</select>
+									<button type="button" class="btn-default-s">보기</button>
+								</div>
+							</div>
+							
+							<!-- 리스트 -->
+							<ul class="normal-board">
+								<li>
+									<div class="num-area">No.<span>1,785</span></div>
+									<div class="txt-area">
+										<a href="투자의기회_일반입지_지역별프로젝트_상세.html">
+											<strong class="tit">안산 첨단 국방산업단지<span class="icon-new">새로운 글</span></strong>
+											<div class="board-list-box">
+												<ul class="list01">
+													<li><span class="bold">작성자 : </span>운영자</li>
+													<li><span class="bold">작성일 : </span>2020.06.20</li>
+													<li><span class="bold">조회수 : </span>1,852</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+								</li>
+							</ul>
+							<!-- //리스트 -->
+	
+							<!-- 페이징 -->
+							<div class="paging">
+								<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로 이동</span></a>
+								<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로 이동</span></a>
+								<span>
+									<strong>1</strong>
+									<a href="#n">2</a>
+									<a href="#n">3</a>
+									<a href="#n">4</a>
+									<a href="#n">5</a>
+								</span>
+								<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로 이동</span></a>
+								<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로 이동</span></a>
+							</div>
+							<!-- 페이징 -->
+						</div>
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

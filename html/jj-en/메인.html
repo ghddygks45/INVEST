@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/jj-en/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/jj-en/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/jj-en/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/jj-en/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>메인페이지 | 제주</title>
+
+</head>
+<body>
+	<div class="wrap gwn-wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container" id="content">
+
+            <div id="visual_wrap">
+                <div class="main_slider">
+                    <div><a href="#n">
+                        <img src="../../images/gwn-kr/visual.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/gwn-kr/visual_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                    <div><a href="#n">
+                        <img src="../../images/gwn-kr/visual.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/gwn-kr/visual_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                </div>
+                <div class="slider_btn">
+                    <span class="count">
+                        <strong>1</strong>/<span id="total"></span>
+                    </span>
+                    <div class="slider_arrow">
+                        <button class="slide_prev"><span class="blind">이전</span></button>
+                        <button class="slide_stop" onclick="sliderStop(this);"><span class="blind">정지</span></button>
+                        <button class="slide_play" onclick="sliderPlay(this);"><span class="blind">재생</span></button>
+                        <button class="slide_next"><span class="blind">다음</span></button>
+                    </div>
+                </div>
+                <ul class="visual_link">
+                    <li><a href="#n" class="list01">투자상담</a></li>
+                    <li><a href="#n" class="list02">투자환경</a></li>
+                    <li><a href="#n" class="list03">News·Event</a></li>
+                    <li><a href="#n" class="list04">홍보자료</a></li>
+                    <li><a href="#n" class="list05">제주라이프</a></li>
+                    <li><a href="#n" class="list06">투자프로젝트</a></li>
+                    <li><a href="#n" class="list07">USEFUL LINKS</a></li>
+                </ul>
+            </div>
+
+            <div id="contents" class="jj-cnt">
+
+                <!-- 뉴스.행사 / 발간물, 홍보영상 -->
+                <div class="inner">
+                    <div class="section1">
+                        <h2 class="h2_tit">News·Event<a href="#n"></a></h2>
+                        <ul>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>05</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주도, 사물인터넷 분야 기술 2건 특허 확보
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>03</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주산 계란 중동 두바이 갔다…한국인 경영 유통업체서 수입
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>29</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                균형발전박람회 온라인 제주 전시관 선보여…디지털 뉴딜 소개
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>22</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                제주도, 185개 관광업체에 272억원 관광진흥기금 융자 지원
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="section2 main_section">
+                        <h2 class="h2_tit">Publications<a href="#n"></a></h2>
+                        <a href="#n">
+                            <div class="img"><img src="../../images/jj-en/img_pub.gif" alt="강원 투자 가이드"></div>
+                            <div class="txt">
+                                <h3>2020 제주 투자정보</h3>
+                                <p>(Gangwon Investment...</p>
+                                <span>2020.06.18</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="section3 main_section">
+                        <h2 class="h2_tit">Promotional Videos<a href="#n"></a></h2>
+                        <a href="#n">
+                            <img src="../../images/jj-en/img_video.gif" alt="East Coast Free Economic Zone Investment Promotion IR">
+                            <h3>제주도에는 제주도가 참 많다</h3>
+                            <p>Zone Investment Promoti...</p>
+                            <span>2020.06.18</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- // 뉴스.행사 / 발간물, 홍보영상 -->
+
+                <!-- 제주 라이프 -->
+                <div class="jj-life">
+                    <div class="life-inner">
+                        <h2>Jeju Life</h2>
+                        <div class="sec1">
+                            <div class="fl">
+                                <ul>
+                                    <li class="life-box1">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=10">
+                                            <div><img src="../../images/jj-en/img_jj_life01.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Leisure Industry</strong></div>
+                                                <div class="iife-t2">From Hallasan Mountain to the Ocean, from Observation to Experience.</div>
+                                                <div class="iife-t3">How Jeju’s Leisure Industry Captivated Tourists from Korea and Beyond.</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box2">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=19">
+                                            <div><img src="../../images/jj-en/img_jj_life02.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Subtropical Crops Industry Part 2</strong></div>
+                                                <div class="iife-t2">Bring minds together to let the light shine. Gongsimchae Agricultural Company: A social enterprise and a tropical and subtropical farm</div>
+                                                <div class="iife-t3 sec1-clamp1">
+                                                    In Korea, there are 330,000 multicultural households, which account for 1.6% of the total number of Korean households. The total number of multicultural household members stands at around a million. The cultural diversification of Korean society has been driving the consumption of tropical and subtropical fruits in the country. However, Korea still has many hurdles to overcome, such as racism and human rights issues experienced by migrant women. Today, a Jeju company is innovating the food industry by working with migrant women in Jeju. The name of the company is Gongsimchae Agricultural Company, which is the Korean word for morning glory (kong xin cai). In Korean, the name means “bring the minds together to let the light shine.” The company produces, distributes, and processes subtropical vegetables, and it runs various activity programs involving the crops. The company’s goal is to become no. 1 in the Korean agricultural sector. 
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <ul>
+                                    <li class="life-box3">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=18">
+                                            <div><img src="../../images/jj-en/img_jj_life03.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Subtropical Crops Industry Part 1</strong></div>
+                                                <div class="iife-t2">Turning a Crisis into an Opportunity How Jeju will Lead the Food Industry with Its Tropical and Subtropical Crops</div>
+                                                <div class="iife-t3 sec1-clamp2">
+                                                    Well-grown olives hang from trees, basking in the sunlight on an open field. Banana trees, each measuring at least 2 m in height, nurture their fruit into full growth. Apple mangoes and papayas wait for the harvest. 
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box4">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=7">
+                                            <div><img src="../../images/jj-en/img_jj_life04.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Cosmetics Ingredient Industry Part 1</strong></div>
+                                                <div class="iife-t2">Beauty industry emerges as a driving force of the future</div>
+                                                <div class="iife-t3">New Functions of Jeju Species Discovered, Cosmetics Ingredients from Jeju</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sec2">
+                            <div class="fl">
+                                <ul>
+                                    <li class="life-box5">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=14">
+                                            <div><img src="../../images/jj-en/img_jj_life05.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Pork Industry</strong></div>
+                                                <div class="iife-t2">The pork industry is a primary industry conducive to value-adding initiatives. It can branch out as a secondary or a third industry. </div>
+                                                <div class="iife-t3 sec2-clamp1">
+                                                    The government provides full support for the improvement of production technologies and the facilitation of pork distribution. As part of its convergent information and communication technology (ICT) efforts, the government is currently developing a system capable of adjusting animal density, disposing wastes, and managing growth environments to maintain the appropriate number of livestock. The government also plans to build an animal waste transfer system to foster a sustainable pork industry that grows with the local communities.
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box6">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=3">
+                                            <div><img src="../../images/jj-en/img_jj_life06.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Renewable Energy Industry Part 2</strong></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <ul>
+                                    <li class="life-box7">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=2">
+                                            <div><img src="../../images/jj-en/img_jj_life07.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Renewable Energy Industry Part 1</strong></div>
+                                                <div class="iife-t2">A leap forward to becoming a global hub for world-class green industries. Our Journey Towards Carbon-Free Island Jeju</div>
+                                                <div class="iife-t3 sec2-clamp2">
+                                                    Industrialization has made the lives of human beings more prosperous, but along with it has come environmental degradation and the depletion of resources. Whenever natural disasters driven by extreme weather have occurred, people have said that the Earth was sick. 
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box8">
+                                        <a href="/jj-en/bbs/i-1536/detail.do?ntt_sn=8">
+                                            <div><img src="../../images/jj-en/img_jj_life08.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>Cosmetics Ingredient Industry Part 2</strong></div>
+                                                <div class="iife-t2 sec2-clamp3">Beauty industry emerges as a driving force of the future</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 제주 라이프 -->
+
+            </div>
+
+		</div>
+        <!-- //container -->
+
+        <script>
+            /* 비주얼 롤링 */
+            $('.main_slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                prevArrow:$('.slide_prev'),
+                nextArrow:$('.slide_next'),
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                        }
+                    }
+                ]
+            });
+            $('#total').text($('.main_slider .slick-slide:not(.slick-cloned)').length);
+            $('.main_slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                $('.slider_btn .count > strong').html(nextSlide + 1);
+            });
+            
+            
+            function sliderStop(obj){
+                $(obj).hide().next().css('display','inline-block');
+                $('.main_slider').slick('slickPause');
+            }
+
+            
+            function sliderPlay(obj){
+                $(obj).hide().prev().css('display','inline-block');
+                $('.main_slider').slick('slickPlay');
+            }
+
+            $('.visual_link').slick({
+                infinite: true,
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: false,
+                arrows:false,
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                            arrows:true,
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        </script>
+        
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

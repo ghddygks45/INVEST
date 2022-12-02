@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/jj-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/jj-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/jj-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/jj-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>메인페이지 | 제주</title>
+
+</head>
+<body>
+	<div class="wrap gwn-wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container" id="content">
+
+            <div id="visual_wrap">
+                <div class="main_slider">
+                    <div id="videoArea" class="video_area pc-content">
+                        <ul class="video">
+                            <li>
+                                <div class="txt_box">
+                                    <div class="txt01">&nbsp;What rhymes with Jeju</div>
+                                    <div class="txt02">&nbsp;going green</div>
+                                </div>
+                                <video playsinline muted class="video w_video">
+                                    <source src="../../file/jj-kr/main01.mp4" type="video/mp4">
+                                </video>
+                            </li>
+                            <li>
+                                <div class="txt_box">
+                                    <div class="txt01">What rhymes with Jeju</div>
+                                    <div class="txt02">clean energy</div>
+                                </div>
+                                <video playsinline muted class="video w_video">
+                                    <source src="../../file/jj-kr/main02.mp4" type="video/mp4">
+                                </video>
+                            </li>
+                            <li>
+                                <div class="txt_box">
+                                    <div class="txt01">What rhymes with Jeju</div>
+                                    <div class="txt02">potential</div>
+                                </div>
+                                <video playsinline muted class="video w_video">
+                                    <source src="../../file/jj-kr/main03.mp4" type="video/mp4">
+                                </video>
+                            </li>
+                            <li>
+                                <div class="txt_box">
+                                    <div class="txt01">What rhymes with Jeju</div>
+                                    <div class="txt02">your plans</div>
+                                </div>
+                                <video playsinline muted class="video w_video">
+                                    <source src="../../file/jj-kr/main04.mp4" type="video/mp4">
+                                </video>
+                            </li>
+                            <li>
+                                <div class="txt_box">
+                                    <div class="txt01">What rhymes with Jeju</div>
+                                    <div class="txt02">vitality</div>
+                                </div>
+                                <video playsinline muted class="video w_video">
+                                    <source src="../../file/jj-kr/main05.mp4" type="video/mp4">
+                                </video>
+                            </li>
+                            <li>
+                                <div class="txt_box">
+                                    <div class="txt01">What rhymes with Jeju</div>
+                                    <div class="txt02">your investment</div>
+                                </div>
+                                <video playsinline muted class="video w_video">
+                                    <source src="../../file/jj-kr/main06.mp4" type="video/mp4">
+                                </video>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><a href="#n">
+                        <img src="../../images/jj-kr/visual01.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/jj-kr/visual01_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                    <div><a href="#n">
+                        <img src="../../images/jj-kr/visual02.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/jj-kr/visual02_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                </div>
+                <div class="slider_btn">
+                    <span class="count">
+                        <strong>1</strong>/<span id="total"></span>
+                    </span>
+                    <div class="slider_arrow">
+                        <button class="slide_prev"><span class="blind">이전</span></button>
+                        <button class="slide_stop" onclick="sliderStop(this);"><span class="blind">정지</span></button>
+                        <button class="slide_play" onclick="sliderPlay(this);"><span class="blind">재생</span></button>
+                        <button class="slide_next"><span class="blind">다음</span></button>
+                    </div>
+                </div>
+                <ul class="visual_link">
+                    <li><a href="#n" class="list01">투자상담</a></li>
+                    <li><a href="#n" class="list02">투자환경</a></li>
+                    <li><a href="#n" class="list03">뉴스·행사</a></li>
+                    <li><a href="#n" class="list04">홍보자료</a></li>
+                    <li><a href="#n" class="list05">제주라이프</a></li>
+                    <li><a href="#n" class="list06">투자프로젝트</a></li>
+                    <li><a href="#n" class="list07">유용한 링크</a></li>
+                </ul>
+            </div>
+            <script>
+                // 메인 동영상 재생
+                $(function(){
+                    var $videoArea = $("#videoArea"),
+                        $videoWrap = $videoArea.find(".video"),
+                        $videoTag = $videoWrap.find("video"),
+                        $videoLi = $videoWrap.find("li"),
+                        $videoInfoWrap = $videoArea.find(".video"),
+                        $videoTxt = $videoInfoWrap.find(">li"),
+                        $videoTxtMove = $videoInfoWrap.find(".txt_box"),
+                        liLength = $videoLi.length - 1,
+                        videoIdx = 0,
+                        videoTarget = $videoTag[0];
+                    
+                        // slide video play
+                        function videoAction(idx){
+                            slideVideo();
+                            videoTarget.play();
+                            if(videoTarget.currentTime > 0){ videoTarget.currentTime = 0; };
+                    
+                            $videoLi.eq(idx).addClass("active").siblings().removeClass("active");
+                            $videoTxt.eq(idx).addClass("active").siblings().removeClass("active");
+                            $videoTxtMove.removeClass("active");
+                            $videoTxt.eq(idx).find(">.txt_box").delay(1000).addClass("active");
+                        };
+                        function slideVideo(){
+                            videoTarget.onended = function() {
+                                if($videoLi.is(".first")){
+                                    $videoLi.eq(0).removeClass("first");
+                                };
+                                videoIdx ++;
+                                (videoIdx > liLength)&&(videoIdx = 0);
+                                videoTarget = $videoTag[videoIdx];
+                                videoAction(videoIdx);
+                            };
+                        };
+                        videoAction(videoIdx);
+                    });
+            </script>
+
+            <div id="contents" class="jj-cnt">
+
+                <!-- 뉴스.행사 / 발간물, 홍보영상 -->
+                <div class="inner">
+                    <div class="section1">
+                        <h2 class="h2_tit">뉴스·행사<a href="#n"></a></h2>
+                        <ul>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>05</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주도, 사물인터넷 분야 기술 2건 특허 확보
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>03</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주산 계란 중동 두바이 갔다…한국인 경영 유통업체서 수입
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>29</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                균형발전박람회 온라인 제주 전시관 선보여…디지털 뉴딜 소개
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>22</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                제주도, 185개 관광업체에 272억원 관광진흥기금 융자 지원
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="section2 main_section">
+                        <h2 class="h2_tit">발간물<a href="#n"></a></h2>
+                        <a href="#n">
+                            <div class="img"><img src="../../images/jj-kr/img_pub.gif" alt="강원 투자 가이드"></div>
+                            <div class="txt">
+                                <h3>2020 제주 투자정보</h3>
+                                <p>(Gangwon Investment...</p>
+                                <span>2020.06.18</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="section3 main_section">
+                        <h2 class="h2_tit">홍보영상<a href="#n"></a></h2>
+                        <a href="#n">
+                            <img src="../../images/jj-kr/img_video.gif" alt="East Coast Free Economic Zone Investment Promotion IR">
+                            <h3>제주도에는 제주도가 참 많다</h3>
+                            <p>Zone Investment Promoti...</p>
+                            <span>2020.06.18</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- // 뉴스.행사 / 발간물, 홍보영상 -->
+
+                <!-- 제주 라이프 -->
+                <div class="jj-life">
+                    <div class="life-inner">
+                        <h2>제주라이프</h2>
+                        <div class="sec1">
+                            <div class="fl">
+                                <ul>
+                                    <li class="life-box1">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=9">
+                                            <div><img src="../../images/jj-kr/img_jj_life01.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>레저산업</strong></div>
+                                                <div class="iife-t2">한라산에서 바다까지, 보는 여행에서 체험하는여행으로.</div>
+                                                <div class="iife-t3">제주형 레저산업, 국내외 관광객을 유혹하다.</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box2">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=18">
+                                            <div><img src="../../images/jj-kr/img_jj_life02.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>아열대 작물 산업 2부</strong></div>
+                                                <div class="iife-t2">함께 마음을 모으면 빛이난다.‘공심채농업회사법인’</div>
+                                                <div class="iife-t3 sec1-clamp1">
+                                                    우리나라 가구 중 1.6%인
+                                                    33만이 다문화 가구다.
+                                                    다문화 가구원은 100만명에
+                                                    이른다. 열대 및 아열대 작물
+                                                    소비는 다문화 사회 전환을
+                                                    기회로 점차 증가하고 있다.
+                                                    하지만, 여전히 인종 차별과
+                                                    이주 여성 인권 문제 등 사회
+                                                    문제가 끊이지 않는다. ‘함께
+                                                    모으면 빛이 난다.’ 뜻의
+                                                    이름을 가진 채소 ‘공심채’
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <ul>
+                                    <li class="life-box3">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=17">
+                                            <div><img src="../../images/jj-kr/img_jj_life03.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>아열대 작물 산업 1부</strong></div>
+                                                <div class="iife-t2">기후 변화 위기를 기회로 미래 먹거리를 선도하는 제주 열대 및 아열대 작물산업</div>
+                                                <div class="iife-t3 sec1-clamp2">
+                                                    제주 햇살을 머금고 잘 익은
+                                                    올리브가 노지에 있는
+                                                    올리브 나무에 매달려있다.
+                                                    2미터가 넘는 바나나 나무
+                                                    에는 바나나가 주렁주렁
+                                                    열려 있고 사과처럼
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box4">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=4">
+                                            <div><img src="../../images/jj-kr/img_jj_life04.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>화장품 원료산업 1부</strong></div>
+                                                <div class="iife-t2">한라산에서 바다까지, 보는 여행에서 체험하는 여행으로.</div>
+                                                <div class="iife-t3">제주형 레저산업, 국내외 관광객을 유혹하다.</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sec2">
+                            <div class="fl">
+                                <ul>
+                                    <li class="life-box5">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=13">
+                                            <div><img src="../../images/jj-kr/img_jj_life05.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>양돈산업</strong></div>
+                                                <div class="iife-t2">2차 가공업, 3차 서비스업까지 확장성이 있는 부가가치가 큰 1차 산업</div>
+                                                <div class="iife-t3 sec2-clamp1">
+                                                    제주도에서는 양돈산업의
+                                                    경쟁력 확보를 위해 생산
+                                                    기술 향상 및 유통 활성화에
+                                                    적극 지원 중이다. ICT
+                                                    융복합 사업으로 적정 사육
+                                                    두수를 유지해 사육 밀도를
+                                                    조정하고 분뇨처리와 사육
+                                                    환경 관리를 위한 시스템을
+                                                    개발 중이다. 또한, 가축 분뇨
+                                                    인계 시스템을 구축해 지
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box6">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=1">
+                                            <div><img src="../../images/jj-kr/img_jj_life06.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>신재생 에너지 산업</strong></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <ul>
+                                    <li class="life-box7">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=2">
+                                            <div><img src="../../images/jj-kr/img_jj_life07.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>신재생 에너지 산업</strong></div>
+                                                <div class="iife-t2">전 세계가 주목하는 녹색 산업의 글로벌 메카로 도약하다. ‘탄소 없는 섬, 제주’를 향해 나아가는 굳건한발걸음</div>
+                                                <div class="iife-t3 sec2-clamp2">
+                                                    산업화가 남긴 눈부신 유산은 인류에게
+                                                    윤택한 삶을 안겨주었지만, 환경파괴와
+                                                    자원고갈 문제 또한 우리의 손에 쥐여
+                                                    주었다. 이상 기후로 인한 자연재난이
+                                                    일어날 때마다 대중 사이에선 ‘지구가
+                                                    아프다’는 표현이 자주 오르내린다
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box8">
+                                        <a href="/jj-kr/bbs/i-1154/detail.do?ntt_sn=5">
+                                            <div><img src="../../images/jj-kr/img_jj_life08.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>화장품 원료산업 2부</strong></div>
+                                                <div class="iife-t2 sec2-clamp3">한라산에서 바다까지, 보는여행에서</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 제주 라이프 -->
+
+            </div>
+
+		</div>
+        <!-- //container -->
+
+        <script>
+            /* 비주얼 롤링 */
+            $('.main_slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                prevArrow:$('.slide_prev'),
+                nextArrow:$('.slide_next'),
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                        }
+                    }
+                ]
+            });
+            $('#total').text($('.main_slider .slick-slide:not(.slick-cloned)').length);
+            $('.main_slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                $('.slider_btn .count > strong').html(nextSlide + 1);
+            });
+            
+            
+            function sliderStop(obj){
+                $(obj).hide().next().css('display','inline-block');
+                $('.main_slider').slick('slickPause');
+            }
+
+            
+            function sliderPlay(obj){
+                $(obj).hide().prev().css('display','inline-block');
+                $('.main_slider').slick('slickPlay');
+            }
+
+            $('.visual_link').slick({
+                infinite: true,
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: false,
+                arrows:false,
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                            arrows:true,
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        </script>
+        
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

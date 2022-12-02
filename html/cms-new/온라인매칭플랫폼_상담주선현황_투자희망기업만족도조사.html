@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">온라인매칭플랫폼</a>
+				<span>&gt;</span>
+				<strong>상담주선 현황</strong>
+			</p>
+
+			<h2 id="tit_page">상담주선 현황</h2>
+
+			<ul class="tab_menu">
+				<li><a href="#">상태관리</a></li>
+				<li><a href="#">상담요청서</a></li>
+				<li><a href="#">답변</a></li>
+				<li><a href="#">투자가 만족도 조사</a></li>
+				<li class="on"><a href="#">국내기업 만족도 조사</a></li>
+			</ul>
+
+			<h3 class="tit1">상담요청</h3>
+			<table class="tb_write">
+				<caption>상담요청</caption>
+				<colgroup>
+					<col style="width: 200px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>작성자</th>
+						<td>GEISTKOREA</td>
+					</tr>
+					<tr>
+						<th>작성일자</th>
+						<td>2022-02-07</td>
+					</tr>
+					<tr>
+						<th>상담만족도</th>
+						<td>
+							<select>
+								<option>★★★★★</option>
+								<option>★★★★</option>
+								<option>★★★</option>
+								<option>★★</option>
+								<option>★</option>
+							</select>
+							<a href="#;" class="ml10"><img src="../../images/cms/ico_warning_gray.png" alt=""></a>
+						</td>
+					</tr>
+					<tr>
+						<th>투자가 구분</th>
+						<td>
+							<input type="checkbox" name="chk1" id="chk1-1" checked>
+							<label for="chk1-1">CVC</label>
+							<input type="checkbox" name="chk1" id="chk1-2">
+							<label for="chk1-2">VC</label>
+							<input type="checkbox" name="chk1" id="chk1-3">
+							<label for="chk1-3">PE</label>
+							<input type="checkbox" name="chk1" id="chk1-4">
+							<label for="chk1-4">글로벌기업</label>
+							<input type="checkbox" name="chk1" id="chk1-5">
+							<label for="chk1-5">투자가 아님</label>
+							<input type="checkbox" name="chk1" id="chk1-6">
+							<label for="chk1-6" class="mr5">기타</label>
+							<input type="text">
+						</td>
+					</tr>
+					<tr>
+						<th>논의항목</th>
+						<td>
+							<input type="checkbox" name="chk2" id="chk2-1" checked>
+							<label for="chk2-1">재무적 투자</label>
+							<input type="checkbox" name="chk2" id="chk2-2">
+							<label for="chk2-2">전략적투자</label>
+							<input type="checkbox" name="chk2" id="chk2-3">
+							<label for="chk2-3">M&A</label>
+							<input type="checkbox" name="chk2" id="chk2-4">
+							<label for="chk2-4">JV</label>
+							<input type="checkbox" name="chk2" id="chk2-5">
+							<label for="chk2-5">기술제휴</label>
+							<input type="checkbox" name="chk2" id="chk2-6">
+							<label for="chk2-6">업무제휴</label>
+							<input type="checkbox" name="chk2" id="chk2-7">
+							<label for="chk2-7" class="mr5">기타</label>
+							<input type="text">
+						</td>
+					</tr>
+					<tr>
+						<th class="color-red">투자 논의금액</th>
+						<td><input type="text" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<th class="color-red">투자 예정시기</th>
+						<td><input type="text" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<th>세부 논의내용</th>
+						<td><textarea name="" id="" class="txt_area"></textarea></td>
+					</tr>
+					<tr>
+						<th>후속상담 진행</th>
+						<td>
+							<input type="radio" name="chk3" id="chk3-1" checked>
+							<label for="chk3-1">예</label>
+							<input type="radio" name="chk3" id="chk3-2">
+							<label for="chk3-2">아니오</label>
+						</td>
+					</tr>
+					<tr>
+						<th>IK지원 필요여부</th>
+						<td>
+							<input type="radio" name="chk4" id="chk4-1" checked>
+							<label for="chk4-1">예</label>
+							<input type="radio" name="chk4" id="chk4-2">
+							<label for="chk4-2">아니오</label>
+						</td>
+					</tr>
+					<tr>
+						<th>IK지원요청사항 (필요시)</th>
+						<td><textarea name="" id="" class="txt_area"></textarea></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_area">
+				<div class="list_ctrl">
+					<a href="#" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+				</div>
+				<a href="#" class="btn btn_lg act"><i class="fa fa-save"></i> 수정</a>
+				<a href="#" class="btn btn_lg"><i class="fa fa-refresh"></i> 초기화</a>
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

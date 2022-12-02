@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">IKMP</a>
+				<span>&gt;</span>
+				<strong>IKMP 사업신청내역 관리</strong>
+			</p>
+
+			<h2 id="tit_page">투자가 회원 정보관리</h2>
+
+			<ul class="tab_menu">
+				<li><a href="#n">상태관리</a></li>
+				<li><a href="#n">투자가 정보</a></li>
+				<li class="on"><a href="#n">홍보정보</a></li>
+				<li><a href="#n">상담현황</a></li>
+			</ul>
+
+			<div class="mt25">
+				<h3 class="tit1 mt25">등록정보</h3>
+				<table class="tb_write">
+					<colgroup>
+						<col style="width:12%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>최종수정일</th>
+							<td>2021.01.25</td>
+						</tr>
+						<tr>
+							<th>조회수</th>
+							<td>1,000</td>
+						</tr>
+						<tr>
+							<th>공개여부</th>
+							<td><strong class="color-blue">공개</strong></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="mt25">
+				<h3 class="tit1 mt25">투자가 정보</h3>
+				<table class="tb_write">
+					<colgroup>
+						<col style="width:12%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>투자가/기업명(영문)</th>
+							<td>Huayi Brothers Investment</td>
+						</tr>
+						<tr>
+							<th>기업 CI</th>
+							<td>
+								<span class="vam mr5">첨부된 파일명.zip</span>
+								<button type="button" class="bold underline">[다운로드]</button>
+								<button type="button" class="bold underline">[삭제]</button>
+								<div class="mt5">
+									<span class="attach">
+										<a href="#n" target="_blank"><input type="text" style="width:250px"></a>
+									</span>
+									<a href="#" class="btn"><i class="fa fa-search"></i> 찾아보기</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>기업소개(영문)</th>
+							<td>
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>홍보영상 URL</th>
+							<td><input type="text" style="width: 100%;"></td>
+						</tr>
+						<tr>
+							<th>브로슈어</th>
+							<td>
+								<span class="vam mr5">첨부된 파일명.zip</span>
+								<button type="button" class="bold underline">[다운로드]</button>
+								<button type="button" class="bold underline">[삭제]</button>
+								<div class="mt5">
+									<span class="attach">
+										<a href="#n" target="_blank"><input type="text" style="width:250px"></a>
+									</span>
+									<a href="#" class="btn"><i class="fa fa-search"></i> 찾아보기</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><span class="color-red">연 매출액 또는 운용자산</span>(USD)</th>
+							<td>
+								<select name="" id="">
+									<option value="">USD 100~500만</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>임직원 수</th>
+							<td><input type="text" style="width: 100px;"> 명</td>
+						</tr>
+						<tr>
+							<th><span class="color-red">주요 포트폴리오</span></th>
+							<td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="mt25">
+				<h3 class="tit1 mt25">투자가 정보</h3>
+				<table class="tb_write">
+					<colgroup>
+						<col style="width:12%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>투자형태</th>
+							<td>
+								<input type="checkbox" id="check1" checked>
+								<label for="check1">재무적투자(FI)</label>
+								<input type="checkbox" id="check2">
+								<label for="check2">전략적투자(SI)</label>
+								<input type="checkbox" id="check3">
+								<label for="check3">합작법인(JV)</label>
+								<input type="checkbox" id="check4">
+								<label for="check4">M&amp;A</label>
+								<input type="checkbox" id="check5">
+								<label for="check5">직접진출</label>
+							</td>
+						</tr>
+						<tr>
+							<th>투자규모(USD)</th>
+							<td>
+								<select name="" id="">
+									<option value="">USD 100~500만</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>투자조건</th>
+							<td>
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>투자 관심분야</th>
+							<td>
+								<textarea name="" id="" cols="30" rows="10"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="btn_area">
+				<div class="fl"><a href="#n" class="btn btn_lg basic"><i class="fa fa-list-ul"></i> 목록</a></div>
+				<div class="fr">
+					<a href="#n" class="btn btn_lg act"><i class="fa fa-list-ul"></i> 수정</a>
+					<a href="#n" class="btn btn_lg"><i class="fa fa-trash-o"></i> 삭제</a>
+				</div>
+			</div>
+
+			<!-- 표준산업분류 선택 - 레이이팝업 -->
+			<div id="layer_sample" class="layer_popup modal" style="width:800px">
+				<!-- // 레이어 크기 변경시 사이즈 지정 style="width:600px; height:500px;" -->
+				<div class="bg"></div>
+				<h2 class="tit_layer">표준산업분류 선택</h2>
+				<div class="layer_cont">
+					<div class="sort_wrap">
+						<div class="l">
+							<h3><span class="color-red">01</span> 대분류 선택</h3>
+							<ul>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;" class="on">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+							</ul>
+						</div>
+						<div class="r">
+							<h3><span class="color-red">02</span> 중분류 선택</h3>
+							<ul>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;" class="on">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+								<li>
+									<a href="#;">농업, 임업 및 어업</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn_area">
+						<a href="#translation" class="btn btn_lg act">선택</a>
+						<a href="#translation" class="btn btn_lg basic" onclick="closeLayer(this);">취소</a>
+					</div>
+				</div>
+				<button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+			</div>
+			<!-- // 표준산업분류 선택 - 레이이팝업 -->
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

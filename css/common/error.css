@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+/* Font */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: "normal";
+  font-weight: 300;
+  src: local("※"), url("../../fonts/NotoSans-Light.woff2") format("woff2"), url("../../fonts/NotoSans-Light.woff") format("woff"); }
+@font-face {
+  font-family: "Noto Sans";
+  font-style: "normal";
+  font-weight: 400;
+  src: local("※"), url("../../fonts/NotoSans-Regular.woff2") format("woff2"), url("../../fonts/NotoSans-Regular.woff") format("woff"); }
+@font-face {
+  font-family: "Noto Sans";
+  font-style: "normal";
+  font-weight: 500;
+  src: local("※"), url("../../fonts/NotoSans-Medium.woff2") format("woff2"), url("../../fonts/NotoSans-Medium.woff") format("woff"); }
+@font-face {
+  font-family: "Noto Sans";
+  font-style: "normal";
+  font-weight: 700;
+  src: local("※"), url("../../fonts/NotoSans-Bold.woff2") format("woff2"), url("../../fonts/NotoSans-Bold.woff") format("woff"); }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  -webkit-text-size-adjust: none; }
+
+body {
+  -webkit-overflow-scrolling: touch;
+  line-height: 1.5;
+  font-family: 'Noto Sans', Dotum;
+  font-size: 13px;
+  font-weight: 300;
+  word-break: keep-all;
+  color: #666;
+  padding: 0;
+  padding-right: constant(safe-area-inset-right);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left); }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: normal;
+  font-weight: normal; }
+
+ul, ol, li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+  a:hover, a:active, a:visited {
+    text-decoration: none; }
+
+img {
+  border: 0;
+  vertical-align: top; }
+
+button {
+  border: 0;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 300; }
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d7d7d7;
+  font-family: inherit;
+  font-weight: 300;
+  resize: none; }
+
+em, address {
+  font-style: normal; }
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse; }
+
+caption {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  color: transparent; }
+
+label {
+  vertical-align: middle;
+  cursor: pointer; }
+
+input[type=text], input[type=password], input[type=date], input[type=tel] {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  box-sizing: border-box; }
+
+select, textarea {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  box-sizing: border-box; }
+
+input[type=checkbox], input[type=radio] {
+  vertical-align: middle; }
+
+main {
+  display: block; }
+
+strong {
+  font-weight: 500;
+  color: #333; }
+
+select::-ms-expand {
+  display: none; }
+
+::selection {
+  background: #92cfe7; }
+
+::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
+  color: #666 !important; }
+
+.ie9 select {
+  padding: 0 0 0 5px;
+  background-image: none !important; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  -webkit-text-size-adjust: none; }
+
+body {
+  -webkit-overflow-scrolling: touch;
+  min-width: 320px;
+  background: #e7f5f2 url(../../images/error/bg_m_error.png) no-repeat 50% -30px;
+  background-size: cover;
+  line-height: 1.5;
+  font-family: Noto Sans,Dotum;
+  font-size: 13px;
+  font-weight: 300;
+  word-break: keep-all;
+  color: #666; }
+
+body.error_404{background-image:url(../../images/error/bg_m_404_error.png);}
+body.error_500{background-image:url(../../images/error/bg_m_500_error.png);}
+
+.error-wrap {
+  padding: 65vw 10px 80px;
+  text-align: center; }
+
+.error-msg > p:not(:last-child) {
+  margin-bottom: 12px; }
+
+.f-msg {
+  letter-spacing: -.5px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #222; }
+
+.error-btn {
+  margin-top: 20px;
+  font-size: 0; }
+
+.error-btn a {
+  display: inline-block;
+  width: 94px;
+  height: 37px;
+  border-radius: 3px;
+  line-height: 37px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  color: #fff; }
+
+.error-btn a:first-child {
+  margin-right: 7px;
+  background-color: #1686f0; }
+
+.error-btn a:last-child {
+  background-color: #666; }
+
+@media screen and (max-width: 462px) {
+  .error-wrap {
+    padding-top: 316px; } }
+@media screen and (min-width: 1217px) {
+  body {
+    font-size: 15px;
+    background-image: url(../../images/error/bg_error.png);
+    background-size: auto; }
+
+  body.error_404{background-image:url(../../images/error/bg_404_error.png);}
+  body.error_500{background-image:url(../../images/error/bg_500_error.png);}
+
+  .error-wrap {
+    padding: 560px 0 120px; }
+
+  .error-msg > p:not(:last-child) {
+    margin-bottom: 22px; }
+
+  .f-msg {
+    letter-spacing: 0;
+    font-size: 22px; }
+
+  .error-btn {
+    margin-top: 30px;
+    font-size: 0; }
+
+  .error-btn a {
+    width: 114px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 15px; }
+
+  .error-btn a:first-child {
+    margin-right: 10px; } }
+
+/*# sourceMappingURL=error.css.map */

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta property="og:description" content="" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/common/favicon.ico" />
+	<link rel="stylesheet" href="css/ik-kr/style.css">
+	<link rel="stylesheet" href="css/ik-kr/accessibility.css">
+	<link rel="stylesheet" href="css/ik-kr-new/style_20220216.css">
+	<link rel="stylesheet" href="css/ik-kr/swiper.min.css">
+	<link rel="stylesheet" href="resources/plugins/billboard/billboard.min.css">
+	<script src="js/common/jquery-1.11.2.min.js"></script>
+	<script src="js/common/jquery-ui.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="resources/plugins/slick.min.js"></script>
+	<script src="resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="resources/plugins/es6-promise.auto.js"></script>
+	<script src="resources/plugins/html2canvas.min.js"></script>
+	<script src="resources/plugins/jspdf.min.js"></script>
+	<script src="resources/plugins/canvg.min.js"></script>
+	<script src="resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="resources/plugins/billboard/billboard.min.js"></script>
+	<script src="js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="js/ik-kr/main.js"></script>
+	<script src="js/common/pub.js"></script>
+	<script src="js/ik-kr/accessibility.js"></script>
+	<script src="js/ik-kr/swiper.min.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>Invest KOREA</title>
+
+</head>
+
+<body>
+	<div class="wrap main">
+
+		<!-- id값은 팝업마다 다르게 줘야함 -->
+		<!-- <div class="main-layer-popup" id="popup1" style="top: 50px; left: 100px;" tabindex="0">
+			<div class="layer-popup">
+				<div class="top">
+					코로나 바이러스
+					<a href="#n" onclick="closePopup(this);return false;"><span class="blind">닫기</span></a>
+				</div>
+				<div class="pop-content">
+					<a href="#"><img src="images/ik-kr/pop_img.gif" alt=""></a>
+					<div class="btm">
+						<a href="#n" onclick="PopupCloseDay(this);return false;">오늘 하루 보이지 않기</a>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<!-- id값은 팝업마다 다르게 줘야함 -->
+		<!-- <div class="main-layer-popup" id="popup2" style="top: 50px; left: 430px;" tabindex="0">
+			<div class="layer-popup">
+				<div class="top">
+					코로나 바이러스
+					<a href="#n" onclick="closePopup(this);return false;"><span class="blind">닫기</span></a>
+				</div>
+				<div class="pop-content">
+					<a href="#"><img src="images/ik-kr/pop_img.gif" alt=""></a>
+					<div class="btm">
+						<a href="#n" onclick="PopupCloseDay(this);return false;">오늘 하루 보이지 않기</a>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="cookie-area">
+			<div class="cookie-box">
+				<div class="inner">
+					<strong>Invest KOREA는 웹 사이트의 원활한 운영을 위해 쿠키를 사용합니다.</strong>
+					<p>
+						사이트 운영을 위해 필수적으로 사용되는 필수 쿠키와 웹 사이트 이용현황 분석을 위해 사용되는 분석쿠키로 구분됩니다.<br>
+						<span class="col-yellow">단, 개인의 성향 분석용 또는 마케팅용으로 활용될 수 있는 개인정보는 전혀 수집하지 않는 공공 서비스입니다.</span><br>
+						대한무역투자진흥공사(KOTRA) Invest KOREA 웹 사이트 이용자는 쿠키 허용 여부를 선택할 수 있습니다.
+					</p>
+					<div class="btn-area">
+						<a href="#n" class="bg-white" onclick="$('.cookie-area').remove();">모든 쿠키 허용</a>
+						<a href="html/ik-kr/홈페이지이용안내_쿠키정책.html">쿠키 정책 및 쿠키허용여부 설정</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="html/ik-kr/include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<script>
+			// 모바일 검색 추천검색어 슬라이드
+			setTimeout(function () {
+				$('.search_word_slider > ul').slick({
+					infinite: true,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					autoplay: false,
+					arrows: true,
+				});
+			}, 1000);
+		</script>
+
+		<!-- container -->
+		<div class="container" id="content">
+
+			<!-- visual -->
+			<div class="sec01 sec_visual">
+				<div class="visual-wrap">
+					<div class="visual-box">
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual01_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual01.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual02_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual02.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual03_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual03.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual04_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual04.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual05_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual05.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual06_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual06.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#n">
+								<img src="images/ik-kr/new_20220216/visual07_m.jpg" alt="" class="m-content">
+								<img src="images/ik-kr/new_20220216/visual07.jpg" alt="" class="pc-content">
+							</a>
+						</div>
+					</div>
+					<div class="visual_quick">
+						<ul>
+							<li class="bg01"><a href="#n">IKMP</a></li>
+							<li class="bg08"><a href="#n">서식자료</a></li>
+							<!--<li class="bg02"><a href="#n">투자초기 비용계산</a></li>-->
+							<li class="bg03"><a href="#n">FAQ</a></li>
+							<li class="bg04"><a href="#n">투자절차</a></li>
+							<li class="bg05"><a href="#n">외국인투자 옴부즈만</a></li>
+							<li class="bg06"><a href="#n">온라인 컨설팅</a></li>
+							<li class="bg07"><a href="#n">Invest KOREA Magazine</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- <div class="visual_search">
+					<h2>맞춤정보 검색 서비스</h2>
+					<p>Invest KOREA에서는 한국에 관심을 가지고 있는 투자가 여러분께 투자유형별 정보 추천 서비스를 제공하고 있습니다.</p>
+					<div class="btn_wrap">
+						<div class="l_box">
+							<a href="#;" class="btn_green">그린필드</a>
+							<a href="#;" class="btn_default">M&amp;A (지분)</a>
+						</div>
+						<div class="r_box">
+							<a href="#;" class="btn_blue">검색</a>
+						</div>
+					</div>
+				</div> -->
+				<script>
+					/* 비주얼 롤링 */
+					$('.visual-box').slick({
+						infinite: true,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						dots: true,
+						autoplay: false,
+						autoplaySpeed: 5000,
+						arrows: false,
+					});
+
+					$('.slick-dots').wrap("<div class=\"dots_wrap\">");
+					$('.dots_wrap').append(
+						"<button type=\"button\" class=\"btn_stop\"onclick=\"SliderStop(this);\"><span class=\"blind\">정지<\/span><\/button>"
+					);
+					$('.dots_wrap').append(
+						"<button type=\"button\" class=\"btn_play\"onclick=\"SliderPlay(this);\"><span class=\"blind\">시작<\/span><\/button>"
+					);
+
+					function SliderStop(obj) {
+						$(obj).hide().next().css('display', 'inline-block');
+						$('.visual-box').slick('slickPause');
+						$('.btn_play').attr("tabindex", -1).focus();
+					}
+
+					function SliderPlay(obj) {
+						$(obj).hide().prev().css('display', 'inline-block');
+						$('.visual-box').slick('slickPlay').focus();
+						$('.btn_stop').attr("tabindex", -1).focus();
+					}
+
+
+					/* 비주얼 바로가기 슬라이드 */
+					var slider = $('.visual_quick > ul');
+					var slickOptions = {
+						infinite: false,
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						dots: false,
+						autoplay: false,
+						arrows: true
+					};
+					$(window).on('load resize', function () {
+						if ($(window).width() > 1216) {
+							slider.slick('unslick');
+						} else {
+							slider.not('.slick-initialized').slick(slickOptions);
+						}
+					});
+				</script>
+			</div>
+			<!-- // visual -->
+
+			<!-- What's New -->
+			<div class="sec03 sec_new">
+				<div class="inner-sec">
+					<div class="tit_wrap">
+						<h2 class="l main_tit">What's New</h2>
+						<div class="r">
+							<span>공식 홍보 채널</span>
+							<a href="#;"><img src="images/ik-kr/new_20220216/ico_in.png" alt="in"></a>
+							<a href="#;"><img src="images/ik-kr/new_20220216/ico_youtube.png" alt="youtube"></a>
+						</div>
+					</div>
+					<div class="box-area">
+						<!-- 왼쪽 컨텐츠 -->
+						<div class="l-box">
+							<div class="tab-area notice">
+								<ul class="tab-menu">
+									<li class="active"><a href="#n" title="선택됨">성공사례</a></li>
+									<li><a href="#n">Future Unicorn</a></li>
+									<li><a href="#n">Location Report</a></li>
+									<li><a href="#n">동영상</a></li>
+									<li><a href="#n">YouTube</a></li>
+								</ul>
+								<div class="tab-box">
+									<div class="tab-contents active">
+										<div class="slide">
+											<div>
+												<a href="#n" class="cont-box">
+													<div class="pic">
+														<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+													</div>
+													<div class="cont">
+														<ul class="info">
+															<li>2020.10.14</li>
+															<li><span class="main-font-col-blue">성공사례</span></li>
+														</ul>
+														<div class="cont-title">
+															<div href="#n" class="tt text-el02-03">
+																Learning Must Go On: Uninterrupted Education amid
+																COVID-19COVID-19COVID-19
+															</div>
+														</div>
+														<div class="cont-text">
+															Dulwich College is one of the oldest independent
+															schools in the UK, founded in South London as a
+															boys’ school in 1619. Dulwich College International
+															(DCI) was established to bring the Dulwich
+														</div>
+													</div>
+												</a>
+											</div>
+										</div>
+										<div class="slide">
+											<div>
+												<a href="#n" class="cont-box">
+													<div class="pic">
+														<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+													</div>
+													<div class="cont">
+														<ul class="info">
+															<li>2020.10.14</li>
+															<li><span class="main-font-col-blue">성공사례</span></li>
+														</ul>
+														<div class="cont-title">
+															<div href="#n" class="tt text-el02-03">
+																Learning Must Go On: Uninterrupted Education amid
+																COVID-19COVID-19COVID-19
+															</div>
+														</div>
+														<div class="cont-text">
+															Dulwich College is one of the oldest independent
+															schools in the UK, founded in South London as a
+															boys’ school in 1619. Dulwich College International
+															(DCI) was established to bring the Dulwich
+														</div>
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="tab-contents">
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="pic">
+													<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<div href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid
+															COVID-19
+														</div>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-contents">
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2020.12.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2020.12.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-contents">
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2021.10.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<img src="images/ik-kr/new_20220216/img_news.jpg" alt="">
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2021.10.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-contents youtube">
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<a href="#;" target="_blank">
+														<img src="images/ik-kr/new_20220216/img_youtube.jpg" alt="">
+													</a>
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2021.10.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="slide">
+											<div class="cont-box">
+												<div class="pic">
+													<a href="#;" target="_blank">
+														<img src="images/ik-kr/new_20220216/img_youtube.jpg" alt="">
+													</a>
+												</div>
+												<div class="cont">
+													<ul class="info">
+														<li>2021.10.14</li>
+														<li><span class="main-font-col-blue">성공사례</span></li>
+													</ul>
+													<div class="cont-title">
+														<a href="#n" class="tt text-el02-03">
+															Learning Must Go On: Uninterrupted Education amid COVID-19
+														</a>
+													</div>
+													<div class="cont-text">
+														Dulwich College is one of the oldest independent
+														schools in the UK, founded in South London as a
+														boys’ school in 1619. Dulwich College International
+														(DCI) was established to bring the Dulwich
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- // 왼쪽 컨텐츠 -->
+
+						<!-- 오른쪽 컨텐츠 -->
+						<div class="r-box">
+							<div class="tab-area notice type02">
+								<ul class="tab-menu">
+									<li class="active"><a href="#n">투자뉴스</a></li>
+									<li><a href="#n">산업동향</a></li>
+									<li><a href="#n">발간물</a></li>
+								</ul>
+								<div class="tab-box">
+									<div class="tab-contents active">
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.10.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+															investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="tab-contents">
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.12.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2021.01.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="tab-contents">
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2021.02.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.10.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2020.11.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="tab-contents">
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2021.03.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="#n" class="cont-box">
+												<div class="cont">
+													<ul class="info">
+														<li>2021.03.14</li>
+														<li><span class="main-font-col-green">Investment News</span>
+														</li>
+													</ul>
+													<div class="cont-title">
+														<div class="tt">
+															S. Korea unveils huge investment plan for biohealth industry
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- // 오른쪽 컨텐츠 -->
+					</div>
+				</div>
+			</div>
+			<!-- // What's New -->
+
+			<!-- Why KOREA-->
+			<div class="sec_why">
+				<div class="inner">
+					<div class="con_l">
+						<div class="sec_tit">
+							<h2 class="main_tit">Why KOREA</h2>
+							<strong>Finding Business Opportunities in Korea</strong>
+							<p>Invest KOREA는 외국인 투자유치를 위한 플랫폼으로<br>당신의 한국진출을 응원합니다.</p>
+						</div>
+						<div class="sec_link_wrap">
+							<div class="link">
+								<button type="button" title="열기">지속 성장하는 안정적 경제</button>
+								<ul>
+									<li><a href="#;">지속 성장하는 안정적 경제</a></li>
+									<li><a href="#;">세계 최고 디지털 인프라</a></li>
+									<li><a href="#;">풍부한 전문인력과 첨단 혁신 역량</a></li>
+									<li><a href="#;">매력적인 글로벌 테스트베드 시장</a></li>
+									<li><a href="#;">동북아 무역, 물류 허브</a></li>
+									<li><a href="#;">부상하는 e-commerce 시장</a></li>
+									<li><a href="#;">우수한 기업 경영 기반</a></li>
+								</ul>
+							</div>
+							<a href="#;" class="btn_move">이동</a>
+						</div>
+					</div>
+					<div class="con_r">
+						<div class="sec_why_slider swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<a href="#;" class="bg01">
+										<h3>정보통신 ICT</h3>
+									</a>
+									<a href="#;" class="bg02">
+										<h3>신재생 에너지</h3>
+									</a>
+									<a href="#;" class="bg03">
+										<h3>의약·바이오</h3>
+									</a>
+									<a href="#;" class="bg04">
+										<h3>반도체</h3>
+									</a>
+									<a href="#;" class="bg05">
+										<h3>디스플레이</h3>
+									</a>
+									<a href="#;" class="bg06">
+										<h3>자동차부품</h3>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;" class="bg07">
+										<h3>정밀화학</h3>
+									</a>
+									<a href="#;" class="bg08">
+										<h3>항공우주</h3>
+									</a>
+									<a href="#;" class="bg09">
+										<h3>기계산업</h3>
+									</a>
+									<a href="#;" class="bg10">
+										<h3>조선해양</h3>
+									</a>
+									<a href="#;" class="bg11">
+										<h3>금융</h3>
+									</a>
+									<a href="#;" class="bg12">
+										<h3>문화·콘텐츠</h3>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;" class="bg13">
+										<h3>관광</h3>
+									</a>
+									<a href="#;" class="bg14">
+										<h3>유통</h3>
+									</a>
+									<a href="#;" class="bg15">
+										<h3>물류</h3>
+									</a>
+									<a href="#;" class="bg16">
+										<h3>식품</h3>
+									</a>
+									<a href="#;" class="bg17">
+										<h3>패션</h3>
+									</a>
+									<a href="#;" class="bg18">
+										<h3>뷰티</h3>
+									</a>
+								</li>
+							</ul>
+							<div class="sec_paging">
+								<div class="swiper-button-prev swiper-arrow"></div>
+								<div class="swiper-pagination"></div>
+								<div class="swiper-button-next swiper-arrow"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				// 모바일 셀렉트
+				$(document).ready(function () {
+					$('.sec_link_wrap button').click(function () {
+						$(this).toggleClass('active');
+						$(this).next('ul').fadeToggle('fast');
+						if ($('.sec_link_wrap button').hasClass('active')) {
+							$(this).attr('title', '닫기');
+						} else {
+							$(this).attr('title', '열기');
+						}
+					});
+
+					$(window).on('resize', function () {
+						linkSelect();
+					})
+
+					linkSelect();
+
+					function linkSelect() {
+						var windowW = $(window).width();
+						if (windowW < 1217) {
+							$('.sec_link_wrap ul').hide();
+							$('.sec_link_wrap ul li> a').click(function () {
+								var txt = $(this).text();
+								$(this).parents('ul').siblings('button').remove;
+								$(this).parents('ul').siblings('button').text(txt);
+								$(this).parents('ul').hide();
+							});
+						} else {
+							$('.sec_link_wrap ul').show();
+							$('.sec_link_wrap ul li> a').off('click')
+						}
+					}
+				})
+
+				var swiper = new Swiper(".sec_why_slider", {
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+					pagination: {
+						el: ".swiper-pagination",
+						clickable: true
+					},
+				});
+			</script>
+			<!-- // Why KOREA-->
+
+			<!-- 입지정보, 한국의 생활정보 -->
+			<div class="sec_info">
+				<div class="inner">
+					<div class="con_l">
+						<div class="sec_tit">
+							<h2 class="main_tit">입지정보</h2>
+							<p>한국 지방자치단체는 각각 특성화된 투자환경과 서비스를 제공하고 있습니다.</p>
+						</div>
+						<div class="tab_btn_wrap">
+							<a href="#;" class="active" data-tab="tab01">지방자치단체</a>
+							<a href="#;" data-tab="tab02">FEZ</a>
+						</div>
+						<div class="tab_con_wrap">
+							<div id="tab01" class="tab_con">
+								<div class="btn_area m-content">
+									<span>지역 선택</span>
+									<ul>
+										<li><a href="#;" class="active">서울</a></li>
+										<li><a href="#;">인천</a></li>
+										<li><a href="#;">경기</a></li>
+										<li><a href="#;">강원</a></li>
+										<li><a href="#;">세종</a></li>
+										<li><a href="#;">대전</a></li>
+										<li><a href="#;">충남</a></li>
+										<li><a href="#;">충북</a></li>
+										<li><a href="#;">경북</a></li>
+										<li><a href="#;">전북</a></li>
+										<li><a href="#;">대구</a></li>
+										<li><a href="#;">광주</a></li>
+										<li><a href="#;">전남</a></li>
+										<li><a href="#;">경남</a></li>
+										<li><a href="#;">울산</a></li>
+										<li><a href="#;">부산</a></li>
+										<li><a href="#;">제주</a></li>
+									</ul>
+								</div>
+								<div class="map_area pc-content">
+									<img class="map_default" src="images/ik-kr/new_20220216/img_map.jpg" usemap="#image-map">
+
+									<map name="image-map">
+										<area target="_blank" alt="서울" title="서울" href="#;"
+											coords="167,100,153,101,151,116,160,125,178,121,181,111" shape="poly"
+											onmouseover="changeImg('seoul');">
+										<area target="_blank" alt="경기" title="경기" href="#;"
+											coords="151,156,143,162,133,149,148,147,167,134,160,124,178,123,181,112,176,106,169,99,156,100,151,105,151,117,137,126,126,107,122,95,133,94,142,104,143,97,133,71,153,64,166,42,176,43,183,53,200,52,201,64,210,67,214,87,207,108,230,110,226,115,230,148,214,169,209,166,195,176,179,175,159,180,143,170"
+											shape="poly" onmouseover="changeImg('gyeonggi');">
+										<area target="_blank" alt="강원" title="강원" href="#;"
+											coords="286,4,275,24,256,34,230,30,200,30,167,43,178,44,182,54,199,52,202,64,210,67,215,84,208,106,232,112,227,117,230,128,230,150,246,152,251,142,256,149,285,150,302,164,341,160,353,164,373,152,346,99,319,75"
+											shape="poly" onmouseover="changeImg('gangwon');">
+										<area target="_blank" alt="인천" title="인천" href="#;"
+											coords="153,143,143,140,141,132,141,131,142,124,153,116,168,134,168,134" shape="poly"
+											onmouseover="changeImg('incheon');">
+										<area target="_blank" alt="울산" title="울산" href="#;"
+											coords="387,268,370,279,360,292,354,303,354,303,367,314,379,309,385,291" shape="poly"
+											onmouseover="changeImg('ulsan');">
+										<area target="_blank" alt="부산" title="부산" href="#;"
+											coords="380,310,379,321,377,326,374,332,372,343,366,346,366,357,357,366,355,361,343,352,340,338,348,325,353,314,357,306,367,314"
+											shape="poly" onmouseover="changeImg('busan');">
+										<area target="_blank" alt="경북" title="경북" href="#;"
+											coords="377,273,378,263,373,256,380,225,376,213,380,184,375,168,373,154,352,164,335,161,317,164,303,165,293,177,290,192,283,195,273,195,261,196,260,204,250,204,252,213,246,217,247,229,247,252,256,258,257,268,249,270,236,276,241,289,257,302,268,308,267,318,281,316,285,308,288,298,283,289,293,285,301,269,314,282,315,292,311,299,311,305,299,308,297,313,309,320,329,314,338,317,353,307,364,283,377,271,376,271,376,271"
+											shape="poly" onmouseover="changeImg('gyeongbuk');">
+										<area target="_blank" alt="대구" title="대구" href="#;"
+											coords="282,316,297,314,298,307,311,304,310,296,315,292,313,282,301,269,293,284,284,288,289,298"
+											shape="poly" onmouseover="changeImg('daegu');">
+										<area target="_blank" alt="전남" title="전남" href="#;"
+											coords="177,370,163,377,151,378,143,372,135,370,108,369,91,370,76,400,70,427,84,466,118,455,125,475,157,477,174,459,215,445,237,435,236,387,223,366,217,347,203,343,173,347,167,334,157,332,142,336,141,348,129,348,118,339,113,351,105,361,115,368,134,369,147,356,155,357,163,354,171,362"
+											shape="poly" onmouseover="changeImg('jeonnam');">
+										<area target="_blank" alt="광주" title="광주" href="#;"
+											coords="172,372,168,359,154,361,143,355,141,369,153,380" shape="poly"
+											onmouseover="changeImg('gwangju');">
+										<area target="_blank" alt="전북" title="전북" href="#;"
+											coords="220,346,224,336,219,323,224,303,241,290,236,273,219,272,204,279,197,269,177,275,164,266,157,279,131,285,137,306,122,315,119,339,131,351,144,331,164,336,172,331,177,346,195,346,205,340"
+											shape="poly" onmouseover="changeImg('jeonbuk');">
+										<area target="_blank" alt="경남" title="경남" href="#;"
+											coords="241,291,226,303,221,324,226,338,220,349,238,391,238,419,254,411,275,397,296,400,311,409,321,399,320,381,342,375,356,366,341,337,350,326,356,309,352,305,332,314,311,321,296,314,267,317,267,305"
+											shape="poly" onmouseover="changeImg('gyeongnam');">
+										<area target="_blank" alt="충북" title="충북" href="#;"
+											coords="241,274,257,264,255,254,246,252,247,228,243,217,249,203,279,193,289,192,305,159,287,148,260,150,251,143,246,153,228,150,214,168,193,178,204,196,197,208,199,224,214,234,208,250,217,270"
+											shape="poly" onmouseover="changeImg('chungbuk');">
+										<area target="_blank" alt="대전" title="대전" href="#;"
+											coords="205,277,218,270,208,251,212,235,201,227,190,235,187,245,191,259,197,268" shape="poly"
+											onmouseover="changeImg('daejeon');">
+										<area target="_blank" alt="충남" title="충남" href="#;"
+											coords="196,270,188,246,188,234,179,227,182,210,179,197,197,199,203,197,192,175,165,180,145,179,140,172,125,166,115,171,95,197,107,217,114,233,127,241,121,267,137,274,157,277,165,265,177,273"
+											shape="poly" onmouseover="changeImg('chungnam');">
+										<area target="_blank" alt="세종" title="세종" href="#;"
+											coords="200,199,181,199,183,208,180,225,188,233,199,226" shape="poly"
+											onmouseover="changeImg('sejong');">
+										<area target="_blank" alt="제주" title="제주" href="#;"
+											coords="157,525,132,514,103,522,94,529,100,547,109,544,130,546,157,541" shape="poly"
+											onmouseover="changeImg('jeju');">
+									</map>
+								</div>
+							</div>
+							<div id="tab02" class="tab_con" style="display:none;">
+								<div class="btn_area m-content">
+									<span>지역 선택</span>
+									<ul>
+										<li><a href="#;" class="active">인천</a></li>
+										<li><a href="#;">경기</a></li>
+										<li><a href="#;">동해안</a></li>
+										<li><a href="#;">충북</a></li>
+										<li><a href="#;">광주</a></li>
+										<li><a href="#;">광양만</a></li>
+										<li><a href="#;">대구·경북</a></li>
+										<li><a href="#;">울산</a></li>
+										<li><a href="#;">부산진해</a></li>
+									</ul>
+								</div>
+								<div class="fez_area pc-content">
+									<img class="fez_default" src="images/ik-kr/new_20220216/img_fez.jpg" usemap="#image-map2">
+
+									<map name="image-map2">
+										<area target="_blank" alt="동해안" title="동해안" href="#;"
+											coords="269,26,240,33,194,31,166,43,183,54,219,82,211,107,234,113,229,143,249,154,283,152,303,166,348,159,373,156,346,98,311,55,294,18,286,1"
+											shape="poly" onmouseover="changeImg2('donghae');">
+										<area target="_blank" alt="인천" title="인천" href="#;"
+											coords="152,143,164,133,156,121,150,116,140,126,138,137" shape="poly"
+											onmouseover="changeImg2('incheon');">
+										<area target="_blank" alt="경기" title="경기" href="#;"
+											coords="165,43,215,82,207,102,231,112,227,142,229,149,211,170,193,180,179,174,150,180,137,155,140,132,159,122,180,121,181,111,173,100,159,98,149,102,149,114,149,124,133,118,104,91"
+											shape="poly" onmouseover="changeImg2('gyeonggi');">
+										<area target="_blank" alt="울산" title="울산" href="#;"
+											coords="378,308,381,290,373,283,361,284,355,293,349,300,355,307,366,310" shape="poly"
+											onmouseover="changeImg2('ulsan');">
+										<area target="_blank" alt="부산진해" title="부산진해" href="#;"
+											coords="353,366,341,337,350,321,350,305,328,314,310,320,290,314,266,315,268,305,237,289,219,312,217,324,225,337,216,348,223,363,235,384,277,394,311,405"
+											shape="poly" onmouseover="changeImg2('busan');">
+										<area target="_blank" alt="대구경북" title="대구경북" href="#;"
+											coords="298,316,308,312,314,293,311,278,300,276,291,285,283,290,284,302,280,313" shape="poly"
+											onmouseover="changeImg2('dg');">
+										<area target="_blank" alt="광양만" title="광양만" href="#;"
+											coords="214,346,202,344,182,346,170,343,170,337,159,337,140,334,136,347,120,342,107,358,85,371,69,415,112,387,144,361,154,359,164,353,175,370,160,381,149,377,137,367,104,392,100,416,75,452,100,469,160,471,207,422,255,410,232,383"
+											shape="poly" onmouseover="changeImg2('gy');">
+										<area target="_blank" alt="광주" title="광주" href="#;"
+											coords="174,370,164,354,149,360,138,367,150,376,160,380" shape="poly"
+											onmouseover="changeImg2('gwangju');">
+										<area target="_blank" alt="충북" title="충북" href="#;"
+											coords="237,277,257,264,252,253,244,246,242,217,262,198,286,197,299,166,282,153,247,155,227,150,211,170,194,180,194,202,200,225,215,239,209,254,216,271"
+											shape="poly" onmouseover="changeImg2('chungbuk');">
+									</map>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="con_r">
+						<div class="sec_tit">
+							<h2 class="main_tit">Visit Korea</h2>
+							<p>한국의 문화유적지, 여행지 등을 스토리텔링하여 제공합니다.</p>
+						</div>
+						<div class="sec_info_slider swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img01.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img02.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img03.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img04.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img05.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img06.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img07.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img08.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img01.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img02.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img03.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img04.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img05.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img06.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img07.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="#;">
+										<div class="img"><img src="images/ik-kr/new_20220216/sec03_img08.jpg" alt=""></div>
+										<div class="txt">
+											<h3>Take the Best Road Trip Ever on Gangwon Nature Road</h3>
+										</div>
+									</a>
+								</li>
+							</ul>
+							<div class="sec_paging">
+								<div class="swiper-scrollbar"></div>
+								<div class="sec_arrow">
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				// 지방자치단체 지도 이미지 체인지
+				function changeImg(country) {
+					$('.map_area .map_default').attr('src', 'images/ik-kr/new_20220216/img_map_' + country + '.jpg');
+				}
+				// fez 지도 이미지 체인지
+				function changeImg2(country) {
+					$('.fez_area .fez_default').attr('src', 'images/ik-kr/new_20220216/img_fez_' + country + '.jpg');
+				}
+
+				var swiper2 = new Swiper('.sec_info_slider', {
+					slidesPerView: 1,
+					slidesPerColumn: 4,
+					slidesPerGroup: 1,
+					spaceBetween: 20,
+					scrollbar: {
+						el: ".swiper-scrollbar",
+						draggable: true,
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+					breakpoints: {
+						1216: {
+							spaceBetween: 10,
+						}
+					}
+				});
+
+				$('.tab_btn_wrap a ').click(function () {
+					$(this).addClass('active');
+					var tabIdx = $(this).data("tab");
+					$(".tab_con").hide();
+					$("#" + tabIdx).show();
+					$('.tab_btn_wrap a').not($(this)).removeClass('active');
+				})
+
+				// $(document).on('click', 'tab_btn_wrap a', function () {
+				// 	$(this).addClass('active');
+				// 	var tabIdx = $(this).data("tab");
+				// 	$(".tab_con").hide();
+				// 	$("#" + tabIdx).show();
+				// 	$('.tab_btn_wrap a').not($(this)).removeClass('active');
+				// });
+			</script>
+			<!-- // 입지정보, 한국의 생활정보 -->
+
+			<!-- 퀵메뉴 -->
+			<!-- <div class="sc-quik-menu-wrap">
+				<div class="sc-quik-menu-box">
+					<ul>
+						<li><a href="#n">투자절차</a></li>
+						<li><a href="#n">입지정보</a></li>
+						<li><a href="#n">성공사례</a></li>
+						<li><a href="#n">FAQ</a></li>
+						<li><a href="#n">서식</a></li>
+						<li><a href="#n">추천정보 메일링서비스</a></li>
+					</ul>
+					<button class="sc-top-btn" type="button"><span>TOP</span></button>
+				</div>
+				<script>
+					var quickT = parseInt($('.sc-quik-menu-wrap').css('top'));
+					$(window).height()
+					$(window).scroll(function () {
+						var scrollT = $(window).scrollTop();
+						$('.sc-quik-menu-wrap').stop().animate({
+							"top": quickT + scrollT + "px"
+						}, 800);
+						if ($(window).height() < 840) {
+							$('.sc-quik-menu-wrap').addClass('fixed');
+							$('.sc-quik-menu-wrap').stop().animate({
+								"top": 162 + "px"
+							}, 800);
+						} else {
+							$('.sc-quik-menu-wrap').removeClass('fixed');
+						}
+					});
+					$('.sc-top-btn').click(function () {
+						$('html, body').animate({
+							scrollTop: 0
+						}, 700)
+						return false;
+					})
+				</script>
+			</div> -->
+			<!-- // 퀵메뉴 -->
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="html/ik-kr/include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+
+	</div>
+</body>
+
+</html>

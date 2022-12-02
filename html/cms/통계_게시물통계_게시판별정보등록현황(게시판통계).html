@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">통계</a>
+                <span>&gt;</span> 
+                <a href="#none">게시물 통계</a>
+                <span>&gt;</span>
+                <strong>게시판별 정보 등록현황(게시판 통계)</strong>
+            </p>
+    
+            <h2 id="tit_page">게시판별 정보 등록현황(게시판 통계)</h2>
+
+            <div class="search_area">
+                <table class="tb_search">
+                    <colgroup>
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>홈페이지</th>
+                            <td>
+                                <input type="radio" name="radio1" id="radio1-1">
+                                <label for="radio1-1">대표</label>
+                                <input type="radio" name="radio1" id="radio1-2">
+                                <label for="radio1-2">강원</label>
+                                <input type="radio" name="radio1" id="radio1-3">
+                                <label for="radio1-3">충남</label>
+                                <input type="radio" name="radio1" id="radio1-4">
+                                <label for="radio1-4">대전</label>
+                                <input type="radio" name="radio1" id="radio1-5">
+                                <label for="radio1-5">충북</label>
+                                <input type="radio" name="radio1" id="radio1-6">
+                                <label for="radio1-6">전북</label>
+                                <input type="radio" name="radio1" id="radio1-7">
+                                <label for="radio1-7">대구</label>
+                                <input type="radio" name="radio1" id="radio1-8">
+                                <label for="radio1-8">광주</label>
+                                <input type="radio" name="radio1" id="radio1-9">
+                                <label for="radio1-9">울산</label>
+                                <input type="radio" name="radio1" id="radio1-10">
+                                <label for="radio1-10">부산</label>
+                                <input type="radio" name="radio1" id="radio1-11">
+                                <label for="radio1-11">제주</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>언어</th>
+                            <td>
+                                <input type="radio" name="radio2" id="radio2-1">
+                                <label for="radio2-1">국문</label>
+                                <input type="radio" name="radio2" id="radio2-2">
+                                <label for="radio2-2">영문</label>
+                                <input type="radio" name="radio2" id="radio2-3">
+                                <label for="radio2-3">중문</label>
+                                <input type="radio" name="radio2" id="radio2-4">
+                                <label for="radio2-4">일문</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검색</th>
+                            <td>
+                                <select name="" id="" style="width:250px">
+                                    <option value="">검색조건 선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_area">
+                    <button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+                    <button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+                </div>
+            </div>
+
+            <div class="list_status">
+                <p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+                <div class="fr">
+                    <button type="button" class="btn xls" id="inseqcmsExcel">엑셀다운로드</button>
+                    <select class="post_num" name="pageItm" id="pageItm">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>               
+                        <option value="80">80</option>                             
+                        <option value="90">90</option>                                
+                        <option value="100">100</option>
+                    </select>
+                    <button type="button" class="btn" id="btnPageItm">적용</button>
+                </div>
+            </div>
+
+            <div class="tb-scroll-x">
+                <table class="tb_list">
+                    <colgroup>
+                        <col style="width:75px">
+                        <col style="width:90px">
+                        <col style="width:90px">
+                        <col style="width:180px">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>홈페이지</th>
+                            <th>언어</th>
+                            <th>게시판</th>
+                            <th>제목</th>
+                            <th>등록일</th>
+                            <th>
+                                조회수<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                인쇄<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                이미지(다운)<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                PDF(다운)<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                페이스북<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                트위터<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                핀터레스트<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                구글플러스<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                웨이보<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                            <th>
+                                런런왕<br>
+                                <button type="button">▲</button>
+                                <button type="button">▼</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>대표</td>
+                            <td>국문</td>
+                            <td>한국 투자기회</td>
+                            <td class="text-left">옥계 Mg공장 부지 사업 유치</td>
+                            <td>2020-06-20</td>
+                            <td>251</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                            <td>1,000</td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </div>
+    
+            <div class="pagination">
+                <strong>1</strong>
+                <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+                <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> 
+            </div>
+            
+            <div class="btn_area">
+                <a href="운영_IK서비스_IK캘린더_등록.html" class="btn btn_lg act"><i class="fa fa-pencil"></i> 등록</a>
+            </div>
+        
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

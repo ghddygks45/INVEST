@@ -1,0 +1,92 @@
+//
+// variables
+//
+
+// 색상
+$color-default: #333 !default;
+$color-primary: #0f3966 !default;
+$color-gray: #575b63 !default;
+$color-lightgray: #7d7e89 !default;
+$color-blue: #0666b2 !default;
+
+$border-color-dark: #ccc;
+$border-color-base: #ddd;
+$border-color-light: #eee;
+
+$default:$color-default;
+$primary:$color-primary;
+$black: #000;
+$lightgray: #999;
+$disabled: #bbb;
+$gray: #666;
+$blue: #0f3966;
+$khak: #72693c;
+$hotpink:#da2d2d;
+$purple: #44277f;
+$royalblue: #3e678f;
+$brown: #77513d;
+$white: #fff;
+$green:#0f997b;
+$red:#da2d2d;
+$navy:#0f3966;
+$orange:#e26800;
+
+$bg-dark: #2f3253;
+$bg-gray: #f1f1f1;
+$bg-lightgray: #f8f8f8;
+$bg-white: #fff;
+
+$colors: () !default;
+$colors: map-merge(("default": $default,
+		"primary": $primary,
+		"black": $black,
+		"lightgray": $lightgray,
+		"disabled": $disabled,
+		"gray": $gray,
+		"blue": $blue,
+		"khak": $khak,
+		"hotpink": $hotpink,
+		"purple": $purple,
+		"royalblue": $royalblue,
+		"brown": $brown),
+	$colors);
+
+$bg-colors: () !default;
+$bg-colors: map-merge(("bg-lightgray": $bg-lightgray,
+		"bg-white": $bg-white),
+	$bg-colors);
+
+// 글꼴
+$font-family-base: 'Open Sans',
+Arial,
+'Malgun Gothic',
+sans-serif,
+Dotum,
+Gulim,
+Verdana,
+Tahoma;
+$font-size-xxs: 11px !default;
+$font-size-xs: 12px !default;
+$font-size-sm: 13px !default;
+$font-size-base: 14px !default;
+$font-size-lg: 16rem !default;
+$font-size-xl: 18rem !default;
+$font-size-xxl: 20rem !default;
+
+$line-height-sm: 1.2 !default;
+$line-height-base: 1.4 !default;
+$line-height-lg: 1.55 !default;
+
+// 경로
+//$url-fonts: "../fonts/";
+$url-img: "/images/cms";
+
+// 그리드
+//$content-width: 1200px;
+//$both-padding: 10px;
+//$mobile-title-width: 160px;
+
+// 폼 컨트롤 사이즈
+//$height-sm: 35px;
+//$height-base: 46px;
+//$height-lg: 62px;

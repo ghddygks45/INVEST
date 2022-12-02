@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+
+	<!-- 개발시 반드시 삭제 -->
+	<script src="../js/_layout-setting.js"></script>
+	<!-- // 개발시 반드시 삭제 -->
+
+	<!-- ztree 플러그인 -->
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>
+
+	<!-- 개별페이지 스크립트 -->
+	<script>
+		$(document).ready(function() {
+			$.fn.zTree.init($("#tree"), setting, zNodes);
+		});
+
+		//zTree 셋팅
+		var setting = {
+			view: {
+				selectedMulti: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			check: {
+				enable: true
+			}
+		};
+
+		var zNodes = [{
+				siteId: "",
+				id: 0,
+				pId: "",
+				name: "관리자",
+				open: true
+			},
+			{
+				siteId: "cms",
+				id: "1",
+				pId: "0",
+				name: "대표국문",
+				od: "0"
+			},
+			{
+				siteId: "cms",
+				id: "3",
+				pId: "0",
+				name: "대표영문",
+				od: "0"
+			},
+			{
+				siteId: "cms",
+				id: "7",
+				pId: "0",
+				name: "주고베 국문",
+				od: "0"
+			},
+		];
+	</script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<!-- // body에 권한별 아이디 지정 : 최고관리자 user-admin / 사용자(고객) user-client -->
+	<!-- 최고관리자일 때 노출 -->
+	<header id="header">_inc-header.html 참고</header>
+	<!-- // 최고관리자일 때 노출 -->
+	<div id="container">
+		<aside id="sidebar">_inc-sidebar.html 참고</aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#" class="ico_home">HOME</a> <span>&gt;</span>
+				<a href="#">대메뉴</a> <span>&gt;</span>
+				<a href="#">중메뉴</a> <span>&gt;</span>
+				<strong>현재메뉴</strong>
+			</p>
+
+			<h2 id="tit_page">업무요청</h2>
+
+			<!-- 콘텐츠 영역 -->
+			<ol class="work-process">
+				<li class="on"><span><i class="fa fa-calendar-check-o"></i> 접수중</span></li>
+				<li><span><i class="fa fa-refresh"></i> 처리중</span></li>
+				<li><span><i class="fa fa-check"></i> 처리완료</span></li>
+				<li><span><i class="fa fa-exclamation-triangle"></i> 반려</span></li>
+			</ol>
+
+			<table class="tb_view">
+				<caption class="view_subject">간단한건데.. 이런이런 저런저런 요청사항좀 처리해주세요. 내일 아침에 확인하면 되죠?</caption>
+				<colgroup>
+					<col style="width:120px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>성명</th>
+						<td>홍길동</td>
+					</tr>
+					<tr>
+						<th>연락처</th>
+						<td>000-0000-0000</td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td>id@email.net</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="article-title">내용</h3>
+			<div class="bbs_article">
+				<p>아침에 바로 확인하고 싶어요.</p>
+			</div>
+			<h3 class="article-title">답변</h3>
+			<div class="bbs_article">
+				<p>아니오. 안됩니다.</p>
+			</div>
+			<div class="btn_area">
+				<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 등록</button>
+				<button type="button" class="btn btn_lg"><i class="fa fa-trash-o"></i> 삭제</button>
+				<a href="#" class="btn btn_lg basic"><i class="fa fa-list-ul"></i> 목록</a>
+			</div>
+
+			<hr />
+
+			<!-- 레이어 샘플 -->
+			<a href="#layer_sample" class="btn" onclick="openLayer(this);">레이어팝업 샘플</a>
+			<div id="layer_sample" class="layer_popup modal">
+				<!-- // 레이어 크기 변경시 사이즈 지정 style="width:600px; height:500px;" -->
+				<div class="bg"></div>
+				<h2 class="tit_layer">레이어 타이틀</h2>
+				<div class="layer_cont">
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+					<p>레이어 내용 출력 영역</p>
+				</div>
+				<button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+			</div>
+			<!-- // 레이어 샘플 -->
+
+			<hr />
+
+			<ul class="tab_menu">
+				<li class="on"><a href="#">탭메뉴1</a></li>
+				<li><a href="#">탭메뉴2222</a></li>
+				<li><a href="#">탭메뉴2222</a></li>
+				<li><a href="#">탭메뉴2222</a></li>
+				<li><a href="#">탭메뉴2222</a></li>
+				<li><a href="#">탭메뉴2222</a></li>
+			</ul>
+
+			<h3 class="tit1">콘텐츠 타이틀1 .tit1</h3>
+			<h3 class="tit2">콘텐츠 타이틀2 .tit2</h3>
+			<div class="box_guide">
+				<ul class="bul_dot">
+					<li>사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법</li>
+					<li>사용법 사용법 사용법 사용법 사용법 사 사용법 사용법 사용법 사용법 사용법 <a href="#" class="btn btn_sm">사용법</a> 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법</li>
+					<li>사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법 사용법</li>
+				</ul>
+			</div>
+
+			<hr />
+			<h3 class="tit1">버튼</h3>
+			<h4 class="tit2">크기 및 색상별</h4>
+			<div class="mt5">
+				<a href="#" class="btn btn_xs btn basic">.btn.btn_xs.basic</a>
+				<a href="#" class="btn btn_xs btn nav">.btn.btn_xs.nav</a>
+				<a href="#" class="btn btn_xs act">.btn.btn_xs.act</a>
+			</div>
+			<div class="mt5">
+				<a href="#" class="btn btn_sm btn basic">btn.btn_sm.basic</a>
+				<a href="#" class="btn btn_sm btn nav">btn.btn_sm.nav</a>
+				<a href="#" class="btn btn_sm act">btn.btn_sm.act</a>
+			</div>
+			<div class="mt5">
+				<a href="#" class="btn btn basic">.btn.basic</a>
+				<a href="#" class="btn btn.nav">.btn.nav</a>
+				<a href="#" class="btn act">.btn.act</a>
+				<a href="#" class="btn btn_md btn basic">.btn.btn_md.btn.basic</a>
+				<a href="#" class="btn btn_md btn nav">.btn.btn_md.btn.nav</a>
+				<a href="#" class="btn btn_md act">.btn.btn_md.act</a>
+			</div>
+			<div class="mt5">
+				<a href="#" class="btn btn_lg btn basic">.btn.btn_lg.btn.basic</a>
+				<a href="#" class="btn btn_lg btn nav">.btn.btn_lg.btn.nav</a>
+				<a href="#" class="btn btn_lg act">.btn.btn_lg.act</a>
+			</div>
+
+			<h4 class="tit2">아이콘 버튼</h4>
+			<div class="mb30">
+				<a href="https://fontawesome.com/v4.7.0/icons/" target="_blank" title="새창" class="btn">아이콘 미리보기 <i class="fa fa-external-link"></i></a>
+			</div>
+			<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+			<button type="reset" class="btn btn_lg"><i class="fa fa-refresh"></i> 초기화</button>
+
+			<a href="#" class="btn btn_lg"><i class="fa fa-pencil"></i> 등록</a>
+			<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 저장</button>
+			<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 수정</button>
+			<a href="#" class="btn btn_lg nav"><i class="fa fa-arrow-left"></i> 취소</a>
+			<a href="#" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+
+			<hr />
+
+			<div class="search_area">
+				<table class="tb_search">
+					<caption>검색조건</caption>
+					<colgroup>
+						<col style="width:120px" />
+						<col />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><label for="group">분류</label></th>
+							<td>
+								<select id="group">
+									<option>선택</option>
+								</select>
+								<span><a href="#none" class="btn">검색</a></span>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="srchFr">등록일자</label></th>
+							<td>
+								<input type="text" id="srchFr" title="시작일" style="width:100px;" />
+								<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('srchFr')); return false;">달력</a> ~
+								<input type="text" id="srchTo" title="종료일" style="width:100px;" />
+								<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('srchTo')); return false;">달력</a>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="sellFr">판매기간</label></th>
+							<td>
+								<span class="term_setting">
+									<button type="button">오늘</button>
+									<button type="button" class="on">7일</button>
+									<button type="button">1개월</button>
+									<button type="button">3개월</button>
+									<button type="button">6개월</button>
+								</span>
+
+								<input type="text" id="sellFr" title="시작일" style="width:100px;" />
+								<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('sellFr')); return false;">달력</a> ~
+								<input type="text" id="sellTo" title="종료일" style="width:100px;" />
+								<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('sellTo')); return false;">달력</a>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="subject">주제어</label></th>
+							<td>
+								<select id="subject">
+									<option>선택</option>
+								</select>
+								<input type="text" title="검색어" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn_area">
+					<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+					<button type="reset" class="btn btn_lg"><i class="fa fa-refresh"></i> 초기화</button>
+				</div>
+			</div>
+
+			<div class="list_status">
+				<p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+				<div class="fr">
+					<a href="#" class="btn xls">엑셀다운로드</a>
+					<select class="post_num" title="리스트">
+						<option>10</option>
+						<option>20</option>
+						<option>30</option>
+					</select>
+					<button type="submit" class="btn">적용</button>
+				</div>
+			</div>
+
+			<table class="tb_list">
+				<caption>목록</caption>
+				<colgroup>
+					<col style="width:60px" />
+					<col />
+					<col style="width:50px" />
+					<col style="width:100px" />
+					<col style="width:80px" />
+					<col style="width:80px" />
+					<col style="width:80px" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>첨부</th>
+						<th>등록일</th>
+						<th>조회</th>
+						<th>게시여부</th>
+						<th>처리</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="7" class="nodata">조회된 내용이 없습니다.</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td class="al"><a href="#">124 [LOTTE 잠실점 리뉴얼 오픈] 2015-05-08 4405</a> <span class="ico_new">NEW</span></td>
+						<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+						<td>2015-05-01</td>
+						<td>11</td>
+						<td>
+							<button type="button" class="label">게시</button>
+							<button type="button" class="label bg_error">삭제</button>
+						</td>
+						<td><button type="button" class="btn btn basic btn_sm"><i class="fa fa-edit"></i> 수정</button></td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td class="al"><a href="#">124 [LOTTE 잠실점 리뉴얼 오픈] 2015-05-08 4405</a></td>
+						<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+						<td>2015-05-01</td>
+						<td>11</td>
+						<td>
+							<button type="button" class="label bg_warning">미게시</button>
+							<button type="button" class="label bg_error">삭제</button>
+						</td>
+						<td><button type="button" class="btn btn basic btn_sm"><i class="fa fa-edit"></i> 수정</button></td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td class="al"><a href="#">124 [LOTTE 잠실점 리뉴얼 오픈] 2015-05-08 4405</a></td>
+						<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+						<td>2015-05-01</td>
+						<td>11</td>
+						<td><button type="button" class="label bg_info">게시</button></td>
+						<td><button type="button" class="btn btn basic btn_sm"><i class="fa fa-edit"></i> 수정</button></td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td class="al"><a href="#">124 [LOTTE 잠실점 리뉴얼 오픈] 2015-05-08 4405</a></td>
+						<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+						<td>2015-05-01</td>
+						<td>11</td>
+						<td><button type="button" class="label bg_warning">미게시</button></td>
+						<td><button type="button" class="btn btn basic btn_sm"><i class="fa fa-edit"></i> 수정</button></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn_area">
+				<div class="list_ctrl">
+					<button type="button" class="btn btn_sm act">결재확인</button>
+					<button type="button" class="btn btn_sm act">배송완료</button>
+					<button type="button" class="btn btn_sm">선택삭제</button>
+					<button type="button" class="btn btn_sm">선택복사</button>
+				</div>
+				<a href="#" class="btn btn_lg"><i class="fa fa-pencil"></i> 등록</a>
+			</div>
+
+			<div class="pagination">
+				<a href="#" class="direction first">처음</a>
+				<a href="#" class="direction prev">이전</a>
+				<strong>1</strong>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a href="#">7</a>
+				<a href="#">8</a>
+				<a href="#">9</a>
+				<a href="#">10</a>
+				<a href="#" class="direction next">다음</a>
+				<a href="#" class="direction last">끝</a>
+			</div>
+
+			<hr />
+
+			<p class="nodata">조회된 내용이 없습니다.</p>
+
+			<hr />
+
+			<table class="tb_view">
+				<caption>상세</caption>
+				<colgroup>
+					<col style="width:120px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>성명</th>
+						<td>홍길동</td>
+					</tr>
+					<tr>
+						<th>연락처</th>
+						<td>000-0000-0000</td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td>id@email.net</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3 class="article-title">내용</h3>
+			<div class="bbs_article">
+				내용 미리보기....
+			</div>
+
+			<div class="btn_area">
+				<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 수정</button>
+				<a href="#" class="btn btn_lg basic"><i class="fa fa-arrow-left"></i> 취소</a>
+			</div>
+
+			<hr />
+
+			<form action="">
+				<table class="tb_write">
+					<caption>등록</caption>
+					<colgroup>
+						<col style="width:120px" />
+						<col />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>성명</th>
+							<td>홍길동</td>
+						</tr>
+						<tr>
+							<th><label for="utel"><span class="req">필수입력</span> 휴대폰</label></th>
+							<td>
+								<select id="utel" style="width:65px;">
+									<option>010</option>
+									<option>011</option>
+									<option>016</option>
+									<option>017</option>
+									<option>018</option>
+									<option>019</option>
+								</select> -
+								<input type="text" size="4" maxlength="4" title="휴대폰 가운데 네자리" /> -
+								<input type="text" size="4" maxlength="4" title="휴대폰 마지막 네자리" />
+							</td>
+						</tr>
+						<tr>
+							<th><label for="uemail"><span class="req">필수입력</span> 이메일</label></th>
+							<td><input type="text" id="uemail" /></td>
+						</tr>
+						<tr>
+							<th><label for="lb_file"><span class="req">필수입력</span> 파일첨부</label></th>
+							<td>
+								<input type="file" id="lb_file" style="width:400px;" />
+								<button type="button" class="btn"><i class="fa fa-trash-o"></i> 삭제</button>
+								<span class="tip">(GIF, JPG만 등록)</span>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="ori_file_nm"><span class="req">필수입력</span> 파일첨부</label></th>
+							<td>
+								<span class="attach">
+									<a href="../../images/cms/img_gallery_photo3.jpg" target="_blank"><input type="text" id="ori_file_nm" value="img_gallery_photo3.jpg" /></a>
+								</span>
+								<a href="#" class="btn"><i class="fa fa-search"></i> 찾아보기</a>
+								<button type="button" class="btn"><i class="fa fa-trash-o"></i> 삭제</button>
+								<span class="tip">(GIF, JPG만 등록)</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="article-title"><label for="ctnt">내용</label></h3>
+				<div class="bbs_article_write">
+					<div class="editor_option">
+						<input type="radio" name="input_option" id="txt" checked="checked" />
+						<label for="txt">TXT</label>
+						<input type="radio" name="input_option" id="html" />
+						<label for="html">HTML</label>
+						<input type="radio" name="input_option" id="editor" />
+						<label for="editor">웹 에디터</label>
+						<strong class="colr_point ml15">웹접근성 지침에 맞춰 팝업페이지 HTML 코드를 입력해주세요.</strong>
+					</div>
+					<textarea id="ctnt" cols="80" rows="10"></textarea>
+				</div>
+
+				<div class="btn_area">
+					<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 등록</button>
+					<button type="button" class="btn btn_lg"><i class="fa fa-trash-o"></i> 삭제</button>
+					<a href="#" class="btn btn_lg basic"><i class="fa fa-arrow-left"></i> 취소</a>
+				</div>
+			</form>
+
+			<!-- // 콘텐츠 영역 -->
+		</article>
+	</div>
+	<footer id="footer">_inc-footer.html 참고</footer>
+	<div class="cms-login-extn" id="cms-login-extn" style="display: none;">
+		<div class="msg-updt">
+			<p>장시간 사용하지 않아<br> 10분 후 자동 로그아웃 됩니다.</p>
+			<p class="time"><i class="fa fa-clock-o"></i> 59:46</p>
+			<div class="btn-area">
+				<button type="button" class="btn btn_lg"><i class="fa fa-plus"></i> 연장</button>
+				<a href="#" class="btn btn_lg act"><i class="fa fa-sign-out"></i> 로그아웃</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+/* 팝업 */
+#popup {
+	#header {
+		position: static;
+		min-width: inherit;
+		height: 55px;
+		padding: 0 20px;
+		background: #444;
+
+		h1 {
+			color: #fff;
+			font-size: 22px;
+			line-height: 55px;
+		}
+	}
+
+	#content {
+		padding: 30px 20px;
+	}
+
+	.day-close {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 0 10px;
+		color: #fff;
+		font-size: 13px;
+		line-height: 30px;
+		background: #333;
+	}
+
+	.btn_frontpop_close {
+		position: fixed;
+		bottom: 5px;
+		right: 10px;
+		width: 22px;
+		height: 22px;
+		text-indent: 100%;
+		white-space: nowrap;
+		background: url(#{$url-img}/btn_pop_close.png) no-repeat center center;
+		background-size: 80% auto;
+		overflow: hidden;
+	}
+
+	#btn_pop_close,
+	.btn_cmspop_close {
+		position: absolute;
+		top: 16px;
+		right: 20px;
+		width: 22px;
+		height: 22px;
+		text-indent: 100%;
+		white-space: nowrap;
+		background: url(#{$url-img}/btn_pop_close.png);
+		overflow: hidden;
+	}
+
+	.tb_list+.btn_area {
+		text-align: center;
+	}
+
+	.tree_area .scroll_area {
+		height: 367px;
+	}
+
+	.box_upload {
+		margin: 0 0 10px;
+		padding: 5px 20px;
+		border: 1px solid #ddd;
+
+		input[type=file] {
+			width: 70%;
+		}
+	}
+
+	.upload_tip {
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
+
+/* 레이어 팝업 */
+.layer_popup {
+	&.modal {
+		display: none;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		width: 700px;
+		box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+		background-color: #fff;
+		z-index: 2050;
+
+		.bg {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 1500;
+		}
+
+		.tit_layer {
+			position: relative;
+			height: 50px;
+			padding: 0 40px 0 20px;
+			font-size: 17px;
+			color: #fff;
+			line-height: 50px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			background: $color-primary;
+			overflow: hidden;
+			z-index: 2050;
+		}
+
+		.layer_cont {
+			position: relative;
+			height: calc(100% - 40px);
+			min-height: 200px;
+			max-height: calc(100vh - 200px);
+			padding: 15px 15px 0;
+			border: 2px solid $color-primary;
+			border-top: 0;
+			background-color: #fff;
+			overflow-y: auto;
+			z-index: 2050;
+
+			&:after {
+				clear: both;
+				display: block;
+				height: 15px;
+				content: '';
+			}
+		}
+	}
+
+	.btn_layer_close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0;
+		border: 0;
+		text-indent: -9999px;
+		white-space: nowrap;
+		background: url(#{$url-img}/btn_layer_close.png) no-repeat center center;
+		overflow: hidden;
+		z-index: 2050;
+	}
+
+	&.modal .btn_layer_close {
+		right: 5px;
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.no_scroll {
+	overflow: hidden;
+}

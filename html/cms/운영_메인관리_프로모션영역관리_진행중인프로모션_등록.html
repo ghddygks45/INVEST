@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">메인관리</a>
+                <span>&gt;</span>
+                <strong>프로모션 영역 관리</strong>
+            </p>
+    
+            <h2 id="tit_page">프로모션 영역 관리</h2>
+
+            <ul class="tab_menu">
+                <li class="on"><a href="운영_메인관리_프로모션영역관리_진행중인프로모션_목록.html">진행중인 프로모션</a></li>
+                <li><a href="#n">마감된 프로모션</a></li>
+            </ul>
+
+            <table class="tb_write">
+                <colgroup>
+                    <col style="width:200px">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>홈페이지 구분</th>
+                    <td>
+                        <select name="" id="" style="width:200px">
+                            <option value="">홈페이지 구분 선택</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>언어구분</th>
+                    <td>
+                        <select name="" id="" style="width:200px">
+                            <option value="">언어 구분 선택</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>제목</th>
+                    <td><input type="text" style="width:100%"></td>
+                </tr>
+                <tr>
+                    <th>게시일자</th>
+                    <td>
+                        <input type="text" name="bgnde" id="bgnde" value="" title="시작일" style="width:100px;" readonly="readonly">
+                        <a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+                        <input type="text" name="endde" id="endde" value="" title="종료일" style="width:100px;" readonly="readonly">
+                        <a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>게시여부</th>
+                    <td>
+                        <input type="radio" name="data_sttus" id="data_sttus1">
+                        <label for="data_sttus1">게시</label>
+                        <input type="radio" name="data_sttus" id="data_sttus2">
+                        <label for="data_sttus2">미게시</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>프로모션 이미지(PC)</th>
+                    <td>
+                        <span class="vam mr5">첨부된 파일명.zip</span>
+                        <button type="button" class="bold underline">[다운로드]</button>
+                        <button type="button" class="bold underline">[삭제]</button>
+                        <div class="mt5">
+                            <span class="attach">
+                                <a href="#n" target="_blank"><input type="text" id="" value=""></a>
+                            </span>
+                            <a href="#" class="btn"><i class="fa fa-search"></i> 찾아보기</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>프로모션 이미지(Mobile)</th>
+                    <td>
+                        <span class="vam mr5">첨부된 파일명.zip</span>
+                        <button type="button" class="bold underline">[다운로드]</button>
+                        <button type="button" class="bold underline">[삭제]</button>
+                        <div class="mt5">
+                            <span class="attach">
+                                <a href="#n" target="_blank"><input type="text" id="" value=""></a>
+                            </span>
+                            <a href="#" class="btn"><i class="fa fa-search"></i> 찾아보기</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>링크(PC)</th>
+                    <td>
+                        <input type="radio" name="radio1" id="radio1-1">
+                        <label for="radio1-1">새창</label>
+                        <input type="radio" name="radio1" id="radio1-2">
+                        <label for="radio1-2">현재창</label>
+                        이동URL : <input type="text" style="width:500px">
+                    </td>
+                </tr>
+                <tr>
+                    <th>링크(Mobile)</th>
+                    <td>
+                        <input type="radio" name="radio2" id="radio1-1">
+                        <label for="radio1-1">새창</label>
+                        <input type="radio" name="radio2" id="radio1-2">
+                        <label for="radio1-2">현재창</label>
+                        이동URL : <input type="text" style="width:500px">
+                    </td>
+                </tr>
+                <tr>
+                    <th>작성자</th>
+                    <td>홍길동</td>
+                </tr>
+                </tbody>
+             </table>
+
+            <div class="btn_area">
+                <div class="fl">
+                    <a href="운영_메인관리_프로모션영역관리_진행중인프로모션_목록.html" class="btn btn_lg basic"><i class="fa fa-list-ul"></i> 목록</a>
+                </div>
+                <div class="fr">
+                    <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 프로모션 등록</button>
+                    <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 수정</button>
+                    <button type="button" class="btn btn_lg"><i class="fa fa-trash-o"></i> 삭제</button>
+                </div>
+            </div>
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

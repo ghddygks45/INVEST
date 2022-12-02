@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>IK 캘린더 &lt; 공지·홍보 &lt; IK 서비스 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(7,3,2)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb07.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>IK 캘린더</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>IK 서비스</li>
+						<li>공지·홍보</li>
+						<li>IK 캘린더</li>
+					</ul>
+
+					<div class="ctn">
+						<script src="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+						<link rel="stylesheet" href="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+						
+                        <ul class="tab pc-content">
+                            <li><a href="IK서비스_공지·홍보_IK캘린더_달력으로보기.html">달력으로 보기</a></li>
+                            <li><a href="IK서비스_공지·홍보_IK캘린더_목록으로보기.html" class="active">목록으로 보기</a></li>
+						</ul>
+						
+						<!-- 검색 -->
+						<div class="search-area">
+							<div class="form-area">
+								<div class="in">
+									<div class="date-type">
+										<span class="input-date">
+											<input type="text" class="datepicker" placeholder="행사일" title="행사일 시작일 선택 ex)yyyy-mm-dd">
+										</span>
+										<span class="input-date">
+											<input type="text" class="datepicker" placeholder="행사일" title="행사일 종료일 선택 ex)yyyy-mm-dd">
+										</span>
+									</div>
+									<span class="select-type3">
+										<select name="" id="" title="검색구분 선택">
+											<option value="">검색구분</option>
+										</select>
+									</span>
+									<span class="input-type3"><input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요."></span>
+									<button type="submit" class="btn-default-s">검색</button>	
+								</div>
+							</div>
+						</div>
+						<script>
+							// datepicker
+							$(".datepicker").datepicker({
+								changeYear: true,
+								changeMonth: true,
+								dateFormat: "yy-mm-dd",
+								showMonthAfterYear: true,
+								monthSuffix: "년",
+								dayNames: ['일요일','월요일', '화요일', '수요일', '목요일', '금요일', '토요일2'],
+								dayNamesMin: ['일','월', '화', '수', '목', '금', '토'],
+								monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+								monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+								numberOfMonths: [1,1],
+								buttonText: "달력 열기",
+								showOn: "button",
+								yearRange: "c-50:c+10"
+							});
+					   </script>
+						<!-- //검색 -->
+
+						<div class="table-top">
+							<div class="l item-num">전체 : <span>235</span>건 [<span>1</span>/23페이지]</div>
+							<div class="r">
+								<select name="" id="" class="item-view" title="리스트 개수 선택">
+									<option value="">10개씩</option>
+								</select>
+								<button type="button" class="btn-default-s">보기</button>                                
+							</div>
+						</div>
+						
+						<!-- 리스트 -->
+						<ul class="normal-board">
+							<li>
+								<div class="num-area">No.<span>1,785</span></div>
+								<div class="txt-area">
+									<a href="ik서비스_공지·홍보_ik캘린더_상세.html">
+										<strong class="tit"><span class="category">[행사명 : 2020년 IK포럼]</span>2020년 IK 포럼 Webinar 개최<span class="icon-new">새로운 글</span></strong>
+										<div class="board-list-box">
+											<ul class="list01">
+												<li><span class="bold">작성자 : </span>운영자</li>
+												<li><span class="bold">작성일 : </span>2020.06.20</li>
+												<li><span class="bold">조회수 : </span>1,852</li>
+											</ul>
+											<ul class="list01">
+												<li><span class="bold">일정 : </span>2020년 7월 8일(수요일)</li>
+												<li><span class="bold">시간 : </span>14:00 ~ 15:55</li>
+												<li><span class="bold">장소 : </span>Webinar(온라인 생중계)</li>
+											</ul>
+										</div>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<!-- //리스트 -->
+
+						<!-- 페이징 -->
+						<div class="paging">
+							<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로 이동</span></a>
+							<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로 이동</span></a>
+							<span>
+								<strong>1</strong>
+								<a href="#n">2</a>
+								<a href="#n">3</a>
+								<a href="#n">4</a>
+								<a href="#n">5</a>
+							</span>
+							<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로 이동</span></a>
+							<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로 이동</span></a>
+						</div>
+						<!-- 페이징 -->
+					</div>				
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

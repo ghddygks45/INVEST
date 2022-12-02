@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/jj-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/jj-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/jj-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/jj-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>매인페이지 | 강원도</title>
+
+</head>
+<body>
+	<div class="wrap gwn-wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container" id="content">
+
+            <div class="main-top">
+
+                <!-- 메인 동영상 영역 -->
+                <div id="videoArea" class="video_area">
+                    <ul class="video">
+                        <li>
+                            <div class="txt_box">
+                                <div class="txt01">&nbsp;What rhymes with Jeju</div>
+                                <div class="txt02">&nbsp;going green</div>
+                            </div>
+                            <video playsinline muted class="video w_video">
+                                <source src="../../file/jj-kr/main01.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <div class="txt_box">
+                                <div class="txt01">What rhymes with Jeju</div>
+                                <div class="txt02">clean energy</div>
+                            </div>
+                            <video playsinline muted class="video w_video">
+                                <source src="../../file/jj-kr/main02.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <div class="txt_box">
+                                <div class="txt01">What rhymes with Jeju</div>
+                                <div class="txt02">potential</div>
+                            </div>
+                            <video playsinline muted class="video w_video">
+                                <source src="../../file/jj-kr/main03.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <div class="txt_box">
+                                <div class="txt01">What rhymes with Jeju</div>
+                                <div class="txt02">your plans</div>
+                            </div>
+                            <video playsinline muted class="video w_video">
+                                <source src="../../file/jj-kr/main04.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <div class="txt_box">
+                                <div class="txt01">What rhymes with Jeju</div>
+                                <div class="txt02">vitality</div>
+                            </div>
+                            <video playsinline muted class="video w_video">
+                                <source src="../../file/jj-kr/main05.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <div class="txt_box">
+                                <div class="txt01">What rhymes with Jeju</div>
+                                <div class="txt02">your investment</div>
+                            </div>
+                            <video playsinline muted class="video w_video">
+                                <source src="../../file/jj-kr/main06.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                    </ul>
+                </div>
+
+                <script>
+                    // 메인 동영상 재생
+                    $(function(){
+                        var $videoArea = $("#videoArea"),
+                            $videoWrap = $videoArea.find(".video"),
+                            $videoTag = $videoWrap.find("video"),
+                            $videoLi = $videoWrap.find("li"),
+                            $videoInfoWrap = $videoArea.find(".video"),
+                            $videoTxt = $videoInfoWrap.find(">li"),
+                            $videoTxtMove = $videoInfoWrap.find(".txt_box"),
+                            liLength = $videoLi.length - 1,
+                            videoIdx = 0,
+                            videoTarget = $videoTag[0];
+                        
+                            // slide video play
+                            function videoAction(idx){
+                                slideVideo();
+                                videoTarget.play();
+                                if(videoTarget.currentTime > 0){ videoTarget.currentTime = 0; };
+                        
+                                $videoLi.eq(idx).addClass("active").siblings().removeClass("active");
+                                $videoTxt.eq(idx).addClass("active").siblings().removeClass("active");
+                                $videoTxtMove.removeClass("active");
+                                $videoTxt.eq(idx).find(">.txt_box").delay(1000).addClass("active");
+                            };
+                            function slideVideo(){
+                                videoTarget.onended = function() {
+                                    if($videoLi.is(".first")){
+                                        $videoLi.eq(0).removeClass("first");
+                                    };
+                                    videoIdx ++;
+                                    (videoIdx > liLength)&&(videoIdx = 0);
+                                    videoTarget = $videoTag[videoIdx];
+                                    videoAction(videoIdx);
+                                };
+                            };
+                            videoAction(videoIdx);
+                        });
+                </script>
+                <!-- // 메인 동영상 영역 -->
+
+                <!-- 모바일 비주얼 영역 -->
+                <div class="mobile-visual">
+                    <div class="vis"><img src="../../images/jj-kr/img_jj_kr_visual01.jpg" alt=""></div>
+                </div>
+                <!-- // 모바일 비주얼 영역 -->
+
+                <!-- quick menu -->
+                <div class="jj-quick-mn">
+                    <div>
+                        <a href="#n" class="jj-qui01">일반현황</a>
+                    </div>
+                    <div>
+                        <a href="#n" class="jj-qui02">투자환경</a>
+                    </div>
+                    <div>
+                        <a href="#n" class="jj-qui03">뉴스·행사</a>
+                    </div>
+                    <div>
+                        <a href="#n" class="jj-qui04">홍보자료</a>
+                    </div>
+                    <div>
+                        <a href="#n" class="jj-qui05">제주라이프</a>
+                    </div>
+                    <div>
+                        <a href="#n" class="jj-qui06">투자프로젝트</a>
+                    </div>
+                    <div>
+                        <a href="#n" class="jj-qui07">유용한 링크</a>
+                    </div>
+                </div>
+                <script>
+                    $('.jj-quick-mn').slick({
+                        infinite: false,
+                        dots: false,
+                        slidesToShow: 7,
+                        slidesToScroll: 7,
+                        responsive: [
+                            {
+                                breakpoint: 1215,
+                                settings: {
+                                    slidesToShow: 4,
+                                    slidesToScroll: 4
+                                }
+                            },
+                            {
+                                breakpoint: 767,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3
+                                }
+                            }
+                        ]
+                    });
+                </script>
+                <!-- // quick menu -->
+            </div>
+
+            <div id="contents">
+
+                <!-- 뉴스.행사 / 발간물, 홍보영상 -->
+                <div class="inner">
+                    <div class="section1">
+                        <h2 class="h2_tit">뉴스·행사<a href="#n"></a></h2>
+                        <ul>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>05</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주도, 사물인터넷 분야 기술 2건 특허 확보
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>03</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주산 계란 중동 두바이 갔다…한국인 경영 유통업체서 수입
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>29</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                균형발전박람회 온라인 제주 전시관 선보여…디지털 뉴딜 소개
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>22</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                제주도, 185개 관광업체에 272억원 관광진흥기금 융자 지원
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="section2 main_section">
+                        <h2 class="h2_tit">발간물<a href="#n"></a></h2>
+                        <a href="#n">
+                            <div class="img"><img src="../../images/jj-kr/img_pub.gif" alt="강원 투자 가이드"></div>
+                            <div class="txt">
+                                <h3>2020 제주 투자정보</h3>
+                                <p>(Gangwon Investment...</p>
+                                <span>2020.06.18</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="section3 main_section">
+                        <h2 class="h2_tit">홍보영상<a href="#n"></a></h2>
+                        <a href="#n">
+                            <img src="../../images/jj-kr/img_video.gif" alt="East Coast Free Economic Zone Investment Promotion IR">
+                            <h3>제주도에는 제주도가 참 많다</h3>
+                            <p>Zone Investment Promoti...</p>
+                            <span>2020.06.18</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- // 뉴스.행사 / 발간물, 홍보영상 -->
+
+                <!-- 제주 라이프 -->
+                <div class="jj-life">
+                    <img src="../../images/jj-kr/img_jj_life_list.png" alt="" class="pc-life">
+                    <img src="../../images/jj-kr/img_jj_life_list_m.jpg" alt="" class="m-life">
+                </div>
+                <!-- // 제주 라이프 -->
+
+            </div>
+
+		</div>
+        <!-- //container -->
+        
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

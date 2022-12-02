@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-kr/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../css/ik-kr-new/style_20220216.css">
+	<link rel="stylesheet" href="../../css/ik-kr/accessibility.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<script src="../../js/ik-kr/accessibility.js"></script>
+	<script src="../../js/ik-kr-new/20220217_pub.js"></script>
+	<!-- 2022-03-04 추가 -->
+	<script src="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<!-- // 2022-03-04 추가 -->
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>임대료 &lt; 투자초기비용조회 &lt; 투자초기비용 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(1, 1, 2)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/new_20220216_03.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>Search Initial Investment Cost</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>Initial Investment Cost</li>
+						<li>Search Initial Investment Cost</li>
+					</ul>
+
+					<div class="ctn">
+
+						<div class="top-info-box top-calcu">
+							<div class="in">
+								<div class="tit fs_15">You can easily search for the cost of starting and operating a business in Korea.
+								</div>
+								<p>
+									Please enter information for each item (labor cost, four major insurances, rent, and other taxes) to
+									calculate initial investment cost.
+								</p>
+							</div>
+						</div>
+
+						<ul class="tab mn4">
+							<li><a href="투자초기비용_투자초기비용조회_인건비.html">Labor Cost</a></li>
+							<li><a href="투자초기비용_투자초기비용조회_4대보험.html">Four Major Insurances</a></li>
+							<li><a href="투자초기비용_투자초기비용조회_임대료.html" class="active" title="selected">Rent</a></li>
+							<li><a href="투자초기비용_투자초기비용조회_기타세금.html">Other Taxes</a></li>
+						</ul>
+
+						<div class="text-box">
+							<p class="normal-mt2">
+								This service provides rent data for investors to refer to when calculating initial investment cost.
+								The related data is provided based on office rental fees categorized by quarter and city/province
+								available on the Public Data Portal.(www.data.go.kr)
+							</p>
+							<p class="normal-mt2">
+								Please note that rent data is provided based on quarter and city/province and may differ depending on
+								region, business location, and the time of construction; therefore, actual figures may differ. Data is
+								for reference only.
+							</p>
+						</div>
+
+						<div class="gray-box cal-bot-mt">
+							<div>
+								<label class="bold dot" for="data1">Select location to establish a company</label>
+								<div class="normal-mt sel-double">
+									<span>
+										<select name="" id="data1" class="select-type1" title="Location (Level 1)">
+											<option value="">Location (Level 1)</option>
+											<option value="">Seoul</option>
+											<option value="">Central city of Seoul</option>
+											<option value="">Seoul Gangnam</option>
+											<option value="">Seoul YeouidoMapo</option>
+											<option value="">Seoul others</option>
+											<option value="">Busan</option>
+											<option value="">Daegu</option>
+											<option value="">Incheon Guwol</option>
+											<option value="">Gwangju</option>
+											<option value="">Daejeon</option>
+											<option value="">Ulsan</option>
+											<option value="">Gyeonggi</option>
+										</select>
+									</span>
+									<span>
+										<select name="" id="data2" class="select-type1" title="Location (Level 2)">
+											<option value="">Location (Level 2)</option>
+											<option value="">Central city of Seoul, Gwanghwamun</option>
+											<option value="">Central city of Seoul, Namdaemun</option>
+											<option value="">Central city of Seoul, Dongdaemun</option>
+											<option value="">Central city of Seoul, Myeongdong</option>
+											<option value="">Central city of Seoul, Sicheong</option>
+											<option value="">Central city of Seoul, Eulji-ro</option>
+											<option value="">Central city of Seoul, Jong-ro</option>
+											<option value="">Central city of Seoul, Chungmu-ro</option>
+											<option value="">Seoul Gangnam Gangnam-daero</option>
+											<option value="">Seoul Gangnam Nonhyeon Station</option>
+											<option value="">Seoul Gangnam Seoul National University of Education Station</option>
+											<option value="">Seoul Gangnam Nambu Terminal</option>
+											<option value="">Seoul Gangnam Dosan-daero</option>
+											<option value="">Seoul Gangnam Sinsa Station</option>
+											<option value="">Seoul Gangnam Teheran-ro</option>
+											<option value="">Seoul YeouidoMapo Gongdeok Station</option>
+											<option value="">Seoul YeouidoMapo Dangsan Station</option>
+											<option value="">Seoul YeouidoMapo Yeouido</option>
+											<option value="">Seoul YeouidoMapo Yeongdeungpo Station</option>
+											<option value="">Seoul others Mokdong</option>
+											<option value="">Seoul others Sadang</option>
+											<option value="">Seoul others Sookmyung Women’s University</option>
+											<option value="">Seoul others Yongsan Station</option>
+											<option value="">Seoul others Jamsil Songpa</option>
+											<option value="">Seoul others Jamsil Saenae Station</option>
+											<option value="">Seoul others Jangan-dong</option>
+											<option value="">Seoul others Cheonho</option>
+											<option value="">Seoul others Hongdae Hapjeong</option>
+											<option value="">Seoul others Hwagok</option>
+											<option value="">Busan Nampo-dong</option>
+											<option value="">Busan Busan Station</option>
+											<option value="">Busan Bujeon Market</option>
+											<option value="">Busan Seomyeon Jeonpo</option>
+											<option value="">Busan Yeonsan Rotary</option>
+											<option value="">Busan Near Hyundai Department Store</option>
+											<option value="">Daegu Dongdaegu</option>
+											<option value="">Daegu Dongseong-ro</option>
+											<option value="">Daegu Suseong Beomeo</option>
+											<option value="">Incheon Guwol</option>
+											<option value="">Incheon Bupyeong</option>
+											<option value="">Incheon Juan</option>
+											<option value="">Gwangju Geumnam-ro Chungjang-ro</option>
+											<option value="">Gwangju Sangmu Zone</option>
+											<option value="">Daejeon Dunsan</option>
+											<option value="">Daejeon Seodaejeon Negeori</option>
+											<option value="">Daejeon Wondosim (original city center)</option>
+											<option value="">Ulsan Samsan-dong</option>
+											<option value="">Ulsan Sinjeong-dong</option>
+											<option value="">Gyeonggi Bundang</option>
+											<option value="">Gyeonggi Ingye-dong</option>
+											<option value="">Gyeonggi Ilsandong-gu</option>
+											<option value="">Gyeonggi Pyeongchon Beomgye</option>
+										</select>
+									</span>
+								</div>
+							</div>
+							<div class="normal-mt2">
+								<label class="bold dot" for="data3">Enter surface area of company</label>
+								<div class="normal-mt area-inp">
+									<input type="text" class="inp-w-430" title="Enter surface area of company"> <span
+										class="ml5">m^2</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-area">
+							<div class="r">
+								<button type="button" class="btn-default bg-blue" onclick="fn_open_popup(this,'cal-popup');">View
+									information</button>
+							</div>
+						</div>
+
+						<div class="layer-popup-box" data-popup="cal-popup" tabindex="0">
+							<div class="popup pop-size-800">
+								<div class="top">
+									<div class="tit">
+										Rent Information
+									</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('cal-popup');"><span
+											class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<div class="section">
+										<div class="sub-tit01">Enter Information</div>
+										<ul class="list01">
+											<li>Desired location to establish a company : 서울 여의도 마포 영등포역</li>
+											<li>Desired area of a company : 1,000 m^2</li>
+										</ul>
+									</div>
+									<div class="section">
+										<div class="sub-tit01">Calculation of Rent</div>
+										<div class="normal-table02 m-pc-level01">
+											<ul>
+												<li>
+													<div class="data">
+														<div class="tit">Average monthly rent in desired location to establish a company</div>
+														<div class="cont">12.5 천원</div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">Desired area of a company</div>
+														<div class="cont">1,000 m^2</div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">Average annual rent</div>
+														<div class="cont">150,000 천원</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="section">
+										<div class="sub-tit01">Basis of Calculation</div>
+										Rent data is provided based on office rental fees categorized by quarter and city/province available
+										on the Public Data Portal.
+									</div>
+									<div class="btn-area">
+										<div class="r">
+											<a href="#n" class="btn-default bg-blue" onclick="fn_hide_popup('cal-popup');">OK</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

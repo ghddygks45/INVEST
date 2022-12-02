@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>    
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">시스템</a>
+                <span>&gt;</span> 
+                <a href="/system/code/index.do">코드관리</a>
+                <span>&gt;</span>
+                <strong>코드설정</strong>
+            </p>
+            <h2 id="tit_page">코드설정</h2>
+
+            <script type="text/javascript">
+            //<![CDATA[
+            /** 코드관리 영역 Start */
+            $(document).on('click','#btnUpdt',function(){
+                console.log("seq : " + $(this).attr('updtSeq'));
+                if(confirm("[코드설정]를 수정하시겠습니까?")){
+                    $.post("show.do",{
+                        type	: "updt"
+                        ,seq     : $(this).attr('updtSeq')
+                        ,use_at  : $('input[name=use_at]:checked').val()	//사용여부
+                        ,code_id : $('#code_id').val()  //코드아이디
+                        ,code_nm : $('#code_nm').val()  //코드명
+                        ,code_dc : $('#code_dc').val()  //코드설명
+                    },
+                    function(result){
+                    console.log(result)
+                        if(result > 0){
+                            alert("처리되었습니다");
+                            location.reload();
+                            return false;
+                        }else{
+                            alert("실패되었습니다.");
+                            return false;
+                        }
+                    });	
+                    return false;
+                }
+                return false;
+            }).on('click','#btnDelt',function(){
+                console.log("seq : " + $(this).attr('deltSeq'));
+                if(confirm("[코드설정]를 삭제하시겠습니까?")){
+                    $.post("show.do",{
+                        type	: "delt"
+                        ,seq     : $(this).attr('deltSeq')
+                        ,code_id : $('#code_id').val()  //코드아이디
+                    },
+                    function(result){
+                    console.log(result)
+                        if(result > 0){
+                            alert("처리되었습니다");
+                            location.href="./list.do";
+                        }else{
+                            alert("실패되었습니다.");
+                            return false;
+                        }
+                    });	
+                    return false;
+                }
+                return false;	
+            });
+            /** 코드관리 영역 End */
+            
+            /** 코드아이템관리 영역 Start */
+                //zTree 셋팅
+                var setting = {
+                    
+                    view: {
+                        selectedMulti: false
+                    },
+                    edit: {
+                        drag: {
+                            autoExpandTrigger: true,
+                            prev: dropPrev,
+                            inner: dropInner,
+                            next: dropNext
+                        },
+                        enable: true,
+                        showRemoveBtn: false,
+                        showRenameBtn: false
+                    },		
+                    data: {
+                        simpleData: {
+                            enable: true
+                        }
+                    },
+                    
+                    callback: {
+                        beforeDrag: beforeDrag,
+                        beforeDrop: beforeDrop,
+                        beforeDragOpen: beforeDragOpen,
+                        onDrag: onDrag,
+                        onDrop: onDrop,
+                        onExpand: onExpand,
+                        beforeClick: beforeClick,
+                        onClick: onClick
+                    }
+                    
+                };
+                
+                
+                //메뉴트리 호출
+                var zNodes =[
+                                { codeItmId:"", id:0, pId:0, name:"11", open:true, drag:false},
+                                
+                            ];
+                    
+                function dropPrev(treeId, nodes, targetNode) {
+                    var pNode = targetNode.getParentNode();
+                    if (pNode && pNode.dropInner === false) {
+                        return false;
+                    } else {
+                        for (var i=0,l=curDragNodes.length; i<l; i++) {
+                            var curPNode = curDragNodes[i].getParentNode();
+                            if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+                function dropInner(treeId, nodes, targetNode) {
+                    if (targetNode && targetNode.dropInner === false) {
+                        return false;
+                    } else {
+                        for (var i=0,l=curDragNodes.length; i<l; i++) {
+                            if (!targetNode && curDragNodes[i].dropRoot === false) {
+                                return false;
+                            } else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+                
+                function dropNext(treeId, nodes, targetNode) {
+                    var pNode = targetNode.getParentNode();
+                    if (pNode && pNode.dropInner === false) {
+                        return false;
+                    } else {
+                        for (var i=0,l=curDragNodes.length; i<l; i++) {
+                            var curPNode = curDragNodes[i].getParentNode();
+                            if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+                
+                var log, className = "dark", curDragNodes, autoExpandNode;
+                function beforeDrag(treeId, treeNodes) {
+                    className = (className === "dark" ? "":"dark");
+                    //showLog("[ "+getTime()+" beforeDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag: " + treeNodes.length + " nodes." );
+                    for (var i=0,l=treeNodes.length; i<l; i++) {
+                        if (treeNodes[i].drag === false) {
+                            curDragNodes = null;
+                            return false;
+                        } else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
+                            curDragNodes = null;
+                            return false;
+                        }
+                    }
+                    curDragNodes = treeNodes;
+                    return true;
+                }
+                
+                function beforeDragOpen(treeId, treeNode) {
+                    autoExpandNode = treeNode;
+                    return true;
+                }
+                
+                function beforeDrop(treeId, treeNodes, targetNode, moveType, isCopy) {
+                    className = (className === "dark" ? "":"dark");
+                    //showLog("[ "+getTime()+" beforeDrop ]&nbsp;&nbsp;&nbsp;&nbsp; moveType:" + moveType);
+                    //showLog("target: " + (targetNode ? targetNode.name : "root") + "  -- is "+ (isCopy==null? "cancel" : isCopy ? "copy" : "move"));
+                    return true;
+                }
+                
+                function onDrag(event, treeId, treeNodes) {
+                    className = (className === "dark" ? "":"dark");
+                    //showLog("[ "+getTime()+" onDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag: " + treeNodes.length + " nodes." );
+                }
+                
+                function onDrop(event, treeId, treeNodes, targetNode, moveType, isCopy) {
+                    className = (className === "dark" ? "":"dark");
+                    //showLog("[ "+getTime()+" onDrop ]&nbsp;&nbsp;&nbsp;&nbsp; moveType:" + moveType);
+                    //showLog("target: " + (targetNode ? targetNode.name : "root") + "  -- is "+ (isCopy==null? "cancel" : isCopy ? "copy" : "move"))
+                }
+                
+                function onExpand(event, treeId, treeNode) {
+                    if (treeNode === autoExpandNode) {
+                        className = (className === "dark" ? "":"dark");
+                        //showLog("[ "+getTime()+" onExpand ]&nbsp;&nbsp;&nbsp;&nbsp;" + treeNode.name);
+                    }
+                }
+                
+                function showLog(str) {
+                    if (!log) log = $("#log");
+                    log.append("<li class='"+className+"'>"+str+"</li>");
+                    if(log.children("li").length > 8) {
+                        log.get(0).removeChild(log.children("li")[0]);
+                    }
+                }
+                
+                function getTime() {
+                    var now= new Date(),
+                    h=now.getHours(),
+                    m=now.getMinutes(),
+                    s=now.getSeconds(),
+                    ms=now.getMilliseconds();
+                    return (h+":"+m+":"+s+ " " +ms);
+                }
+                
+                function setTrigger() {
+                    var zTree = $.fn.zTree.getZTreeObj("ztree");
+                    zTree.setting.edit.drag.autoExpandTrigger = $("#callbackTrigger").attr("checked");
+                }
+                
+                function beforeClick(treeId, treeNode, clickFlag) {
+                    className = (className === "dark" ? "":"dark");
+                    return (treeNode.click != false);
+                }	
+                
+                //메뉴 전체펼침,닫힘
+                function expandNode(e) {
+                    var zTree = $.fn.zTree.getZTreeObj("ztree"),
+                    type = e.data.type,
+                    nodes = zTree.getSelectedNodes();
+                    if (type == "openTree") {//펼침
+                        zTree.expandAll(true);
+                    } else if (type == "closeTree") {//닫힘
+                        zTree.expandAll(false);
+                    } 
+                }	
+                
+                //코드아이템 메뉴트리 클릭 후 상세
+                function onClick(event, treeId, treeNode, clickFlag) {
+                    var zTree = $.fn.zTree.getZTreeObj("ztree");
+                    var node = zTree.getNodeByParam('id', treeNode.id);
+                    var nodeNm = zTree.getNodeByParam('name', treeNode.name);
+                    console.log("onClick node id:: " + node.id)
+                    console.log("onClick node pId:: " + node.pId)
+                    
+                    if(node.id == 0 || node.codeItmId==''){//상세보기 대상 아님
+                        var remove = $('form[name=frmCodeTree]');
+                        remove.find('input').val('');
+                        remove.find('textarea').val('');
+                        $('form[name=frmCodeTree] input[name=code_itm_id]').val("1111");		//리턴값 셋팅(코드아이디)
+                        $('form[name=frmCodeTree] input[name=seq]').val("18");					//리턴값 셋팅(일련)
+                        return false;
+                    }
+                    
+                    $.post("show.do",{
+                            type   : "treeShow"				//type check
+                            ,codeItmId : treeNode.codeItmId		//코드아이템아이디
+                            ,itmSeq    : treeNode.id			//아이템일련
+                        },
+                        function(result){
+                            console.log("result : "+ result.treeshow.codeItmId);
+            
+                            if(node.id >0){
+                                //코드관리 설정
+                                $('input[name=type]').val('treeUpdt');								//타입 셋팅
+                                $('input[name=itm_use_at]:radio[value='+result.treeshow.itmUseAt+']').prop("checked",true);			//사용여부
+                                $('input[name=itm_seq]').val(result.treeshow.itmSeq);				//일련
+                                $('input[name=itm_upper_seq]').val(result.treeshow.itmUpperSeq);	//상위일련
+                                $('input[name=itm_nm]').val(result.treeshow.itmNm);					//항목명
+                                $('input[name=dept_code]').val(result.treeshow.deptCode);			//담당부서코드
+                                $('input[name=dept_nm]').val(result.treeshow.deptNm);				//담당부서명
+                                $('textarea[name=itm_dc]').val(result.treeshow.itmDc);				//설명
+                                
+                                console.log("result.treeshow.itmUpperNm :: " + result.treeshow.itmUpperNm);
+                                if(result.treeshow.itmUpperNm !=''){
+                                    $('input[name=itm_upper_nm]').val(result.treeshow.itmUpperNm);	//상위항목 (값이 있을경우)
+                                }else{
+                                    $('input[name=itm_upper_nm]').val("11");			//상위항목 (값이 없을경우 코드관리에서 가져오도록 셋팅)
+                                }
+                                $('input[name=itm_ordr]').val(result.treeshow.itmOrdr);				//항목순서
+                                $('input[name=code_itm_id]').val(result.treeshow.codeItmId);		//리턴값 셋팅(코드아이디)
+                                $('input[name=seq]').val("18");							//리턴값 셋팅(일련)
+                                
+                                
+                            }else{
+                                console.log(treeNode.name+"는 관리 대상이 아닙니다.")
+                                //alert(treeNode.name+"는 관리 대상이 아닙니다.");
+                                return false;
+                            }
+                            
+                        });
+            
+                }
+                
+                //코드아이템 메뉴트리삭제
+                function fnTreeDelt(e) {
+                    console.log("메뉴트리삭제");
+                    var zTree = $.fn.zTree.getZTreeObj("ztree"),
+                    nodes = zTree.getSelectedNodes(),
+                    treeNode = nodes[0];
+            
+                    if(treeNode){
+                        console.log("codeItmId :: " +treeNode.codeItmId);
+                        console.log("id :: " +treeNode.id);
+                        console.log("pId :: " +treeNode.pId);
+            
+                        if(treeNode.id > 0 && treeNode.codeItmId !=''){
+                            
+                            console.log("삭제 시작 treeNode.codeItmId :: " +treeNode.codeItmId);
+                            console.log("삭제 시작 treeNode.id :: " +treeNode.id);
+                            console.log("삭제 시작 treeNode.pId :: " +treeNode.pId);
+                            
+                            if(confirm("하위메뉴가 있다면 하위메뉴도 전부 삭제됩니다 삭제하시겠습니까?")){
+                                
+                                $.post("show.do",{
+                                        type          : 'treeDelt'			//타입 셋팅	
+                                        ,code_itm_id   : treeNode.codeItmId	//사이트아이디
+                                        ,itm_seq       : treeNode.id		//아이템일련
+                                        ,itm_upper_seq : treeNode.pId		//아이템상위일련
+                                    },
+                                    function(result){
+                                        console.log("treeDelt :: " + result)
+                                        if(result>0){
+                                            alert("정상적으로 처리되었습니다.");
+                                            //location.reload();
+                                            var callbackFlag = $("#callbackTrigger").attr("checked");
+                                            zTree.removeNode(treeNode, callbackFlag);
+                                            var remove = $('form[name=frmCodeTree]');
+                                            remove.find('input').val('');
+                                            remove.find('textarea').val('');
+                                            $('form[name=frmCodeTree] input[name=code_itm_id]').val("1111");		//리턴값 셋팅(코드아이디)
+                                            $('form[name=frmCodeTree] input[name=seq]').val("18");					//리턴값 셋팅(일련)
+                                            return false;
+                                        }else{
+                                            alert("요청하신 정보가 실패되었습니다.");
+                                            return false;
+                                        }
+                                        return false;
+                                    }); 
+                            }
+                            return false;
+                        }else{
+                            alert('해당 메뉴는 삭제 대상이 아닙니다.');
+                            return false;
+                        }
+                    }else{
+                        alert("메뉴를 선택해 주세요.");
+                        $('#ztree').focus();
+                        return false;
+                    }
+            
+                };
+                
+                //메뉴저장,수정
+                function fnTreeSave(e){
+                    console.log("fnMenuSave :: " + $("input[name=itm_upper_seq]").val());
+                    console.log("fnMenuSave :: " + $("input[name=code_id]").val());
+                    console.log("fnMenuSave :: " + $("input[name=seq]").val());
+                    var zTree = $.fn.zTree.getZTreeObj("ztree"),
+                    isParent = e.data.isParent,
+                    nodes = zTree.getSelectedNodes(),
+                    treeNode = nodes[0];
+                    
+                    console.log(treeNode)
+                    if (treeNode) {
+                        console.log(treeNode.id)
+                        console.log(treeNode.pId)
+                
+                        var value = new MiyaValidator(document.forms["frmCodeTree"]);
+                        value.add("itm_nm", {required: true});  //항목명
+                        
+                        var result = value.validate();
+                        if (!result) {
+                            alert(value.getErrorMessage()); //디폴트 label 메세지
+                            //alert(value.getErrorMessage("{message}")); //동적 메세지
+                            value.getErrorElement().focus();
+                            return false;
+                        }else {
+                            
+                            $("input[name=itm_ordr]").removeAttr('disabled');	//메뉴순번 활성화
+                            
+                            var msg = $('input[name=type]').val() =="treeSave"? '저장':'수정';
+                            
+                            if(confirm(msg+" 하시겠습니까?") && $('input[name=type]').val() !=''){
+                                $('form[name=frmCodeTree]').submit();
+                            }else{
+                                alert(treeNode.name+"는 변경내용저장 대상이 아닙니다.\n 코드추가 버튼을 선택하세요.");
+                                $('#btnAdd').focus();
+                                return false;
+                            }
+                        }
+                        return false;
+                    }else{
+                        alert("코드메뉴를  선택하세요");
+                        $('#ztree').focus();
+                        return false;
+                    }
+                    return false;
+                }
+                
+                //순선변경저장
+                $(document).on('click','#btnTreeChange',function(){	
+                        var zTree = $.fn.zTree.getZTreeObj("ztree");
+                        var nodeLength=[0,0,0,0,0,0,0,0,0,0];
+                        var queryArr=[];
+                        
+                        $.each(zTree.transformToArray(zTree.getNodes()),function(i,v){
+                            if(i>0){
+                                if(v.children!=null)
+                                nodeLength[v.level]=0;
+                                nodeLength[eval(v.level-1)]++;
+                                console.log("v check: "+ v.id)
+                                var data={
+                                        "code_itm_id":v.codeItmId,
+                                        "itm_seq":v.id,
+                                        "itm_upper_seq":v.pId,
+                                        "itm_nm":v.name,
+                                        "itm_ordr":nodeLength[eval(v.level-1)]
+                                }
+                                console.log("---------------------")
+                                console.log(data)
+                                console.log("---------------------")
+                                queryArr.push(data);
+                            }
+                        });
+            
+                        if(confirm("[코드설정] 순서를 정말로 변경저장 하시겠습니까?")){
+                            
+                            $.post("show.do", {dataType:'json',type:'treeChange',data:JSON.stringify(queryArr)}, function(result){
+                                console.log("result :: " + result)
+                                if(result>0){
+                                    alert("처리되었습니다.");
+                                    return false;
+                                }else{
+                                    alert("실패되었습니다.");
+                                    location.reload();
+                                    return false;
+                                }
+                                return false;
+                            });
+                            
+                        }
+                });
+                
+                //메뉴추가
+                function fnTreeAdd(e) {
+                    console.log("코드메뉴추가");
+                    var zTree = $.fn.zTree.getZTreeObj("ztree"),
+                    isParent = e.data.isParent,
+                    nodes = zTree.getSelectedNodes(),
+                    treeNode = nodes[0];
+                    console.log("treeNode :: " + treeNode);
+                    console.log("isParent :: " + isParent);
+                    if(treeNode){
+                        //사이트 생성
+                        console.log("[fnAdd id    ]:: " +treeNode.id)
+                        console.log("[fnAdd level ]:: " +treeNode.level)
+                        console.log("[fnAdd check ]:: " +treeNode.id)
+                        //설정(초기화)
+                        $('input[name=type]').val('treeSave');									//타입 셋팅
+                        $('input[name=itm_nm]').val('');										//항목명
+                        $('input[name=itm_use_at]').val('Y');									//사용여부
+                        $('input[name=dept_code]').val('');										//담당부서코드
+                        $('input[name=dept_nm]').val('');										//담당부서명
+                        if(treeNode.children==null)
+                        $('input[name=itm_ordr]').val(1);										//항목순서 레벨별 최상위 셋팅
+                        else
+                        $('input[name=itm_ordr]').val(treeNode.children.length+1);				//항목순서
+                        $("input[name=itm_upper_seq]").val(treeNode.id);						//상위일련
+                        $("input[name=itm_upper_nm]").val(treeNode.name+"("+treeNode.id+")");	//상위항목(일련)명		
+            
+            
+                    }else{
+                        alert("코드메뉴를 선택해 주세요.");
+                        $('#ztree').focus();
+                        return false;
+                    }
+                };	
+                
+                $(document).ready(function(){
+                    //1.zTree 초기셋팅
+                    $.fn.zTree.init($("#ztree"), setting, zNodes);
+                    //2.메뉴추가
+                    $("#btnTreeAdd").bind("click", {isParent:false}, fnTreeAdd);
+                    //3.메뉴삭제
+                    $("#btnTreeDelt").bind("click", fnTreeDelt);
+                    //4.메뉴저장
+                    $("#btnTreeSave").bind("click", {isParent:false}, fnTreeSave);
+                    //5.메뉴변경
+                    $("#callbackTrigger").bind("change", {}, setTrigger);
+                    //6.메뉴트리 전체 펼침
+                    $("#btnOpenTree").bind("click", {type:"openTree"}, expandNode);
+                    //7.메뉴트리 전체 닫힘
+                    $("#btnCloseTree").bind("click", {type:"closeTree"}, expandNode);
+                });
+            
+            /** 코드아이템관리 영역 End */
+            //]]>
+            </script>
+    
+            <form name="frmCode">
+                <table class="tb_write">
+                    <caption>코드설정 상세</caption>
+                    <colgroup>
+                        <col style="width:120px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th><span class="req">필수입력</span> 사용여부</th>
+                        <td>
+                            <input type="radio" value="Y" name="use_at" id="use_at1" checked="checked">
+                            <label for="use_at1">사용</label>
+                            <input type="radio" value="N" name="use_at" id="use_at2" >
+                            <label for="use_at2">미사용</label>
+                        </td>
+                    </tr>		
+                        <tr>
+                            <th><label for="code_id"><span class="req">필수입력</span> 코드아이디</label></th>
+                            <td>
+                                <input type="text" value="1111" name="code_id" id="code_id" class="text date2" maxlength="15" style="width:100%" disabled="disabled">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="code_nm"><span class="req">필수입력</span> 코드명</label></th>
+                            <td>
+                                <input type="text" value="11" name="code_nm" id="code_nm" class="text date2" style="width:100%">
+                            </td>
+                        </tr>			
+                        <tr>
+                            <th><label for="remark">코드 설명</label></th>
+                            <td>
+                                <textarea cols="5" rows="4" name="code_dc" id="code_dc" class="include" title="코드 설명">111</textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <div class="btn_area">
+                    <button type="button" class="btn btn_lg act" id="btnUpdt" updtSeq="18"><i class="fa fa-edit"></i> 수정</button>
+                    <button type="button" class="btn btn_lg" id="btnDelt" deltSeq="18"><i class="fa fa-trash-o"></i> 삭제</button>
+                    <a href="./list.do" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+                </div>
+            </form>
+        
+            <form name="frmCodeTree" action="./show.do" method="post">
+                <input type="hidden" name="code_itm_id" id="code_itm_id" value="1111"/>	<!-- 코드관리 코드아이디 -->
+                <input type="hidden" name="seq" id="seq" value="18"/>						<!-- 코드관리 일련 -->
+                <input type="hidden" name="type" id="type"/>										<!-- 코드관리 아이템 타입 여부 -->
+                <input type="hidden" name="itm_seq" id="itm_seq"/>									<!-- 코드관리 아이템 일련 -->
+                <input type="hidden" name="itm_upper_seq" id="itm_upper_seq">						<!-- 코드관리 아이템 상위 일련 -->		
+                <div class="mng_menu category">
+                    <div class="tree_area">
+                        <div id="ztree" class="tree_scroll ztree" tabindex="-1"></div>
+                    <div class="menu_ctrl">
+                        <a href="#none" class="btn act" id="btnTreeAdd">+ 코드추가</a>
+                        <a href="#none" class="btn" id="btnTreeDelt">- 코드삭제</a>
+                        <a href="#none" class="btn" id="btnTreeChange"> 순서변경</a>
+                    </div>
+                    </div>
+                    <div class="input_area">
+                        <table class="tb_write">
+                        <caption>코드 상세</caption>
+                        <colgroup>
+                            <col style="width:110px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th><label for="itm_nm"><span class="req">필수입력</span> 항목명</label></th>
+                            <td><input type="text" name="itm_nm" id="itm_nm"></td>
+                        </tr>
+                        <tr>
+                            <th><span class="req">필수입력</span> 사용여부</th>
+                            <td>
+                                <input type="radio" value="Y" name="itm_use_at" id="itm_use_at1" checked="checked">
+                                <label for="itm_use_at1">사용</label>
+                                <input type="radio" value="N" name="itm_use_at" id="itm_use_at2">
+                                <label for="itm_use_at2">미사용</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="dept_code">담당부서코드</label></th>
+                            <td><input type="text" name="dept_code" id="dept_code"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="dept_nm">담당부서명</label></th>
+                            <td><input type="text" name="dept_nm" id="dept_nm"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="itm_ordr"><span class="req">필수입력</span> 항목순서</label></th>
+                            <td><input type="text" name="itm_ordr" id="itm_ordr" disabled="disabled"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="itm_upper_nm"><span class="req">필수입력</span> 상위항목</label></th>
+                            <td><input type="text" name="itm_upper_nm" id="itm_upper_nm" disabled="disabled"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="remark">설명</label></th>
+                            <td><textarea cols="3" rows="1" name="itm_dc" id="itm_dc" class="include" title="설명"></textarea></td>
+                        </tr>
+                        </tbody>
+                        </table>
+                            
+                        <div class="btn_area">
+                            <button type="button" class="btn act" id="btnTreeSave"><i class="fa fa-save"></i> 변경내용저장</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

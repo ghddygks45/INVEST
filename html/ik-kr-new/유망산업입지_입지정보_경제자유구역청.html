@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-kr/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../css/ik-kr-new/style_20220216.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>지역별 프로젝트 &lt; 일반입지 &lt; 투자의 기회 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(2, 2, 2)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="../ik-kr/include/lnb11.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>경제자유구역청</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>유망산업·입지</li>
+						<li>입지정보</li>
+						<li>경제자유구역청</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="section">
+							<h4 class="sub-tit01">경제자유구역청</h4>
+							<div>
+								<p>
+									<span class="fwr bold">비지니스 성공 공식이 펼쳐지는</span>
+									<span class="fwr color-blue">대한민국 경제자유구역</span>
+								</p>
+								<p class="normal-mt">
+									세계의 자본과 정보가 모이는 국제 비즈니스의 중심지, 글로벌
+									기업들을 위한 <span class="bold underline">최적의 경영 환경, 바로 대한민국 경제자유구역입니다</span>
+								</p>
+								<p class="normal-mt">
+									대한민국 경제자유구역(Korean Free Economic Zones : KFEZ)은 외국인투자기업의 경영환경과 생활여건을 개선하고, 각종 규제완화를 통한 기업의
+									경제활동 자율성과 투자유인을 최대한 보장하여 외국인 투자를 적극적으로 유치하기 위한 특별경제구역을 의미하며, 2003년 인천을 시작으로 부산ㆍ진해,
+									광양만권, 경기, 대구ㆍ경북, 충북, 동해안권, 광주, 울산 등 총 9개가 조성·운영되고 있습니다.
+								</p>
+							</div>
+							<div class="search-area normal-mt2">
+								<div class="form-area m-version">
+									<div class="in">
+										<span class="select-type3 mr5">
+											<select name="" id="local_choice" title="지역 선택">
+												<option value="map_00">인천</option>
+												<option value="map_01">경기</option>
+												<option value="map_02">동해안</option>
+												<option value="map_03">충북</option>
+												<option value="map_04">광주</option>
+												<option value="map_05">광양만</option>
+												<option value="map_06">대구·경북</option>
+												<option value="map_17">울산</option>
+												<option value="map_07">부산진해</option>
+											</select>
+										</span>
+										<button type="button" class="btn-default-s" onclick="localMapTrans();">보기</button>
+									</div>
+								</div>
+								<div class="sel-local-box fix_local">
+									<div class="l">지역선택</div>
+									<div class="r">
+										<ul>
+											<li><button type="button" class="btn-default-s">인천</button></li>
+											<li><button type="button" class="btn-default-s">경기</button></li>
+											<li><button type="button" class="btn-default-s">동해안</button></li>
+											<li><button type="button" class="btn-default-s">충북</button></li>
+											<li><button type="button" class="btn-default-s">광주</button></li>
+											<li><button type="button" class="btn-default-s">광양만</button></li>
+											<li><button type="button" class="btn-default-s">대구·경북</button></li>
+											<li><button type="button" class="btn-default-s">울산</button></li>
+											<li><button type="button" class="btn-default-s">부산진해</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="map-area-box eco_map">
+								<div class="map-l">
+									<img src="../../images/ik-kr/img_eco_map_incheon.gif" alt="인천">
+									<img src="../../images/ik-kr/img_eco_map_gyeonggi.gif" alt="경기">
+									<img src="../../images/ik-kr/img_map_eastsea.gif" alt="동해안">
+									<img src="../../images/ik-kr/img_eco_map_n_chungcheong.gif" alt="충북">
+									<img src="../../images/ik-kr/img_deco_map_gwangju.gif" alt="광주">
+									<img src="../../images/ik-kr/img_deco_map_gwangyang.gif" alt="광양만">
+									<img src="../../images/ik-kr/img_deco_map_daegu.gif" alt="대구·경북">
+									<img src="../../images/ik-kr/img_deco_map_ulsan.gif" alt="울산">
+									<img src="../../images/ik-kr/img_deco_map_busan.gif" alt="부산진해">
+								</div>
+
+								<div class="map-r">
+
+									<!-- 인천 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_ifez.png" alt="인천경제자유구역(IFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												글로벌 비즈니스 프런티어<br>(Global Business Frontier)
+											</p>
+										</div>
+										<div class="normal-txt">
+											글로벌 비즈니스 허브로 거듭나고 있는 인천. 12년 연속
+											ASQ 1위에 선정된 인천국제공항과 급성장중인
+											인천항의 항만 인프라, 송도글로벌캠퍼스에 입주한
+											5개의 세계적인 외국대학, 국제 업무단지를 중심으로
+											국제적 수준의 비즈니스 환경을 자랑합니다. 바이오,
+											물류, 의료, 교육, 첨단산업 등 모든 것을 누릴 수 있는 곳,
+											인천경제자유구역(IFEZ)입니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">인천경제자유구역(IFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													인천(연수구ㆍ중구ㆍ서구)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													122.43㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2003. 10. 15
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													인천국제공항, 인천항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													2030년(1차 03~09, 2차 10~14, 3차 15~30)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">바이오ㆍ헬스케어, 항공ㆍ복합물류, 스마트제조(첨단산업), 지식ㆍ관광서비스</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.ifez.go.kr/index" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://www.ifez.go.kr/ifezn/pro32" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 인천 -->
+
+									<!-- 경기 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_ggfez.png" alt="경기경제자유구역(GGFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												미래 신산업 혁신성장거점
+											</p>
+										</div>
+										<div class="normal-txt">
+											경기경제자유구역(GGFEZ)은 서해안경제벨트 중앙에 위치하고
+											있으며 첨단산업·물류·유통산업의 평택 포승(BIX)지구, 현덕지구와
+											육·해·공 무인이동체 연구개발의 시흥 배곧지구 등 3개 지구로
+											조성됩니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">경기경제자유구역(GGFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													경기(평택)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													5.24㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2008. 07. 22
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													평택항, 당진항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													2020(1차 08~13, 2차 14~20)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">첨단산업(자동차, IT, 기계, 화학, 물류), 서비스산업(관광, 유통, 상업, 호텔)</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://ggfez.gg.go.kr/" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://ggfez.gg.go.kr/videos/" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 경기 -->
+
+									<!-- 동해안 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_efez.png" alt="동해안권경제자유구역(EFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												휴양형 관광레저산업, 수소에너지산업, 첨단소재부품산업
+												동북아 경제 중심지
+											</p>
+										</div>
+										<div class="normal-txt">
+											강원도 동해안 지역에서 외국인 투자기업의 경영환경과 생활여건을
+											개선하고, 각종 규제 완화를 통한 기업의 경제활동 자율성과
+											투자유인을 최대한 보장하는 특별 경제특구로 다양한 세제 혜택,
+											자유로운 경제활동을 위한 규제 완화, 편리한 생활환경, 간편한
+											행정서비스 제공으로 자유롭고 폭넓은 기업활동을 보장합니다.
+											글로벌 수준의 국제복합 관광도시 조성으로 사계절 명품 휴양형
+											관광레저산업, 수소에너지산업, 첨단소재부품산업 동북아 경제의
+											중심지 동해안권경제자유구역(EFEZ)입니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">동해안권경제자유구역(EFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													강원(강릉, 동해)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													4.31㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2013. 07. 19
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													양양국제공항, 동해항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													2024(1차 13~24)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">휴양형 관광레저산업, 수소에너지산업, 첨단소재부품 산업</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.efez.go.kr/hb/kor" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="#;https://www.efez.go.kr/hb/kor/pr-vod" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 동해안 -->
+
+									<!-- 충북 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_cbfez.png" alt="충북경제자유구역(CBFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												중부권 글로벌 첨단산업의 거점 기지
+											</p>
+										</div>
+										<div class="normal-txt">
+											중부 내륙권역에 위치해 전국 최단의 접근성이 확보된 사통팔달의
+											교통중심지 충북.중부권 산업을 견인하고 글로벌 도시육성을 위한
+											전진 기지로써 바이오 산업을 육성하고 회전익 정비산업을 연계한
+											도심형항공교통(Urban Air Mobility)산업의 허브로 거듭나고 있는 곳
+											충북경제자유구역(CBFEZ)입니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">충북경제자유구역(CBFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													충북(청주)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													4.96㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2013.04.26
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													청주국제공항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													2020(1차 13~20)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">바이오, 항공제조ㆍ서비스, 복합물류</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.chungbuk.go.kr/eco/index.do" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://www.chungbuk.go.kr/eco/contents.do?key=2432" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>VR
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 충북 -->
+
+									<!-- 광주 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_gjfez.png" alt="광주경제자유구역(GJFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												미래를 위한, AI 융복합 신산업 허브
+											</p>
+										</div>
+										<div class="normal-txt">
+											<p>
+												국내유일의 ‘AI경제자유구역’인 광주경제자유구역은 4차산업 혁명의
+												핵심분야인 인공지능을 중심으로 미래형 친환경자동차,
+												스마트에너지, 생체의료 등 첨단기술의 융복합을 통해 대한민국
+												혁신성장의 거점으로 조성되고 있습니다.
+											</p>
+											<p class="normal-mt">
+												AI융복합지구, 미래형자동차지구, 스마트에너지1, 2지구로 조성된
+												광주경제자유구역은 기업의 투자와 성공 비즈니스를 위한 최적의
+												환경을 약속합니다.
+											</p>
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">광주경제자유구역(GJFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													광주(남구ㆍ북구ㆍ광산구)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													4.37㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2021.01.27
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													광주공항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													‘20~’25
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">AI, 자동차 및 친환경자동차 부품, 스마트에너지 관련,
+												차세대 배터리, 생체의료 및 헬스 케어 등</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.gjfez.go.kr/" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://www.gjfez.go.kr/boardList.do?boardId=BD0008&pageId=www61" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+												<li><a href="https://www.gjfez.go.kr/contentsView.do?pageId=www14" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>VR
+													바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 광주 -->
+
+									<!-- 광양만-->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_gfez.gif" alt="광양만권경제자유구역(GFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												동북아 비즈니스의 중심지, 기회의 땅!<br>
+												최고의 투자지역 GFEZ 입니다.
+											</p>
+										</div>
+										<div class="normal-txt">
+											당신의 성공을 위해 가장 완벽하게 준비된 최적의 6개 특화지구 17개
+											단지 개발을 통해 역동적인 국제 무역도시로서의 모습을 갖추며
+											동북아시아 물류 · 신산업 · 관광의 허브로 거듭나고 있습니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">광양만권경제자유구역(GFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													전남(여수ㆍ순천ㆍ광양), 경남(하동군)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													59.6㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2003. 03. 24
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													광양항, 여수공항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													22년(1차 03~09, 2차 10~14, 3차 15~22)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">
+												미래형 첨단소재산업, 기능성화확, 이차전지,
+												항만물류서비스, 복합관광레저, 바이오산업
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.gfez.go.kr/kor/index.do" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://www.gfez.go.kr/prog/mvp/pr/sub02_01/B/list.do" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 광양만 -->
+
+									<!-- 대구·경북-->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_dgfez.png" alt="대구ㆍ경북경제자유구역(DGFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												제조업 신화를 거쳐 첨단 융복합 메디컬 산업의 비전까지
+											</p>
+										</div>
+										<div class="normal-txt">
+											국내지식기반산업 및 서비스 인프라가 두루 갖추어진 대구 ·경북.
+											IT융합, 첨단수송기계부품, 메디컬 산업을 중점으로 사업부지,
+											R&amp;D시설, 상업 및 주거여건을 안정적으로 제공합니다. 국내 최대
+											자동차부품, IT/SW산업 및 의료, 철강산업 등 국내 주력산업의
+											클러스터의 중심이자 풍부한 인적자원을 자랑하는 곳.
+											대구경북경제자유구역(DGFEZ)입니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">대구ㆍ경북경제자유구역(DGFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													대구,경북(경산, 영천, 포항)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													18.46㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2008.08.13
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													대구공항, 포항영일만항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													2024(1차 08~13, 2차 14~24)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">
+												자동차 및 기계부품, 그린에너지, 바이오, 의료기기, IT, SW
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.dgfez.go.kr/" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://www.dgfez.go.kr/page.php?mnu_uid=1543&" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+												<li><a href="https://dgfez.go.kr/dgfez_vr/index.html" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>VR
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 대구·경북 -->
+
+									<!-- 울산 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_ufez.gif" alt="울산경제자유구역(UFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												동북아 에너지 허브 울산경제자유구역<br>
+												(UFEZ : Ulsan Free Economic Zone)
+											</p>
+										</div>
+										<div class="normal-txt">
+											울산은 1인당 지역총생산량 전국 1위의 산업도시로서, 자동차·조선·
+											석유화학 관련 세계적인 기업이 위치해 있는 것은 물론 이를
+											뒷받침하는 항만·공항·철도 등 우수한 산업인프라와 UNIST·
+											에너지경제연구원·한국화학연구원 등 다양한 연구기관을 갖추고
+											있습니다. 울산은 앞으로도 우리나라 산업 발전의 중요한 역할을
+											담당하기 위해 미래모빌리티·바이오·화학 신소재·수소/저탄소
+											에너지 산업을 중점 육성할 계획이며, 그 중심에 울산경제자유구역이
+											있습니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">울산경제자유구역(UFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													울산(남구ㆍ북구ㆍ울주군)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													4.7㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2021.01.14
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													울산공항, 울산항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													'20~'30
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">
+												미래모빌리티, 바이오ㆍ화학, 신소재, 수소ㆍ저탄소 에너지, 수소산업(자동차 부품, 연료전지)
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.ulsan.go.kr/s/ufez/main.ulsan" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<!-- <li><a href="#;" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li> -->
+											</ul>
+										</div>
+									</div>
+									<!-- // 울산 -->
+
+									<!-- 부산진해 -->
+									<div class="local_info active">
+										<img src="../../images/ik-kr/img_logo_bjfez.png" alt="부산진해경제자유구역(BJFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												세계 최고 물류·비즈니스의 중심
+											</p>
+										</div>
+										<div class="normal-txt">
+											컨테이너 물동량 세계 7위, 환적화물 세계 2위의 부산항은 국내 화물
+											물동량의 75%를 담당하는 동북아 최고의 물류중심지입니다.
+											조선·자동차·기계 산업이 집중된 글로벌 산업 클러스터의
+											중심지이자, 전기차·데이터 센터 등 차세대 디지털 산업의 핵심 지역,
+											부산·진해경제자유구역입니다.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">부산진해경제자유구역(BJFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													부산(강서구), 경남(창원시)
+												</li>
+												<li>
+													<strong class="bold">면적 :</strong>
+													51.1㎢
+												</li>
+												<li>
+													<strong class="bold">개청일 :</strong>
+													2004. 03. 30
+												</li>
+												<li>
+													<strong class="bold">공항ㆍ항만 :</strong>
+													김해공항, 부산신항
+												</li>
+												<li>
+													<strong class="bold">개발완료 :</strong>
+													2023(1차 04~06, 2차 07~15, 3차 16~23)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">중점유치업종(핵심전략산업)</h5>
+											<p class="txt-con-box">
+												첨단부품소재제조업(자동차, 해양플랜트부품, 산업기계ㆍ부품 등), 항만물류, R&amp;D, 관광레저, 바이오ㆍ헬스
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.bjfez.go.kr/main.web" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>홈페이지
+															바로가기</span></a></li>
+												<li><a href="https://www.bjfez.go.kr/whybjfez/00033.web" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>홍보영상
+															바로가기</span></a></li>
+												<li><a href="https://www.bjfez.go.kr/vr/vr/" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>VR
+															바로가기</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 부산진해 -->
+
+								</div>
+							</div>
+							<script>
+								$('.btn-default-s').trigger('click');
+
+								// 모바일 일때 지자체 변경
+								function localMapTrans() {
+									var sel_midx = $("#local_choice option").index($("#local_choice option:selected"));
+
+									$('.map-l > img').removeClass('active').eq(sel_midx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_midx).addClass('active');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$('.sel-local-box ul>li').eq(sel_midx).find('button').addClass('active');
+								}
+
+								// pc 일때 지자체 변경
+								$('.sel-local-box ul>li>button').on('click', function () {
+									var sel_pcidx = $(this).closest('li').index();
+
+									$("#local_choice option").eq(sel_pcidx).attr('selected', 'selected');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$(this).addClass('active');
+									$('.map-l > img').removeClass('active').eq(sel_pcidx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_pcidx).addClass('active');
+								})
+							</script>
+						</div>
+
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

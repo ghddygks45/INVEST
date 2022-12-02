@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/jj-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/jj-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/jj-ch/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/jj-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>메인페이지 | 제주</title>
+
+</head>
+<body>
+	<div class="wrap gwn-wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container" id="content">
+
+            <div id="visual_wrap">
+                <div class="main_slider">
+                    <div><a href="#n">
+                        <img src="../../images/gwn-kr/visual.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/gwn-kr/visual_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                    <div><a href="#n">
+                        <img src="../../images/gwn-kr/visual.jpg" alt="visual" class="pc_img">
+                        <img src="../../images/gwn-kr/visual_m.jpg" alt="visual" class="m_img">
+                    </a></div>
+                </div>
+                <div class="slider_btn">
+                    <span class="count">
+                        <strong>1</strong>/<span id="total"></span>
+                    </span>
+                    <div class="slider_arrow">
+                        <button class="slide_prev"><span class="blind">이전</span></button>
+                        <button class="slide_stop" onclick="sliderStop(this);"><span class="blind">정지</span></button>
+                        <button class="slide_play" onclick="sliderPlay(this);"><span class="blind">재생</span></button>
+                        <button class="slide_next"><span class="blind">다음</span></button>
+                    </div>
+                </div>
+                <ul class="visual_link">
+                    <li><a href="#n" class="list01">투자상담</a></li>
+                    <li><a href="#n" class="list02">투자환경</a></li>
+                    <li><a href="#n" class="list03">新闻及活动</a></li>
+                    <li><a href="#n" class="list04">홍보자료</a></li>
+                    <li><a href="#n" class="list05">제주라이프</a></li>
+                    <li><a href="#n" class="list06">투자프로젝트</a></li>
+                    <li><a href="#n" class="list07">有用的链接</a></li>
+                </ul>
+            </div>
+
+            <div id="contents" class="jj-cnt">
+
+                <!-- 뉴스.행사 / 발간물, 홍보영상 -->
+                <div class="inner">
+                    <div class="section1">
+                        <h2 class="h2_tit">新闻及活动<a href="#n"></a></h2>
+                        <ul>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>05</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주도, 사물인터넷 분야 기술 2건 특허 확보
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>03</strong>
+                                    <span>2020.11</span>
+                                </div>
+                                제주산 계란 중동 두바이 갔다…한국인 경영 유통업체서 수입
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>29</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                균형발전박람회 온라인 제주 전시관 선보여…디지털 뉴딜 소개
+                            </a></li>
+                            <li><a href="#n">
+                                <div class="date">
+                                    <strong>22</strong>
+                                    <span>2020.10</span>
+                                </div>
+                                제주도, 185개 관광업체에 272억원 관광진흥기금 융자 지원
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="section2 main_section">
+                        <h2 class="h2_tit">出版物<a href="#n"></a></h2>
+                        <a href="#n">
+                            <div class="img"><img src="../../images/jj-kr/img_pub.gif" alt="강원 투자 가이드"></div>
+                            <div class="txt">
+                                <h3>2020 제주 투자정보</h3>
+                                <p>(Gangwon Investment...</p>
+                                <span>2020.06.18</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="section3 main_section">
+                        <h2 class="h2_tit">宣传影片<a href="#n"></a></h2>
+                        <a href="#n">
+                            <img src="../../images/jj-kr/img_video.gif" alt="East Coast Free Economic Zone Investment Promotion IR">
+                            <h3>제주도에는 제주도가 참 많다</h3>
+                            <p>Zone Investment Promoti...</p>
+                            <span>2020.06.18</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- // 뉴스.행사 / 발간물, 홍보영상 -->
+
+                <!-- 제주 라이프 -->
+                <div class="jj-life">
+                    <div class="life-inner">
+                        <h2>济州生活</h2>
+                        <div class="sec1">
+                            <div class="fl">
+                                <ul>
+                                    <li class="life-box1">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=9">
+                                            <div><img src="../../images/jj-kr/img_jj_life01.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>休闲产业</strong></div>
+                                                <div class="iife-t2">从汉拿山到大海，从观光到体验之旅。 </div>
+                                                <div class="iife-t3">吸引国内外游客的济州岛休闲产业</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box2">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=21">
+                                            <div><img src="../../images/jj-kr/img_jj_life02.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>亚热带农作物产业 第二篇</strong></div>
+                                                <div class="iife-t2">同心合意放光明，热带及亚热带农作物的社会农场“空心菜农业公司法人”</div>
+                                                <div class="iife-t3 sec1-clamp1">
+                                                    韩国家庭中有33万户是跨国婚姻家庭，占总体的1.6%，而跨国婚姻家庭的成员已近100万名。随着转换为多元文化社会，人们对于热带及亚热带农作物的需求也在逐渐增加。但是，依然存在着种族歧视和移民女性的人权问题等社会问题。有一家以韩语名称中寓意“同心合意放光明”的蔬菜“空心菜”作为法人名称，和济州岛移民女性一起主导食物创新的公司，那就是通过济州岛亚热带蔬菜的栽培、流通、体验、加工等，希望成为韩国第一农业公司的“空心菜农业公司法人”。
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <ul>
+                                    <li class="life-box3">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=20">
+                                            <div><img src="../../images/jj-kr/img_jj_life03.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>亚热带农作物产业 第一篇</strong></div>
+                                                <div class="iife-t2">将气候变化危机转化为机会 引领未来饮食的济州岛热带及亚热带农作物产业</div>
+                                                <div class="iife-t3 sec1-clamp2">
+                                                    在济州岛的阳光下，熟透的橄榄挂在路边的橄榄树上。两米多高的香蕉树上结满了香蕉，像苹果一样泛着红光的苹果芒和酷似葫芦的木瓜等待着收获。听起来这似乎是属于东南亚或地中海地区的农场风景，但这些橄榄、香蕉、苹果芒和木瓜都是目前济州岛正在积极栽培的亚热带农作物。 
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box4">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=4">
+                                            <div><img src="../../images/jj-kr/img_jj_life04.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>化妆品原料产业 第一篇</strong></div>
+                                                <div class="iife-t2">不止于美，为未来产业赋能</div>
+                                                <div class="iife-t3">发现“清洁济州”物种新功能 济州化妆品原料产业</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sec2">
+                            <div class="fl">
+                                <ul>
+                                    <li class="life-box5">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=13">
+                                            <div><img src="../../images/jj-kr/img_jj_life05.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>养猪产业</strong></div>
+                                                <div class="iife-t2">养猪产业是具有高附加价值的第一产业，且具有可向二次加工业、三次服务业发展的扩张性。</div>
+                                                <div class="iife-t3 sec2-clamp1">
+                                                    济州岛为了确保养猪产业的竞争力，正在促进生产技术及流通方面积极提供着支援。并以ICT融合·复合事业，维持适当的饲养数量，调整饲养密度，研发处理粪便和管理饲养环境的系统。还计划构建家畜粪便移交系统，谋求与地区相辅相成的可持续型养猪产业的发展。
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box6">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=2">
+                                            <div><img src="../../images/jj-kr/img_jj_life06.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>新再生能个产业 第二篇</strong></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr">
+                                <ul>
+                                    <li class="life-box7">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=1">
+                                            <div><img src="../../images/jj-kr/img_jj_life07.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>新再生能个产业 第一篇</strong></div>
+                                                <div class="iife-t2">化身举世瞩目的国际绿色产业中心 向“无碳之岛，济州”迈出坚定步伐</div>
+                                                <div class="iife-t3 sec2-clamp2">
+                                                    工业化的辉煌成就让人类丰衣足食，但也导致了环境破坏和资源枯竭。每当气候异常引发自然灾害时，人们总是会说“地球生病了”。这也从侧面证明，人们认识到了问题的严重，而且情况亟待改善。
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="life-box8">
+                                        <a href="/jj-ch/bbs/i-1822/detail.do?ntt_sn=5">
+                                            <div><img src="../../images/jj-kr/img_jj_life08.jpg" alt=""></div>
+                                            <div class="iife-txt">
+                                                <div class="iife-t1"><strong>化妆品原料产业 第二篇</strong></div>
+                                                <div class="iife-t2 sec2-clamp3">不止于美，为未来产业赋能 发现“清洁济州”物种新功能</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 제주 라이프 -->
+
+            </div>
+
+		</div>
+        <!-- //container -->
+
+        <script>
+            /* 비주얼 롤링 */
+            $('.main_slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                prevArrow:$('.slide_prev'),
+                nextArrow:$('.slide_next'),
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                        }
+                    }
+                ]
+            });
+            $('#total').text($('.main_slider .slick-slide:not(.slick-cloned)').length);
+            $('.main_slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                $('.slider_btn .count > strong').html(nextSlide + 1);
+            });
+            
+            
+            function sliderStop(obj){
+                $(obj).hide().next().css('display','inline-block');
+                $('.main_slider').slick('slickPause');
+            }
+
+            
+            function sliderPlay(obj){
+                $(obj).hide().prev().css('display','inline-block');
+                $('.main_slider').slick('slickPlay');
+            }
+
+            $('.visual_link').slick({
+                infinite: true,
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: false,
+                arrows:false,
+                responsive: [
+                    {
+                        breakpoint: 1217,
+                        settings: {
+                            arrows:true,
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        </script>
+        
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/********************************************************
+    파일명 : asis.css
+    설  명 : 기존 에디터 css 사용
+ 
+    수정일         수정자      Version    Function 명
+  -----------  ------------- ----------- --------------
+  2020.12.24    Geist Korea      1.0       최초 생성
+*********************************************************/
+
+.kotra_table,.kotra_table02{
+    border-top: 2px solid #666;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.kotra_table thead th,.kotra_table02 thead th {
+    padding: 11px 3px;
+    font-weight: 500;
+    color: #333;
+    background-color: #edf4fa;
+    border-width: 1px;
+    border-style: none solid solid none;
+    border-color: #d6d6d6;
+}
+
+.kotra_table tbody th,.kotra_table tbody td,.kotra_table02 tbody th, .kotra_table02 tbody td{
+    padding: 11px 5px;
+    border-width: 1px;
+    border-style: none solid solid none;
+    border-color: #d6d6d6;
+    background-color: #fff;
+}
+
+.kotra_table tbody th{
+    font-weight: 500;
+    color: #333;
+    background-color: #f6f6f6;
+}
+
+.kotra_table th:last-child,.kotra_table td:last-child,.kotra_table02 th:last-child,.kotra_table02 td:last-child{
+    border-right:0;
+}
+
+@media screen and (min-width: 1217px) {
+    .kotra_table thead th,.kotra_table02 thead th {padding: 16px 3px;}
+    .kotra_table tbody th,.kotra_table tbody td,.kotra_table02 tbody th,.kotra_table02 tbody td{padding: 16px 10px;}
+    .kotra_table tbody td a,.kotra_table02 tbody td.td_left{text-align:left;}
+    .kotra_table tbody td.td_left,.kotra_table tbody th.th_left,.kotra_table thead th.th_left,.kotra_table02 tbody td.td_left{text-align:left !important;}
+    .kotra_table tbody td.td_right{text-align:right !important;}
+
+    .kotra_table tbody td.td_blue{background-color:#e8f0f8;color:#296ebc;}
+    .kotra_table tbody th.no_back{background-color: #fff !important;}
+    .kotra_table tbody th.th_blue{background-color: #e8f0f8 !important;}
+    .kotra_table tbody th.th_black{color:#000000;}
+    .kotra_table tbody td.td_korea{background-color: #22b0be !important; color:#fff;}
+
+    /* .kotra_table tbody th.th_top{padding-top:30px;}
+    .kotra_table thead th.th_pd20{padding:20px;}
+    .kotra_table tbody th.th_pd20{padding:20px;}
+    .kotra_table02 tbody th.no_back{background-color: #fff !important;}
+    .no_back{background-color: #fff !important;} */
+    .no_right {border-right: none !important;}
+    .no_bottom {border-bottom: none !important;}
+
+    .kotra_table02 tbody td ul li{line-height:22px;}
+    .tab_p{text-align:right;font-size:14px;}
+    .tab_p_l{text-align:left;font-size:14px;}
+    .tab_p_c{text-align:center;font-size:14px;}
+    .tab_p_l{text-align:left;font-size:14px;}
+    .table_ul01 li{line-height:28px;padding:0 5px 0 10px; background:url(/_res/kr/img/common/dot01.gif) no-repeat 0 10px;}
+    .table_ul02 li{line-height:28px;padding:0 5px 3px 10px; background:url(/_res/kr/img/common/bar_dot.gif) no-repeat 0 13px;}
+    .table_ul03 li{line-height:28px;padding:0 5px 0 10px;}
+    .map_p01{background:url(/_res/kr/img/common/bg_add01.gif) no-repeat 35px 2px;padding:0 0 0 65px; }
+    .map_p02{background:url(/_res/kr/img/common/bg_add02.gif) no-repeat 35px 2px;padding:0 0 0 65px; }
+    .fta_top{border-top: 2px solid #2e4c80; background-color: #f7f7f7 !important;}
+    .fta_bottom_bar{border-bottom: 1px solid #dadada;}
+    .fta_th_font{line-height: 24px;color:#000000;font-weight: bold; padding: 20px 0; text-align:center;}
+    .table_ul01_02 li{line-height:28px;padding:0 5px 0 10px; background:url(/_res/kr/img/common/dot01.gif) no-repeat 0 12px;}
+    .table_ul02_02 li{line-height:20px;padding:0 5px 3px 10px;background:url(/_res/kr/img/common/bar_dot.gif) no-repeat 0 10px;}
+    .infra_div ul li{ line-height: 23px;letter-spacing: -0.035em;}
+
+}

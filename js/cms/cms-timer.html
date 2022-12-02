@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>[팝업] 로그인 연장 | CMS관리시스템</title>
+<link rel="stylesheet" type="text/css" href="/css/cms/style.css" media="all" />
+<script type="text/javascript" src="/js/cms/jquery-1.12.0.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/cms/ui.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/cms/cms-timer.js"></script>
+</head>
+<body>
+<div id="popup">
+	<div id="header">
+		<h1><i class="fa fa-clock-o" aria-hidden="true"></i> 로그인 연장</h1>
+	</div>
+	<div id="content">
+		<!-- 콘텐츠 영역 -->
+		<div class="ac mt30">
+			<p class="mt20">개인정보를 위해 장시간 사용하지 않아</p>
+			<p>1분 후 자동 로그아웃 처리됩니다.</p>
+		</div>
+
+		<div class="btn_area mt30">
+			<button type="button" class="btn btn_lg act" onclick="fnExtend();"><i class="fa fa-toggle-on" aria-hidden="true"></i> 연장</button>
+		</div>
+		<!-- // 콘텐츠 영역 -->
+	</div>
+	<button type="button" id="btn_pop_close" onclick="window.close()">창닫기</button>
+</div>
+</body>
+</html>

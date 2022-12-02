@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">	
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all" />
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body>
+	<div id="popup">
+		<div id="header">
+			<h1>KOTRA Express 구독신청 내역</h1>
+		</div>
+		<div id="content">
+			<!-- 콘텐츠 영역 -->
+			<table class="tb_write">
+				<colgroup>
+					<col style="width:200px">
+					<col>
+				</colgroup>
+				<tbody>
+                    <tr>
+                        <th>상태</th>
+                        <td>
+                            <input type="radio" name="radio1" id="radio1-1">
+                            <label for="radio1-1">구독중</label>
+                            <input type="radio" name="radio1" id="radio1-2">
+                            <label for="radio1-2">구독거부</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>신청대상 홈페이지(언어)</th>
+                        <td>
+                            <input type="radio" name="radio2" id="radio2-1">
+                            <label for="radio2-1">국문</label>
+                            <input type="radio" name="radio2" id="radio2-2">
+                            <label for="radio2-2">영문</label>
+                            <input type="radio" name="radio2" id="radio2-3">
+                            <label for="radio2-3">중문</label>
+                            <input type="radio" name="radio2" id="radio2-4">
+                            <label for="radio2-4">일문</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" style="width:200px"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td><input type="text" style="width:100%"></td>
+                    </tr>
+                    <tr>
+                        <th>국적</th>
+                        <td>
+                            <select name="" id="" style="width:200px">
+                                <option value="">국적 선택</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>직업</th>
+                        <td>
+                            <select name="" id="" style="width:200px">
+                                <option value="">직업 선택</option>
+                            </select>
+                        </td>
+                    </tr>
+				</tbody>
+            </table>
+            
+            <div class="btn_area">
+                <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 등록</button>
+                <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 수정</button>
+                <button type="button" class="btn btn_lg"><i class="fa fa-close"></i> 취소</button>
+            </div>
+			<!-- // 콘텐츠 영역 -->
+		</div>
+		<button type="button" id="btn_pop_close" onclick="window.close()">창닫기</button>
+	</div>
+</body>
+
+</html>

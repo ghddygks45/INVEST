@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+	<link rel="stylesheet" href="../../css/jj-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script type="text/javascript">
+        $(function() {
+            var content = $(opener.document).find(".container .inner").html();
+            $(".print-box").append(content);
+            window.print();
+        });
+        </script>
+	<title>페이지 인쇄 | 충남</title>
+</head>
+<body>
+    <div class="print-box"></div>
+</body>
+</html>

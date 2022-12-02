@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">투자초기비용검색</a>
+				<span>&gt;</span>
+				<strong>계산이력</strong>
+			</p>
+
+			<h2 id="tit_page">계산이력</h2>
+			<div class="search_area">
+				<table class="tb_search">
+					<caption>검색조건</caption>
+					<colgroup>
+						<col style="width:120px" />
+						<col />
+						<col style="width:120px" />
+						<col />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><label for="srchFr">기간</label></th>
+							<td colspan="3">
+								<input type="text" id="srchFr" title="시작일" style="width:100px;" />
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('srchFr')); return false;">달력</a> ~
+								<input type="text" id="srchTo" title="종료일" style="width:100px;" />
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('srchTo')); return false;">달력</a>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="group">국가</label></th>
+							<td>
+								<select id="group">
+									<option>국가 선택</option>
+								</select>
+								<span><a href="#none" class="btn">검색</a></span>
+							</td>
+							<th><label for="group2">산업분류</label></th>
+							<td>
+								<select id="group2">
+									<option>산업분류 선택</option>
+								</select>
+								<span><a href="#none" class="btn">검색</a></span>
+							</td>
+						</tr>
+						<tr>
+							<th>계산구분</th>
+							<td>
+								<input type="radio" name="chk1" id="chk-1">
+								<label for="chk-1">인건비</label>
+								<input type="radio" name="chk1" id="chk-2">
+								<label for="chk-2">4대 보험</label>
+								<input type="radio" name="chk1" id="chk-3">
+								<label for="chk-3">임대료</label>
+								<input type="radio" name="chk1" id="chk-4">
+								<label for="chk-4">기타세금</label>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="subject">검색</label></th>
+							<td colspan="3">
+								<select id="subject">
+									<option>검색조건 선택</option>
+									<option>기업명</option>
+									<option>입력데이터</option>
+								</select>
+								<input type="text" title="검색어" placeholder="검색어를 입력해주세요." />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn_area">
+					<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+					<button type="reset" class="btn btn_lg"><i class="fa fa-refresh"></i> 초기화</button>
+				</div>
+			</div>
+
+			<div class="list_status">
+				<p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+				<div class="fr">
+					<a href="#" class="btn xls">엑셀다운로드</a>
+					<select class="post_num" title="리스트">
+						<option>10</option>
+						<option>20</option>
+						<option>30</option>
+					</select>
+					<button type="submit" class="btn">적용</button>
+				</div>
+			</div>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<colgroup>
+						<col style="width: 120px;">
+						<col style="width: 150px;">
+						<col style="width: 180px;">
+						<col style="width: 160px;">
+						<col style="width: 160px;">
+						<col>
+						<col style="width: 180px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>계산구분</th>
+							<th>기업명</th>
+							<th>국가</th>
+							<th>산업분류</th>
+							<th>입력 데이터</th>
+							<th>계산일시</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>9</td>
+							<td>인건비</td>
+							<td>Geistkorea</td>
+							<td>Singapore</td>
+							<td>정보통신(ICT)</td>
+							<td>직업 / 정보통신 전문가 및 기술직</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>4대 보험</td>
+							<td>Alphabet Inc.</td>
+							<td>United States</td>
+							<td>정보통신(ICT)</td>
+							<td>2,000,000원 / 100~299명 / 전기기계기구 · 정밀기구 · 전자제품제조업</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>임대료</td>
+							<td>NVDIA Corporation</td>
+							<td>United States</td>
+							<td>반도체</td>
+							<td>서울 여의도 마포 / 서울 여의도 마포 영등포역 / 1,000 m^2</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>기타세금</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>100,000,000 원 / 서울 여의도 마포 / 서울 여의도 마포 영등포역</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>인건비</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>산업 / 전자부품, 컴퓨터, 영상, 음향 및 통신장비 제조업</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>인건비</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>경력 / 3년 이상~4년 미만</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>인건비</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>근속년수 / 10~15년 미만</td>
+							<td>2022.01.21 10:38:10</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pagination">
+				<strong>1</strong>
+				<a
+					href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+				<a
+					href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a>
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

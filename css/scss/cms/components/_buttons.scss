@@ -1,0 +1,291 @@
+/* 버튼 */
+.btn {
+	$btn-text-color: #fff !default;
+	display: inline-block;
+	padding: 0.5em 0.8em;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	color: #fff;
+	font-size: $font-size-base;
+	text-align: center;
+	line-height: 1.285714285714286;
+	text-decoration: none !important;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-color: $color-gray;
+	overflow: hidden;
+	transition: .3s;
+
+	&.inline {
+		padding: 0.3em 0.6em;
+		font-size: 13px;
+	}
+
+	.fa:first-child {
+		margin-right: 0.3em;
+	}
+
+	.fa-external-link {
+		margin-right: 0;
+		margin-left: 0.3em;
+	}
+
+	&:hover,
+	&:focus {
+		color: $btn-text-color !important;
+		border-color: transparent;
+		background-color: #333;
+	}
+
+	&.basic {
+		color: $color-gray;
+		border-color: rgba(204, 204, 204, 1) !important;
+		background-color: #f5f5f5;
+
+		&:hover,
+		&:focus {
+			color: $color-primary !important;
+			border-color: $color-primary;
+			background-color: #f8f8f8;
+		}
+	}
+
+	&.nav {
+		color: $btn-text-color;
+		background-color: $color-gray;
+
+		&:hover,
+		&:focus {
+			color: $btn-text-color !important;
+			border-color: transparent;
+			background-color: #333;
+		}
+	}
+
+	&.act {
+		color: $btn-text-color;
+		background-color: $color-primary !important;
+
+		&:hover,
+		&:focus {
+			color: $btn-text-color !important;
+			border-color: transparent;
+			background-color: darken($color-primary, 10%);
+		}
+	}
+
+	&.bg_green{
+		background:$green ;
+	}
+	
+	&.bg_navy{
+		background:$blue;
+	}
+}
+
+.btn_block {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+.btn_lg {
+	padding: 0.5em 1em;
+	border-radius: 3px;
+	font-weight: 600;
+	font-size: 17px;
+}
+
+.btn_md {
+	padding: 0.5em 0.8em;
+	font-size: $font-size-base;
+}
+
+.btn_sm,
+.tree_area .btn {
+	padding: 0.4em 0.7em;
+	font-size: 12px;
+}
+
+.btn_sm .fa:first-child {
+	margin-right: 0;
+}
+
+.btn_xs {
+	padding: 0.3em 0.7em;
+	font-size: 11px;
+
+	.fa:first-child {
+		margin-right: 0;
+	}
+}
+
+.btn_area {
+	position: relative;
+	margin-top: 20px;
+	text-align: right;
+	overflow: hidden;
+}
+
+.pagination+.btn_area {
+	margin-top: 0;
+}
+
+.btn_area .btn+.btn {
+	margin-left: 6px;
+}
+
+.list_ctrl .btn+.btn {
+	margin-left: 0;
+}
+
+.term_setting {
+	display: inline-block;
+	padding-left: 1px;
+	font-size: 0;
+	vertical-align: middle;
+	overflow: hidden;
+
+	button {
+		height: 34px;
+		margin-left: -1px;
+		padding: 0 8px;
+		border: 1px solid $border-color-dark;
+		color: #666;
+		font-size: $font-size-base;
+		line-height: 32px;
+		vertical-align: middle;
+		background-color: #fff;
+		overflow: hidden;
+
+		&:first-child {
+			border-radius: 2px 0 0 2px;
+		}
+
+		&:last-child {
+			border-radius: 0 2px 2px 0;
+		}
+
+		min-width: 50px;
+		padding: 0 10px;
+		outline-color: transparent;
+
+		&.on {
+			position: relative;
+			color: $color-primary;
+			border-color: $color-primary;
+			z-index: 10;
+		}
+	}
+}
+
+.btn_download {
+	position: relative;
+	display: inline-block;
+	width: 12px;
+	height: 22px;
+	padding-left: 12px;
+	white-space: nowrap;
+	vertical-align: middle;
+	overflow: hidden;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-family: 'FontAwesome';
+		content: '\f0c7';
+	}
+}
+
+.btn.xls {
+	background-color: #227447;
+
+	&:before {
+		display: inline;
+		margin-right: 5px;
+		font-family: 'FontAwesome';
+		content: '\f1c3';
+	}
+}
+
+.btn-file-add,
+.btn-file-del {
+	padding-right: 26px;
+	position: relative;
+
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+
+		background: #000;
+	}
+
+
+	&:hover {
+
+		&:after,
+		&:before {
+			background: #fff;
+		}
+	}
+
+}
+
+.btn-file-add {
+
+	color: #badcff;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		width: 2px;
+		height: 10px;
+		background: #badcff;
+		vertical-align: 1px;
+		margin-left: 4px;
+		position: absolute;
+		right: 14px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 10px;
+		height: 2px;
+		background: #badcff;
+		vertical-align: 1px;
+		margin-left: 4px;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.btn-file-del {
+	color: #ffbaba;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 10px;
+		height: 2px;
+		background: #ffbaba;
+		vertical-align: 1px;
+		margin-left: 4px;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.btn-add{
+	background-color:$green !important;
+}

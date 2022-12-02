@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-kr/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../css/ik-kr-new/style_20220216.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<script src="../../js/ik-kr-new/20220217_pub.js"></script>
+	<!-- 2022-03-04 추가 -->
+	<script src="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<!-- // 2022-03-04 추가 -->
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>회원가입 &lt; 회원가입 &lt; 투자가 회원가입 &lt; 투자가 로그인 &lt; 온라인 매칭 플랫폼 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(1, 1, 2)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/new_20220216.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>Register as Investor</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>Online Matching Platform</li>
+						<li>Investors Log-in</li>
+						<li>Register as Investor</li>
+					</ul>
+
+					<div class="ctn">
+
+						<!-- 모바일 환경 노출 방지 -->
+						<div class="use-pc">
+							<strong>This menu is not available on <span>mobile.</span></strong>
+							Please use your PC for this service.
+							<div class="btn"><a href="#n" class="btn-pc-version">Go back to previous page</a></div>
+						</div>
+						<!-- // 모바일 환경 노출 방지 -->
+
+						<div class="pc-content">
+
+							<div class="section">
+								<h4 class="sub-tit01">Enter Information of Person in Charge</h4>
+								<div class="normal-table02 level01">
+									<ul>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data1">Name of person in charge (English)</label><span
+														class="must">*</span>
+												</div>
+												<div class="cont">
+													<input type="text" id="data1" class="input-type1" title="Name of person in charge (English)">
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data2">Position</label></div>
+												<div class="cont">
+													<input type="text" id="data2" class="input-type1" title="Position">
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data3">E-mail</label><span class="must">*</span>
+												</div>
+												<div class="cont">
+													<input type="text" placeholder="Eg) name@kotra.or.kr" id="data3" class="input-type1">
+													<button type="button" class="btn-default-s"
+														onclick="fn_open_popup(this,'email-popup');">Verify E-mail</button>
+													<!-- 인증완료 -->
+													<span class="emailsuccess ml8 vm">Verification completed</span>
+													<!-- // 인증완료 -->
+													<div class=" color-blue normal-mt">※ Your email address will be used as your ID.</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data4">Password</label><span class="must">*</span>
+												</div>
+												<div class="cont">
+													<input type="password" id="data4" class="input-type2" title="Password">
+													<div>
+														<span class="color-blue vm ml8">※ Please enter at least 9 characters in length, with
+															letters,
+															numeric characters, and special characters.</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data5">Confirm password</label><span class="must">*</span>
+												</div>
+												<div class="cont">
+													<input type="password" id="data5" class="input-type2" title="Confirm password">
+													<div>
+														<span class="color-blue vm ml8">※ Please enter at least 9 characters in length, with
+															letters,
+															numeric characters, and special characters.</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data6">Phone no.</label><span class="must">*</span>
+												</div>
+												<div class="cont">
+													<input type="text" id="data6" class="input-type1" placeholder="Eg) 82 2-1234-5678"
+														title="Phone no.">
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data7">Mobile no.</label><span class="must">*</span></div>
+												<div class="cont">
+													<input type="text" id="data7" class="input-type1" placeholder="Eg) 82 10-1234-5678"
+														title="Mobile no.">
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="layer-popup-box h_normal" data-popup="email-popup" tabindex="0">
+									<div class="popup">
+										<div class="top">
+											<div class="tit">
+												E-mail Verification
+											</div>
+											<button type="button" class="btn-close" onclick="fn_hide_popup('email-popup');"><span
+													class="blind">닫기</span></button>
+										</div>
+										<div class="pop-content">
+											<div class="pop-email">
+												<strong>E-mail verification is required for investor members.</strong>
+												<div class="color-blue">Please enter the verification code sent to your e-mail account.</div>
+												<div class="code_box">
+													<input type="text" maxlength="1" oninput="codeInputMoving(this);">
+													<input type="text" maxlength="1" oninput="codeInputMoving(this);">
+													<input type="text" maxlength="1" oninput="codeInputMoving(this);">
+													-
+													<input type="text" maxlength="1" oninput="codeInputMoving(this);">
+													<input type="text" maxlength="1" oninput="codeInputMoving(this);">
+													<input type="text" maxlength="1" oninput="codeInputMoving(this);">
+												</div>
+												<a href="#n" class="bold underline">[Resend verification code]</a>
+												<script>
+													function codeInputMoving(obj) {
+														$(obj).next('input').focus();
+													}
+												</script>
+											</div>
+											<div class="btn-area">
+												<div class="r">
+													<a href="#n" class="btn-default bg-blue" onclick="fn_hide_popup('email-popup');">Confirm</a>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="layer-popup-box" data-popup="category-popup" tabindex="0">
+									<div class="popup pop-size-800">
+										<div class="top">
+											<div class="tit">
+												표준산업분류 선택
+											</div>
+											<button type="button" class="btn-close" onclick="fn_hide_popup('category-popup');"><span
+													class="blind">닫기</span></button>
+										</div>
+										<div class="pop-content">
+											<div class="category-area v2 item-level02">
+												<div class="category-box-wrap">
+													<div class="category-box">
+														<strong class="sub-tit03">01.대분류선택</strong>
+														<ul>
+															<li><a href="#n">정보통신</a></li>
+															<li><a href="#n" class="active">정보통신</a></li>
+															<li><a href="#n">정보통신</a></li>
+														</ul>
+													</div>
+													<div class="category-box">
+														<strong class="sub-tit03">02.중분류선택</strong>
+														<ul>
+															<li><a href="#n" class="active">우편 및 통신업</a></li>
+														</ul>
+													</div>
+													<!-- <div class="category-box">
+                                                        <strong class="sub-tit03">03.소분류선택</strong>
+                                                        <ul>
+                                                            <li><a href="#n">전기 통신업</a></li>
+                                                            <li><a href="#n">전기 통신업</a></li>
+                                                            <li><a href="#n" class="active">전기 통신업</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="category-box">
+                                                        <strong class="sub-tit03">04.세분류선택</strong>
+                                                        <ul>
+                                                            <li><a href="#n">유선 통신업</a></li>
+                                                            <li><a href="#n" class="active">유선 통신업</a></li>
+                                                            <li><a href="#n">유선 통신업</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="category-box">
+                                                        <strong class="sub-tit03">05.세세분류선택</strong>
+                                                        <ul>
+                                                            <li><a href="#n">유선 통신업</a></li>
+                                                            <li><a href="#n" class="active">유선 통신업</a></li>
+                                                            <li><a href="#n">유선 통신업</a></li>
+                                                        </ul>
+                                                    </div> -->
+												</div>
+											</div>
+											<div class="btn-area">
+												<div class="r">
+													<button type="button" class="btn-default bg-blue">선택</button>
+													<button type="button" class="btn-default"
+														onclick="fn_hide_popup('category-popup');">취소</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="section">
+								<h4 class="sub-tit01">Enter Basic Information of Investor</h4>
+								<div class="normal-table02 level01">
+									<ul>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data8">Investor/Company (English)</label><span
+														class="must">*</span>
+												</div>
+												<div class="cont">
+													<input type="text" id="data8" class="input-type1" title="Investor/Company (English)">
+													<button type="button" class="btn-default-s"
+														onclick="fn_open_popup(this,'find-com-popup');">Search company name</button>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data9">Country (Nationality)</label><span class="must">*</span>
+												</div>
+												<div class="cont">
+													<select name="" id="data9" class="select-type2" title="Select country (nationality)">
+														<option value="">Select country (nationality)</option>
+													</select>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data17">Time Zone</label><span class="must">*</span></div>
+												<div class="cont">
+													<select name="" id="data17" class="select-type2" title="Time Zone 선택">
+														<option value="">Select Time Zone</option>
+														<option value="">Japan, Korea Time(09:13)</option>
+													</select>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data10">Business Center within jurisdiction (Country)</label>
+												</div>
+												<div class="cont">
+													<select name="" id="data10" class="select-type2"
+														title="Business Center within jurisdiction (Country)">
+														<option value="">Select Business Center in charge</option>
+													</select>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data11">Type of business</label><span class="must">*</span>
+												</div>
+												<div class="cont">
+													<select name="" id="data11" class="select-type2" title="Select type of business">
+														<option value="">Select type of business</option>
+													</select>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data2-6">Industrial classification</label></div>
+												<div class="cont">
+													<div class="form-srch">
+														<input type="text" title="산업분류 입력창" placeholder="Select industrial classification"
+															readonly="">
+														<button type="button" class="btn" onclick="fn_open_popup(this,'category-popup')"><span
+																class="blind">검색</span></button>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data12">Establishment year</label>
+												</div>
+												<div class="cont">
+													<select name="" id="data12" class="select-type1" title="Select year">
+														<option value="">Select year</option>
+													</select>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data13">Address (English)</label>
+												</div>
+												<div class="cont">
+													<input type="text" id="data13" class="input-type1" title="Address (English)">
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data14">Address (Local language)</label>
+												</div>
+												<div class="cont">
+													<input type="text" class="input-type1" id="data14" title="Address (Local language)">
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data15">Website<span class="must">*</span></label>
+												</div>
+												<div class="cont">
+													<input type="text" id="data15" class="input-type1" placeholder="Eg) www.google.com"
+														title="Website">
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="data">
+												<div class="tit"><label for="data16">Company phone no.<span class="must">*</span></label>
+												</div>
+												<div class="cont">
+													<input type="text" id="data16" class="input-type1" placeholder="Eg) 82 2-1234-0000"
+														title="Company phone no.">
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="btn-area">
+									<div class="r">
+										<a href="온라인매칭플랫폼_투자가전용서비스_투자가로그인_투자가회원가입_회원가입_가입완료.html" class="btn-default bg-blue">Register as
+											Investor</a>
+									</div>
+								</div>
+
+								<div class="layer-popup-box" data-popup="find-com-popup" tabindex="0">
+									<div class="popup">
+										<div class="top">
+											<div class="tit">
+												Search Company Name
+											</div>
+											<button type="button" class="btn-close" onclick="fn_hide_popup('find-com-popup');"><span
+													class="blind">닫기</span></button>
+										</div>
+										<div class="pop-content">
+											<div class="gray-box bg-white">
+												<div class="bold">You can search for information about registered investors. Please select the
+													searched company name and click [OK] to enter the company name automatically.</div>
+												<p>
+													If there is no registered information, please click [Register] to join.
+												</p>
+											</div>
+											<div class="search-area normal-mt2">
+												<div class="form-area">
+													<div class="in company-search">
+														<span class="select-type1 bold level01">
+															Company name
+														</span>
+														<span class="input-type1"><input type="text" title="Please enter a search term."
+																placeholder="Please enter a search term."></span>
+														<button type="submit" class="btn-default-s">Search</button>
+													</div>
+												</div>
+											</div>
+											<div class="table">
+												<table class="normal-table">
+													<caption>기업명찾기 표로 선택, 투자가/기업명, 국가, 업종 정보제공</caption>
+													<colgroup>
+														<col style="width:10%">
+														<col style="width:40%">
+														<col style="width:20%">
+														<col style="width:20%">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">Select</th>
+															<th scope="col">Investor/Company name</th>
+															<th scope="col">Country</th>
+															<th scope="col">Type of business</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																<span class="radio single">
+																	<input type="radio" name="company" id="radio1" class="blind">
+																	<label for="radio1"><span class="blind">선택</span></label>
+																</span>
+															</td>
+															<td class="txt-left">
+																Samsung Display
+															</td>
+															<td>
+																China
+															</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>
+																<span class="radio single">
+																	<input type="radio" name="company" id="radio2" class="blind">
+																	<label for="radio2"><span class="blind">선택</span></label>
+																</span>
+															</td>
+															<td class="txt-left">
+																Samsung Display
+															</td>
+															<td>
+																China
+															</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>
+																<span class="radio single">
+																	<input type="radio" name="company" id="radio3" class="blind">
+																	<label for="radio3"><span class="blind">선택</span></label>
+																</span>
+															</td>
+															<td class="txt-left">
+																Samsung Display
+															</td>
+															<td>
+																China
+															</td>
+															<td></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="no-data">
+												<strong>The investor/company name you entered could not be found.</strong>
+											</div>
+											<div class="paging">
+												<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로
+														이동</span></a>
+												<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로
+														이동</span></a>
+												<span>
+													<strong>1</strong>
+													<a href="#n">2</a>
+													<a href="#n">3</a>
+													<a href="#n">4</a>
+													<a href="#n">5</a>
+												</span>
+												<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로
+														이동</span></a>
+												<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로
+														이동</span></a>
+											</div>
+											<div class="btn-area">
+												<div class="c">
+													<a href="#n" class="btn-default bg-green" onclick="fn_hide_popup('find-com-popup');">OK</a>
+													<a href="#n" class="btn-default bg-blue">Register</a>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+				<!-- //content -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

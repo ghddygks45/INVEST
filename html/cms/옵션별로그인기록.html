@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">로그</a>
+				<span>&gt;</span> 
+				<a href="/weblog/index.do">관리자 로그</a>
+				<span>&gt;</span> 
+				<strong>옵션별 로그인 기록</strong>
+			</p>
+	
+			<h2 id="tit_page">옵션별 로그인 기록</h2>
+
+			<script>
+				//페이지 아이템
+				$(document).on('click','#btnPageItm',function(){
+					$('form[name=frm]').submit();
+				//초기화
+				}).on('click','#btnReset',function(){
+					var add = $("form[name=frm]");
+					add.find('input').val('');
+					return false;
+				}).on('click','.inseqcms',function(){
+					console.log($(this).data('dt-idx'));
+			
+					var today  = new Date();
+					var dtIdx = $(this).data('dt-idx');
+					$('input[name=searchCondition]').val(dtIdx);
+					//End date 셋팅
+					$('input[name=searchEndDt]').val(dateSetup(today));
+					var inPut='';
+						//당일
+						if(dtIdx==0){
+							inPut=dateSetup(today);
+						//1일전 체크
+						}else if(dtIdx==-1){
+							today.setDate(today.getDate()-1);
+							inPut=dateSetup(today);
+						//7일전 체크(일주일전)
+						}else if(dtIdx==-7){
+							today.setDate(today.getDate()-7);
+							inPut=dateSetup(today);
+						//개월수 체크
+						}else{
+							today.setMonth(eval(today.getMonth()-dtIdx));
+							inPut=dateSetup(today);
+						}
+					//Start date 셋팅
+					$('input[name=searchStartDt]').val(inPut);
+						
+				});
+				
+				//날짜설정
+				function dateSetup(date){
+					//return date.getFullYear()+"-"+pad(eval(date.getMonth()+1))+"-"+date.getDate();
+					return date.getFullYear()+"-"+add(eval(date.getMonth()+1))+"-"+add(eval(date.getDate()));
+				}
+				
+				//10보다 작을 경우 0 append 처리
+				function add(number) {
+					return (number < 10 ? '0' : '') + number;
+				}
+			</script>
+	
+			<form name="frm" action="/weblog/conectlog/mngroptn.do" method="post">
+				<input type="hidden" name="searchCondition" id="searchCondition" value="">
+				<div class="search_area">
+					<table class="tb_search">
+						<caption>검색조건</caption>
+						<colgroup>
+							<col style="width:120px">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="searchStartDt">발생일시</label></th>
+								<td>
+									<span class="term_setting">
+										<button type="button" class="inseqcms" data-dt-idx="-1">하루전</button>
+										<button type="button" class="inseqcms" data-dt-idx="-7">1주일</button>
+										<button type="button" class="inseqcms" data-dt-idx="1">1개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="3">3개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="6">6개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="12">1년</button>
+									</span>
+									<input type="text" name="searchStartDt" id="searchStartDt" value="" title="시작일" style="width:100px;" readonly="readonly"/>
+									<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchStartDt')); return false;">달력</a> ~
+									<input type="text" name="searchEndDt" id="searchEndDt" value="" title="종료일" style="width:100px;" readonly="readonly"/>
+									<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchEndDt')); return false;">달력</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+		
+					<div class="btn_area">
+						<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+						<button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+					</div>
+				</div>
+				
+				<div class="list_status">
+					<p class="status">총 <strong class="colr_point">2075</strong> 건 (1/10 page)</p>
+					<div class="fr">
+						<select class="post_num" name="pageItm" id="pageItm" title="리스트">
+							<option value="10" >10</option>
+							<option value="20" >20</option>
+							<option value="30" >30</option>
+							<option value="40" >40</option>
+							<option value="50" >50</option>
+							<option value="60" >60</option>
+							<option value="70" >70</option>
+							<option value="80" >80</option>
+							<option value="90" >90</option>
+							<option value="100" >100</option>
+						</select>
+						<button type="button" class="btn" id="btnPageItm">적용</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<caption>옵션별 로그인 기록 목록</caption>
+					<colgroup>
+						<col style="width:60px" />
+						<col style="width:180px" />
+						<col style="width:200px" />
+						<col style="width:150px" />
+						<col style="width:150px" />
+						<col style="width:150px" />
+						<col style="width:150px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>로그ID</th>
+							<th>발생일시</th>
+							<th>접속IP</th>
+							<th>접속브라우저</th>
+							<th>접속DEVICE</th>
+							<th>접속OS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2075</td>
+							<td class="al">LOGIN_1594601253621</td>
+							<td>2020-07-13 09:47:33.0</td>
+							<td>1.235.205.86</td>
+							<td>chrome</td>
+							<td>pc</td>
+							<td>Windows10</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	
+			<div class="pagination">
+				<a href="?pageIndex=1&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10" class="direction first">처음</a> <a href="?pageIndex=1&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10" class="direction prev">이전</a> <strong>1</strong> <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a> <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> <a href="?pageIndex=4&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">4</a> <a href="?pageIndex=5&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">5</a> <a href="?pageIndex=6&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">6</a> <a href="?pageIndex=7&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">7</a> <a href="?pageIndex=8&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">8</a> <a href="?pageIndex=9&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">9</a> <a href="?pageIndex=10&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">10</a> <a href="?pageIndex=11&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10" class="direction next">다음</a> <a href="?pageIndex=208&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10" class="direction last">마지막</a> 
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

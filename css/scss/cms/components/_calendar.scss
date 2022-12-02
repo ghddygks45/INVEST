@@ -1,0 +1,199 @@
+/* 레이어 달력 */
+.btn_cal {
+	display: inline-block;
+	position: relative;
+	margin-left: -5px;
+	width: 34px;
+	height: 34px;
+	border: 1px solid $border-color-dark;
+	border-radius: 0 2px 2px 0;
+	text-indent: 34px;
+	font-size: 18px;
+	line-height: 1.777777777777778;
+	vertical-align: middle;
+	background: #fff;
+	overflow: hidden;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		color: #666;
+		font-family: 'FontAwesome';
+		text-indent: 0;
+		text-align: center;
+		content: '\f073';
+	}
+}
+
+#divCalendar {
+	position: absolute;
+	width: 250px;
+	padding: 8px 10px 10px;
+	border: 1px solid #d2d2d2;
+	font-size: $font-size-base;
+	background-color: #fff;
+	box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.05);
+	z-index: 1500;
+
+	caption {
+		height: 0;
+		font-size: 0;
+		line-height: 0;
+		overflow: hidden;
+	}
+
+	table {
+		table-layout: auto;
+		margin-top: 0;
+		width: 100%;
+		text-align: center;
+		border: 0px solid #000;
+		color: #000;
+		line-height: 2;
+
+		a {
+			line-height: 2;
+		}
+	}
+
+	#tableCalendarTitle td {
+		font-size: 16px;
+
+		a {
+			font-size: 16px;
+		}
+	}
+
+	#tableMonthTitle td a {
+		font-size: 16px;
+	}
+}
+
+#tableYearTitle td {
+	font-size: 16px;
+}
+
+#divCalendar {
+
+	#tableCalendarTitle a,
+	#tableYear a {
+		color: #000;
+	}
+
+	table {
+		th {
+			height: auto;
+			background: none;
+			padding: 0 0 0.5em;
+			border: 0;
+			margin: 0;
+			color: #000;
+			text-align: center;
+			line-height: 20px;
+		}
+
+		td {
+			padding: 0 !important;
+			margin: 0;
+			height: auto;
+			text-align: center;
+			border: 0;
+			line-height: 1;
+		}
+
+		tbody td {
+			height: 28px;
+			color: #767676;
+		}
+
+		td a {
+			display: block;
+			color: #000;
+			text-decoration: none;
+
+			&.today {
+				color: #fff !important;
+				background-color: $color-primary;
+				font-weight: 500;
+			}
+		}
+	}
+
+	#tableMonthTitle a,
+	#tableMonth a {
+		color: #000;
+	}
+
+	#tableCalendar {
+		th:first-child {
+			color: #cf2121;
+		}
+
+		td:first-child {
+			color: #cf2121;
+
+			a {
+				color: #cf2121;
+			}
+		}
+
+		th:last-child {
+			color: #0072cf;
+		}
+
+		td:last-child {
+			color: #0072cf;
+
+			a {
+				color: #0072cf;
+			}
+		}
+	}
+
+	.prev,
+	.next {
+		width: 30px;
+		height: 30px;
+		padding: 0;
+		border: 1px solid #e0e0e0;
+		background: #fff url(#{$url-img}/ico_paging_prev.png) no-repeat center center;
+		text-indent: 100%;
+		line-height: 38px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.prev {
+		float: left;
+		background-image: url(#{$url-img}/ico_paging_prev.png);
+	}
+
+	.next {
+		float: right;
+		background-image: url(#{$url-img}/ico_paging_next.png);
+	}
+
+	.btn_cal_close {
+		position: absolute;
+		top: -1px;
+		right: -20px;
+
+		a {
+			display: block;
+			border: 1px solid #d2d2d2;
+			text-indent: 100%;
+			white-space: nowrap;
+			background: #fff url(#{$url-img}/ico_close.png) no-repeat center center;
+			background-size: 10px 10px;
+			overflow: hidden;
+			width: 20px;
+			height: 20px;
+		}
+
+		width: 20px;
+		height: 20px;
+	}
+}

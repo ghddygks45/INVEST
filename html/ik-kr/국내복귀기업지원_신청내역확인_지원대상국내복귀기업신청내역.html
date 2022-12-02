@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>신청내역 확인 &lt; 국내복귀기업지원 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(6,3)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb06.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>신청내역 확인</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>국내복귀기업지원</li>
+						<li>신청내역 확인</li>
+					</ul>
+
+					<div class="ctn">
+                        <!-- 모바일 환경일 경우 노출 -->
+                        <div class="use-pc v2">
+                            <strong>접속하신 화면은 <span>[모바일 환경]</span> 에서는 제공하지 않습니다.</strong>
+                            이용을 원하실 경우,<br>PC환경에서 접속해주시기 바랍니다.
+                            <div class="btn"><a href="#n" class="btn-pc-version">PC 화면으로 보기</a></div>
+                        </div>
+                        <!-- //모바일 환경일 경우 노출 -->
+
+						<div class="use-pc-content">
+							<ul class="tab">
+								<li><a href="국내복귀기업지원_신청내역확인_지원대상국내복귀기업신청내역.html" class="active">지원대상 국내복귀기업 신청내역</a></li>
+								<li><a href="국내복귀기업지원_신청내역확인_구조조정컨설팅신청내역.html">구조조정 컨설팅 신청내역</a></li>
+							</ul>
+
+							<div class="top-info-box top-support">
+								<div class="in">
+									<ul class="list01">
+										<li>귀사에서 신청하신 지원대상 국내복귀기업 신청, 구조조정 컨설팅 신청내역입니다.</li>
+										<li class="bold">본 화면을 통해 신청 현황 및 진행상태를 열람하실 수 있습니다.</li>
+										<li class="bold">본 화면을 통해 임시저장중인 신청정보를 수정하거나 추가 작성하실 수 있습니다</li>
+										<li>
+											<div class="bold">최종 제출된 신청건은 수정할 수 없으며 수정이 필요하신 경우 업무담당자에게 문의해주세요</div>
+											<ul class="list02">
+												<li>KOTRA 유턴지원팀 연락처 : <span class="bold">T)</span> 02-3460-3243 <span class="bold">Email)</span> reshoring@kotra.or.kr</li>
+											</ul>
+										</li>
+										<li class="color-red fwr">신청취소를 원하시면 “신청취소” 버튼을 눌러주세요. (신청된 모든 내용이 삭제됩니다.)</li>
+									</ul>
+								</div>
+							</div>
+
+							<h4 class="sub-tit01">지원대상 국내복귀기업 신청내역</h4>
+							<div class="table">
+								<table class="normal-table m-scroll">
+									<caption>지원대상 국내복귀기업 신청내역 표로 번호,신청 기업명,신청담당자,휴대전화번호,이메일,제출여부,제출일,진행상태,관리 정보 제공</caption>
+									<colgroup>
+										<col style="width:70px">
+										<col style="width:160px">
+										<col style="width:110px">
+										<col style="width:130px">
+										<col style="width:160px">
+										<col style="width:95px">
+										<col style="width:110px">
+										<col style="width:92px">
+										<col style="width:234px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">번호</th>
+											<th scope="col">신청 기업명</th>
+											<th scope="col">신청담당자</th>
+											<th scope="col">휴대전화번호</th>
+											<th scope="col">이메일</th>
+											<th scope="col">제출여부</th>
+											<th scope="col">제출일</th>
+											<th scope="col">진행상태</th>
+											<th scope="col">관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>(주)가이스트코리아</td>
+											<td>이희성</td>
+											<td>010-1234-5678</td>
+											<td>naver.naver.com</td>
+											<td><span class="color-green fwr">최종제출</span></td>
+											<td>2020-06-20</td>
+											<td><span class="color-green fwr">접수완료</span></td>
+											<td>
+												<!-- mobile에서 보여지는 버튼 -->
+												<a href="#n" class="btn-default-s bg-green m-content btn-pc-version-s">신청정보 보기</a>
+												<!-- //mobile에서 보여지는 버튼 -->
+
+												<!-- pc에서 보여지는 버튼 -->
+												<a href="#n" class="btn-default-s bg-green pc-content" onclick="fn_open_popup(this,'popup1')">신청정보 보기</a>
+												<!-- //pc에서 보여지는 버튼 -->
+
+												<a href="#n" class="btn-default-s">신청취소</a>
+											</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>(주)가이스트코리아</td>
+											<td>이희성</td>
+											<td>010-1234-5678</td>
+											<td>naver.naver.com</td>
+											<td><span class="bold">임시저장중</span></td>
+											<td>2020-06-20</td>
+											<td><span class="color-navy fwr">심사중</span></td>
+											<td>
+												<a href="#n" class="btn-default-s bg-navy">수정하기</a>
+												<a href="#n" class="btn-default-s bg-light-gray">삭제</a>
+											</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>(주)가이스트코리아</td>
+											<td>이희성</td>
+											<td>010-1234-5678</td>
+											<td>naver.naver.com</td>
+											<td><span class="bold">임시저장중</span></td>
+											<td>2020-06-20</td>
+											<td><span class="color-blue fwr">심사완료</span></td>
+											<td>
+												<a href="#n" class="btn-default-s bg-navy">수정하기</a>
+												<a href="#n" class="btn-default-s bg-light-gray">삭제</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!-- 레이어팝업 -->
+						<!-- 신청 정보보기 -->
+						<div class="layer-popup-box" data-popup="popup1">
+							<div class="popup pop-size-1000">
+								<div class="top">
+									<div class="tit">지원대상 국내복귀기업 신청내역 보기</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('popup1');"><span class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<div class="btn-area normal-btm2">
+										<div class="r">
+											<button type="button" class="btn-default bg-green btn-pop-img">이미지로 다운</button>
+											<button type="button" class="btn-default bg-blue btn-pop-pdf2">PDF로 다운</button>
+											<button type="button" class="btn-default btn-pop-print">인쇄</button>
+										</div>
+									</div>
+
+									<div class="section">
+										<div class="normal-table02 wid-v1">
+											<ul>
+												<li>
+													<div class="data">
+														<div class="tit">접수 아이디</div>
+														<div class="cont">leehee43</div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">제출여부</div>
+														<div class="cont">최종제출</div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">제출일</div>
+														<div class="cont">2020-06-20 13:35</div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">개인정보 공개동의</div>
+														<div class="cont"><span class="color-blue fwr">동의함</span></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">진행상태</div>
+														<div class="cont">
+															<span class="color-green fwr">접수완료</span>
+															<span class="color-navy fwr">검토중</span>
+															<span class="color-navy fwr">1차 심의중</span>
+															<span class="color-blue fwr">심의완료</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<!-- 신청기업 및 국내 투자사업장 -->
+									<div class="section">
+										<h4 class="sub-tit01">신청기업 및 국내 투자사업장</h4>
+										<div class="table-top txt-right">
+											<span class="color-red">(*)</span>표시는 필수입력 항목입니다
+										</div>
+										<div class="normal-table02 wid-v2">
+											<ul>
+												<li>
+													<div class="data">
+														<div class="tit">기업명<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">대표자 성명</div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">사업자번호<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">법인등록번호</div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">업종/주요제품<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">업종코드(표준산업분류)<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">본점 소재지</div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">기존 사업장(공장) 소재지</div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">복귀 사업장(공장) 소재지</div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">신청 담당자 성명<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">담당자 전화번호</div>
+														<div class="cont"></div>
+													</div>
+												</li>                                        
+												<li>
+													<div class="data">
+														<div class="tit">담당자 휴대전화번호<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit">이메일<span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- //신청기업 및 국내 투자사업장 -->
+
+									<!-- 해외진출기업 -->
+									<div class="section">
+										<h4 class="sub-tit01">해외진출기업</h4>
+										<div class="table-top txt-right">
+											<span class="color-red">(*)</span>표시는 필수입력 항목입니다
+										</div>
+										<div class="normal-table02 wid-v2">
+											<ul>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-1">기업명</label><span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-2">대표자 성명</label></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-3">사업자번호(해외발급)</label></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-4">법인등록번호(해외발급)</label></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-5">업종/주요제품</label><span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-6">업종코드(표준산업분류)</label></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+												<li>
+													<div class="data">
+														<div class="tit"><label for="data2-7">해외사업장 소재지</label><span class="must">*</span></div>
+														<div class="cont"></div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- //해외진출기업 -->
+
+									<!-- 국내복귀 유형 -->
+									<div class="section">
+										<h4 class="sub-tit01">국내복귀 유형(2가지 선택)</h4>
+										<div class="normal-box v2 double">
+											<span class="checkbox">
+												<input type="checkbox" class="blind" checked disabled>
+												<label>국내사업장 신설 · 증설 완료</label>
+											</span>
+											<span class="checkbox">
+												<input type="checkbox" class="blind" checked disabled>
+												<label>국내사업장 신설 · 증설 미완료</label>
+											</span>
+											<span class="checkbox">
+												<input type="checkbox" class="blind" disabled>
+												<label>해외사업장 청산 · 양도 완료</label>
+											</span>
+											<span class="checkbox">
+												<input type="checkbox" class="blind" disabled>
+												<label>해외사업장 청산 · 양도 미완료</label>
+											</span>
+											<span class="checkbox">
+												<input type="checkbox" class="blind" disabled>
+												<label>해외사업장 생산량 축소 완료</label>
+											</span>
+											<span class="checkbox">
+												<input type="checkbox" class="blind" disabled>
+												<label>해외사업장 생산량 축소 미완료</label>
+											</span>
+											<span class="checkbox">
+												<input type="checkbox" class="blind" disabled>
+												<label>해외사업장 유지(향후 해외사업장 청산·양도·축소 계획 없음)</label>
+											</span>
+										</div>
+									</div>
+									<!-- //국내복귀 유형  -->
+
+									<!-- 신청서식 -->
+									<div class="section">
+										<h4 class="sub-tit01">신청서식</h4>
+										<div class="table">
+											<table class="normal-table">
+												<caption>신청서식 표로 구분,확인사항,Y,N 정보 제공</caption>
+												<colgroup>
+													<col style="width:190px">
+													<col>
+													<col style="width:60px">
+													<col style="width:60px">
+												</colgroup>
+												<thead>
+													<tr>
+														<th scope="col">구분</th>
+														<th scope="col">확인사항</th>
+														<th scope="col">Y</th>
+														<th scope="col">N</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th rowspan="2" class="v-top">신청</th>
+														<td class="txt-left">KOTRA로 지원대상 국내복귀기업을 신청하시겠습니까?</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제1호서식] 지원대상 국내복귀기업 선정신청서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>
+													<tr>
+														<th rowspan="8" class="v-top">해외사업장<br>(해당되는 1개만 Y체크)</th>
+														<td class="txt-left">
+															해외사업장을 100% 철수(청산, 양도) 완료 하셨습니까?
+															<div class="color-blue">(※기 완료하신 경우 1년 이내에만 신청이 가능합니다.)</div>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제2호서식] 해외사업장 청산·양도 완료신고서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>
+													<tr>
+														<td class="txt-left">
+															해외사업장을 100%철수(청산, 양도) 완료 하실 예정이십니까? 
+															<div class="color-blue">(※국내복귀기업 선정일로부터 4년 이내 완료)</div>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제5호서식] 해외사업장 청산·양도 또는 축소 관련 국내복귀계획서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>
+													<tr>
+														<td class="txt-left">
+															해외사업장을 부분 축소 완료 하셨습니까? 
+															<div class="color-blue">(※기 완료하신 경우 1년 이내에만 신청이 가능합니다.)</div>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제3호서식] 해외사업장 축소완료신고서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>
+													<tr>
+														<td class="txt-left">
+															해외사업장을 부분 축소 하실 예정이십니까?
+															<div class="color-blue">(※국내복귀기업 선정일로부터 4년 이내 완료)</div>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제5호서식] 해외사업장 청산·양도 또는 축소 관련 국내복귀계획서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>
+													<tr>
+														<th rowspan="4" class="v-top b-btm-999">국내사업장<br>(해당되는 1개만 Y체크)</th>
+														<td class="txt-left">
+															국내사업장 투자(신설,증설)를 완료 하셨습니까?
+															<div class="color-blue">(※기 완료하신 경우 신·증설 완료일로부터 1년 이내에만 신청이 가능합니다.)</div>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제4호서식] 국내사업장 신설 · 증설 완료신고서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>                                            
+													<tr>
+														<td class="txt-left">
+															국내사업장 투자(신설,증설)를 하실 예정이십니까?
+															<div class="color-blue">(※국내복귀기업 선정일로부터 3년 이내 완료)</div>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" checked disabled>
+																<label>Y</label>
+															</span>
+														</td>
+														<td>
+															<span class="radio2">
+																<input type="radio" class="blind" disabled>
+																<label>N</label>
+															</span>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" class="txt-left bold">· 신청서류 확인 : [별지 제6호서식] 국내사업장 신설·증설 관련 국내복귀계획서 <a href="#n" class="color-green underline">[다운로드]</a></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<!-- //신청서식 -->
+
+									<!-- 서류 제출하기 -->
+									<div class="section">
+										<h4 class="sub-tit01">서류 제출하기</h4>
+										<div class="table-top txt-right color-blue">
+											※ 준비된 모든 제출서류를 압축파일(ZIP)로 묶어서 제출해주시기 바랍니다.
+										</div>
+										<div class="normal-table02">
+											<ul>
+												<li>
+													<div class="data">
+														<div class="tit">첨부서류</div>
+														<div class="cont">
+															<span class="attach-file">첨부된 파일명.docx</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- //서류 제출하기 -->
+
+									<div class="btn-area">
+										<div class="l">
+											<button type="button" class="btn-default" onclick="fn_hide_popup('popup1')">닫기</button>
+										</div>
+										<div class="r">
+											<button type="button" class="btn-default bg-green">이미지로 다운</button>
+											<button type="button" class="btn-default bg-blue btn-pop-pdf2">PDF로 다운</button>
+											<button type="button" class="btn-default btn-pop-print">인쇄</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //신청 정보보기 -->
+						<!-- 레이어팝업 -->
+						
+                    </div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

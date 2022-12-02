@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>유턴기업 지원내용 시뮬레이션 결과 &lt; 국내복귀기업지원 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(6,4)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb06.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>유턴기업 지원내용 시뮬레이션 결과</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>국내복귀기업지원</li>
+						<li>유턴기업 지원내용 시뮬레이션 결과</li>
+					</ul>
+
+					<div class="ctn">
+                        <!-- 모바일 환경일 경우 노출 -->
+                        <div class="use-pc">
+                            <strong>접속하신 화면은 <span>[모바일 환경]</span> 에서는 제공하지 않습니다.</strong>
+                            이용을 원하실 경우,<br>PC환경에서 접속해주시기 바랍니다.
+                            <div class="btn"><a href="#n" class="btn-pc-version">PC 화면으로 보기</a></div>
+                        </div>
+                        <!-- 모바일 환경일 경우 노출 -->
+                        
+                        <div class="pc-content">
+                            <div class="top-info-box top-simulation">
+                                <div class="in">
+                                    <div class="normal-txt bold">
+                                        국내복귀 의사결정에 편리함을 드리고자 제공하는 서비스로,<br>
+                                        정확한 금액 산출과 지원여부는 KOTRA 유턴지원팀에 반드시 문의주시기 바랍니다.
+                                    </div>
+                                    <div class="normal-txt">An intuitive online calculator for determining a company's profit and loss impact of reshoring vs. offshoring</div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <h4 class="sub-tit01">기업개요</h4>
+                                <div class="search-head2 v2">
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">기업규모</div>
+                                            <div class="cont">해당되는 기업규모를 선택해주세요.</div>
+                                            <div class="input-box">
+                                                <span class="radio">
+                                                    <input type="radio" id="radio1" name="select1" class="blind">
+                                                    <label for="radio1">중소기업</label>
+                                                </span>
+                                                <span class="radio">
+                                                    <input type="radio" id="radio2" name="select1" class="blind">
+                                                    <label for="radio2">중견기업</label>
+                                                </span>
+                                                <span class="radio">
+                                                    <input type="radio" id="radio3" name="select1" class="blind">
+                                                    <label for="radio3">대기업</label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">복귀지역</div>
+                                            <div class="cont">[표]를 참고하시어, 국내에 신 · 증설하는 사업장의 지역을 선택해주세요.</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="복귀지역 선택" placeholder="선택" readonly>
+                                                <button type="button" class="btn-default-s" onclick="fn_open_popup(this,'return-table');">[표]</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">고용계획</div>
+                                            <div class="cont">국내에 신 · 증설하는 사업장의 신규 고용 인원(계획)을 기재해주세요. (단위 : 명)</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="고용인원 기재" class="w-m-half" placeholder="숫자만 입력"> 명
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">해외사업장 구조조정 고용계획</div>
+                                            <div class="cont">해외사업장 청산, 양도, 생산량 축소, 유지(국내사업장이 없는 기업만 선택 가능)</div>
+                                            <div class="input-box">
+                                                <span class="radio">
+                                                    <input type="radio" id="radio4" name="select2" class="blind">
+                                                    <label for="radio4">청산</label>
+                                                </span>
+                                                <span class="radio">
+                                                    <input type="radio" id="radio5" name="select2" class="blind">
+                                                    <label for="radio5">양도</label>
+                                                </span>
+                                                <span class="radio">
+                                                    <input type="radio" id="radio6" name="select2" class="blind">
+                                                    <label for="radio6">생산량축소</label>
+                                                </span>
+                                                <span class="radio">
+                                                    <input type="radio" id="radio7" name="select2" class="blind">
+                                                    <label for="radio7">유지</label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section">
+                                <h4 class="sub-tit01">보조금</h4>
+                                <div class="search-head2 v2">
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">입지 투자 금액</div>
+                                            <div class="cont">국내에 신 · 증설하는 사업장의 토지 매입 금액을 기재해주세요. (단위 : 백만원)</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="입지 투자 금액 입력" class="w-m-half" placeholder="숫자만 입력"> 백만원
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">설비 투자 금액</div>
+                                            <div class="cont">국내에 신 · 증설하는 사업장의 건설투자비용, 기계장비구입비용 등을 기재해주세요. (단위 : 백만원)</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="설비 투자 금액 입력" class="w-m-half" placeholder="숫자만 입력"> 백만원
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <h4 class="sub-tit01">조세감면</h4>
+                                <div class="search-head2 v2">
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">관세</div>
+                                            <div class="cont">해외사업장에서 사용하던 기계장비, 신구로 수입해오는 기계장비 등의 관세 금액을 기재해주세요. (단위 : 백만원)</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="관세 입력" class="w-m-half" placeholder="숫자만 입력"> 백만원
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">법인세(개인사업자 : 소득세)</div>
+                                            <div class="cont">국내복귀 사업장에서 예상되는 ‘1~3년차’, ‘4~5년차’, ‘6~7년차’ 법인세 합계액(예상)</div>
+                                            <div class="table normal-mt2">
+                                                <table class="normal-table m-scroll02">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">1~3년차 법인세 합계액(예상)</th>
+                                                            <th scope="col">4~5년차 법인세 합계액(예상)</th>
+                                                            <th scope="col">6~7년차 법인세 합계액(예상)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" title="1~3년차 법인세 합계액(예상) 입력" class="w-m-half" placeholder="숫자만 입력">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" title="4~5년차 법인세 합계액(예상) 입력" class="w-m-half" placeholder="숫자만 입력">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" title="6~7년차 법인세 합계액(예상) 입력" class="w-m-half" placeholder="숫자만 입력">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <h4 class="sub-tit01">고용창출장려금</h4>
+                                <div class="search-head2 v2">
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">고용창출장려금 사업계획서 제출 전 3개월 평균 근로자수</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="고용창출장려금 사업계획서 제출 전 3개월 평균 근로자수 입력" class="w-m-half" placeholder="숫자만 입력"> 명
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="detail-box">
+                                            <div class="tit">고용창출장려금 승인통보서를 받은 날의 다음달부터 3개월 경과된 이후 3개월 월평균 근로자수</div>
+                                            <div class="input-box normal-mt">
+                                                <input type="text" title="고용창출장려금 승인통보서를 받은 날의 다음달부터 3개월 경과된 이후 3개월 월평균 근로자수 입력" class="w-m-half" placeholder="숫자만 입력"> 명
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section btn-area txt-center">
+                                <button type="button" class="btn-default bg-blue" onclick="fn_open_popup(this,'alert-msg');">지원내용 조회</button>
+                                <button type="button" class="btn-default">다시입력</button>
+                            </div>
+
+                            <div class="section search-result">
+                                <div class="sub-section">
+                                    <div class="tip-box">
+                                        <div class="tip-tit">유턴기업 지원내용 시뮬레이션 결과</div>
+                                        <div class="tip-content">
+                                            <div class="simulation-result-top">
+                                                <ul>
+                                                    <li>
+                                                        <div class="tit">보조금 예상지원액</div>
+                                                        <div class="cont"><span>2,160</span> 백만원</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">예상 감면 세액</div>
+                                                        <div class="cont"><span>70</span> 백만원</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">고용창출장려금 예상지원액</div>
+                                                        <div class="cont"><span>173</span> 백만원</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="simulation-result-bottom">
+                                                <ul>
+                                                    <li>
+                                                        <div class="tit">E-7 비자<br>발급지원</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">외국인고용<br>허가제(E-9)</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">구조조정<br>컨설팅</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">스마트공장</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">입지지원</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">금융지원</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">지적재산권</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">보증·보험<br>우대</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tit">R&D<br>지원사업</div>
+                                                        <div class="cont">○</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-section">
+                                    <div class="btn-area">
+                                        <div class="r">
+                                            <button type="button" class="btn-default bg-blue" onclick="fn_open_popup(this,'contact-table');">담당기관 및 연락처</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+						<!-- 레이어팝업 -->
+                        <!-- 복귀지역구분 -->
+                        <div class="layer-popup-box" data-popup="return-table" tabindex="0">
+							<div class="popup pop-size-1000">
+								<div class="top">
+									<div class="tit">복귀지역구분</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('return-table');"><span class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+                                    <div class="ex-tit">※ 아래 [표]를 참고하시어, 국내에 신 · 증설하는 사업장의 지역을 선택해주세요.</div>
+									<div class="table self-radio">
+                                        <table class="normal-table m-scroll02">
+                                            <caption>복귀지역구분표로 선택, 지역구분, 처리목적 정보제공</caption>
+                                            <colgroup>
+                                                <col style="width:8%">
+                                                <col style="width:15%">
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">선택</th>
+                                                    <th scope="col">지역구분</th>
+                                                    <th scope="col">처리목적</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="txt-center">
+                                                        <span class="radio">
+                                                            <input type="radio" id="radio8" name="select3" class="blind">
+                                                            <label for="radio8"><span class="blind">선택</span></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>수도권(과밀억제권역 내)</td>
+                                                    <td class="txt-left">
+                                                        <ul class="list02">
+                                                            <li>서울, 인천광역시[강화군, 옹진군, 서구 대곡동ㆍ불로동ㆍ마전동ㆍ금곡동ㆍ오류동ㆍ왕길동ㆍ당하동ㆍ원당동, 인천경제자유구역(경제자유구역에서 해제된 지역을 포함한다) 및 남동 국가산업단지는 제외한다]</li>
+                                                            <li>의정부시, 구리시, 하남시, 고양시, 수원시, 성남시, 안양시, 부천시, 광명시, 과천시, 의왕시, 군포시</li>
+                                                            <li>남양주시(호평동, 평내동, 금곡동, 일패동, 이패동, 삼패동, 가운동, 수석동, 지금동 및 도농동만 해당한다), 시흥시[반월특수지역(반월특수지역에서 해제된 지역을 포함한다)은 제외한다]</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt-center">
+                                                        <span class="radio">
+                                                            <input type="radio" id="radio9" name="select3" class="blind">
+                                                            <label for="radio9"><span class="blind">선택</span></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>수도권(과밀억제권역 외)</td>
+                                                    <td class="txt-left">
+                                                        <ul class="list02">
+                                                            <li>동두천시, 안산시, 오산시, 평택시, 파주시, 연천군, 포천시, 양주시, 김포시, 화성시</li>
+                                                            <li>인천광역시[강화군, 옹진군, 서구 대곡동ㆍ불로동ㆍ마전동ㆍ금곡동ㆍ오류동ㆍ왕길동ㆍ당하동ㆍ원당동, 인천경제자유구역(경제자유구역에서 해제된 지역을 포함한다) 및 남동 국가산업단지만 해당한다]</li>
+                                                            <li>남양주시(별내동, 와부읍, 진전읍, 별내면, 퇴계원면, 진건읍 및 오남읍만 해당한다)</li>
+                                                            <li>용인시(신갈동, 하갈동, 영덕동, 구갈동, 상갈동, 보라동, 지곡동, 공세동, 고매동, 농서동, 서천동, 언남동, 청덕동, 마북동, 동백동, 중동, 상하동, 보정동, 풍덕천동, 신봉동, 죽전동, 동천동, 고기동, 상현동, 성복동, 남사면, 이동면 및 원삼면 목신리ㆍ죽릉리ㆍ학일리ㆍ독성리ㆍ고당리ㆍ문촌리만 해당한다)</li>
+                                                            <li>안성시(가사동, 가현동, 명륜동, 숭인동, 봉남동, 구포동, 동본동, 영동, 봉산동, 성남동, 창전동, 낙원동, 옥천동, 현수동, 발화동, 옥산동, 석정동, 서인동, 인지동, 아양동, 신흥동, 도기동, 계동, 중리동, 사곡동, 금석동, 당왕동, 신모산동, 신소현동, 신건지동, 금산동, 연지동, 대천동, 대덕면, 미양면, 공도읍, 원곡면, 보개면, 금광면, 서운면, 양성면, 고삼면, 죽산면 두교리ㆍ당목리ㆍ칠장리 및 삼죽면 마전리ㆍ미장리ㆍ진촌리ㆍ기솔리ㆍ내강리만 해당한다)</li>
+                                                            <li>시흥시 중 반월특수지역(반월특수지역에서 해제된 지역을 포함한다)</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt-center">
+                                                        <span class="radio">
+                                                            <input type="radio" id="radio10" name="select3" class="blind">
+                                                            <label for="radio10"><span class="blind">선택</span></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>수도권 인접지역</td>
+                                                    <td class="txt-left">
+                                                        <ul class="list02">
+                                                            <li>강원 : 원주시(단,기업도시, 혁신도시는 지원우대지역)</li>
+                                                            <li>충북 : 충주시, 음성군, 청주시, 진천군</li>
+                                                            <li>충남 : 아산시, 천안시, 당진시</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt-center">
+                                                        <span class="radio">
+                                                            <input type="radio" id="radio11" name="select3" class="blind">
+                                                            <label for="radio11"><span class="blind">선택</span></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>일반지역</td>
+                                                    <td class="txt-left">
+                                                        <ul class="list02">
+                                                            <li>수도권, 수도권인접지역, 지원우대지역, 산업위기대응 특별지역을 제외한 지역</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt-center">
+                                                        <span class="radio">
+                                                            <input type="radio" id="radio12" name="select3" class="blind">
+                                                            <label for="radio12"><span class="blind">선택</span></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>지원우대지역</td>
+                                                    <td class="txt-left">
+                                                        <ul class="list02">
+                                                            <li>성장촉진지역, 특수상황지역</li>
+                                                            <li>기업도시개발구역, 국가혁신융복합단지</li>
+                                                            <li>세종시, 제주도, 새만금사업지역</li>
+                                                            <li>분양률 50% 이하 국가산업단지(준공+3년 이상 산단)</li>
+                                                            <li>전년도 선정실적이 없는 광역지방자치단체</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt-center">
+                                                        <span class="radio">
+                                                            <input type="radio" id="radio13" name="select3" class="blind">
+                                                            <label for="radio13"><span class="blind">선택</span></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>산업위기대응 특별지역</td>
+                                                    <td class="txt-left">
+                                                        <ul class="list02">
+                                                            <li>울산 동구, 통영․고성, 거제, 창원 진해구, 영암·목포·해남</li>
+                                                            <li>소재부품장비기업중 핵심품목 투자기업</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+						
+									<div class="btn-area">
+										<div class="r">
+											<button type="button" class="btn-default bg-blue">선택</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!-- // 복귀지역구분 -->
+
+                        <!-- 담당기관 및 연락처 -->
+                        <div class="layer-popup-box" data-popup="alert-msg" tabindex="0">
+							<div class="popup">
+								<div class="top">
+									<div class="tit">알림</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('alert-msg');"><span class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<div class="top-info-box top-simulation">
+                                        <div class="in">
+                                            입력해주신 정보를 기준으로 유턴기업 지원내용을 조회하시겠습니까?
+                                        </div>
+                                    </div>
+						
+									<div class="btn-area">
+										<div class="r">
+											<button type="button" class="btn-default" onclick="fn_hide_popup('alert-msg');">취소</button>
+											<button type="button" class="btn-default bg-blue">확인</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!-- // 담당기관 및 연락처 -->
+
+                        <!-- 담당기관 및 연락처 -->
+                        <div class="layer-popup-box" data-popup="contact-table" tabindex="0">
+							<div class="popup pop-size-640">
+								<div class="top">
+									<div class="tit">담당기관 및 연락처</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('contact-table');"><span class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+									<div class="table">
+                                        <table class="normal-table">
+                                            <caption>담당기관 및 연락처 표로 선택, 담당기관, 연락처 정보제공</caption>
+                                            <colgroup>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">선택</th>
+                                                    <th scope="col">담당기관</th>
+                                                    <th scope="col">연락처</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="2">E-7 비자발급지원</td>
+                                                    <td>KOTRA 해외취업팀</td>
+                                                    <td>02-3460-7388</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>출입국관리사무소</td>
+                                                    <td>1345</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>외국인고용허가제 (E-9)</td>
+                                                    <td>관할 고용센터</td>
+                                                    <td>1350</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>구조조정컨설팅</td>
+                                                    <td>KOTRA 유턴지원팀</td>
+                                                    <td>02-3460-3243</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">스마트공장</td>
+                                                    <td>스마트제조 혁신추진단</td>
+                                                    <td>1644-1736</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>한국로봇산업진흥원</td>
+                                                    <td>053-210-9653</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">입지지원</td>
+                                                    <td>지자체 투자유치과</td>
+                                                    <td>17개 광역지자체</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>한국산업단지공단</td>
+                                                    <td>070-8895-7000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3">금융지원</td>
+                                                    <td>수출입은행</td>
+                                                    <td>02-3779-6310</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>산은</td>
+                                                    <td>070-8895-7000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>기은</td>
+                                                    <td>1588-2588</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>지적재산권</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3">보증보험우대</td>
+                                                    <td>신용보증기금</td>
+                                                    <td>1588-6565</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>기보</td>
+                                                    <td>1544-1120</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>무보</td>
+                                                    <td>1588-3884</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>R&amp;D지원사업</td>
+                                                    <td>산업부 산업기술개발과</td>
+                                                    <td>044-203-4534</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+						
+									<div class="btn-area">
+										<div class="r">
+											<button type="button" class="btn-default bg-blue" onclick="fn_hide_popup('contact-table');">확인</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!-- // 담당기관 및 연락처 -->
+
+						<!-- 레이어팝업 -->
+						
+                    </div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

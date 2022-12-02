@@ -1,0 +1,107 @@
+.tab-area.notice .slick-arrow.slick-disabled {
+    opacity: 0.77;
+}
+
+.sec05 .inner-sec .box-area .box-r .local-name-box>ul>li.active {
+    background: #ED6C25;
+}
+
+.sec05 .inner-sec .box-area .box-r .local-name-box>ul>li.active:after {
+    background: #ED6C25;
+}
+
+.header .header-content .lang li a:focus {
+    position: relative;
+    outline: 0;
+}
+
+.header .header-content .lang li a:focus:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    top: 0;
+    left: 0;
+    border: dotted 1px #f28938;
+}
+
+.footer .footer-content .utill li a {
+    outline: 0;
+}
+
+.footer .footer-content .utill li a:focus:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    top: 0;
+    left: 0;
+    border: dotted 1px #ddd;
+}
+
+.sec02 .inner-sec .r-box .sub-box .btn02:focus {
+    outline-color: #F28938 !important;
+}
+
+.btn-default:focus {
+    outline-color: #F28938;
+}
+
+
+.btn-default-s:focus {
+    outline-color: #F28938;
+}
+
+
+
+/* .sec03 .slide>a:focus {
+    outline: solid 1px red
+} */
+.sec03 .inner-sec .notice .tab-box .tab-contents .cont-box {
+    display: block;
+}
+
+.sec03 .inner-sec .notice .tab-box .tab-contents .cont-box:focus {
+    background: #0f997b;
+}
+
+.sec03 .inner-sec .notice .tab-box .tab-contents .cont-box:focus .info li {
+    color: #fff;
+}
+
+.sec03 .inner-sec .notice .tab-box .tab-contents .cont-box:focus .tt {
+    color: #fff;
+}
+
+.sec03 .inner-sec .notice .tab-box .tab-contents .cont-box:focus .cont-text {
+    color: #fff;
+}
+
+.sitemap>.section>ul>li>a:focus {
+    position: relative;
+    outline: 0;
+}
+
+.sitemap>.section>ul>li>a:focus:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 2px);
+    height: calc(100% - 4px);
+    border: solid 2px #000;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+@media screen and (min-width:1217px),
+print {
+    .header.off .header-content .lang a {
+        color: #888 !important;
+    }
+
+
+}

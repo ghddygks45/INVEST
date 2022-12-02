@@ -1,0 +1,56 @@
+/* 탭메뉴 */
+.tab_menu {
+	margin-bottom:30px;
+	border-bottom: 2px solid $color-primary;
+	overflow: hidden;
+
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+
+	li {
+		display: table;
+		float: left;
+		min-width: 100px;
+		height: 55px;
+		margin: 0 0 -1px 4px;
+		border: 1px solid #d5d5d5;
+		border-radius: 3px 3px 0 0;
+		text-align: center;
+		background: #f9f9f9;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		a {
+			display: table-cell;
+			padding: 0 25px;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 1.2;
+			vertical-align: middle;
+			text-decoration: none;
+		}
+
+		&.on {
+			border-color: $color-primary;
+			background-color: $color-primary;
+
+			a {
+				font-weight: 600;
+				color: #fff;
+			}
+		}
+	}
+
+	+ {
+
+		.table table,
+		form .table table {
+			border-top: 0;
+		}
+	}
+}

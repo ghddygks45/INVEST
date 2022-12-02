@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">투자초기비용검색</a>
+				<span>&gt;</span>
+				<a href="#none">4대 보험</a>
+				<span>&gt;</span>
+				<strong>고용보험</strong>
+			</p>
+
+			<h2 id="tit_page">4대 보험 계산</h2>
+
+			<ul class="tab_menu">
+				<li><a href="#;">국민연금</a></li>
+				<li><a href="#;">국민건강보험</a></li>
+				<li class="on"><a href="#;">고용보험</a></li>
+				<li><a href="#;">산재보험</a></li>
+			</ul>
+			<table class="tb_write">
+				<caption>등록</caption>
+				<colgroup>
+					<col style="width: 160px" />
+					<col style="width: 450px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>실업급여</th>
+						<td colspan="2">
+							<input type="text" value="0.8000"> %
+						</td>
+					</tr>
+					<tr>
+						<th rowspan="4">고용안정</th>
+						<td>150인 미만 기업</td>
+						<td><input type="text" value="0.2500"> %</td>
+					</tr>
+					<tr>
+						<td>150인 이상기업(우선대상 지원 기업)</td>
+						<td><input type="text" value="0.4500"> %</td>
+					</tr>
+					<tr>
+						<td>150인 이상 ~ 1,000인 미만 기업(우선지원 대상 기업 제외)</td>
+						<td><input type="text" value="0.6500"> %</td>
+					</tr>
+					<tr>
+						<td>1,000인 이상 기업 및 국가, 지방자치단체가 직접 행하는 사업</td>
+						<td><input type="text" value="0.8500"> %</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn_area">
+				<a href="#;" class="btn btn_lg act"><i class="fa fa-pencil"></i> 등록</a>
+				<a href="#;" class="btn btn_lg act"><i class="fa fa-pencil"></i> 수정</a>
+				<a href="#;" class="btn btn_lg basic"><i class="fa fa-arrow-left"></i> 취소</a>
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

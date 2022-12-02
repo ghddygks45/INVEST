@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">국내복귀기업지원</a>
+                <span>&gt;</span>
+                <strong>구조조정 컨설팅 신청 관리</strong>
+            </p>
+    
+            <h2 id="tit_page">구조조정 컨설팅 신청 관리</h2>
+
+            <ul class="tab_menu">
+				<li class="on"><a href="운영_국내복귀기업지원_구조조정컨설팅신청관리_목록.html">상태관리</a></li>
+				<li><a href="운영_국내복귀기업지원_구조조정컨설팅신청관리_신청서.html">신청서</a></li>
+				<li><a href="운영_국내복귀기업지원_구조조정컨설팅신청관리_제출서류.html">제출서류</a></li>
+            </ul>
+            
+            <table class="tb_write">
+                <colgroup>
+                    <col style="width:180px">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>접수 아이디</th>
+                        <td>abc123</td>
+                    </tr>
+                    <tr>
+                        <th>제출여부</th>
+                        <td>
+							<input type="radio" name="radio1" id="radio1-1"><label for="radio1-1">최종제출</label>
+							<input type="radio" name="radio1" id="radio1-2" ><label for="radio1-2">임시저장중</label>
+						</td>
+                    </tr>
+                    <tr>
+                        <th>제출일</th>
+                        <td>2020-06-20 13:35</td>
+                    </tr>
+                    <tr>
+                        <th>개인정보 공개동의</th>
+                        <td><span class="color-blue bold">동의함</span></td>
+                    </tr>
+                    <tr>
+                        <th>진행상태</th>
+                        <td>
+							<input type="radio" name="radio2" id="radio2-1"><label for="radio2-1">접수완료</label>
+							<input type="radio" name="radio2" id="radio2-2" ><label for="radio2-2">검토중</label>
+							<input type="radio" name="radio2" id="radio2-3" ><label for="radio2-3">1차 심의중</label>
+							<input type="radio" name="radio2" id="radio2-4" ><label for="radio2-4">심의완료</label>
+						</td>
+                    </tr>
+                    <tr>
+                        <th>진행상태 최종변경일</th>
+                        <td>2020-07-20 17:40</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="btn_area">
+                <button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 저장</button>     
+            </div>
+
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">투자초기비용검색</a>
+				<span>&gt;</span>
+				<a href="#none">4대 보험</a>
+				<span>&gt;</span>
+				<strong>국민연금</strong>
+			</p>
+
+			<h2 id="tit_page">4대 보험 계산</h2>
+
+			<ul class="tab_menu">
+				<li class="on"><a href="#;">국민연금</a></li>
+				<li><a href="#;">국민건강보험</a></li>
+				<li><a href="#;">고용보험</a></li>
+				<li><a href="#;">산재보험</a></li>
+			</ul>
+			<table class="tb_write">
+				<caption>등록</caption>
+				<colgroup>
+					<col style="width: 160px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th rowspan="3">고용주 부담분</th>
+						<td>
+							<input type="text" value="4.5000"> %
+						</td>
+					</tr>
+					<tr>
+						<td>
+							보수월액 상한액 <input type="text" value="5,240,000"> 원
+							<span class="ml5">
+								(보험료 상한액 <input type="text" value="235,800"> 원)
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							보수월액 하한액 <input type="text" value="235,800"> 원
+							<span class="ml5">
+								(보험료 하한액 <input type="text" value="14,850"> 원)
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn_area">
+				<a href="#;" class="btn btn_lg act"><i class="fa fa-pencil"></i> 등록</a>
+				<a href="#;" class="btn btn_lg act"><i class="fa fa-pencil"></i> 수정</a>
+				<a href="#;" class="btn btn_lg basic"><i class="fa fa-arrow-left"></i> 취소</a>
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

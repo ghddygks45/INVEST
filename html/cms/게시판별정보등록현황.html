@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/billboard/billboard.min.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+	<script src="../../js/cms/_layout-setting.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>	
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">로그</a>
+				<span>&gt;</span> 
+				<a href="/stats/ntt/index.do">게시물 통계</a>
+				<span>&gt;</span> 
+				<strong>게시판 통계</strong>
+			</p>
+	
+			<h2 id="tit_page">게시판 통계</h2>
+
+			<script>
+				$(function() {
+				
+					
+						// donut Script
+						var chart = bb.generate({
+							data: {
+							columns: [
+								
+								
+								
+								
+									["새 설정 환경에서 등록한 게시판", "331"],
+								
+								
+								
+									["자유형게시판", "82"],
+								
+								
+								
+									["민원게시판", "33"],
+								
+								
+								
+									["리스트(목록) 게시판", "17"],
+								
+								
+								
+									["[incms]갤러리", "15"],
+								
+								
+								
+									["FAQ 게시판", "12"],
+								
+								
+								
+									["[incms]자주묻는질문", "10"],
+								
+								
+								
+									["블로그 게시판", "7"],
+								
+								
+								
+									["[incms]공지사항", "6"],
+								
+								
+								
+									["[incms]보도자료", "5"],
+								
+								
+								
+									["[incms]홍보동영상", "4"],
+								
+								
+								
+									["포토형", "3"],
+								
+								
+								
+									["[incms]자유게시판", "2"],
+								
+								
+								
+									["동영상", "1"],
+								
+								
+							],
+							type: "donut"
+						},
+						donut: {
+							title: "2019년",
+							padAngle: 0.01
+						},
+						bindto: "#padAngle"
+						});
+					
+					
+				// bar Script
+				var chart = bb.generate({
+					data: {
+						columns: [
+						
+							//console.log("여러건의 경우")
+							["합계", "528", "18", "484", "22", "0", "0", 
+							"1", "0", "0", "1", "2", "0", "0"],
+							
+							//console.log("여러건의 경우")
+							["새 설정 환경에서 등록한 게시판", "331", "0", "331", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["자유형게시판", "82", "0", "67", "14", "0", "0", 
+							"0", "0", "0", "1", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["민원게시판", "33", "7", "20", "6", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+	
+							//console.log("여러건의 경우")
+							["리스트(목록) 게시판", "17", "2", "15", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["[incms]갤러리", "15", "0", "15", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["FAQ 게시판", "12", "1", "11", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["[incms]자주묻는질문", "10", "0", "10", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["블로그 게시판", "7", "4", "1", "0", "0", "0", 
+							"0", "0", "0", "0", "2", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["[incms]공지사항", "6", "0", "5", "0", "0", "0", 
+							"1", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["[incms]보도자료", "5", "0", "5", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["[incms]홍보동영상", "4", "0", "4", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+							
+							//console.log("여러건의 경우")
+							["포토형", "3", "3", "0", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+
+							//console.log("여러건의 경우")
+							["[incms]자유게시판", "2", "0", "0", "2", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+							
+							//console.log("여러건의 경우")
+							["동영상", "1", "1", "0", "0", "0", "0", 
+							"0", "0", "0", "0", "0", "0", "0"],
+						
+						],
+						type: "bar"
+					},
+					bar: {
+						padding: 3
+					},
+					bindto: "#BarPadding"
+				});
+				//엑셀버튼 활성화
+				$("#inseqcmsExcel").show();
+				
+				
+			});
+			
+			//페이지 아이템
+			$(document).on('click','#btnReset',function(){
+				//var add = $("form[name=frm]");
+				//add.find('input').val('');
+				//return false;
+				location.href="/stats/ntt/bbs.do"
+			}).on('click','#btnSearch',function(){
+				var value = new MiyaValidator(document.forms["frm"]);
+				value.add("searchStartDt", {required:true});
+				var result = value.validate();
+				if (!result) {
+					alert(value.getErrorMessage()); //디폴트 label 메세지
+					value.getErrorElement().focus();
+					return false;
+				}else {
+			
+					var msg = $('input[name=searchStartDt]').val();
+					if(confirm("[ "+msg+" ]년도 게시판 통계를  조회 하시겠습니까?\n데이터 처리량이 많아 늦어질수 있습니다. ")){
+						$('form[name=frm]').submit();
+					}
+					return false;
+				}
+				return false;
+			
+			//엑셀다운로드
+			}).on('click','#inseqcmsExcel',function(){
+				//$("#inseqcmsExcelForm").submit();
+				var $preparingFileModal = $("#cms-file-modal");
+				$preparingFileModal.dialog({ modal: true });
+				$("#progressbar").progressbar({value: false});
+				
+				$.fileDownload($("#inseqcmsExcelForm").prop('action'),{
+					httpMethod: "POST",
+					data:jQuery("#inseqcmsExcelForm").serialize(),
+					successCallback: function (url) {
+						//console.log("a :: "+url)
+						$preparingFileModal.dialog('close');
+					},
+					failCallback: function (responseHtml, url) {
+						//console.log("b :: "+url)
+						$preparingFileModal.dialog('close');
+						$("#cms-fileError-modal").dialog({ modal: true });
+					}
+				});
+				// 버튼의 원래 클릭 이벤트를 중지
+				return false;
+			});
+				
+			</script>
+	
+			<form name="frm" action="/stats/ntt/bbs.do" method="post">
+				<div class="search_area">
+					<table class="tb_search">
+					<caption>검색조건</caption>
+					<colgroup>
+							<col style="width:12%">
+							<col style="width:32%">
+							<col style="width:8%">
+							<col>
+					</colgroup>
+					<tbody>
+					<tr>
+						<th><label for="searchStartDt"><span class="req">필수입력</span> 조회기간</label></th>
+						<td>
+							<input type="text" name="searchStartDt" id="searchStartDt" value="2019" style="width:100px;" readonly="readonly"/>
+							<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchStartDt'), 'year'); return false;">달력</a>
+						</td>
+							<th><label for="searchCondition">게시판명</label></th>
+							<td>
+								<select name="searchCondition" id="searchCondition">
+									<option value="">전체</option>
+									
+									<option value="test1" >test</option>
+									
+									<option value="faq" >FAQ 게시판</option>
+									
+									<option value="cms-notice" >운영자 공지사항</option>
+									
+									<option value="test" >test</option>
+									
+									<option value="Test" >Test</option>
+									
+									<option value="2332423432" >324234</option>
+									
+									<option value="movie" >동영상</option>
+									
+									<option value="list" >리스트(목록) 게시판</option>
+									
+									<option value="photo" >포토형</option>
+									
+									<option value="free" >자유형게시판</option>
+									
+									<option value="minwon" >민원게시판</option>
+									
+									<option value="blog" >블로그 게시판</option>
+									
+									<option value="test4" >test</option>
+									
+									<option value="incms-notice" >[incms]공지사항</option>
+									
+									<option value="incms-bodo" >[incms]보도자료</option>
+									
+									<option value="incms-movie" >[incms]홍보동영상</option>
+									
+									<option value="incms-photo" >[incms]갤러리</option>
+									
+									<option value="incms-free" >[incms]자유게시판</option>
+									
+									<option value="incms-faq" >[incms]자주묻는질문</option>
+									
+									<option value="testzz" >test</option>
+									
+									<option value="newbbstest" >새 설정 환경에서 등록한 게시판</option>
+									
+									<option value="324234234" >324324</option>
+									
+			
+								</select>
+							</td>
+					</tr>
+					</tbody>
+					</table>
+			
+					<div class="btn_area">
+						<button type="button" class="btn btn_lg act" id="btnSearch"><i class="fa fa-search"></i> 검색</button>
+						<button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+						<button type="button" class="btn btn_lg xls" id="inseqcmsExcel">엑셀다운로드</button>
+					</div>
+				</div>
+			</form>
+				
+			<div class="clearfix">
+				<div class="fl" style="width:375px;">
+					<div class="tree_area">
+						<div class="tree_ctrl">
+							
+							<button type="button" class="inseqcms btn">2019년 게시판 통계</button>
+						</div>
+						<!-- Markup -->
+						<div id="padAngle"></div>
+					</div>
+				</div>		
+				<div class="fr" style="width:calc(100% - 400px);">
+					<!-- Markup -->
+					<div id="BarPadding"></div>
+				</div>
+			</div>
+
+			<table class="tb_list mt50">
+				<caption>게시판 통계 목록</caption>
+				<colgroup>
+					<col style="width:200px" />
+					<col />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>게시판명</th>
+						<th>총계</th>
+						<th>1월</th>
+						<th>2월</th>
+						<th>3월</th>
+						<th>4월</th>
+						<th>5월</th>
+						<th>6월</th>
+						<th>7월</th>
+						<th>8월</th>
+						<th>9월</th>
+						<th>10월</th>
+						<th>11월</th>
+						<th>12월</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="selected">
+						<td class="al">합계</td>
+						<td>528</td>
+						<td>18</td>
+						<td>484</td>
+						<td>22</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>2</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">새 설정 환경에서 등록한 게시판</td>
+						<td>331</td>
+						<td>0</td>
+						<td>331</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">자유형게시판</td>
+						<td>82</td>
+						<td>0</td>
+						<td>67</td>
+						<td>14</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+							<td class="al">민원게시판</td>
+							<td>33</td>
+							<td>7</td>
+							<td>20</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">리스트(목록) 게시판</td>
+						<td>17</td>
+						<td>2</td>
+						<td>15</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">[incms]갤러리</td>
+						<td>15</td>
+						<td>0</td>
+						<td>15</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">FAQ 게시판</td>
+						<td>12</td>
+						<td>1</td>
+						<td>11</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">[incms]자주묻는질문</td>
+						<td>10</td>
+						<td>0</td>
+						<td>10</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>	
+					<tr>
+						<td class="al">블로그 게시판</td>
+						<td>7</td>
+						<td>4</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>2</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">[incms]공지사항</td>
+						<td>6</td>
+						<td>0</td>
+						<td>5</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">[incms]보도자료</td>
+						<td>5</td>
+						<td>0</td>
+						<td>5</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">[incms]홍보동영상</td>
+						<td>4</td>
+						<td>0</td>
+						<td>4</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">포토형</td>
+						<td>3</td>
+						<td>3</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">[incms]자유게시판</td>
+						<td>2</td>
+						<td>0</td>
+						<td>0</td>
+						<td>2</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td class="al">동영상</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</tbody>
+			</table>
+	
+			<!-- 엑셀다운 Format Start -->
+			<form id="inseqcmsExcelForm" method="post" action="/cms/inseqcmsCmmnExcelFileDown.do">
+			<input type="hidden" name="excelName" value="게시판 통계"/>										<!-- 엑셀파일명 -->
+			<input type="hidden" name="excelHead" value="게시판아이디,게시판명,총계,1월,2월,3월,4월,5월,6월,7월,8월,9월,10월,11월,12월"/>	<!-- 엑셀상단말머리 -->
+			<input type="hidden" name="searchStartDt" value="2019"/>													<!-- 조회기간 -->
+			<input type="hidden" name="searchCondition" value=""/>												<!-- 게시판명 -->
+			<input type="hidden" name="excelSqlMap" value="inseqcms-stats-ntt.bbsSelectListExcel"/>									<!-- 엑셀데이터쿼리 -->
+			</form>
+			<!-- 엑셀다운 Format End -->	
+	
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

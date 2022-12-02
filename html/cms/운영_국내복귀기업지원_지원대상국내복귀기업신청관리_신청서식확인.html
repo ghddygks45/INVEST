@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">국내복귀기업지원</a>
+                <span>&gt;</span>
+                <strong>지원대상 국내복귀기업 신청관리</strong>
+            </p>
+    
+            <h2 id="tit_page">지원대상 국내복귀기업 신청관리</h2>
+
+            <ul class="tab_menu">
+				<li><a href="운영_국내복귀기업지원_지원대상국내복귀기업신청관리_상태관리.html">상태관리</a></li>
+				<li><a href="운영_국내복귀기업지원_지원대상국내복귀기업신청관리_신청서.html">신청서</a></li>
+				<li class="on"><a href="운영_국내복귀기업지원_지원대상국내복귀기업신청관리_신청서식확인.html">신청서식 확인</a></li>
+				<li><a href="운영_국내복귀기업지원_지원대상국내복귀기업신청관리_제출서류.html">제출서류</a></li>
+            </ul>
+            
+            <table class="tb_data">
+                <colgroup>
+                    <col style="width:200px">
+                    <col>
+                    <col style="width:100px">
+                    <col style="width:100px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">구분</th>
+                        <th scope="col">확인사항</th>
+                        <th scope="col">Y</th>
+                        <th scope="col">N</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>신청</th>
+                        <td class="text-left">KOTRA로 지원대상 국내복귀기업을 신청하시겠습니까?</td>
+                        <td><input type="radio" name="radio1" id="radio1-1"></td>
+                        <td><input type="radio" name="radio1" id="radio1-2"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">해외사업장<br>(해당되는 1개만 Y체크)</th>
+                        <td class="text-left">해외사업장을 100% 철수(청산, 양도) 완료 하셨습니까? <span class="color-blue">(※기 완료하신 경우 1년 이내에만 신청이 가능합니다.)</span></td>
+                        <td><input type="radio" name="radio2" id="radio2-1"></td>
+                        <td><input type="radio" name="radio2" id="radio2-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">해외사업장을 100%철수(청산, 양도) 완료 하실 예정이십니까? <span class="color-blue">(※국내복귀기업 선정일로부터 4년 이내 완료)</span></td>
+                        <td><input type="radio" name="radio3" id="radio3-1"></td>
+                        <td><input type="radio" name="radio3" id="radio3-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">해외사업장을 부분 축소 완료 하셨습니까? <span class="color-blue">(※기 완료하신 경우 1년 이내에만 신청이 가능합니다.)</span></td>
+                        <td><input type="radio" name="radio4" id="radio4-1"></td>
+                        <td><input type="radio" name="radio4" id="radio4-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">해외사업장을 부분 축소 하실 예정이십니까? <span class="color-blue">(※국내복귀기업 선정일로부터 4년 이내 완료)</span></td>
+                        <td><input type="radio" name="radio5" id="radio5-1"></td>
+                        <td><input type="radio" name="radio5" id="radio5-2"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">국내사업장<br>(해당되는 1개만 Y체크)</th>
+                        <td class="text-left">국내사업장 투자(신설,증설)를 완료 하셨습니까? <span class="color-blue"></span>(※기 완료하신 경우 신·증설 완료일로부터 1년 이내에만 신청이 가능합니다.)</td>
+                        <td><input type="radio" name="radio6" id="radio6-1"></td>
+                        <td><input type="radio" name="radio6" id="radio6-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">국내사업장 투자(신설,증설)를 하실 예정이십니까? <span class="color-blue"></span>(※국내복귀기업 선정일로부터 3년 이내 완료)</td>
+                        <td><input type="radio" name="radio7" id="radio2-1"></td>
+                        <td><input type="radio" name="radio7" id="radio2-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="btn_area">
+                <button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 저장</button>     
+            </div>
+
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

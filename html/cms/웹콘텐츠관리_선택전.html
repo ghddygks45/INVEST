@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.fn.zTree.init($("#tree"), setting, zNodes);
+		});
+
+		//zTree 셋팅
+		var setting = {
+			view: {
+				selectedMulti: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			check: {
+				enable: true
+			}
+		};
+
+		var zNodes = [{
+				siteId: "",
+				id: 0,
+				pId: "",
+				name: "관리자",
+				open: true
+			},
+			{
+				siteId: "cms",
+				id: "1",
+				pId: "0",
+				name: "대표국문",
+				od: "0"
+			},
+			{
+				siteId: "cms",
+				id: "3",
+				pId: "0",
+				name: "대표영문",
+				od: "0"
+			},
+			{
+				siteId: "cms",
+				id: "7",
+				pId: "0",
+				name: "주고베 국문",
+				od: "0"
+			},
+		];
+	</script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#" class="ico_home">HOME</a> <span>&gt;</span>
+				<a href="#">대메뉴</a> <span>&gt;</span>
+				<a href="#">중메뉴</a> <span>&gt;</span>
+				<strong>현재메뉴</strong>
+			</p>
+			<h2 id="tit_page">웹콘텐츠관리</h2>
+			<!-- 콘텐츠 영역 -->
+			<form name="frmSelect2" id="frmSelect2" method="post">
+				<fieldset class="site-list">
+					<legend class="tts">사이트 선택</legend>
+					<label><input type="radio" name="searchCl" value="tmplat-a"><span class="site-name">인시퀀스<span class="site-id">tmplat-a</span></span></label>
+					<label><input type="radio" name="searchCl" value="eng"><span class="site-name">런시퀀스<span class="site-id">eng</span></span></label>
+					<label><input type="radio" name="searchCl" value="tmplat-b"><span class="site-name">통일부 북한이탈주민포털<span class="site-id">tmplat-b</span></span></label>
+				</fieldset>
+			</form>
+
+			<p class="webcontents-guide">
+				<i class="fa fa-hand-pointer-o fa-4x"></i><br>
+				사이트를 선택해주세요.
+			</p>
+			<!-- // 콘텐츠 영역 -->
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

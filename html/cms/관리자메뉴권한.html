@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+	<script src="../../js/cms/_layout-setting.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>   
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">시스템</a>
+				<span>&gt;</span> 
+				<a href="/system/mngrauthor/index.do">권한관리</a>
+				<span>&gt;</span>
+				<strong>관리자 메뉴권한</strong>
+			</p>
+	
+			<h2 id="tit_page">관리자 메뉴권한</h2>
+
+			<script type="text/javascript">
+			//<![CDATA[
+				
+				$(document).ready(function(){
+					$.fn.zTree.init($("#ztree"), setting, zNodes);
+					$("#btnOpenTree").bind("click", {type:"openTree"}, expandNode);
+					$("#btnCloseTree").bind("click", {type:"closeTree"}, expandNode);
+				
+				//그룹목록 그리드 클릭 옵션
+				}).on('click','.incms-GridClick',function(){
+						var msg = "["+$(this).data('nm')+"]님 권한정보 데이터 처리량이 많아 늦어질수 있습니다.\n게시물 권한을 조회하시겠습니까?";
+						if(!confirm(msg)){return;}
+						//$("#ajax_loading_bg").show();
+						$("form[name=GridFrm] input[name=conectId]").val($(this).data('conect-id'));
+						$('form[name=GridFrm]').submit();
+				//저장
+				}).on('click','#btnSave',function(){
+					console.log('')
+					var conectId = "";
+					if(conectId !=""){
+						var zTree = $.fn.zTree.getZTreeObj("ztree");
+						var nodes = zTree.getCheckedNodes(true);
+						var nodeLength=[0,0,0,0,0,0,0,0,0,0];
+						var queryArr=[];
+						//alert('선택 노트 갯수 : ' + nodes.length);
+						//console.log(nodes);
+						$.each(zTree.transformToArray(zTree.getNodes()) && nodes,function(i,v){
+							console.log("i:"+i);
+							console.log("v:"+v);
+							if(i>0){
+								if(v.children!=null)
+								nodeLength[v.level]=0;
+								nodeLength[eval(v.level-1)]++;
+								var data={
+										'menu_site_id':v.siteId
+										,'menu_seq':v.id
+										,'menu_upper_seq':v.pId
+										,'menu_conect_id':''
+										,'menuChk':v.menuChk
+										//,"menuNm":v.name //확인용도
+								}
+								console.log('-------data--------');
+								console.log(data);
+								console.log('-------data--------');
+								queryArr.push(data);
+							}
+						});
+						if(confirm("관리자 메뉴권한 변경내용 저장 하시겠습니까?")){
+							$.post("ntt.do", {dataType:'json', type:'save', menu_conect_id:'', data:JSON.stringify(queryArr)}
+							,function(result){
+								if(result > 0){
+									alert("정상적으로  처리되었습니다.");
+								}else{
+									alert("권한매핑에 실패했습니다.");
+								}
+								return false;
+							});	
+						}
+						return false;
+					}else{
+						alert("관리자 메뉴권한 ID 정보가 없습니다.\n좌측 목록에서 열을 클릭하세요.")
+						return false;
+					}
+					return false;
+				//초기화
+				}).on('click','#btnReset',function(){
+					var add = $("form[name=frm]");
+					add.find('input').val('');
+					return false;
+				}); 
+				
+				//zTree 셋팅
+				var setting = {
+					view: {
+						selectedMulti: false
+					},
+					data: {
+						simpleData: {
+							enable: true
+						}
+					},
+					/*
+					callback: {
+						//beforeClick: beforeClick
+					},
+					*/
+					
+			
+				};
+				
+				
+				//디폴트
+				var zNodes =[
+							{ siteId:"",id:0, pId:"", name:"업무권한", open:true},
+							
+							{ siteId:"cms", id:"1", pId:"0", name:"인시퀀스",od:"9"},
+							
+							{ siteId:"cms", id:"3", pId:"0", name:"런시퀀스",od:"10"},
+							
+							{ siteId:"cms", id:"20", pId:"0", name:"웹콘텐츠관리",od:"1"},
+							
+							{ siteId:"cms", id:"49", pId:"0", name:"운영자 공지사항",od:"3"},
+							
+							{ siteId:"cms", id:"50", pId:"0", name:"조직관리",od:"4"},
+							
+							{ siteId:"cms", id:"53", pId:"0", name:"설문조사",od:"5"},
+							
+							{ siteId:"cms", id:"59", pId:"0", name:"스케줄",od:"6"},
+							
+							{ siteId:"cms", id:"62", pId:"0", name:"메인관리",od:"2"},
+							
+							{ siteId:"cms", id:"99", pId:"0", name:"I.N.CMS",od:"8"},
+							
+							{ siteId:"cms", id:"125", pId:"0", name:"통합회원관리",od:"7"},
+							
+							{ siteId:"cms", id:"131", pId:"0", name:"테스트",od:"11"},
+							
+				];
+				
+					
+				//callback beforeClick
+				function beforeClick(treeId, treeNode, clickFlag) {
+					className = (className === "dark" ? "":"dark");
+					return (treeNode.click != false);
+				}
+				
+				//메뉴펼침, 닫힘
+				function expandNode(e) {
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					type = e.data.type,
+					nodes = zTree.getSelectedNodes();
+					if (type == "openTree") {
+						zTree.expandAll(true);
+					} else if (type == "closeTree") {
+						zTree.expandAll(false);
+					} 
+				}
+			//]]>
+			</script>
+			
+			<form name="frm" action="ntt.do" method="post" >
+				<div class="search_area">
+					<table class="tb_search">
+						<caption>검색조건</caption>
+						<colgroup>
+							<col style="width:120px" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="searchKeyword">주제어</label></th>
+								<td>
+									<input type="text" name="searchKeyword" id="searchKeyword" value="" placeholder="ID, 성명 검색" style="width:100%;" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+			
+					<div class="btn_area">
+						<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+						<button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+					</div>
+				</div>
+			</form>
+				
+			<div class="box_guide">
+				<ul class="bul_dot">
+					<li>좌측 목록에서 열을 클릭한 뒤 우측 메뉴트리에서 권한을 매핑합니다.</li>
+					<li>매핑 후 <span class="btn btn_sm act"><i class="fa fa-save"></i> 변경내용 저장</span> 버튼을 클릭하여 반영합니다.</li>
+				</ul>
+			</div>
+		
+			<div class="permission_mapping">
+				<div class="tb_area">
+					<table class="tb_head table-head">
+						<caption>그룹목록</caption>
+						<colgroup>
+							<col style="width:60px" />
+							<col style="width:250px" />
+							<col style="width:150px"/>
+							<col style="width:250px" />
+							<col style="width:250px" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>ID</th>
+								<th>성명</th>
+								<th>등급</th>
+								<th>가입일시</th>
+							</tr>
+						</thead>
+						<tbody style="display: none;">
+							<tr>
+								<td colspan="5"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="tb_scroll">
+						<table class="tb_body">
+							<caption>관리자 메뉴권한 목록</caption>
+							<colgroup>
+								<col style="width:60px" />
+								<col style="width:250px" />
+								<col style="width:150px" />
+								<col style="width:250px" />
+								<col style="width:250px" />
+							</colgroup>
+							<tbody>
+								<tr class="incms-GridClick" data-conect-id="test7" data-nm="테스트7">
+									<td>1</td>
+									<td>test7</td>
+									<td>테스트7</td>
+									<td>업무 사용자</td>
+									<td>2019-01-15 12:31:15.0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="mapping">
+					<div class="tree_area">
+						<div class="tree_ctrl">
+							<button type="button" class="btn btn_sm nav" id="btnOpenTree">+ 전체열기</button>
+							<button type="button" class="btn btn_sm nav" id="btnCloseTree">- 전체닫기</button>
+						</div>
+						<div class="scroll_area">
+							<ul id="ztree" class="ztree"></ul>
+						</div>
+						<!--
+						<div class="menu_ctrl">
+							<div class="chk_list">
+								<input type="checkbox" id="lb_permission1" /> <label for="lb_permission1">목록</label>
+								<input type="checkbox" id="lb_permission2" /> <label for="lb_permission2">상세</label>
+								<input type="checkbox" id="lb_permission3" /> <label for="lb_permission3">쓰기</label>
+								<input type="checkbox" id="lb_permission4" /> <label for="lb_permission4">삭제</label>
+								<input type="checkbox" id="lb_permission5" /> <label for="lb_permission5">관리자</label>
+							</div>
+						</div>
+						-->
+					</div>
+					<div class="btn_area">
+						<button type="submit" class="btn btn_lg act" id="btnSave"><i class="fa fa-save"></i>변경내용 저장</button>
+					</div>
+				</div>
+			</div>
+		
+			<form id="GridFrm" name="GridFrm" method="post" action="/system/author/ntt.do">
+				<input type="hidden" name="conectId">
+				<input type="hidden" name="searchKeyword" value="">
+			</form>		
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

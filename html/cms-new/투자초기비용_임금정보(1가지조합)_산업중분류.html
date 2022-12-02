@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">투자초기비용검색</a>
+				<span>&gt;</span>
+				<a href="#none">임금정보(1가지 조합)</a>
+				<span>&gt;</span>
+				<strong>산업중분류</strong>
+			</p>
+
+			<h2 id="tit_page">임금정보(1가지 조합)</h2>
+
+			<ul class="tab_menu">
+				<li class="on"><a href="#;">산업중분류</a></li>
+				<li><a href="#;">직업중분류</a></li>
+				<li><a href="#;">사업체규모</a></li>
+				<li><a href="#;">경력</a></li>
+				<li><a href="#;">성별</a></li>
+				<li><a href="#;">학력</a></li>
+				<li><a href="#;">근속년수</a></li>
+			</ul>
+
+			<div class="list_status">
+				<p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+				<div class="fr">
+					<select class="post_num" name="pageItm" id="pageItm">
+						<option value="10">10</option>
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+						<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80">80</option>
+						<option value="90">90</option>
+						<option value="100">100</option>
+					</select>
+					<button type="button" class="btn" id="btnPageItm">적용</button>
+				</div>
+			</div>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<colgroup>
+						<col style="width:100px">
+						<col style="width:150px">
+						<col style="width:300px">
+						<col style="width:300px">
+						<col>
+						<col>
+						<col>
+						<col>
+						<col style="width:150px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>중분류코드</th>
+							<th>산업중분류(Kor)</th>
+							<th>산업중분류(Eng)</th>
+							<th>평균</th>
+							<th>하위25%</th>
+							<th>중위</th>
+							<th>상위25%</th>
+							<th>등록일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>10</td>
+							<td>06</td>
+							<td>금속 광업</td>
+							<td>금속 광업</td>
+							<td>50,029</td>
+							<td>37,944</td>
+							<td>49,238</td>
+							<td>59,700</td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>07</td>
+							<td>비금속광물 광업;연료용 제외</td>
+							<td>비금속광물 광업;연료용 제외</td>
+							<td>41,848</td>
+							<td>33,638</td>
+							<td>40,195</td>
+							<td>47,701</td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>08</td>
+							<td>광업 지원 서비스업</td>
+							<td>광업 지원 서비스업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>10</td>
+							<td>식료품 제조업</td>
+							<td>식료품 제조업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>11</td>
+							<td>음료 제조업</td>
+							<td>음료 제조업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>12</td>
+							<td>담배 제조업</td>
+							<td>담배 제조업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>13</td>
+							<td>섬유제품 제조업; 의복제외</td>
+							<td>섬유제품 제조업; 의복제외</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>14</td>
+							<td>복, 의복액세서리 및 모피제품 제조업</td>
+							<td>복, 의복액세서리 및 모피제품 제조업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>15</td>
+							<td>가죽, 가방 및 신발 제조업</td>
+							<td>가죽, 가방 및 신발 제조업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>16</td>
+							<td>목재 및 나무제품 제조업;가구제외</td>
+							<td>목재 및 나무제품 제조업;가구제외</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2022-01-20</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="pagination">
+				<strong>1</strong>
+				<a
+					href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+				<a
+					href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a>
+			</div>
+			<div class="btn_area">
+				<a href="#" class="btn xls">엑셀 내려받기</a>
+				<a href="#layer01" class="btn btn_md act" onclick="openLayer(this);"><i class="fa fa-pencil"></i> 엑셀 등록</a>
+			</div>
+
+			<!-- 레이어 샘플 -->
+			<div id="layer01" class="layer_popup modal">
+				<div class="bg"></div>
+				<h2 class="tit_layer">엑셀 파일로 일괄등록</h2>
+				<div class="layer_cont">
+					<h3 class="tit2">엑셀 파일로 일괄 등록</h3>
+					<p class="mt15">엑셀파일만 업로드 가능합니다.<br>
+						첫번째 시트에 데이터가 있어야 합니다.[시트명 Sheet1]<br>
+						엑셀작성 시 정해진 엑셀 양식을 다운로드하여 내용 수정 후 업로드 하셔야 합니다</p>
+					<table class="tb_write mt15">
+						<caption>등록</caption>
+						<colgroup>
+							<col style="width:150px" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="lb_file">파일선택</label></th>
+								<td>
+									<input type="file" id="lb_file" style="width:400px;" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_area text-center">
+						<a href="#" class="btn btn_lg act"><i class="fa fa-pencil"></i> 엑셀파일 등록</a>
+						<a href="#layer01" class="btn btn_lg" onclick="closeLayer(this);">닫기</a>
+					</div>
+				</div>
+				<button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+			</div>
+			<!-- // 레이어 샘플 -->
+
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

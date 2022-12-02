@@ -1,0 +1,555 @@
+
+<!DOCTYPE html PUBLIC "-/W3C/DTD Xhtml 1.0 Transitional/EN" "http:/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http:/www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>GUIDE | INVEST KOREA</title>
+        <style type="text/css">
+            html, body {margin:0;padding:0}
+            body, td {font:.9em "맑은 고딕",dotum,"돋움",Sans-Serif;color:#6b6b6b}
+            td{font-size:11px}
+            table {border-collapse: collapse;border-spacing: 0}
+			ul {list-style: none}
+            input[type="checkbox"]{margin:0 3px 0;vertical-align:text-bottom}
+            #g_header h1 {min-width:1024px;height:130px;line-height:130px;padding-left:28px;margin-top:0;margin-bottom:0;text-align:center;color:#fff;background:#0f3a67}
+            #g_body {min-width:1024px;padding:50px 30px 50px}
+            #g_footer {padding:30px; text-align:right}
+            .guide_table {width:100%;border-collapse:collapse}
+            .guide_table thead th {background:#777;padding:5px 0;border:solid 1px #dadada;color:#fff}
+            .guide_table tbody td {padding:4px 10px;border:solid 1px #dadada}
+            .guide_table tbody td.filelink .link {text-decoration:none;color:#0177bd}
+            .guide_table tbody td.filelink .link:hover {text-decoration: underline}
+            .guide_table tbody td.filelink .link:focus {font-weight: 600;color: #e43c3c;text-decoration: underline}
+            .guide_table tbody tr td:first-child{text-align:center}
+			.guide_table tbody tr:hover{background-color:#f1f1f1}
+            .guide_table tr.dep01 td {border-top:solid 2px #0f3a67}
+            .mark {display:inline-block;padding:0 2px;color:#fff}
+            .mark-a {background-color: blue}
+            .mark-b {background-color: #8200ff}
+            .mark-c {background-color: red}
+            .mark-d {background-color: green}
+            .mark-e {background-color: #07c7bc}
+            .mark-f {background-color: #40de40}
+            .mark-g {background-color: #444}
+            .mark-h {background-color: #23a15e}
+            .mark-i {background-color: #0177bd}
+            .mark-remaning-work {background-color: red}
+			.tab-btn{margin-bottom:25px}
+			.tab-btn:after {content: ''; display: block; clear: both}
+			.tab-btn ul{margin:0 0 -1px 0;padding:0}
+			.tab-btn li{float:left;width:170px;border:1px solid #b1b1b1;margin-right:-1px}
+			.tab-btn a{display:block;height:45px;line-height:45px;text-decoration:none;font-size:16px;color:#666;text-align:center}
+			.tab-btn .on,.tab-btn a:hover{background-color:#ddd;color:#222}
+			.tac{text-align:center}
+            .bd-top{border-top:2px solid #f28938}
+        </style>
+    </head>
+    <body>
+        <div id="g_header">
+            <h1>INVEST KOREA</h1>
+        </div>
+        <div id="g_body">
+            <div class="contents">
+                <!-- <h3 style="font-size:36px; font-weight:bold;">File List</h3> -->
+				<!-- <div class="tab-btn">
+					<ul>
+                        <li><a href="guide.html" class="on">Invest Korea 국문</a></li>
+                        <li><a href="guide_en.html">Invest Korea 영문</a></li>
+                        <li><a href="guide_ch.html">Invest Korea 중문</a></li>   
+                        <li><a href="guide_jp.html">Invest Korea 일문</a></li>                 
+                        <li><a href="local_guide.html">지자체 국문</a></li>
+                        <li><a href="local_guide_en.html">지자체 영문</a></li>
+                        <li><a href="local_guide_ch.html">지자체 중문</a></li>
+                        <li><a href="local_guide_jp.html">지자체 일문</a></li>
+						<li><a href="admin_guide.html">관리자</a></li>
+                    </ul>
+                    <ul style="float:right;">
+						<li><a href="html/ik-kr/guide/style.html">STYLE</a></li>
+					</ul>
+				</div> -->
+                <form name="work" action="">
+                    <table class="guide_table" id="guide_table">
+                        <colgroup>
+                            <col width="30px" />
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="430px" />
+                            <col width="100px" />
+                            <col width="155px" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">사이트논리명-다국어논리명</th>
+                                <th scope="col">사이트-다국어 물리명</th>
+                                <th scope="col">디렉토리 폴더명</th>
+                                <th scope="col">사이트 INDEX 명(운영)</th>
+                                <th scope="col">사이트 INDEX 명(개발서버)</th>
+                                <th scope="col">사이트 INDEX 명(개발자)</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="dep01">
+                                <td class="no"></td>
+                                <td>인베스트코리아-국문</td>
+                                <td>IK-KR</td>
+                                <td>ik-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/ik-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/ik-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/ik-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/ik-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/ik-kr/index.do" target="_blank" title="새창" class="link">http://localhost/ik-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>인베스트코리아-영문</td>
+                                <td>IK-EN</td>
+                                <td>ik-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/ik-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/ik-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/ik-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/ik-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/ik-en/index.do" target="_blank" title="새창" class="link">http://localhost/ik-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>인베스트코리아-중문</td>
+                                <td>IK-CH</td>
+                                <td>ik-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/ik-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/ik-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/ik-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/ik-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/ik-ch/index.do" target="_blank" title="새창" class="link">http://localhost/ik-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>인베스트코리아-일문</td>
+                                <td>IK-JP</td>
+                                <td>ik-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/ik-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/ik-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/ik-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/ik-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/ik-jp/index.do" target="_blank" title="새창" class="link">http://localhost/ik-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>강원-국문</td>
+                                <td>GWN-KR</td>
+                                <td>gwn-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gwn-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gwn-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gwn-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gwn-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gwn-kr/index.do" target="_blank" title="새창" class="link">http://localhost/gwn-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>강원-영문</td>
+                                <td>GWN-EN</td>
+                                <td>gwn-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gwn-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gwn-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gwn-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gwn-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gwn-en/index.do" target="_blank" title="새창" class="link">http://localhost/gwn-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>강원-중문</td>
+                                <td>GWN-CH</td>
+                                <td>gwn-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gwn-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gwn-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gwn-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gwn-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gwn-ch/index.do" target="_blank" title="새창" class="link">http://localhost/gwn-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>강원-일문</td>
+                                <td>GWN-JP</td>
+                                <td>gwn-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gwn-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gwn-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gwn-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gwn-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gwn-jp/index.do" target="_blank" title="새창" class="link">http://localhost/gwn-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>충남-국문</td>
+                                <td>CHN-KR</td>
+                                <td>chn-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/chn-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/chn-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/chn-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/chn-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/chn-kr/index.do" target="_blank" title="새창" class="link">http://localhost/chn-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>충남-영문</td>
+                                <td>CHN-EN</td>
+                                <td>chn-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/chn-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/chn-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/chn-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/chn-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/chn-en/index.do" target="_blank" title="새창" class="link">http://localhost/chn-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>충남-중문</td>
+                                <td>CHN-CH</td>
+                                <td>chn-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/chn-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/chn-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/chn-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/chn-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/chn-ch/index.do" target="_blank" title="새창" class="link">http://localhost/chn-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>충남-일문</td>
+                                <td>CHN-JP</td>
+                                <td>chn-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/chn-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/chn-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/chn-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/chn-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/chn-jp/index.do" target="_blank" title="새창" class="link">http://localhost/chn-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>대전-국문</td>
+                                <td>DJ-KR</td>
+                                <td>dj-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dj-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dj-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dj-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dj-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dj-kr/index.do" target="_blank" title="새창" class="link">http://localhost/dj-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>대전-영문</td>
+                                <td>DJ-EN</td>
+                                <td>dj-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dj-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dj-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dj-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dj-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dj-en/index.do" target="_blank" title="새창" class="link">http://localhost/dj-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>대전-중문</td>
+                                <td>DJ-CN</td>
+                                <td>dj-cn</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dj-cn/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dj-cn/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dj-cn/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dj-cn/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dj-cn/index.do" target="_blank" title="새창" class="link">http://localhost/dj-cn/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>대전-일문</td>
+                                <td>DJ-JP</td>
+                                <td>dj-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dj-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dj-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dj-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dj-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dj-jp/index.do" target="_blank" title="새창" class="link">http://localhost/dj-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>충북-국문</td>
+                                <td>CB-KR</td>
+                                <td>cb-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/cb-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/cb-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/cb-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/cb-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/cb-kr/index.do" target="_blank" title="새창" class="link">http://localhost/cb-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>충북-영문</td>
+                                <td>CB-EN</td>
+                                <td>cb-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/cb-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/cb-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/cb-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/cb-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/cb-en/index.do" target="_blank" title="새창" class="link">http://localhost/cb-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>충북-중문</td>
+                                <td>CB-CH</td>
+                                <td>cb-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/cb-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/cb-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/cb-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/cb-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/cb-ch/index.do" target="_blank" title="새창" class="link">http://localhost/cb-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>충북-일문</td>
+                                <td>CB-JP</td>
+                                <td>cb-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/cb-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/cb-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/cb-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/cb-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/cb-jp/index.do" target="_blank" title="새창" class="link">http://localhost/cb-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>전북-국문</td>
+                                <td>JNBK-KR</td>
+                                <td>jnbk-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jnbk-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jnbk-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jnbk-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jnbk-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jnbk-kr/index.do" target="_blank" title="새창" class="link">http://localhost/jnbk-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>전북-영문</td>
+                                <td>JNBK-EN</td>
+                                <td>jnbk-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jnbk-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jnbk-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jnbk-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jnbk-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jnbk-en/index.do" target="_blank" title="새창" class="link">http://localhost/jnbk-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>전북-중문</td>
+                                <td>JNBK-CH</td>
+                                <td>jnbk-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jnbk-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jnbk-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jnbk-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jnbk-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jnbk-ch/index.do" target="_blank" title="새창" class="link">http://localhost/jnbk-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>전북-일문</td>
+                                <td>JNBK-JP</td>
+                                <td>jnbk-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jnbk-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jnbk-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jnbk-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jnbk-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jnbk-jp/index.do" target="_blank" title="새창" class="link">http://localhost/jnbk-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>대구-국문</td>
+                                <td>DG-KR</td>
+                                <td>dg-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dg-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dg-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dg-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dg-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dg-kr/index.do" target="_blank" title="새창" class="link">http://localhost/dg-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>대구-영문</td>
+                                <td>DG-EN</td>
+                                <td>dg-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dg-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dg-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dg-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dg-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dg-en/index.do" target="_blank" title="새창" class="link">http://localhost/dg-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>대구-중문</td>
+                                <td>DG-CH</td>
+                                <td>dg-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dg-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dg-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dg-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dg-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dg-ch/index.do" target="_blank" title="새창" class="link">http://localhost/dg-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>대구-일문</td>
+                                <td>DG-JP</td>
+                                <td>dg-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/dg-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/dg-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/dg-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/dg-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/dg-jp/index.do" target="_blank" title="새창" class="link">http://localhost/dg-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>광주-국문</td>
+                                <td>GJ-KR</td>
+                                <td>gj-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gj-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gj-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gj-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gj-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gj-kr/index.do" target="_blank" title="새창" class="link">http://localhost/gj-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>광주-영문</td>
+                                <td>GJ-EN</td>
+                                <td>gj-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gj-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gj-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gj-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gj-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gj-en/index.do" target="_blank" title="새창" class="link">http://localhost/gj-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>광주-중문</td>
+                                <td>GJ-CH</td>
+                                <td>gj-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gj-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gj-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gj-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gj-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gj-ch/index.do" target="_blank" title="새창" class="link">http://localhost/gj-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>광주-일문</td>
+                                <td>GJ-JP</td>
+                                <td>gj-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/gj-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/gj-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/gj-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/gj-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/gj-jp/index.do" target="_blank" title="새창" class="link">http://localhost/gj-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>울산-국문</td>
+                                <td>US-KR</td>
+                                <td>us-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/us-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/us-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/us-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/us-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/us-kr/index.do" target="_blank" title="새창" class="link">http://localhost/us-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>울산-영문</td>
+                                <td>US-EN</td>
+                                <td>us-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/us-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/us-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/us-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/us-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/us-en/index.do" target="_blank" title="새창" class="link">http://localhost/us-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>울산-중문</td>
+                                <td>US-CN</td>
+                                <td>us-cn</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/us-cn/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/us-cn/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/us-cn/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/us-cn/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/us-cn/index.do" target="_blank" title="새창" class="link">http://localhost/us-cn/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>울산-일문</td>
+                                <td>US-JP</td>
+                                <td>us-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/us-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/us-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/us-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/us-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/us-jp/index.do" target="_blank" title="새창" class="link">http://localhost/us-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>부산-국문</td>
+                                <td>BSN-KR</td>
+                                <td>bsn-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/bsn-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/bsn-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/bsn-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/bsn-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/bsn-kr/index.do" target="_blank" title="새창" class="link">http://localhost/bsn-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>부산-영문</td>
+                                <td>BSN-EN</td>
+                                <td>bsn-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/bsn-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/bsn-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/bsn-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/bsn-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/bsn-en/index.do" target="_blank" title="새창" class="link">http://localhost/bsn-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>부산-중문</td>
+                                <td>BSN-CH</td>
+                                <td>bsn-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/bsn-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/bsn-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/bsn-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/bsn-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/bsn-ch/index.do" target="_blank" title="새창" class="link">http://localhost/bsn-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>부산-일문</td>
+                                <td>BSN-JP</td>
+                                <td>bsn-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/bsn-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/bsn-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/bsn-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/bsn-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/bsn-jp/index.do" target="_blank" title="새창" class="link">http://localhost/bsn-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bd-top">
+                                <td class="no"></td>
+                                <td>제주-국문</td>
+                                <td>JJ-KR</td>
+                                <td>jj-kr</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jj-kr/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jj-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jj-kr/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jj-kr/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jj-kr/index.do" target="_blank" title="새창" class="link">http://localhost/jj-kr/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>제주-영문</td>
+                                <td>JJ-EN</td>
+                                <td>jj-en</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jj-en/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jj-en/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jj-en/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jj-en/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jj-en/index.do" target="_blank" title="새창" class="link">http://localhost/jj-en/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>제주-중문</td>
+                                <td>JJ-CH</td>
+                                <td>jj-ch</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jj-ch/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jj-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jj-ch/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jj-ch/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jj-ch/index.do" target="_blank" title="새창" class="link">http://localhost/jj-ch/index.do</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="no"></td>
+                                <td>제주-일문</td>
+                                <td>JJ-JP</td>
+                                <td>jj-jp</td>
+                                <td class="filelink"><a href="https://www.investkorea.org/jj-jp/index.do" target="_blank" title="새창" class="link">https://www.investkorea.org/jj-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://investkorea.inseq.co.kr:8888/jj-jp/index.do" target="_blank" title="새창" class="link">http://investkorea.inseq.co.kr:8888/jj-jp/index.do</a></td>
+                                <td class="filelink"><a href="http://localhost/jj-jp/index.do" target="_blank" title="새창" class="link">http://localhost/jj-jp/index.do</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <script>
+            //테이블 번호 삽입
+            (function () {
+                let num = 1,
+                    tr = document.querySelectorAll('table tr');
+
+                for(let i=1; i < tr.length; i++) {
+                    tr[i].children[0].innerText = num;
+                    num++;
+                }
+            })();
+        </script>
+    </body>
+</html>

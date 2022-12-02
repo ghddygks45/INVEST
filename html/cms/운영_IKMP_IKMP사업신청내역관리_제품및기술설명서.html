@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">IKMP</a>
+                <span>&gt;</span>
+                <strong>IKMP 사업신청내역 관리</strong>
+            </p>
+    
+            <h2 id="tit_page">IKMP 사업신청내역 관리</h2>
+            
+            <ul class="tab_menu">
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_상태관리.html">상태관리</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_기업현황.html">기업현황</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_회사의주요연혁.html">회사 주요연혁</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_경영진및주주현황.html">경영진 및 주주현황</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_투자유치희망방식.html">투자유치 희망방식</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_주요재무정보.html">주요 재무정보</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_사업개요및핵심기술.html">사업개요 및 핵심기술</a></li>
+                <li class="on"><a href="운영_IKMP_IKMP사업신청내역관리_제품및기술설명서.html">제품 및 기술설명서</a></li>
+                <li><a href="운영_IKMP_IKMP사업신청내역관리_기타첨부서류.html">기타 첨부서류</a></li>
+            </ul>
+
+            <!-- 주요 보유 기술 개요 -->
+            <h3 class="tit1 mt25">주요 보유 기술 개요<span class="s-txt">※ 각 항목 해당되는 경우 기입 요망 (공란일 경우에도 평가 상 불이익 없음)</span></h3>
+            <table class="tb_write">
+                <colgroup>
+                    <col style="width:220px">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>기술(사업)명</th>
+                        <td><input type="text" style="width:100%"></td>
+                    </tr>
+                    <tr>
+                        <th>제품화 여부</th>
+                        <td>
+							<input type="radio" name="radio1" id="radio1-1"><label for="radio1-1">해당</label>
+							<input type="radio" name="radio1" id="radio1-2"><label for="radio1-2">해당없음</label>
+						</td>
+                    </tr>
+                    <tr>
+                        <th>권리 구분</th>
+                        <td>
+							<input type="checkbox" name="ck1-1" id="ck1-1"><label for="ck1-1">특허권</label><br>
+							<input type="checkbox" name="ck1-1" id="ck1-2"><label for="ck1-2">실용신안권</label><br>
+							<input type="checkbox" name="ck1-1" id="ck1-3"><label for="ck1-3">디자인</label><br>
+							<input type="checkbox" name="ck1-1" id="ck1-4"><label for="ck1-4">상표</label><br>
+							<input type="checkbox" name="ck1-1" id="ck1-5"><label for="ck1-5">프로그램저작권</label><br>
+							<input type="checkbox" name="ck1-1" id="ck1-6"><label for="ck1-6">기타</label><input type="text" stlye="width:150px">
+						</td>
+                    </tr>
+                    <tr>
+                        <th>권리 상태</th>
+                        <td>
+							<input type="checkbox" name="ck2-1" id="ck2-1"><label for="ck2-1">출원중</label><br>
+							<input type="checkbox" name="ck2-1" id="ck2-2"><label for="ck2-2">등록</label>
+						</td>
+                    </tr>
+                    <tr>
+                        <th>등록(출원) 번호</th>
+                        <td><input type="text" style="width:300px"></td>
+                    </tr>
+                    <tr>
+                        <th>제품화 단계</th>
+                        <td>
+							<input type="checkbox" name="ck3-1" id="ck3-1"><label for="ck3-1">양산단계</label><br>
+							<input type="checkbox" name="ck3-1" id="ck3-2"><label for="ck3-2">양산준비단계</label><br>
+							<input type="checkbox" name="ck3-1" id="ck3-3"><label for="ck3-3">제품화완료단계</label><br>
+							<input type="checkbox" name="ck3-1" id="ck3-4"><label for="ck3-4">시제품(연구, 개발, 기획) 단계</label><br>
+							<input type="checkbox" name="ck3-1" id="ck3-5"><label for="ck3-5">아이디어단계</label>
+						</td>
+                    </tr>
+                    <tr>
+                        <th>권리자 성명</th>
+                        <td><input type="text" style="width:300px"></td>
+                    </tr>
+                    <tr>
+                        <th>권리자와의 관계</th>
+                        <td><input type="text" style="width:300px"></td>
+                    </tr>
+                    <tr>
+                        <th>발명자</th>
+                        <td><input type="text" style="width:300px"></td>
+                    </tr>
+                    <tr>
+                        <th>발명자와의 관계</th>
+                        <td><input type="text" style="width:300px"></td>
+                    </tr>
+                    <tr>
+                        <th>제품내용</th>
+                        <td>
+                            <div class="color-blue mb5">※ 10줄 내외로 간략하게 작성</div>
+                            <textarea style="height:200px"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //주요 보유 기술 개요 -->
+
+            <!-- 연구 인력 -->
+            <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">연구인력</h3></div>
+                <div class="fr"><button type="button" class="btn btn-add">연구인력추가</button></div>
+            </div>
+            <table class="tb_data">
+				<colgroup>
+					<col style="width:200px">
+					<col style="width:200px">
+					<col style="width:150px">
+					<col style="width:200px">
+					<col>
+					<col style="width:120px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>성명</th>
+                        <th>직위</th>
+                        <th>나이</th>
+                        <th>최종학력</th>
+                        <th>주요경력</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+				<tbody>
+                    <tr>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+				</tbody>
+            </table>
+            <!-- //연구 인력 -->
+
+            <!-- 주요 보유 기술 개요 -->
+            <h3 class="tit1 mt25">주요 보유 기술 개요<span class="s-txt">※ 각 항목 해당되는 경우 기입 요망 (공란일 경우에도 평가 상 불이익 없음)</span></h3>
+            <table class="tb_write">
+                <colgroup>
+                    <col style="width:250px">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>기술개발 및 관련실적(3년 이내)</th>
+                        <td>
+                            <div class="mb5">기술상용화실적 <input type="text" style="width:50px"> 건</div>
+                            <div class="mb5">기술개발실적 <input type="text" style="width:50px"> 건</div>
+                            <div class="mb5">수상실적 <input type="text" style="width:50px"> 건</div>
+                            <div>인증실적 <input type="text" style="width:50px"> 건</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>기술개발 환경</th>
+                        <td>
+							<input type="radio" name="radio2" id="radio2-1"><label for="radio2-1">공인된 기업부설연구소</label><br>
+							<input type="radio" name="radio2" id="radio2-2"><label for="radio2-2">연구개발전담부서 보유</label><br>
+							<input type="radio" name="radio2" id="radio2-3"><label for="radio2-3">기술인력만 확보</label><br>
+							<input type="radio" name="radio2" id="radio2-4"><label for="radio2-4">별도의 연구설비 및 기술인력 없음</label>
+						</td>
+                    </tr>
+                    <tr>
+                        <th>기술혁신</th>
+                        <td>
+                            <input type="radio" name="radio3" id="radio3-1"><label for="radio3-1">최근 3년간 정부 R&D과제를 수행하여 성공판정을 받았다</label><br>
+							<input type="radio" name="radio3" id="radio3-2"><label for="radio3-2">해당없음</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //주요 보유 기술 개요 -->
+
+            <!-- 국내외 관련 지식 재산권 현황 -->
+            <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">국내외 관련 지식 재산권 현황</h3></div>
+                <div class="fr"><button type="button" class="btn btn-add">국내외 관련 지식 재산권 추가</button></div>
+            </div>
+            <table class="tb_data">
+				<colgroup>
+					<col style="width:300px">
+					<col style="width:300px">
+					<col style="width:200px">
+					<col>
+					<col style="width:120px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>출원국 / 등록(출원)번호</th>
+                        <th>권리상태(등록/출원)</th>
+                        <th>권리 구분</th>
+                        <th>지식재산권명</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+				<tbody>
+                    <tr>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+				</tbody>
+            </table>
+            <!-- //국내외 관련 지식 재산권 현황 -->
+
+            <!-- 연구시설·장비보유 및 구입현황(자사보유) -->
+            <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">연구시설·장비보유 및 구입현황(자사보유)<span class="s-txt">※기 보유시설·장비(활용 가능 기자재 포함)</span></h3></div>
+                <div class="fr"><button type="button" class="btn btn-add">연구시설·장비 추가</button></div>
+            </div>
+            <table class="tb_data">
+				<colgroup>
+					<col style="width:300px">
+					<col style="width:250px">
+					<col style="width:150px">
+					<col style="width:150px">
+					<col>
+					<col style="width:120px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>시설 및 장비명</th>
+                        <th>규격</th>
+                        <th>수량</th>
+                        <th>구입년도</th>
+                        <th>용도(구입사유)</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+				<tbody>
+                    <tr>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+				</tbody>
+            </table>
+            <!-- //연구시설·장비보유 및 구입현황(자사보유) -->
+
+            <!-- 연구시설·장비보유 및 구입현황(공동장비 활용) -->
+            <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">연구시설·장비보유 및 구입현황(공동장비 활용)<span class="s-txt">※기 보유시설·장비(활용 가능 기자재 포함)</span></h3></div>
+                <div class="fr"><button type="button" class="btn btn-add">연구시설·장비 추가</button></div>
+            </div>
+            <table class="tb_data">
+				<colgroup>
+					<col style="width:300px">
+					<col style="width:250px">
+					<col style="width:150px">
+					<col style="width:150px">
+					<col>
+					<col style="width:120px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>시설 및 장비명</th>
+                        <th>규격</th>
+                        <th>수량</th>
+                        <th>구입년도</th>
+                        <th>용도(구입사유)</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+				<tbody>
+                    <tr>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><input type="text" style="width:100%"></td>
+                        <td><button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button></td>
+                    </tr>
+				</tbody>
+            </table>           
+            <!-- //연구시설·장비보유 및 구입현황(공동장비 활용) -->
+
+            <div class="btn_area">
+                <button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-save"></i> 저장</button>
+            </div>
+        </div>
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

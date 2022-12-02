@@ -1,0 +1,23 @@
+/* 권한매핑 */
+.permission_mapping {
+	overflow: hidden;
+
+	.tb_area {
+		float: left;
+		width: calc(100% - 400px);
+		overflow-x: auto;
+
+		td {
+			cursor: pointer;
+		}
+
+		.tb_list {
+			width: 100%;
+		}
+	}
+
+	.mapping {
+		float: right;
+		width: 375px;
+	}
+}

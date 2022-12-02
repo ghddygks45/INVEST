@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">온라인매칭플랫폼</a>
+				<span>&gt;</span>
+				<strong>상담주선 현황</strong>
+			</p>
+
+			<h2 id="tit_page">상담주선 현황</h2>
+
+			<ul class="tab_menu">
+				<li class="on"><a href="#">상태관리</a></li>
+				<li><a href="#">상담요청서</a></li>
+				<li><a href="#">답변</a></li>
+				<li><a href="#">투자가 만족도 조사</a></li>
+				<li><a href="#">국내기업 만족도 조사</a></li>
+			</ul>
+
+			<h3 class="tit1">상태관리</h3>
+
+			<table class="tb_view">
+				<caption>상태관리</caption>
+				<colgroup>
+					<col style="width: 200px" />
+					<col />
+					<col style="width: 100px" />
+					<col style="width: 200px" />
+					<col />
+				</colgroup>
+				<thead>
+					<tr>
+						<th colspan="2">투자유치 희망기업</th>
+						<th>구분</th>
+						<th colspan="2">투자가</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>기업명</th>
+						<td>GEISTKOREA
+							<a href="#;" class="ml5"><img src="../../images/cms/ico_tbl_info.png" alt=""></a>
+						</td>
+						<td rowspan="6" class="text-center tb_border"><img src="../../images/cms/ico_arr_red.png" alt=""></td>
+						<th>투자가/기업명</th>
+						<td>Huayi Brothers Investment
+							<a href="#;" class="ml5"><img src="../../images/cms/ico_tbl_info.png" alt=""></a>
+						</td>
+					</tr>
+					<tr>
+						<th>담당자명</th>
+						<td>Min Soo Choi</td>
+						<th>담당자명</th>
+						<td>Hong gil dong</td>
+					</tr>
+					<tr>
+						<th>분야</th>
+						<td>ICT</td>
+						<th>분야</th>
+						<td>Culture & Contents</td>
+					</tr>
+					<tr>
+						<th>담당 PM</th>
+						<td>Kim min soo</td>
+						<th>담당 PM</th>
+						<td>Kim Chul soo</td>
+					</tr>
+					<tr>
+						<th>투자유치 희망규모</th>
+						<td>USD 100~500만</td>
+						<th>투자규모</th>
+						<td>USD 100~500만</td>
+					</tr>
+					<tr>
+						<th>스타트업 구분</th>
+						<td>Y</td>
+						<th>국가/관할무역관</th>
+						<td>중국 / 베이징 무역관</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3 class="tit1 mt25">상태설정</h3>
+			<table class="tb_write">
+				<caption>상태설정</caption>
+				<colgroup>
+					<col style="width: 200px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>기업명</th>
+						<td>
+							<input type="radio" name="chk1" id="chk1-1" checked>
+							<label for="chk1-1">상담요청</label>
+							<input type="radio" name="chk1" id="chk1-2">
+							<label for="chk1-2">요청취소</label>
+							<input type="radio" name="chk1" id="chk1-3">
+							<label for="chk1-3">상담거절</label>
+							<input type="radio" name="chk1" id="chk1-4">
+							<label for="chk1-4">상담수락</label>
+							<input type="radio" name="chk1" id="chk1-5">
+							<label for="chk1-5">상담종료</label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_area">
+				<div class="list_ctrl">
+					<a href="#" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+				</div>
+				<a href="#" class="btn btn_lg act"><i class="fa fa-pencil"></i> 상태등록</a>
+			</div>
+
+			<div class="tb-scroll-x mt25">
+				<table class="tb_list">
+					<colgroup>
+						<col style="width:80px">
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>상태</th>
+							<th>날짜</th>
+							<th>요청자</th>
+							<th>구분</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>3</td>
+							<td>상담거절</td>
+							<td>2022.01.22</td>
+							<td>Huayi Brothers Investment</td>
+							<td>투자가</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>상담수락</td>
+							<td>2022.01.21</td>
+							<td>GEISTKOREA</td>
+							<td>투자희망기업</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>상담요청</td>
+							<td>2022.01.20</td>
+							<td>Huayi Brothers Investment</td>
+							<td>투자가</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h3 class="tit1 mt25">화상회의 접속정보</h3>
+			<table class="tb_view">
+				<caption>화상회의 접속정보</caption>
+				<colgroup>
+					<col style="width: 200px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>줌링크</th>
+						<td>https://us06web.zoom.us/j/5108522963?pwd=ak1XbmprdFBUQnRZOWszWU91VHdyUT09</td>
+					</tr>
+					<tr>
+						<th>회의 ID</th>
+						<td>510 852 2963</td>
+					</tr>
+					<tr>
+						<th>암호</th>
+						<td>1234</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

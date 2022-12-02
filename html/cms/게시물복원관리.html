@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">로그</a>
+				<span>&gt;</span> 
+				<a href="/weblog/cntnts/index.do">콘텐츠 이력</a>
+				<span>&gt;</span> 
+				<strong>게시물 복원관리</strong>
+			</p>
+	
+			<h2 id="tit_page">게시물 복원관리</h2>
+
+			<script>
+				//페이지 아이템
+				$(document).on('click','#btnPageItm',function(){
+					$('form[name=frm]').submit();
+				//초기화
+				}).on('click','#btnReset',function(){
+					var add = $("form[name=frm]");
+					add.find('input').val('');
+					return false;
+				}).on('click','.inseqcms',function(){
+					console.log($(this).data('dt-idx'));
+			
+					var today  = new Date();
+					var dtIdx = $(this).data('dt-idx');
+					$('input[name=searchCondition]').val(dtIdx);
+					//End date 셋팅
+					$('input[name=searchEndDt]').val(dateSetup(today));
+					var inPut='';
+						//당일
+						if(dtIdx==0){
+							inPut=dateSetup(today);
+						//1일전 체크
+						}else if(dtIdx==-1){
+							today.setDate(today.getDate()-1);
+							inPut=dateSetup(today);
+						//7일전 체크(일주일전)
+						}else if(dtIdx==-7){
+							today.setDate(today.getDate()-7);
+							inPut=dateSetup(today);
+						//개월수 체크
+						}else{
+							today.setMonth(eval(today.getMonth()-dtIdx));
+							inPut=dateSetup(today);
+						}
+					//Start date 셋팅
+					$('input[name=searchStartDt]').val(inPut);
+				
+				//게시물 미게시처리
+				}).on('click','#btnDataSttusHidden',function(){
+					console.log("미게시 or 게시");
+					var _data_sttus = $(this).attr('data_sttus')=="A"? 'H':'A';	//상태값(A:게시, H:미게시, D:삭제)
+					var _bbs_type   = $(this).attr('bbs_type');					//게시판타입
+					var _bbs_id		= $(this).attr('bbs_id');					//게시판아이디
+					var _seq 		= $(this).attr('seq');						//일련번호
+					var _sj 		= $(this).attr('sj');						//제목
+					console.log(_data_sttus, _bbs_type, _bbs_id, _seq)
+					
+					var msg = _data_sttus =="A"? '게시':'미게시';
+					var msg_ui = _bbs_type =="5"? "\n댓글 게시판의 경우 하위글이 있을경우 하위글도 전부 "+msg+" 처리 됩니다." : ""
+					if(confirm("["+_sj+"]을 "+msg+" 처리 하시겠습니까?"+msg_ui)){
+						$.post("./nttrecovry.do",{
+							type        : "process"
+							,seq         : _seq
+							,bbs_type    : _bbs_type
+							,bbs_id      : _bbs_id
+							,data_sttus  : _data_sttus
+						},
+						function(result){
+						console.log(result)
+							if(result > 0){
+								alert("["+msg+"]처리 되었습니다");
+								location.reload();
+								return false;
+							}else{
+								alert("["+msg+"]처리 실패되었습니다.");
+								return false;
+							}
+						});	
+						return false;
+					}
+					return false;
+				//게시물 삭제	
+				}).on('click','#btnDataSttusDelt',function(){
+					console.log("삭제");
+					var _data_sttus = $(this).attr('data_sttus');			//상태값(A:게시, H:미게시, D:삭제)
+					var _bbs_type   = $(this).attr('bbs_type');				//게시판타입
+					var _bbs_id		= $(this).attr('bbs_id');				//게시판아이디
+					var _seq 		= $(this).attr('seq');					//일련번호
+					var _sj 		= $(this).attr('sj');					//제목
+					console.log(_data_sttus, _bbs_type, _bbs_id, _seq)
+					
+					var msg = '삭제';
+					var msg_ui = _bbs_type =="5"? "\n댓글 게시판의 경우 하위글이 있을경우 하위글도 전부 "+msg+" 처리 됩니다." : ""
+					if(confirm("["+_sj+"]을 "+msg+" 처리 하시겠습니까?"+msg_ui)){
+						$.post("./nttrecovry.do",{
+							type        : "process"
+							,seq         : _seq
+							,bbs_type    : _bbs_type
+							,bbs_id      : _bbs_id
+							,data_sttus  : _data_sttus
+						},
+						function(result){
+						console.log(result)
+							if(result > 0){
+								alert("["+msg+"]처리 되었습니다");
+								location.reload();
+								return false;
+							}else{
+								alert("["+msg+"]처리 실패되었습니다.");
+								return false;
+							}
+						});	
+						return false;
+					}
+					return false;
+				//게시물 복원
+				}).on('click','#btnDataSttusRecovry',function(){
+					console.log("복원");
+					var _data_sttus = $(this).attr('data_sttus');			//상태값(A:게시, H:미게시, D:삭제)
+					var _bbs_type   = $(this).attr('bbs_type');				//게시판타입
+					var _bbs_id		= $(this).attr('bbs_id');				//게시판아이디
+					var _seq 		= $(this).attr('seq');					//일련번호
+					var _sj 		= $(this).attr('sj');					//제목
+					console.log(_data_sttus, _bbs_type, _bbs_id, _seq)
+					
+					var msg = '복원';
+					var msg_ui = _bbs_type =="5"? "\n댓글 게시판의 경우 하위글이 있을경우 하위글도 전부 "+msg+" 처리 됩니다." : ""
+					if(confirm("["+_sj+"]을 "+msg+" 처리 하시겠습니까?"+msg_ui)){
+						$.post("./nttrecovry.do",{
+							type        : "process"
+							,seq         : _seq
+							,bbs_type    : _bbs_type
+							,bbs_id      : _bbs_id
+							,data_sttus  : _data_sttus
+						},
+						function(result){
+						console.log(result)
+							if(result > 0){
+								alert("["+msg+"]처리 되었습니다");
+								location.reload();
+								return false;
+							}else{
+								alert("["+msg+"]처리 실패되었습니다.");
+								return false;
+							}
+						});	
+						return false;
+					}
+					return false;
+			
+				//엑셀다운로드
+				}).on('click','#inseqcmsExcel',function(){
+					var $preparingFileModal = $("#cms-file-modal");
+					$preparingFileModal.dialog({ modal: true });
+					$("#progressbar").progressbar({value: false});
+					
+					$.fileDownload($("#inseqcmsExcelForm").prop('action'),{
+						httpMethod: "POST",
+						data:jQuery("#inseqcmsExcelForm").serialize(),
+						successCallback: function (url) {
+							//console.log("a :: "+url)
+							$preparingFileModal.dialog('close');
+						},
+						failCallback: function (responseHtml, url) {
+							//console.log("b :: "+url)
+							$preparingFileModal.dialog('close');
+							$("#cms-fileError-modal").dialog({ modal: true });
+						}
+					});
+					// 버튼의 원래 클릭 이벤트를 중지
+					return false;
+				});
+				
+				
+				//날짜설정
+				function dateSetup(date){
+					//return date.getFullYear()+"-"+pad(eval(date.getMonth()+1))+"-"+date.getDate();
+					return date.getFullYear()+"-"+add(eval(date.getMonth()+1))+"-"+add(eval(date.getDate()));
+				}
+				
+				//10보다 작을 경우 0 append 처리
+				function add(number) {
+					return (number < 10 ? '0' : '') + number;
+				} 
+			</script>
+	
+			<form name="frm" action="/weblog/cntntslog/nttrecovry.do" method="post">
+				<input type="hidden" name="searchCondition" id="searchCondition" value="">
+				<div class="search_area">
+					<table class="tb_search">
+						<caption>검색조건</caption>
+						<colgroup>
+							<col style="width:120px">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="searchStartDt">등록일시</label></th>
+								<td>
+									<span class="term_setting">
+										<button type="button" class="inseqcms" data-dt-idx="-1">하루전</button>
+										<button type="button" class="inseqcms" data-dt-idx="-7">1주일</button>
+										<button type="button" class="inseqcms" data-dt-idx="1">1개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="3">3개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="6">6개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="12">1년</button>
+									</span>
+									<input type="text" name="searchStartDt" id="searchStartDt" value="" title="시작일" style="width:100px;" readonly="readonly"/>
+									<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchStartDt')); return false;">달력</a> ~
+									<input type="text" name="searchEndDt" id="searchEndDt" value="" title="종료일" style="width:100px;" readonly="readonly"/>
+									<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchEndDt')); return false;">달력</a>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="searchKeyword">주제어</label></th>
+								<td>
+									<input type="text" name="searchKeyword" id="searchKeyword" value="" placeholder="제목/등록부서/등록자/등록아이디로 검색" style="width:100%;" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+		
+					<div class="btn_area">
+						<button type="submit" class="btn btn_lg act" id="btnSearch"><i class="fa fa-search"></i> 검색</button>
+						<button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+					</div>
+				</div>
+				
+				<div class="list_status">
+					<p class="status">총 <strong class="colr_point">649</strong> 건 (1/10 page)</p>
+					<div class="fr">
+						<button type="button" class="btn xls" id="inseqcmsExcel">엑셀다운로드</button>
+						<select class="post_num" name="pageItm" id="pageItm" title="리스트">
+							<option value="10" >10</option>
+							<option value="20" >20</option>
+							<option value="30" >30</option>
+							<option value="40" >40</option>
+							<option value="50" >50</option>
+							<option value="60" >60</option>
+							<option value="70" >70</option>
+							<option value="80" >80</option>
+							<option value="90" >90</option>
+							<option value="100" >100</option>
+						</select>
+						<button type="button" class="btn" id="btnPageItm">적용</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<caption>게시물 복원관리 목록</caption>
+					<colgroup>
+						<col style="width:100px" />
+						<col style="width:300px"/>
+						<col style="width:280px"/>
+						<col style="width:150px" />
+						<col style="width:120px" />
+						<col style="width:120px" />
+						<col style="width:100px" />
+						<col style="width:100px" />
+						<col style="width:100px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>상태</th>
+							<th>게시위치</th>
+							<th>제목</th>
+							<th>등록부서/등록자</th>
+							<th>등록ID/등록IP</th>
+							<th>등록일시</th>
+							<th>상태변경</th>
+							<th>삭제여부</th>
+							<th>복원여부</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><i class="fa fa-check"></i> 게시</td>
+							<td class="al">인시퀀스&gt;웹진형 게시판</td>
+							<td class="al">
+								<i class="fa fa-external-link"></i> <a href="/cms/bbs/i-4/show.do?seq=17" title="234234324 게시물로 이동">234234324</a>
+							</td>
+							<td> / </td>
+							<td>gusdn8987 / <br/>192.168.0.1</td>
+							<td>2019-10-02 19:24:54.0</td>
+							<td>
+								<button type="button" class="btn btn_sm basic" id="btnDataSttusHidden" sj="234234324" bbs_type="4" bbs_id="blog" seq="17" data_sttus="A"><i class="fa fa-ban"></i> 미게시</button>
+							</td>
+							<td>
+								<button type="button" class="btn btn_sm nav" id="btnDataSttusDelt" sj="234234324" bbs_type="4" bbs_id="blog" seq="17" data_sttus="D"><i class="fa fa-trash-o"></i> 삭제</button>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>삭제</td>
+							<td class="al">인시퀀스&gt;웹진형 게시판</td>
+							<td class="al">123123123</td>
+							<td> / </td>
+							<td>gusdn8987 / <br/>192.168.0.1</td>
+							<td>2019-10-02 19:24:23.0</td>
+							<td></td>
+							<td></td>
+							<td>
+								<button type="button" class="btn btn_sm act" id="btnDataSttusRecovry" sj="123123123" bbs_type="4" bbs_id="blog" seq="16" data_sttus="R"><i class="fa fa-repeat"></i> 복원</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	
+			<div class="pagination">
+				<a href="?pageIndex=1&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10" class="direction first">처음</a> <a href="?pageIndex=1&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10" class="direction prev">이전</a> <strong>1</strong> <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">2</a> <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">3</a> <a href="?pageIndex=4&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">4</a> <a href="?pageIndex=5&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">5</a> <a href="?pageIndex=6&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">6</a> <a href="?pageIndex=7&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">7</a> <a href="?pageIndex=8&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">8</a> <a href="?pageIndex=9&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">9</a> <a href="?pageIndex=10&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10">10</a> <a href="?pageIndex=11&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10" class="direction next">다음</a> <a href="?pageIndex=65&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl1=&amp;searchCl2=&amp;searchMulti=&amp;searchCl=&amp;pageItm=10" class="direction last">마지막</a> 
+			</div>
+			
+			<!-- 엑셀다운 Format Start -->
+			<form id="inseqcmsExcelForm" method="post" action="/cms/inseqcmsCmmnExcelFileDown.do">
+			<input type="hidden" name="excelName" value="게시물 복원관리"/>							<!-- 엑셀파일명 -->
+			<input type="hidden" name="excelHead" value="번호,상태,게시위치,제목,등록부서,등록자,등록ID,등록IP,등록일시"/>		<!-- 엑셀상단말머리 -->
+			<input type="hidden" name="searchStartDt" value=""/>										<!-- 작업일시(시작일) -->
+			<input type="hidden" name="searchEndDt" value=""/>											<!-- 작업일시(종료일) -->
+			<input type="hidden" name="searchKeyword" value=""/>										<!-- 주제어 -->
+			<input type="hidden" name="excelSqlMap" value="inseqcms-weblog-cntntslog.nttBbsSelectListRecovryExcel"/>	<!-- 엑셀데이터쿼리 -->
+			</form>
+			<!-- 엑셀다운 Format End -->	
+	
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

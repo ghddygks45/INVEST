@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-kr/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>IKMP 사업신청 &lt; 기업정보 &lt; 투자의 기회 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(1,1,2)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb11.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>IKMP 사업신청</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>투자의 기회</li>
+						<li>기업정보</li>
+						<li>IKMP 사업신청</li>
+					</ul>
+
+					<div class="ctn">
+                        <script src="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+                        <link rel="stylesheet" href="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
+                        <!-- 모바일 환경일 경우 노출 -->
+                        <div class="use-pc">
+                            <strong>접속하신 화면은 <span>[모바일 환경]</span> 에서는 제공하지 않습니다.</strong>
+                            이용을 원하실 경우,<br>PC환경에서 접속해주시기 바랍니다.
+                            <div class="btn"><a href="#n" class="btn-pc-version">PC 화면으로 보기</a></div>
+                        </div>
+                        <!-- //모바일 환경일 경우 노출 -->
+
+                        <div class="pc-content">
+                            <div class="tip-box attention-box">
+								<div class="tip-tit">작성 유의사항</div>
+								<div class="tip-content">
+                                    <ul class="list01">
+                                        <li>사업참가신청서의 각 항목을 확인하시고 정확하게 작성해 주세요. (※각 항목 해당 사항 없는 경우에는 공란)</li>
+                                        <li>작성 중 “임시 저장” 하시면 “IKMP > IKMP 사업참여현황” 에서 이어서 작성하실 수 있습니다.</li>
+                                        <li>최종 제출 후에는 정보 수정이 불가하오니 작성내용을 면밀히 검토하신 후 제출해주세요.</li>
+                                        <li>IKMP 사업신청 관련 문의 : <span class="bold">T)</span> 02-3460-7857 <span class="bold">Email)</span> ikmp@kotra.or.kr</li>
+                                    </ul>
+								</div>
+                            </div>
+                            
+                            <ol class="step-tab">
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">01</div>
+                                        기업 및 개인정보 이용 동의
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">02</div>
+                                        기업현황
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">03</div>
+                                        회사 주요연혁
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">04</div>
+                                        경영진 및 주주현황
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">05</div>
+                                        투자유치 희망방식
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">06</div>
+                                        주요 재무정보
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">07</div>
+                                        사업개요 및 핵심기술
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">08</div>
+                                        제품 및 기술 설명서
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#n"><span class="blind">open</span></a>
+                                    <div class=cont>
+                                        <div class="num">09</div>
+                                        기타 첨부서류
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="section">
+                                <h4 class="sub-tit01">주요 재무 정보</h4>
+                                <div class="table-top txt-right">
+                                    <span class="color-red">(*)</span>표시는 필수입력 항목입니다
+                                </div>
+
+                                <div class="normal-table02 wid-v1">
+                                    <ul>
+                                        <li>
+                                            <div class="data">
+                                                <div class="tit">외부 감사 여부<span class="must">*</span></div>
+                                                <div class="cont">
+                                                    <span class="radio">
+                                                        <input type="radio" name="radio1" id="radio1-1" class="blind">
+                                                        <label for="radio1-1">해당</label>
+                                                    </span>
+                                                    <span class="radio">
+                                                        <input type="radio" name="radio1" id="radio1-2" class="blind">
+                                                        <label for="radio1-2">해당없음</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="table normal-mt2">
+                                    <table class="normal-table">
+                                        <caption>주요 재무정보 표로 항목,연도 정보제공</caption>
+                                        <colgroup>
+                                            <col>
+                                            <col style="width:195px">
+                                            <col style="width:195px">
+                                            <col style="width:195px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">항목</th>
+                                                <th scope="col">'17년</th>
+                                                <th scope="col">'18년</th>
+                                                <th scope="col">'19년</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="txt-left">매출액</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 매출액">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 매출액">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 매출액">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">매출원가</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 매출원가">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 매출원가">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 매출원가">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">매출원가율</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 매출원가율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 매출원가율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 매출원가율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">매출총이익</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 매출총이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 매출총이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 매출총이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">판매비와 관리비</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 판매비와 관리비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 판매비와 관리비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 판매비와 관리비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">감가상각비</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 감가상각비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 감가상각비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 감가상각비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">영업이익</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 영업이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 영업이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 영업이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">영업이익율</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 영업이익율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 영업이익율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 영업이익율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">당기순이익</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 당기순이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 당기순이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 당기순이익">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">연구개발비</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 연구개발비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 연구개발비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 연구개발비">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">연구개발 투자비율(연구개발비/매출액X100)</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 연구개발 투자비율(연구개발비/매출액X100)">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 연구개발 투자비율(연구개발비/매출액X100)">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 연구개발 투자비율(연구개발비/매출액X100)">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">EBITDA</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 EBITDA">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 EBITDA">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 EBITDA">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">자산총계</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 자산총계">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 자산총계">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 자산총계">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">부채총계</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 부채총계">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 부채총계">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 부채총계">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">순자산</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 순자산">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 순자산">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 순자산">
+                                                        <span class="txt">백만원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt-left">부채비율</th>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="17년 부채비율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="18년 부채비율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="ikmp-input-type">
+                                                        <input type="text" title="19년 부채비율">
+                                                        <span class="txt">%</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="normal-table02-btm">
+                                <div class="r">
+                                    <a href="#n" class="btn-default bg-navy" onclick="fn_open_popup(this,'popup1')">임시저장</a>
+                                    <a href="투자의기회_기업정보_IKMP사업신청_사업개요및핵심기술.html" class="btn-default bg-blue">저장 후 다음 단계로 이동</a>
+                                </div>
+                            </div>
+
+                            <script>
+                                // datepicker
+                                $(".datepicker").datepicker({
+                                    changeYear: true,
+                                    changeMonth: true,
+                                    dateFormat: "yy-mm-dd",
+                                    showMonthAfterYear: true,
+                                    monthSuffix: "년",
+                                    dayNames: ['일요일','월요일', '화요일', '수요일', '목요일', '금요일', '토요일2'],
+                                    dayNamesMin: ['일','월', '화', '수', '목', '금', '토'],
+                                    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+                                    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+                                    numberOfMonths: [1,1],
+                                    buttonText: "달력 열기",
+                                    showOn: "button",
+                                    yearRange: "c-50:c+10"
+                                });
+                            </script>
+                        </div>
+
+                        <!-- 레이어팝업 -->
+                        <!-- 임시저장 -->
+                        <div class="layer-popup-box" data-popup="popup1">
+							<div class="popup pop-size-640">
+								<div class="top">
+									<div class="tit">IKMP 사업신청 임시저장 완료</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('popup1');"><span class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+                                    <div class="top-info-box top-ikmp2">
+                                        <div class="in">
+                                            <div class="tit">IKMP 사업신청 내역이 임시저장되었습니다.</div>
+                                            <div class="color-blue fwr">임시저장 상태에서는 내용을 보강하거나 추가작성하실 수 있습니다.</div>
+                                            궁금하신 사항은 업무담당자에게 문의해주세요.
+                                            <div class="normal-mt2"><span class="bold">T : </span>02-3460-7857 <span class="bold">Email : </span>ikmp@kotra.or.kr</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="normal-table02">
+                                        <ul>
+                                            <li>
+                                                <div class="data">
+                                                    <div class="tit">접수상태</div>
+                                                    <div class="cont">임시저장</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="data">
+                                                    <div class="tit">임시저장일</div>
+                                                    <div class="cont">2020.08.05 15:30</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="data">
+                                                    <div class="tit">기업명</div>
+                                                    <div class="cont">주)가이스트코리아</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="data">
+                                                    <div class="tit">담당자 성명</div>
+                                                    <div class="cont">이희성</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+									<div class="btn-area">
+										<div class="l">임시저장상태에서 추가 작성 시<br><span class="color-blue">[IKMP > IKMP 사업관리]</span>메뉴에서 하실 수 있습니다.</div>
+										<div class="r">
+											<a href="#n" class="btn-default bg-navy">IKMP 사업관리</a>
+                                            <a href="#n" class="btn-default bg-blue" onclick="fn_hide_popup('popup1');">확인</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!-- //임시저장 -->
+                        <!-- 레이어팝업 -->
+                    </div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

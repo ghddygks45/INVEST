@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">시스템</a>
+                <span>&gt;</span> 
+                <a href="/system/mngrinfo/index.do">정보관리</a>
+                <span>&gt;</span> 
+                <strong>관리자 아이피관리</strong>
+            </p>
+    
+            <h2 id="tit_page">관리자 아이피관리</h2>
+
+            <script type="text/javascript">
+            //<![CDATA[
+                //수정처리결과
+                $(document).on('click','#btnUpdt',function(){
+                    var value = new MiyaValidator(document.forms["frmIp"]);
+                    value.add("nm", {required: true});				//성명
+                    
+                    var result = value.validate();
+                    if (!result) {
+                        alert(value.getErrorMessage()); //디폴트 label 메세지
+                        value.getErrorElement().focus();
+                        return false;
+                    }else {
+                        var msg = $('input[name=type]').val() =="save"? '저장':'수정';
+                        if(confirm("["+msg+"]처리 하시겠습니까?") && $('input[name=type]').val() !=''){
+                            $.post("show.do",{
+                                type	: "updt"								//타입
+                                ,seq	: $(this).attr('seq')					//일련
+                                ,use_at : $('input[name=use_at]:checked').val()	//사용여부
+                                ,nm		: $("#nm").val()						//성명
+                                ,dc		: $('textarea[name=dc]').val()			//설명
+                            },
+                            function(result){
+                            console.log(result)
+                                if(result > 0){
+                                    alert("["+msg+"]처리 되었습니다");
+                                    return false;
+                                }else{
+                                    alert("["+msg+"]처리 실패되었습니다.");
+                                    return false;
+                                }
+                            });	
+                            return false;
+                        }
+                        return false;
+                    }
+                    return false; 
+                });
+            //]]>
+            </script>
+            <form name="frmIp" action="./save.do" method="post">
+                <input type="hidden" name="type" id="type" value="updt">			<!-- 타입여부 체크 -->
+                <table class="tb_write">
+                    <caption>관리자 아이피관리 상세</caption>
+                    <colgroup>
+                        <col style="width:120px">
+                        <col>
+                        <col style="width:120px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><span class="req">필수입력</span> 허용여부</th>
+                            <td colspan="3">
+                                <input type="radio" value="Y" name="use_at" id="use_at1" checked="checked">
+                                <label for="use_at1">허용</label>
+                                <input type="radio" value="N" name="use_at" id="use_at2" >
+                                <label for="use_at2">미허용</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="perm_ip1"><span class="req">필수입력</span> 허용 IP</label></th>
+                            <td colspan="3">
+                                <input type="text" name="perm_ip1" id="perm_ip1" size="3" class="text date2" maxlength="3" value="784" disabled="disabled">.
+                                <input type="text" name="perm_ip2" id="perm_ip2" size="3" class="text date2" maxlength="3" value="545" disabled="disabled" title="두번째 ip주소">.
+                                <input type="text" name="perm_ip3" id="perm_ip3" size="3" class="text date2" maxlength="3" value="676" disabled="disabled" title="세번째 ip주소">.
+                                <input type="text" name="perm_ip4" id="perm_ip4" size="3" class="text date2" maxlength="3" value="841" disabled="disabled" title="네번째 ip주소">
+                            </td>
+                        </tr>		
+                        <tr>
+                            <th><label for="nm"><span class="req">필수입력</span> 성명</label></th>
+                            <td colspan="3">
+                                <input type="text" name="nm" id="nm" class="text date2" value="홍길동10">	
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="dc"> 설명</label></th>
+                            <td colspan="3">
+                                <textarea cols="5" rows="3" name="dc" id="dc" class="include"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <div class="btn_area">
+                    <button type="button" class="btn btn_lg act" id="btnUpdt" seq="10"><i class="fa fa-edit"></i> 수정</button>
+                    <a href="./list.do" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+                </div>
+            </form>
+    
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

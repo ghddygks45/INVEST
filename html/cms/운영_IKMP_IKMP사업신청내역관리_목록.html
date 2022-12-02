@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">IKMP</a>
+                <span>&gt;</span>
+                <strong>IKMP 사업신청내역 관리</strong>
+            </p>
+    
+            <h2 id="tit_page">IKMP 사업신청내역 관리</h2>
+            
+            <table class="tb_list">
+                <colgroup>
+                    <col style="width:75px">
+                    <col style="width:120px">
+                    <col style="width:200px">
+                    <col style="width:200px">
+                    <col style="width:120px">
+                    <col style="width:120px">
+                    <col style="width:120px">
+                    <col style="width:130px">
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>회차명</th>
+                        <th>신청기간</th>
+                        <th>심사기간</th>
+                        <th>신청기업 수</th>
+                        <th>선정 기업 수</th>
+                        <th>접수현황</th>
+                        <th>회차 등록일</th>
+                        <th>게시여부</th>
+                        <th>관리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2021년 1차</td>
+                        <td>2021.01.01 ~ 2021.04.30</td>
+                        <td>2021.05.01 ~ 2021.05.30</td>
+                        <td>58</td>
+                        <td>0</td>
+                        <td><span class="color-blue bold">접수중</span></td>
+                        <td>2020-07-20</td>
+                        <td><span class="color-blue bold">게시</span></td>
+                        <td>
+                            <a href="운영_IKMP_IKMP사업신청내역관리_뷰목록.html" class="btn btn_sm bg_green">신청내역관리</a>
+                            <button type="button" class="btn btn_sm act"><i class="fa fa-edit"></i> 수정</button>
+                            <button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2021년 1차</td>
+                        <td>2021.01.01 ~ 2021.04.30</td>
+                        <td>2021.05.01 ~ 2021.05.30</td>
+                        <td>58</td>
+                        <td>0</td>
+                        <td><span class="color-red bold">접수완료</span></td>
+                        <td>2020-07-20</td>
+                        <td><span class="color-red bold">미게시</span></td>
+                        <td>
+                            <a href="운영_IKMP_IKMP사업신청내역관리_뷰목록.html" class="btn btn_sm bg_green">신청내역관리</a>
+                            <button type="button" class="btn btn_sm act"><i class="fa fa-edit"></i> 수정</button>
+                            <button type="button" class="btn btn_sm nav"><i class="fa fa-trash-o"></i> 삭제</button>
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+    
+            <div class="pagination">
+                <strong>1</strong> <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a> <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> 
+            </div>
+            
+            <div class="btn_area">
+                <a href="운영_IKMP_IKMP사업신청내역관리_등록.html" class="btn btn_lg" target="_blank"><i class="fa fa-pencil"></i> 회차정보등록</a>
+            </div>
+        
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

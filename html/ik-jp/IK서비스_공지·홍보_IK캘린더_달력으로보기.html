@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-ch/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-ch/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-ch/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-ch/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>IK 캘린더 &lt; 공지·홍보 &lt; IK 서비스 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(6,3,2)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb06.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>IK 캘린더</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+                        <li>IK 서비스</li>
+                        <li>공지·홍보</li>
+						<li>IK 캘린더</li>
+					</ul>
+
+					<div class="ctn">
+                        <div class="use-pc">
+                            <strong>접속하신 화면은 <span>[모바일 환경]</span> 에서는 제공하지 않습니다.</strong>
+                            이용을 원하실 경우,<br>PC환경에서 접속해주시기 바랍니다.
+                            <div class="btn"><a href="#n" class="btn-default bg-blue btn-pc-version">PC 화면으로 보기</a></div>
+                        </div>
+
+                        <ul class="tab pc-content">
+                            <li><a href="IK서비스_공지·홍보_IK캘린더_달력으로보기.html" class="active">カレンダー</a></li>
+                            <li><a href="IK서비스_공지·홍보_IK캘린더_목록으로보기.html">リスト</a></li>
+                        </ul>
+
+                        <div class="calender-index-box">
+                            <ul class="calender-index pc-content">
+                                <li class="index01"><a href="#n"><i style="background-color:#ff0000"></i>행사</a></li>
+                                <li class="index02"><a href="#n"><i style="background-color:#bfbf03"></i>교육</a></li>
+                                <li class="index03"><a href="#n"><i style="background-color:#0000ff"></i>세미나</a></li>
+                                <li class="index04"><a href="#n"><i style="background-color:#008000"></i>온라인</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="calendar-content">
+                            <div class="calendar-header">
+                                <button type="button" class="btn-prev"><span class="blind">이전</span></button>
+                                <strong class="schdul_date">2020年 11月</strong>
+                                <button type="button" class="btn-next"><span class="blind">다음</span></button>
+                            </div>
+
+                            <table class="calendar-table">
+                                <caption>ik calendar</caption>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">日曜日</th>
+                                        <th scope="col">月曜日</th>
+                                        <th scope="col">火曜日</th>
+                                        <th scope="col">水曜日</th>
+                                        <th scope="col">木曜日</th>
+                                        <th scope="col">金曜日</th>
+                                        <th scope="col">土曜日</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="td-inner"></div></td>
+                                        <td><div class="td-inner"></div></td>
+                                        <td><div class="td-inner"></div></td>
+                                        <td><div class="td-inner"></div></td>
+                                        <td><div class="td-inner"></div></td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">1</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">2</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">3</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">4</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">5</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">6</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">7</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">8</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">9</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">10</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">11</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">12</span>                                        
+                                                <a href="#n" data-cal="1"><i style="background-color:#ff0000"><span class="blind">행사</span></i>2020년 IK 포럼</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">13</span>
+                                                <a href="#n" data-cal="4"><i style="background-color:#bfbf03"><span class="blind">교육</span></i>2020년 IK 교육</a>
+                                                <a href="#n" data-cal="5"><i style="background-color:#0000ff"><span class="blind">세미나</span></i>2020년 IK 세미나</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">14</span>
+                                                <a href="#n" data-cal="2"><i style="background-color:#008000"><span class="blind">온라인</span></i>KOTRA 온라인 한국상품전</a>
+                                                <a href="#n" data-cal="3"><i style="background-color:#008000"><span class="blind">온라인</span></i>2020년 KOTRA 온라인 한국상품전</a>
+                                            </div>
+                                        </td>                                                                                                                                                                
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">15</span>
+                                                <a href="#n" data-cal="2"><i style="background-color:#008000"><span class="blind">온라인</span></i>KOTRA 온라인 한국상품전</a>
+                                                <a href="#n" data-cal="3"><i style="background-color:#008000"><span class="blind">온라인</span></i>2020년 KOTRA 온라인 한국상품전</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">16</span>
+                                                <a href="#n" data-cal="3"><i style="background-color:#008000"><span class="blind">온라인</span></i>2020년 KOTRA 온라인 한국상품전</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">17</span>
+                                                <a href="#n" data-cal="3"><i style="background-color:#008000"><span class="blind">온라인</span></i>2020년 KOTRA 온라인 한국상품전</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">18</span>
+                                                <a href="#n" data-cal="3"><i style="background-color:#008000"><span class="blind">온라인</span></i>2020년 KOTRA 온라인 한국상품전</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">19</span>
+                                                <a href="#n" data-cal="3"><i style="background-color:#008000"><span class="blind">온라인</span></i>2020년 KOTRA 온라인 한국상품전</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">20</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">21</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">22</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">23</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">24</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">25</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">26</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">27</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">28</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">29</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-inner">
+                                                <span class="date">30</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <script>
+                                // 달력 일정링크 hover 처리
+                                $("[data-cal]").hover(function(){
+                                    var selector = $("[data-cal='" + $(this).data("cal") + "']");
+                                    selector.each(function(idx, obj){
+                                        $(this).closest("td").addClass("active");
+                                        if(idx==0) $(this).closest("td").addClass("start");
+                                        if(idx==selector.length-1) $(this).closest("td").addClass("end")
+                                    });
+                                }, function(){
+                                    var selector = $("[data-cal='" + $(this).data("cal") + "']");
+                                    selector.closest("td").removeClass("active start end");
+                                });
+                            </script>
+                        </div>
+					</div>				
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

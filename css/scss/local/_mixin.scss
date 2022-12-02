@@ -1,0 +1,21 @@
+@mixin ellipsis($line : 1){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @if($line == 1){
+    white-space:nowrap;
+    } @else {    
+        white-space: normal;
+        line-height: 1.5;
+        max-height: 1.5*$line+em;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: $line;
+        -webkit-box-orient: vertical;
+    }
+}
+
+@mixin clearboth(){
+    content:'';
+    display:block;
+    clear:both;
+}

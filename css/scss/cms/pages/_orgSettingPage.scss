@@ -1,0 +1,18 @@
+/* 조직도 */
+.mng_menu.org {
+	margin-top: 40px;
+
+	.menu_container {
+		overflow: hidden;
+
+		+.menu_container {
+			margin-top: 30px;
+			border-top: 1px solid $border-color-base;
+			padding-top: 30px;
+		}
+	}
+
+	.tree_area .scroll_area {
+		height: 450px;
+	}
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">온라인매칭플랫폼</a>
+				<span>&gt;</span>
+				<strong>공지사항</strong>
+			</p>
+
+			<h2 id="tit_page">공지사항</h2>
+
+			<div class="search_area">
+				<table class="tb_search">
+					<colgroup>
+						<col style="width:12%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>등록일자</th>
+							<td>
+								<input type="text" name="bgnde" id="bgnde" style="width:100px;" readonly="readonly">
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+								<input type="text" name="endde" id="endde" style="width:100px;" readonly="readonly" title="종료일">
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+							</td>
+						</tr>
+						<tr>
+							<th>검색어</th>
+							<td>
+								<select name="" style="width:160px;">
+									<option value="">검색조건 선택</option>
+								</select>
+								<input type="text" title="검색어" name="" id="" value="" placeholder="검색어를 입력해주세요" style="width:32%;">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn_area">
+					<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+				</div>
+			</div>
+
+			<div class="list_status">
+				<p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+				<div class="fr">
+					<select class="post_num" name="pageItm" id="pageItm">
+						<option value="10">10</option>
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+						<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80">80</option>
+						<option value="90">90</option>
+						<option value="100">100</option>
+					</select>
+					<button type="button" class="btn" id="btnPageItm">적용</button>
+				</div>
+			</div>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<colgroup>
+						<col style="width:80px">
+						<col style="width:200px">
+						<col>
+						<col style="width:180px">
+						<col style="width:180px">
+						<col style="width:150px">
+						<col style="width:100px">
+						<col style="width:120px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>구분</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>조회수</th>
+							<th>첨부파일</th>
+							<th>게시여부</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>3</td>
+							<td>투자가</td>
+							<td>"한국에 투자하세요" ‘2022 외국인투자주간' 개막</td>
+							<td>Invest KOREA</td>
+							<td>2022-02-03</td>
+							<td>202</td>
+							<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+							<td>
+								<span class="check_switch">
+									<input type="checkbox" id="chk1" checked>
+									<label for="chk1">
+										<span class="txt_uncheck">N</span>
+										<span class="txt_checked">Y</span>
+									</label>
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>투자유치 희망기업</td>
+							<td>"한국에 투자하세요" ‘2022 외국인투자주간' 개막</td>
+							<td>Invest KOREA</td>
+							<td>2022-02-03</td>
+							<td>202</td>
+							<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>전체</td>
+							<td>"한국에 투자하세요" ‘2022 외국인투자주간' 개막</td>
+							<td>Invest KOREA</td>
+							<td>2022-02-03</td>
+							<td>202</td>
+							<td><a href="#" target="_blank" class="btn_download">파일 다운로드</a></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="pagination">
+				<strong>1</strong>
+				<a
+					href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+				<a
+					href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a>
+			</div>
+			<div class="btn_area">
+				<a href="#" class="btn btn_lg" onclick="closeLayer(this);"><i class="fa fa-pencil"></i> 등록</a>
+			</div>
+
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

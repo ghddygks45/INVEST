@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">투자초기비용검색</a>
+				<span>&gt;</span>
+				<strong>기타비용 계산</strong>
+			</p>
+
+			<h2 id="tit_page">기타비용 계산</h2>
+
+			<table class="tb_write">
+				<caption>등록</caption>
+				<colgroup>
+					<col style="width: 160px" />
+					<col style="width: 140px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th rowspan="2">법인등록면허세</th>
+						<td colspan="2">
+							일반 : 출자금액 * <input type="text" value="0.004">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							과밀억제권역 : 출자금액 * <input type="text" value="0.012">
+						</td>
+					</tr>
+					<tr>
+						<th>지방교육세</th>
+						<td colspan="2">
+							법인등록면허세 * <input type="text" value="0.20">
+						</td>
+					</tr>
+					<tr>
+						<th rowspan="8">법무사 수수료</th>
+						<td>0~5천 만원</td>
+						<td><input type="text" value="310,000"> 원</td>
+					</tr>
+					<tr>
+						<td>5천~1억원</td>
+						<td><input type="text" value="310,000"> 원</td>
+					</tr>
+					<tr>
+						<td>1억~3억원</td>
+						<td><input type="text" value="420,000"> 원</td>
+					</tr>
+					<tr>
+						<td>3억~5억원</td>
+						<td><input type="text" value="600,000"> 원</td>
+					</tr>
+					<tr>
+						<td>5억~10억원</td>
+						<td><input type="text" value="760,000"> 원</td>
+					</tr>
+					<tr>
+						<td>10억~20억원</td>
+						<td><input type="text" value="1,110,000"> 원</td>
+					</tr>
+					<tr>
+						<td>20억~200억원</td>
+						<td><input type="text" value="1,710,000"> 원</td>
+					</tr>
+					<tr>
+						<td>200억원 이상</td>
+						<td><input type="text" value="8,910,000"> 원</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn_area">
+				<a href="#;" class="btn btn_lg act"><i class="fa fa-pencil"></i> 등록</a>
+				<a href="#;" class="btn btn_lg act"><i class="fa fa-pencil"></i> 수정</a>
+				<a href="#;" class="btn btn_lg basic"><i class="fa fa-arrow-left"></i> 취소</a>
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

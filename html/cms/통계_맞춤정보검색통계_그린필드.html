@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">통계</a>
+                <span>&gt;</span> 
+                <a href="#none">게시물 통계</a>
+                <span>&gt;</span>
+                <strong>맞춤정보검색 통계</strong>
+            </p>
+    
+            <h2 id="tit_page">맞춤정보검색 통계</h2>
+            
+            <ul class="tab_menu">
+                <li><a href="통계_맞춤정보검색통계_M&A.html">M&A(지분)</a></li>
+                <li class="on"><a href="통계_맞춤정보검색통계_그린필드.html">그린필드</a></li>
+            </ul>
+
+            <div class="search_area">
+                <table class="tb_search">
+                    <colgroup>
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검색일</th>
+                            <td>
+                                <input type="text" name="bgnde" id="bgnde" style="width:100px;" readonly="readonly">
+                                <a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+                                <input type="text" name="endde" id="endde" style="width:100px;" readonly="readonly" title="종료일">
+                                <a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+                            </td>
+                        </tr>                              
+                    </tbody>
+                </table>
+
+                <div class="btn_area">
+                    <button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+                    <button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+                </div>
+            </div>
+
+            <!-- 국가 -->
+            <div class="list_status">
+                <div class="fl"><h3 class="tit1">국가</h3></div>
+                <div class="fr mt0"><button type="button" class="btn xls">엑셀다운로드</button></div>
+            </div>
+
+            <div class="chart-area" style="height:350px"></div>
+
+            <table class="tb_data">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>국가</th>
+                        <th>합계</th>
+                        <th>중국</th>
+                        <th>대만</th>
+                        <th>독일</th>
+                        <th>프랑스</th>
+                        <th>모나코</th>
+                        <th>영국</th>
+                        <th>아일랜드</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>검색 수(회)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //국가 -->
+
+            <!-- 업종(중분류 기준) -->
+            <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">업종(중분류 기준)</h3></div>
+                <div class="fr mt0"><button type="button" class="btn xls">엑셀다운로드</button></div>
+            </div>
+
+            <div class="chart-area" style="height:350px"></div>
+
+            <table class="tb_data">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>대륙</th>
+                        <th>국가</th>
+                        <th>농업</th>
+                        <th>임업</th>
+                        <th>어업</th>
+                        <th>석탄, 원유 및 천연가스 광업</th>
+                        <th>비금속광물 광업; 연료용 제외</th>
+                        <th>광업 지원 서비스업</th>
+                        <th>식료품 제조업</th>
+                    </tr>                
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="bg-data">합계</th>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                    </tr>
+                    <tr>
+                        <th>중국지역</th>
+                        <th>중국</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>중국지역</th>
+                        <th>대만</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>독일</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>프랑스</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>모나코</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>영국</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>아일랜드</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>스웨덴</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>노르웨이</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>아이슬란드</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //국가 -->
+
+             <!-- 투자금액 -->
+             <div class="list_status mt25">
+                <div class="fl"><h3 class="tit1">투자금액</h3></div>
+                <div class="fr mt0"><button type="button" class="btn xls">엑셀다운로드</button></div>
+            </div>
+
+            <div class="chart-area" style="height:350px"></div>
+
+            <table class="tb_data">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>대륙</th>
+                        <th>국가</th>
+                        <th>200만불 미만</th>
+                        <th>1,000만불</th>
+                        <th>2,000만불 이상</th>
+                        <th>3,000만불 이상</th>
+                    </tr>                
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="bg-data">합계</th>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                        <td class="bg-data"></td>
+                    </tr>
+                    <tr>
+                        <th>중국지역</th>
+                        <th>중국</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>중국지역</th>
+                        <th>대만</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>독일</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>프랑스</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>모나코</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>영국</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>아일랜드</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>스웨덴</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>노르웨이</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>유럽지역</th>
+                        <th>아이슬란드</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //투자금액 -->
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

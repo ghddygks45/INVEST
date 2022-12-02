@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">온라인매칭플랫폼</a>
+				<span>&gt;</span>
+				<strong>공지사항</strong>
+			</p>
+
+			<h2 id="tit_page">공지사항</h2>
+
+			<table class="tb_write">
+				<caption>공지사항 등록</caption>
+				<colgroup>
+					<col style="width: 200px" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>게시여부</th>
+						<td>
+							<input type="radio" name="chk1" id="chk1-1" checked>
+							<label for="chk1-1">게시</label>
+							<input type="radio" name="chk1" id="chk1-2">
+							<label for="chk1-2">미게시</label>
+						</td>
+					</tr>
+					<tr>
+						<th>공지여부</th>
+						<td>
+							<input type="radio" name="chk2" id="chk2-1" checked>
+							<label for="chk2-1">공지</label>
+							<input type="radio" name="chk2" id="chk2-2">
+							<label for="chk2-2">미공지</label>
+						</td>
+					</tr>
+					<tr>
+						<th>구분</th>
+						<td>
+							<input type="radio" name="chk3" id="chk3-1" checked>
+							<label for="chk3-1">전체</label>
+							<input type="radio" name="chk3" id="chk3-2">
+							<label for="chk3-2">투자가</label>
+							<input type="radio" name="chk3" id="chk3-3">
+							<label for="chk3-3">투자유치 희망기업</label>
+						</td>
+					</tr>
+					<tr>
+						<th>제목</th>
+						<td><input type="text" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<th>작성자</th>
+						<td><input type="text" value="InvestKOREA"></td>
+					</tr>
+					<tr>
+						<th>첨부파일 1</th>
+						<td>
+							<input type="file" id="lb_file" style="width:400px;" />
+							<button type="button" class="btn"><i class="fa fa-trash-o"></i> 삭제</button>
+						</td>
+					</tr>
+					<tr>
+						<th>첨부파일 2</th>
+						<td>
+							<input type="file" id="lb_file" style="width:400px;" />
+							<button type="button" class="btn"><i class="fa fa-trash-o"></i> 삭제</button>
+						</td>
+					<tr>
+						<th>첨부파일 3</th>
+						<td>
+							<input type="file" id="lb_file" style="width:400px;" />
+							<button type="button" class="btn"><i class="fa fa-trash-o"></i> 삭제</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="article-title">내용</h3>
+			<div class="bbs_article pd10">
+				<textarea name="" id="" class="txt_area"></textarea>
+			</div>
+			<div class="btn_area">
+				<a href="#" class="btn btn_lg act" onclick="closeLayer(this);"><i class="fa fa-save"></i> 등록</a>
+				<a href="#" class="btn btn_lg" onclick="closeLayer(this);"><i class="fa fa-list-ul"></i> 목록</a>
+			</div>
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

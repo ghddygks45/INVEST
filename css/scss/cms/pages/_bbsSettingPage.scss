@@ -1,0 +1,289 @@
+/* 게시판 설정관리 */
+#detailInputItem .bbsitem_setting {
+	border-top: 1px solid #ddd;
+	overflow: hidden;
+
+	li {
+		float: left;
+		width: 25%;
+		padding: 5px 10px;
+		border-bottom: 1px solid $border-color-base;
+		box-sizing: border-box;
+		font-size: $font-size-base;
+		line-height: 30px;
+
+		input[type=checkbox]:checked+label {
+			font-weight: bold;
+			background: #FF9;
+			/* color:#f60; */
+		}
+	}
+
+	&.input {
+		label {
+			display: inline-block;
+			width: 70px;
+			vertical-align: middle;
+		}
+
+		input[type=text] {
+			width: 70px;
+		}
+	}
+}
+
+/* 게시판 상세설정 */
+.bbs-setting {
+	margin: -8px;
+
+	.btn_area {
+		clear: both;
+		text-align: center;
+		margin: 0 8px;
+		padding: 15px 8px;
+	}
+
+	.btn_area2 {
+		display: none;
+	}
+
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+
+	table {
+		border-top: 1px solid #ccc;
+	}
+
+	caption {
+		margin: 0;
+		height: auto;
+		font-weight: 600;
+		font-size: 16px;
+		letter-spacing: -1px;
+		line-height: 1.6;
+		text-align: left;
+		padding: 10px 20px;
+		line-height: 24px;
+	}
+
+	.tb_data tbody th {
+		text-align: left;
+		padding-left: 15px;
+		padding-right: 12px;
+	}
+
+	tbody .tooltip-area {
+		float: right;
+		margin-top: 1px;
+	}
+
+	.col-view {
+		background-color: #eef0f7;
+	}
+
+	.col-list {
+		background-color: #f5ebf0;
+	}
+
+	.tooltip-cont {
+		top: -3px;
+	}
+
+	.set-area {
+		float: left;
+		width: calc(40% - 16px);
+		margin: 8px;
+		border: 1px solid #ccc;
+		background-color: #fff;
+		box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+	}
+
+	.set-detail {
+		width: calc(60% - 16px);
+	}
+
+	.set-etc {
+		clear: both;
+	}
+
+	.set-add {
+		width: calc(60% - 16px);
+	}
+
+	.set-content1 {
+		width: calc(100% - 16px);
+
+		.basic th,
+		.basic td {
+			padding: 3px 8px;
+			height: 37px;
+
+			input[type=text] {
+				width: 100%;
+			}
+		}
+	}
+
+	.set-content2 {
+		width: calc(100% - 16px);
+
+		.tb_search {
+
+			.form-search {
+				width: calc(100% - 61px);
+				height: 28px;
+			}
+		}
+
+		.main-board th,
+		.main-board td {
+			padding: 3.5px 8px;
+			height: 31px;
+
+			input[type=text] {
+				width: 100%;
+				height: 28px;
+			}
+		}
+	}
+}
+
+.menu-area {
+	overflow: inherit;
+
+	&:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+
+	.setting-area {
+		float: none;
+		width: 100%;
+	}
+}
+
+.setting-inner {
+	margin: 0 -8px;
+
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+
+	.setting1 {
+		float: right;
+		width: calc(100% - 288px);
+		margin: 0;
+
+		.set-content1 {
+			width: calc(100% - 16px);
+			margin: 0 8px;
+		}
+	}
+
+	.setting2 {
+		width: 100%;
+		margin: 0;
+		clear: both;
+
+		.set-content2 {
+			width: calc(50% - 16px);
+			margin: 8px;
+		}
+	}
+}
+
+@media only all and (min-width: 1600px) {
+	.bbs-setting {
+		.set-default {
+			width: calc(29% - 16px);
+		}
+
+		.set-detail {
+			width: calc(42% - 16px);
+		}
+
+		.set-etc {
+			clear: none;
+			width: calc(29% - 16px);
+		}
+
+		.set-add {
+			clear: both;
+			float: none;
+			margin: 8px auto;
+			width: calc(42% - 16px);
+		}
+
+		.btn_area1 {
+			display: none;
+		}
+
+		.btn_area2 {
+			display: block;
+		}
+
+		.set-content1 {
+			width: calc(42% - 16px);
+
+			.basic th,
+			.basic td {
+				padding: 3px 8px;
+				height: 37px;
+			}
+		}
+
+		.set-content2 {
+			width: calc(58% - 16px);
+		}
+	}
+
+	.mng_menu {
+		.setting-area {
+			float: right;
+			width: calc(100% - 295px);
+		}
+	}
+
+
+	.setting-inner {
+
+		&:after {
+			display: block;
+			content: '';
+			clear: both;
+		}
+
+		.setting1 {
+			float: left;
+			width: calc(42% - 16px);
+			margin: 0 8px;
+
+			.set-content1 {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		.setting2 {
+			float: left;
+			width: calc(58% - 16px);
+			margin: 0 8px;
+			clear: none;
+
+			.set-content2 {
+				width: 100%;
+				margin: 0;
+
+				+.set-content2 {
+					margin-top: 16px;
+				}
+			}
+		}
+	}
+}

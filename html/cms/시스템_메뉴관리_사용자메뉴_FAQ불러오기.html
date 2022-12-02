@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">	
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all" />
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body>
+	<div id="popup">
+		<div id="header">
+			<h1>FAQ 불러오기</h1>
+		</div>
+		<div id="content">
+            <!-- 콘텐츠 영역 -->
+            <div class="search_area">
+                <table class="tb_search">
+                    <colgroup>
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>언어</th>
+                            <td>
+                                <input type="radio" name="radio1" id="radio1-1"><label for="radio1-1">국문</label>
+                                <input type="radio" name="radio1" id="radio1-2"><label for="radio1-2">영문</label>
+                                <input type="radio" name="radio1" id="radio1-3"><label for="radio1-3">중문</label>
+                                <input type="radio" name="radio1" id="radio1-4"><label for="radio1-4">일문</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검색</th>
+                            <td>
+                                <select name="" id="" style="width:160px">
+                                    <option value="">FAQ 분야 선택</option>
+                                </select>
+                                <select name="" id="" style="width:160px">
+                                    <option value="">검색조건 선택</option>
+                                </select>
+                                <input type="text"  placeholder="검색어를 입력해주세요" style="width:calc(100% - 350px)">
+                            </td>
+                        </tr>            
+                    </tbody>
+                </table>
+
+                <div class="btn_area">
+                    <button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+                    <button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+                </div>
+            </div>
+
+            <div class="list_status">
+                <p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+                <div class="fr">
+                    <select class="post_num" name="pageItm" id="pageItm">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>               
+                        <option value="80">80</option>                             
+                        <option value="90">90</option>                                
+                        <option value="100">100</option>
+                    </select>
+                    <button type="button" class="btn" id="btnPageItm">적용</button>
+                </div>
+            </div>
+
+            <table class="tb_list">
+                <colgroup>
+                    <col style="width:75px">
+                    <col style="width:75px">
+                    <col style="width:180px">
+                    <col>
+                    <col style="width:110px">
+                    <col style="width:110px">
+                    <col style="width:110px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>언어</th>
+                        <th>FAQ 분야</th>
+                        <th>질문</th>
+                        <th>작성자</th>
+                        <th>등록일</th>
+                        <th>선정</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>국문</td>
+                        <td>투자제도 일반</td>
+                        <td class="text-left"><a href="#n">2019년 1월 1일부터 2020년 12월 31일까지</a></td>
+                        <td>이순신</td>
+                        <td>2020-06-20</td>
+                        <td><button type="button" class="btn">선정하기</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <strong>1</strong>
+                <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+                <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> 
+            </div>
+
+            <div class="btn_area">
+                <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 등록</button>
+                <button type="button" class="btn btn_lg"><i class="fa fa-close"></i> 취소</button>
+            </div>
+			<!-- // 콘텐츠 영역 -->
+		</div>
+		<button type="button" id="btn_pop_close" onclick="window.close()">창닫기</button>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+/* 설문 */
+.poll_input {
+	padding: 15px;
+	text-align: center;
+
+	table {
+		border-top: 1px solid #ddd;
+
+		td {
+			text-align: left;
+		}
+	}
+}
+
+.qustnrQesitm>table {
+	margin-top: 30px;
+}
+
+.stat_comp {
+	color: #090;
+}
+
+.stat_wait {
+	color: #F60;
+}
+
+.stat_fin {
+	color: #777;
+}
+
+.stat_on {
+	color: #F00;
+}
+
+.poll_view {
+	margin-top: 30px;
+
+	dt {
+		padding: 10px 15px;
+		border: 1px solid #ddd;
+		border-bottom: 0;
+		border-radius: 5px 5px 0 0;
+		font-weight: 600;
+		font-size: 17px;
+		line-height: 30px;
+		background: #eef2f5;
+
+		span {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			border-radius: 100%;
+			font-weight: normal;
+			font-size: 12px;
+			color: #fff;
+			text-align: center;
+			background: #044a85;
+		}
+	}
+
+	dd {
+		margin-bottom: 20px;
+		padding: 20px;
+		border: 1px solid #ddd;
+		border-top: 0;
+		border-radius: 0 0 5px 5px;
+	}
+
+	.poll_item,
+	.tb_list {
+		margin-top: 10px;
+	}
+}

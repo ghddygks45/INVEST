@@ -1,0 +1,524 @@
+<div class="skip-nav">
+	<a href="#content">Shortcut to Body</a>
+	<a href="#gnb">Shortcut to main menu</a>
+</div>
+
+<header class="header">
+	<div class="header-link">
+		<div class="inner">
+			<ul class="lang">
+				<li><a href="#n" class="active">KOR</a></li>
+				<li><a href="#n">ENG</a></li>
+				<li><a href="#n">CHN</a></li>
+				<li><a href="#n">JPN</a></li>
+			</ul>
+			<ul class="sns">
+				<li><a href="#n" class="facebook" target="_blank" title="open window"><span class="blind">Shortcut to facebook</span></a></li>
+				<li><a href="#n" class="youtube" target="_blank" title="open window"><span class="blind">Shortcut to youtube</span></a></li>
+				<li><a href="#n" class="twitter" target="_blank" title="open window"><span class="blind">Shortcut to twitter</span></a></li>
+				<li><a href="#n" class="rss" target="_blank" title="open window"><span class="blind">Shortcut to rss</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="header-content">
+		<div class="inner">
+			<h1 class="logo">
+				<a href="#n"><span class="blind">Invest Korea</span></a>
+			</h1>				
+			<div class="top-search-wrap">
+				<button type="button" class="btn-search"><span class="blind">Open the search area</span></button>
+				<div class="top-search-area">
+					<div class="search-tit">Search</div>
+					<div class="inner">
+						<div class="top-search-form">
+							<input type="text" title="Enter Keyword to Search" placeholder="Enter Keyword to Search">
+							<button type="submit" class="btn"><span class="blind">Search</span></button>
+						</div>
+						<!-- 추천검색어 기능 사용안함 (추후 변경 가능성 있음)
+						<div class="recommend">
+							<strong class="tit">추천검색어</strong>
+							<div class="recommend-slider-wrap">
+								<ul class="slider">
+									<li><a href="#n">Investment</a></li>
+									<li><a href="#n">Investment</a></li>
+									<li><a href="#n">Investment</a></li>
+									<li><a href="#n">Investment</a></li>
+								</ul>
+							</div>
+						</div>
+						-->
+					</div>
+					<button type="button" class="btn-search-close"><span class="blind">Close the search area</span></button>
+				</div>
+			</div>
+			<a href="#n" class="btn-sitemap"><span class="blind">Shortcut to Site Map</span></a>
+		</div>
+	</div>
+	<div class="navi-wrap">
+		<button type="button" class="btn-menu"><span class="blind">Open menu</span></button>
+		<div class="gnb-wrap">
+			<div class="gnb-tit">Whole Menu</div>
+			<!-- 해당 페이지에 1depth, 2depth, 3depth에 해당하는 a태그에 active 클래스를 넣어주세요. -->
+			<nav id="gnb" class="gnb">
+				<ul>
+					<li>
+						<a href="WhyKOREA_온라인IR_목록.html">Why KOREA</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>Why KOREA</span></strong>
+										<div class="tit-content">
+											<div class="txt">
+												<!-- <div class="l">투자소개 영상</div> -->
+												<div class="l">Investment introduction video</div>
+												<div class="r">
+													<!-- <a href="#n" class="link">[바로가기]</a> -->
+													<a href="#n" class="link">[Shortcuts]</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li><a href="WhyKOREA_온라인IR_목록.html">Online IR</a></li>
+										<li><a href="WhyKOREA_경제.html">Economy</a></li>
+										<li>
+											<a href="WhyKOREA_인프라_디지털.html">Infrastructure</a>
+											<ul>
+												<li><a href="WhyKOREA_인프라_디지털.html">Digital</a></li>
+												<li><a href="WhyKOREA_인프라_혁신.html">Innovation</a></li>
+												<li><a href="WhyKOREA_인프라_물류.html">Logistics</a></li>
+												<li><a href="WhyKOREA_인프라_유틸리티.html">Utility</a></li>
+												<li><a href="WhyKOREA_인프라_의료.html">Healthcare</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="WhyKOREA_시장_내수시장.html">Market</a>
+											<ul>
+												<li><a href="WhyKOREA_시장_내수시장.html">Domestic Market</a></li>
+												<li><a href="WhyKOREA_시장_대외무역.html">International Trade</a></li>
+												<li><a href="WhyKOREA_시장_전자상거래.html">E-Commerce</a></li>
+												<li><a href="WhyKOREA_시장_지식재산권.html">Intellectual Property Rights</a></li>
+											</ul>
+										</li>									
+										<li>
+											<a href="WhyKOREA_산업_산업동향_목록.html">Industry</a>
+											<ul>
+												<li><a href="WhyKOREA_산업_산업동향_목록.html">Industry Trends</a></li>
+												<li><a href="WhyKOREA_산업_제약·바이오.html">Pharmaceutical&Bio</a></li>
+												<li><a href="WhyKOREA_산업_정보통신(ICT).html">Information and Communication Technologies</a></li>
+												<li><a href="WhyKOREA_산업_정밀화학.html">Fine Chemical</a></li>
+												<li><a href="WhyKOREA_산업_반도체.html">Semiconductor</a></li>
+												<li><a href="WhyKOREA_산업_디스플레이.html">Display</a></li>
+												<li><a href="WhyKOREA_산업_항공우주.html">Aerospace</a></li>
+												<li><a href="WhyKOREA_산업_자동차부품.html">Automobile Parts</a></li>
+												<li><a href="WhyKOREA_산업_기계.html">Machinery</a></li>
+												<li><a href="WhyKOREA_산업_식품.html">Food</a></li>
+												<li><a href="WhyKOREA_산업_패션.html">Fashion</a></li>
+												<li><a href="WhyKOREA_산업_뷰티.html">Beauty</a></li>
+												<li><a href="WhyKOREA_산업_조선해양.html">Shipbuilding and Marine</a></li>
+												<li><a href="WhyKOREA_산업_신재생에너지.html">Renewable Energy</a></li>
+												<li><a href="WhyKOREA_산업_관광.html">Tourism</a></li>
+												<li><a href="WhyKOREA_산업_유통.html">Distribution</a></li>
+												<li><a href="WhyKOREA_산업_물류.html">Logistics</a></li>
+												<li><a href="WhyKOREA_산업_금융.html">Finance</a></li>
+												<li><a href="WhyKOREA_산업_문화콘텐츠.html">Cultural Content</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<!-- <a href="투자의기회_기업정보_사업소개.html">투자의 기회</a> -->
+						<a href="투자의기회_기업정보_사업소개.html">Investment opportunities</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<!-- <strong class="tit"><span>투자의 기회</span></strong> -->
+										<strong class="tit"><span>Investment opportunities</span></strong>
+										<div class="tit-content">
+											<div class="img">Invest KOREA<br>Market Place</div>
+											<div class="txt">
+												<!-- <a href="#n" class="link">[신청하기]</a> -->
+												<a href="#n" class="link">[Apply]</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li>
+											<!-- <a href="투자의기회_기업정보_사업소개.html">기업정보</a> -->
+											<a href="투자의기회_기업정보_사업소개.html">Company information</a>
+											<ul>
+												<li><a href="투자의기회_기업정보_사업소개.html">Introduction</a></li>
+												<li><a href="투자의기회_기업정보_IKMPProject_목록.html">IKMP Project</a></li>
+												<li><a href="투자의기회_기업정보_IKMPInquiry.html">IKMP Inquiry</a></li>
+											</ul>
+										</li>
+										<li>
+											<!-- <a href="투자의기회_일반입지_지자체.html">일반입지</a> -->
+											<a href="투자의기회_일반입지_지자체.html">General location</a>
+											<ul>
+												<!-- <li><a href="투자의기회_일반입지_지자체.html">지자체</a></li> -->
+												<li><a href="투자의기회_일반입지_지자체.html">the local governmen</a></li>
+												<li><a href="투자의기회_일반입지_지역별프로젝트_목록.html">Projects per Region</a></li>
+												<li><a href="투자의기회_일반입지_지역별홍보자료_목록.html">Promotional Materials per Region</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="투자의기회_외국인투자기업중점유치지역_경제자유구역.html">Foreign-Invested Company Priority Zones</a>
+											<ul>
+												<li><a href="투자의기회_외국인투자기업중점유치지역_경제자유구역.html">Free Economic Zones</a></li>
+												<li><a href="투자의기회_외국인투자기업중점유치지역_외국인투자지역.html">Foreign Investment Zones</a></li>
+												<li><a href="투자의기회_외국인투자기업중점유치지역_자유무역지역.html">Free Trade Zones</a></li>
+												<li><a href="투자의기회_외국인투자기업중점유치지역_새만금_사업개요.html">Saemangeum</a></li>
+											</ul>
+										</li>
+										<li><a href="정보센터_성공사례_목록.html">Successful Cases</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="투자의시작_인정요건_외국인직접투자(FDI)정의.html">Start Investment</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>Start Investment</span></strong>
+										<div class="tit-content">
+											<div class="txt">
+												2020<br><!-- 투자가이드 -->Investment Guide
+												<div class="link-area"><a href="#n" class="link">[Download]</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li>
+											<a href="투자의시작_인정요건_외국인직접투자(FDI)정의.html">Requirements</a>
+											<ul>
+												<li><a href="투자의시작_인정요건_외국인직접투자(FDI)정의.html">Definition of Foreign Direct Investment (FDI)</a></li>
+												<li><a href="투자의시작_인정요건_투자가능업종.html">Types of Investable Businesses</a></li>
+												<li><a href="투자의시작_인정요건_외국인투자의유형.html">Types of Foreign Investment</a></li>
+												<li><a href="투자의시작_인정요건_출자가능한자산(출자목적물).html">Objects of Investment</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="투자의시작_기업형태_법인유형.html">Types of Companies</a>
+											<ul>
+												<li><a href="투자의시작_기업형태_법인유형.html">How Foreigners Advance Into Korea</a></li>
+												<li><a href="투자의시작_기업형태_법인형태.html">Types of Corporations</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="투자의시작_입지선정_제조업의입지유형.html">Selecting Location</a>
+											<ul>
+												<li><a href="투자의시작_입지선정_제조업의입지유형.html">Types of Manufacturing Industry Sites</a></li>
+												<li><a href="투자의시작_입지선정_비제조업의입지유형.html">Types of Non-Manufacturing Industry Sites</a></li>
+												<li><a href="투자의시작_입지선정_외국인투자기업중점유치지역_경제자유구역.html">Foreign-Invested Company Priority Zones</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="투자의시작_투자방법_유형별외국인투자절차.html">Investment Methods</a>
+											<ul>
+												<li><a href="투자의시작_투자방법_유형별외국인투자절차.html">Foreign Investment Procedures by Type</a></li>
+												<li><a href="투자의시작_투자방법_기업설립.html">Establishment of Companies</a></li>
+												<li><a href="투자의시작_투자방법_증자.html">Capital Increase</a></li>
+												<li><a href="투자의시작_투자방법_기존주취득.html">Acquisition of Existing Stocks</a></li>
+												<li><a href="투자의시작_투자방법_장기차관.html">Long-Term Loans</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="투자의시작_비자·체류_입국.html">Visa Issuance · Stay in Korea</a>
+											<ul>
+												<li><a href="투자의시작_비자·체류_입국.html">Entry</a></li>
+												<li><a href="투자의시작_비자·체류_기업투자사증발급및체류절차.html">Corporate Investment Visa Issuance and Stay in Korea</a></li>
+												<li><a href="투자의시작_비자·체류_외국인체류지원서비스.html">Visa-Related Services for Foreigners</a></li>
+												<li><a href="투자의시작_비자·체류_체류자격별사증신청.html">Application for Visas by Status of Sojourn</a></li>
+												<li><a href="투자의시작_비자·체류_출입국우대제도.html">Favorable Immigration Policies</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="인센티브_조세감면_지원대상.html">Incentives</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>Incentives</span></strong>
+										<div class="tit-content">
+											<ul class="link-list">
+												<li><a href="#n" class="bg-green">FEZ</a></li>
+												<!-- <li><a href="#n" class="bg-blue">산업단지공단</a></li> -->
+												<li><a href="#n" class="bg-blue">Industrial Complex Corporation</a></li>
+												<!-- <li><a href="#n" class="bg-navy">지자체별 인센티브</a></li> -->
+												<li><a href="#n" class="bg-navy">Incentives by local government</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li>
+											<a href="인센티브_조세감면_지원대상.html">Tax Reductions and Exemptions</a>
+											<ul>
+												<li><a href="인센티브_조세감면_지원대상.html">Eligible Businesses</a></li>
+												<li><a href="인센티브_조세감면_절차.html">Procedures</a></li>
+												<li><a href="인센티브_조세감면_감면혜택_취득세·감면세.html">Reductions or Exemptions</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="인센티브_입지지원_외국인투자기업중점유치지역.html">Location Support</a>
+											<ul>
+												<li><a href="인센티브_입지지원_외국인투자기업중점유치지역.html">Foreign-Invested Company Priority Zones</a></li>
+												<li><a href="인센티브_입지지원_외국인투자지역.html">Foreign Investment Zones</a></li>
+												<li><a href="인센티브_입지지원_경제자유구역.html">Free Economic Zones</a></li>
+												<li><a href="인센티브_입지지원_자유무역지역.html">Free Trade Zones</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="인센티브_현금지원_지원대상.html">Cash Grants</a>
+											<ul>
+												<li><a href="인센티브_현금지원_지원대상.html">Eligible Businesses</a></li>
+												<li><a href="인센티브_현금지원_지원항목.html">Eligible Businesses</a></li>
+												<li><a href="인센티브_현금지원_신청절차및방법.html">Application</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="인센티브_R&D센터_기업부설연구소등.html">R&D Center</a>
+											<ul>
+												<li><a href="인센티브_R&D센터_기업부설연구소등.html">Business-Affiliated Research Institutes, etc.</a></li>
+												<li><a href="인센티브_R&D센터_연구개발서비스업.html">Research and Development Service Businesses</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="경영·생활_조세제도_주요세금의종류.html">Management·Living</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>Management·Living</span></strong>
+										<div class="tit-content">
+											<ul class="link-list">
+												<!-- <li><a href="#n" class="bg-green">설립비용 계산기</a></li> -->
+												<li><a href="#n" class="bg-green">Establishment cost calculator</a></li>
+												<!-- <li><a href="#n" class="bg-blue">생활비용 계산기</a></li> -->
+												<li><a href="#n" class="bg-blue">Living Cost Calculator</a></li>
+												<!-- <li><a href="#n" class="bg-navy">컨시어지</a></li> -->
+												<li><a href="#n" class="bg-navy">Concierge</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li>
+											<a href="경영·생활_조세제도_주요세금의종류.html">Taxation</a>
+											<ul>
+												<li><a href="경영·생활_조세제도_주요세금의종류.html">Types of Taxes</a></li>
+												<li><a href="경영·생활_조세제도_국세_법인세.html">National Tax</a></li>
+												<li><a href="경영·생활_조세제도_지방세.html">Local Tax</a></li>
+												<li><a href="경영·생활_조세제도_이전가격세제.html">Transfer Pricing Tax</a></li>
+												<li><a href="경영·생활_조세제도_과소자본과세제도.html">Insufficient Capital Tax System</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="경영·생활_통관_통관절차.html">Customs Clearance</a>
+											<ul>
+												<li><a href="경영·생활_통관_통관절차.html">Customs Clearance Procedures</a></li>
+												<li><a href="경영·생활_통관_관세납부와환급.html">Payment and Refund of Customs Duties</a></li>
+												<li><a href="경영·생활_통관_자본재도입.html">Capital Goods Importation</a></li>
+											</ul>
+										</li>									
+										<li>
+											<a href="경영·생활_인사·노무_채용및해고.html">HR · Labor</a>
+											<ul>
+												<li><a href="경영·생활_인사·노무_채용및해고.html">Recruitment and Dismissal</a></li>
+												<li><a href="경영·생활_인사·노무_근로조건_임금.html">Working Conditions</a></li>
+												<li><a href="경영·생활_인사·노무_취업규칙.html">Rules of Employment</a></li>
+												<li><a href="경영·생활_인사·노무_일·가정양립지원.html">Work-Family Balance Assistance</a></li>									
+												
+											</ul>
+										</li>
+										<li>
+											<a href="경영·생활_지식재산권_지식재산제도.html">Intellectual Property Rights</a>
+											<ul>
+												<li><a href="경영·생활_지식재산권_지식재산제도.html">Intellectual Property System</a></li>
+												<li><a href="경영·생활_지식재산권_특허청주요서비스.html">Main Services of the Korea Intellectual Property Office</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="경영·생활_부동산취득_관련법령.html">Acquisition of Real Estate</a>
+											<ul>
+												<li><a href="경영·생활_부동산취득_관련법령.html">Related Laws</a></li>
+												<li><a href="경영·생활_부동산취득_절차및필요서류.html">Procedures and Required Documents</a></li>
+												<li><a href="경영·생활_부동산취득_부동산매매대금반출.html">Remittance of Real Estate Transaction Funds</a></li>
+												<li><a href="경영·생활_부동산취득_관련세금.html">Applicable Taxes</a></li>
+												<li><a href="경영·생활_부동산취득_부동산중개수수료.html">Real Estate Brokerage Commission</a></li>
+											</ul>
+										</li>																														
+										<li>
+											<a href="경영·생활_해산및청산_해산.html">Dissolution and Liquidation</a>
+											<ul>
+												<li><a href="경영·생활_해산및청산_해산.html">Dissolution</a></li>
+												<li><a href="경영·생활_해산및청산_청산.html">Liquidation</a></li>
+												<li><a href="경영·생활_해산및청산_인허가,사업자등록말소.html">Cancellation of Authorization, Permission, or Business Registration</a></li>
+											</ul>
+										</li>									
+										<li>
+											<a href="경영·생활_생활정보_대한민국소개.html">Living Information</a>
+											<ul>
+												<li><a href="경영·생활_생활정보_대한민국소개.html">Introduction on the Republic of Korea</a></li>
+												<li><a href="경영·생활_생활정보_주거생활_주거형태.html">Residential Living</a></li>
+												<li><a href="경영·생활_생활정보_교통및공공·편의시설_교통.html">Transportation and Public · Convenient Facilities</a></li>
+												<li><a href="경영·생활_생활정보_교육및취업_교육.html">Education and Employment</a></li>
+											</ul>
+										</li>
+										<li><a href="경영·생활_업무대행기업_수탁기관.html">Business Agencies</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- <li>
+						<a href="IKMP_사업소개.html">IKMP</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>IKMP</span></strong>
+										<div class="tit-content">
+											<div class="img">Invest KOREA<br>Market Place</div>
+											<div class="txt">
+												<a href="#n" class="link">[신청하기]</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li><a href="IKMP_사업소개.html">Introduction of IKMP</a></li>
+										<li><a href="IKMP_IKMPProject_목록.html">IKMP Project</a></li>
+										<li><a href="IKMP_IKMPInquiry.html">IKMP Inquiry</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li> -->
+					<li>
+						<a href="IK서비스_IK소개_InvestKorea.html">IK Services</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>IK Services</span></strong>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li>
+											<a href="IK서비스_IK소개_InvestKorea.html">Introduction of IK</a>
+											<ul>
+												<li><a href="IK서비스_IK소개_InvestKorea.html">Invest Korea</a></li>
+												<li><a href="IK서비스_IK소개_투자종합상담실(ICC).html">Investment Consulting Center (ICC)</a></li> 
+												<li><a href="IK서비스_IK소개_본사및글로벌네트워크_본사.html">Headquarters and Global Network</a></li>
+												<li><a href="IK서비스_IK소개_외국인투자옴브즈만.html">외Foreign Investment Ombudsman</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="IK서비스_주요사업_인큐베이팅(IKP).html">Major Businesses</a>
+											<ul>
+												<li><a href="IK서비스_주요사업_인큐베이팅(IKP).html">Incubating (IKP)</a></li>
+												<li><a href="IK서비스_주요사업_교육훈련보조금및고용보조금지원.html">Education and Training Subsidy and Employment Subsidy</a></li>
+												<li><a href="IK서비스_주요사업_채용지원.html">Employment Support</a></li>
+												<li><a href="IK서비스_주요사업_출입국지원(출입국지원레드카펫서비스).html">Immigration Support (Red Carpet Service)</a></li>
+												<li><a href="IK서비스_주요사업_고충처리(외국인투자옴부즈만).html">Complaint Handling (Foreign Investment Ombudsman)</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="IK서비스_공지·홍보_공지사항_목록.html">Notice·Promotion</a>
+											<ul>
+												<li><a href="IK서비스_공지·홍보_공지사항_목록.html">Notice</a></li>
+												<li><a href="IK서비스_공지·홍보_IK캘린더_달력으로보기.html">IK Calendar</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="IK서비스_Q&A_FAQ.html">Q&A</a>
+											<ul>
+												<li><a href="IK서비스_Q&A_FAQ.html">FAQ</a></li>
+												<li><a href="IK서비스_Q&A_온라인컨설팅.html">Online Consulting</a></li>
+											</ul>
+										</li>										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>			
+					<li>
+						<a href="정보센터_서식자료.html">Infomation Center</a>
+						<div>
+							<div class="gnb-inner">
+								<div class="tit-box">
+									<div class="tit-box-inner">
+										<strong class="tit"><span>Information Center</span></strong>
+										<div class="tit-content">
+											<!-- <div class="img">다양한 서식자료<br>제공</div> -->
+											<div class="img">Provides various format data</div>
+											<div class="txt">
+												<!-- <a href="정보센터_서식자료.html" class="link">[바로가기]</a> -->
+												<a href="정보센터_서식자료.html" class="link">[Shortcuts]</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="gnb-box">
+									<ul>
+										<li><a href="정보센터_서식자료.html">Forms</a></li>
+										<li><a href="정보센터_관련법령.html">Related Laws</a></li>
+										<li><a href="정보센터_투자뉴스_목록.html">Investment News</a></li>
+										<li>
+											<a href="정보센터_KOTRAExpress_KOTRAExpress_목록.html">KOTRA Express</a>
+											<ul>
+												<li><a href="정보센터_KOTRAExpress_KOTRAExpress_목록.html">KOTRA Express</a></li>
+												<li><a href="정보센터_KOTRAExpress_KOTRAExpress구독신청_등록.html">Subscription to KOTRA Express</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="정보센터_지방자치단체홍보자료_지역별프로젝트_목록.html">Local Government Promotional Materials</a>
+											<ul>
+												<li><a href="정보센터_지방자치단체홍보자료_지역별프로젝트_목록.html">Projects per Region</a></li>
+												<li><a href="정보센터_지방자치단체홍보자료_지역별홍보자료_목록.html">Promotional Materials per Region</a></li>
+											</ul>
+										</li>
+										<li><a href="정보센터_성공사례_목록.html">Successful Cases</a></li>
+										<li><a href="정보센터_FDI연구보고서.html">FDI Research Reports</a></li>
+										<li><a href="정보센터_발간물.html">Publications</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<button type="button" class="btn-close"><span class="blind">Close menu</span></button>
+		</div>
+	</div>
+</header>

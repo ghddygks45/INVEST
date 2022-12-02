@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-en/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-en/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-en/style.css">
+	<link rel="stylesheet" href="../../css/ik-en-new/style_20220216.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-en/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>Applicable Taxes &lt; Acquisition of Real Estate &lt; Management·Living | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(4, 6, 4)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb10.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>경제자유구역청</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>Future Industries, Location</li>
+						<li>Location</li>
+						<li>Free Economic Zones</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="section">
+							<h4 class="sub-tit01">Free Economic Zones</h4>
+							<div>
+								<p>
+									<span class="fwr bold">Korean Free Economic Zones</span>
+									<span class="fwr color-blue">KFEZ, where the success formula for businesses unfolds</span>
+								</p>
+								<p class="normal-mt">
+									<span class="bold underline">Korean Free Economic Zones offer the optional business environment for
+										global businesses,</span>
+									A center of international business where the world’s capital and information gather.
+								</p>
+								<p class="normal-mt">
+									Korean Free Economic Zones (KFEZ) are designed to actively attract foreign investment by improving the
+									business environment and living conditions of foreign-invested companies and by maximizing the
+									autonomy and investment incentives of companies through deregulation. Starting with Incheon in 2003, a
+									total of nine zones have been established, including Busan/Jinhae, Gwangyang Bay, Gyeonggi,
+									Daegu/Gyeongbuk, Chungbuk, East Coast, Gwangju, and Ulsan.
+								</p>
+							</div>
+							<div class="search-area normal-mt2">
+								<div class="form-area m-version">
+									<div class="in">
+										<span class="select-type3 mr5">
+											<select name="" id="local_choice" title="Region">
+												<option value="map_00">Incheon</option>
+												<option value="map_01">Gyeonggi</option>
+												<option value="map_02">East Coast</option>
+												<option value="map_03">Chungbuk</option>
+												<option value="map_04">Gwangju</option>
+												<option value="map_05">Gwangyang Bay Area</option>
+												<option value="map_06">Daegu Gyeongbuk</option>
+												<option value="map_17">Ulsan</option>
+												<option value="map_07">Busan Jinhae</option>
+											</select>
+										</span>
+										<button type="button" class="btn-default-s" onclick="localMapTrans();">Search</button>
+									</div>
+								</div>
+								<div class="sel-local-box fix_local">
+									<div class="l">Region</div>
+									<div class="r">
+										<ul>
+											<li><button type="button" class="btn-default-s">Incheon</button></li>
+											<li><button type="button" class="btn-default-s">Gyeonggi</button></li>
+											<li><button type="button" class="btn-default-s">East Coast</button></li>
+											<li><button type="button" class="btn-default-s">Chungbuk</button></li>
+											<li><button type="button" class="btn-default-s">Gwangju</button></li>
+											<li><button type="button" class="btn-default-s">Gwangyang Bay Area</button></li>
+											<li><button type="button" class="btn-default-s">Daegu Gyeongbuk</button></li>
+											<li><button type="button" class="btn-default-s">Ulsan</button></li>
+											<li><button type="button" class="btn-default-s">Busan Jinhae</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="map-area-box eco_map">
+								<div class="map-l">
+									<img src="../../images/ik-en/new_20220216/img_eco_map_incheon.gif" alt="인천">
+									<img src="../../images/ik-en/new_20220216/img_eco_map_gyeonggi.gif" alt="경기">
+									<img src="../../images/ik-en/new_20220216/img_map_eastsea.gif" alt="동해안">
+									<img src="../../images/ik-en/new_20220216/img_eco_map_n_chungcheong.gif" alt="충북">
+									<img src="../../images/ik-en/new_20220216/img_deco_map_gwangju.gif" alt="광주">
+									<img src="../../images/ik-en/new_20220216/img_deco_map_gwangyang.gif" alt="광양만">
+									<img src="../../images/ik-en/new_20220216/img_deco_map_daegu.gif" alt="대구·경북">
+									<img src="../../images/ik-en/new_20220216/img_deco_map_ulsan.gif" alt="울산">
+									<img src="../../images/ik-en/new_20220216/img_deco_map_busan.gif" alt="부산진해">
+								</div>
+
+								<div class="map-r">
+
+									<!-- 인천 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_ifez.png"
+											alt="Incheon Free Economic Zone (IFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">Global Business Frontier</p>
+										</div>
+										<div class="normal-txt">
+											Incheon has been reborn as a global business hub. Incheon boasts an ideal international business
+											environment, including Incheon International Airport, which has attained first place at the
+											Airport Service Quality Awards (ASQ) for twelve consecutive years; the rapidly-growing Incheon
+											Port; five world-class foreign universities located in Songdo Global Campus, and an international
+											business complex. The Incheon Free Economic Zone (IFEZ) is a place where everything from bio,
+											logistics, medical care, education, and high-tech industries can be enjoyed.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Incheon Free Economic Zone (IFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Incheon (Yeonsu-gu, Jung-gu, Seo-gu)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													122.43㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													October 15, 2003
+												</li>
+												<li>
+													<strong class="bold">Airport,Port :</strong>
+													Incheon International Airport, Incheon Port
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2030 (1st phase: 2003–2009, 2nd phase: 2010–2014, 3rd phase: 2015–2030)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">Bio, healthcare, aviation, complex logistics, smart manufacturing
+												(high-tech industry), knowledge and tourism services</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.ifez.go.kr/index" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://www.ifez.go.kr/ifezn/pro32" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 인천 -->
+
+									<!-- 경기 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_ggfez.png"
+											alt="Gyeonggi Free Economic Zone (GGFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">New Industrial Innovation and Growth Hub for the Future</p>
+										</div>
+										<div class="normal-txt">
+											Gyeonggi Free Economic Zone (GGFEZ) is located in the center of the West Coast Economic Belt.
+											GGFEZ consists of three zones:: Pyeongtaek Poseung (BIX) Zone and Hyeondeok Zone for high-tech,
+											logistics, and distribution industries; and Siheung Baegot Zone for R&D of land, sea, and aerial
+											unmanned vehicles.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Gyeonggi Free Economic Zone (GGFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Gyeonggi (Pyeongtaek)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													5.24㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													July 22, 2008
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Pyeongtaek Port, Dangjin Port
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2020 (1st phase: 2008–2013, 2nd phase: 2014–2020)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">High-tech (automobile, IT, machinery, chemical, logistics), services
+												(tourism, distribution, commerce, hotels)</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://ggfez.gg.go.kr/" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://ggfez.gg.go.kr/videos/" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 경기 -->
+
+									<!-- 동해안 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_efez.png"
+											alt="East Coast Free Economic Zone (EFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">Recreational Tourism and Leisure, Hydrogen Energy, and High-tech Materials and
+												Parts Industrial Hub in Northeast Asia</p>
+										</div>
+										<div class="normal-txt">
+											East Coast Free Economic Zone (EFEZ) is a special economic zone that improves the business
+											environment and living conditions of foreign-invested companies located near the east coast of
+											Gangwon-do. Various tax benefits, deregulation for free economic activities, a good living
+											environment, and convenient administrative services guarantee a free and wide range of corporate
+											activities. EFEZ is the center of the economy of Northeast Asia, especially for luxurious
+											recreational tourism in all four seasons, hydrogen energy, and high-tech materials and parts
+											industries.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">East Coast Free Economic Zone (EFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Gangwon (Gangneung, Donghae)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													4.31㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													July 19, 2013
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Yangyang International Airport, Donghae Port
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2024 (1st phase: 2013–2024)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">Recreational tourism and leisure, hydrogen energy, high-tech materials and
+												parts</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.efez.go.kr/hb/kor" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://www.efez.go.kr/hb/kor/pr-vod" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 동해안 -->
+
+									<!-- 충북 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_cbfez.png"
+											alt="Chungbuk Free Economic Zone (CBFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">Global Hub for High-tech Industries in the Central Region</p>
+										</div>
+										<div class="normal-txt">
+											Chungbuk is located in the central inland region and offers the shortest accessibility in all
+											directions. Chungbuk Free Economic Zone (CEBFEZ) is a new hub for growing global cities and
+											fostering the bio industry and the Urban Air Mobility industry, connected with the rotary wing
+											maintenance.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Chungbuk Free Economic Zone (CBFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Chungbuk (Cheongju)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													4.96㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													2013.04.26
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Cheongju International Airport
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2020 (1st phase: 2013–2020)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">Bio, aviation manufacturing/service, complex logistics</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.chungbuk.go.kr/eco/index.do" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://www.chungbuk.go.kr/eco/contents.do?key=2432" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 충북 -->
+
+									<!-- 광주 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_gjfez.png"
+											alt="Gwangju Free Economic Zone (GJFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">AI Convergence Hub for the Future</p>
+										</div>
+										<div class="normal-txt">
+											<p>
+												Gwangju Free Economic Zone (GJFEZ) is the only AI-focused free economic zone in Korea. GJFEZ is
+												building a new hub for Korea’s innovative growth through convergence of cutting-edge
+												technologies, such as next-generation eco-friendly vehicles, smart energy, and biomedical
+												technologies.
+											</p>
+											<p class="normal-mt">
+												GJFEZ consists of AI Convergence Zone, Future Vehicle Zone, and Smart Energy Zone 1 and 2. It
+												promises an optimal environment for investment and the success of business.
+											</p>
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Gwangju Free Economic Zone (GJFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Gwangju (Nam-gu, Buk-gu, Gwangsan-gu)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													4.37㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													January 27, 2021
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Gwangju Airport
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2025-2025
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">AI, automobile and eco-friendly vehicle parts, smart energy,
+												next-generation battery, biomedical, healthcare</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.gjfez.go.kr/" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://www.gjfez.go.kr/boardList.do?boardId=BD0008&pageId=www61" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+												<li><a href="https://www.gjfez.go.kr/contentsView.do?pageId=www14" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View
+													VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 광주 -->
+
+									<!-- 광양만-->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_gfez.gif"
+											alt="Gwangyang Bay Area Free Economic Zone (GFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">GFEZ, the Center of Business in Northeast Asia and the Land of Opportunities</p>
+										</div>
+										<div class="normal-txt">
+											Gwangyang Bay Area Free Economic Zone (GFEZ) consists of six specialized zones and seventeen
+											complexes that are perfectly prepared for your success. GFEZ is a new hub for logistics, tourism,
+											and new industries in Northeast Asia, taking shape as a dynamic, international trade city.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Gwangyang Bay Area Free Economic Zone (GFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Jeonnam (Yeosu, Suncheon, Gwangyang), Gyeongnam (Hadong)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													59.6㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													March 24, 2003
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Gwangyang Port, Yeosu Airport
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2022 (1st phase: 2003–2009, 2nd phase: 2010–2014, 3rd phase 2015–2022)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">
+												High-tech materials, functional chemicals, secondary cell, port logistics service, complex
+												tourism and leisure, bio
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.gfez.go.kr/kor/index.do" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://www.gfez.go.kr/prog/mvp/pr/sub02_01/B/list.do" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 광양만 -->
+
+									<!-- 대구·경북-->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_dgfez.png"
+											alt="Daegu Gyeongbuk Free Economic Zone (DGFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">From the Manufacturing to the Advanced Convergence Medical Industry</p>
+										</div>
+										<div class="normal-txt">
+											Daegu and Gyeongbuk are equipped with knowledge-based industries and service infrastructure. Daegu
+											Gyeongbuk Free Economic Zone (DGFEZ) offers business sites, R&D facilities, and stable commercial
+											and residential conditions, with a focus on IT convergence, high-tech transportation machinery
+											parts, and medical industries. DGFEZ is a cluster of major domestic industries, such as Korea’s
+											largest automobile parts complex, IT/SW, medical care, and steel, and boasts abundant human
+											resources.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Daegu Gyeongbuk Free Economic Zone (DGFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Daegu, Gyeongbuk (Gyeongsan, Yeongcheon, Pohang)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													18.46㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													August 13, 2008
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Daegu International Airport, Pohang Yeongil New Port
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2024 (1st phase: 2008–2013, 2nd phase: 2014–2024)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">
+												Automobile and machinery parts, green energy, bio, medical device, IT, SW
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.dgfez.go.kr/" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<li><a href="https://www.dgfez.go.kr/page.php?mnu_uid=1543&" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+												<li><a href="https://dgfez.go.kr/dgfez_vr/index.html" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View
+															VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 대구·경북 -->
+
+									<!-- 울산 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_ufez.gif" alt="Ulsan Free Economic Zone (UFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">Northeast Asia Energy Hub<br> Ulsan Free Economic Zone (UFEZ)</p>
+										</div>
+										<div class="normal-txt">
+											Ulsan is a no. 1 industrial city with the highest GDP per capita in Korea. The city is a home to
+											world-class automobile, shipbuilding, and petrochemical companies as well as excellent industrial
+											infrastructure (port, airport, railway) and research institutes, such as UNIST, Korea Energy
+											Economics Institute (KEEI), and Korea Research Institute of Chemical Technology (KRICT). In order
+											to play an important role in the development of Korea’s industries, Ulsan aims to focus on
+											fostering future mobility, bio, chemical, new materials, hydrogen, and low carbon energy
+											industries. Ulsan Free Economic Zone (UFEZ) is at the center of such efforts.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Ulsan Free Economic Zone (UFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Ulsan (Nam-gu, Buk-gu, Ulju-gun)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													4.7㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													January 14, 2021
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Ulsan Airport, Ulsan Port
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2020–2030
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">
+												Future mobility, bio, chemical, new materials, hydrogen/low carbon energy, hydrogen (automobile
+												parts, fuel cells)
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.ulsan.go.kr/s/ufez/main.ulsan" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage</span></a></li>
+												<!-- <li><a href="#;" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li> -->
+											</ul>
+										</div>
+									</div>
+									<!-- // 울산 -->
+
+									<!-- 부산진해 -->
+									<div class="local_info active">
+										<img src="../../images/ik-en/new_20220216/img_logo_bjfez.png"
+											alt="Busan Jinhae Free Economic Zone (BJFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												Center of World-class Logistics and Businesses
+											</p>
+										</div>
+										<div class="normal-txt">
+											Busan Port is the best logistics hub in Northeast Asia, dealing with 75% of domestic cargo volume
+											and boasting its world-wide ranking for container traffic volume (no. 7) and transshipment cargo
+											(no. 2). Busan Jinhae Free Economic Zone (BJFEZ) is a global industrial cluster of shipbuilding,
+											automobile, and machinery industries as well as a key region for next-generation digital
+											technologies, including electric vehicles and data centers.
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">Busan Jinhae Free Economic Zone (BJFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">Location :</strong>
+													Busan (Gangseo-gu), Gyeongnam (Changwon)
+												</li>
+												<li>
+													<strong class="bold">Area :</strong>
+													51.1㎢
+												</li>
+												<li>
+													<strong class="bold">Opening Date :</strong>
+													April 30, 2004
+												</li>
+												<li>
+													<strong class="bold">Airport, Port :</strong>
+													Gimhae International Airport, Busan New Port
+												</li>
+												<li>
+													<strong class="bold">Development Completion :</strong>
+													2023 (1st phase: 2004-2006, 2nd phase: 2007-2015, 3rd phase: 2016-2023)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">Key Industries (Core Strategic Industries)</h5>
+											<p class="txt-con-box">
+												High-tech parts and materials manufacturing (automobile, offshore plant parts, industrial
+												machinery and parts), port logistics, R&D, tourism and leisure, bio, health
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.bjfez.go.kr/main.web" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>Go to
+															Homepage </span></a></li>
+												<li><a href="https://www.bjfez.go.kr/whybjfez/00033.web" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View PR
+															Video</span></a></li>
+												<li><a href="https://www.bjfez.go.kr/vr/vr/" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>View VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 부산진해 -->
+
+								</div>
+							</div>
+							<script>
+								$('.btn-default-s').trigger('click');
+
+								// 모바일 일때 지자체 변경
+								function localMapTrans() {
+									var sel_midx = $("#local_choice option").index($("#local_choice option:selected"));
+
+									$('.map-l > img').removeClass('active').eq(sel_midx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_midx).addClass('active');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$('.sel-local-box ul>li').eq(sel_midx).find('button').addClass('active');
+								}
+
+								// pc 일때 지자체 변경
+								$('.sel-local-box ul>li>button').on('click', function () {
+									var sel_pcidx = $(this).closest('li').index();
+
+									$("#local_choice option").eq(sel_pcidx).attr('selected', 'selected');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$(this).addClass('active');
+									$('.map-l > img').removeClass('active').eq(sel_pcidx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_pcidx).addClass('active');
+								})
+							</script>
+						</div>
+
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

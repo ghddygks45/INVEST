@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+	<script src="../../js/cms/_layout-setting.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>    	
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">시스템</a>
+				<span>&gt;</span> 
+				<a href="/system/code/index.do">코드관리</a>
+				<span>&gt;</span>
+				<strong>다중항목코드 설정</strong>
+			</p>
+	
+			<h2 id="tit_page">다중항목코드 설정</h2>
+
+			<script type="text/javascript">
+			//<![CDATA[
+			/** 다중항목코드설정 영역 Start */
+				//숫자 정규식 체크
+				$(function() {
+					$("input:text[name=save_multi_id]").keyup(function(e) {
+						reg = /[^0-9]/gi;
+						v = $(this).val();
+						if (reg.test(v)) {
+						$(this).val(v.replace(reg, ''));
+						$(this).focus();
+						}
+					});
+				});
+				
+				$(document).on('click','#btnSave',function(){
+					var value = new MiyaValidator(document.forms["frmMulti"]);
+					if($('#save_multi_id').val() ==""){											//다중아이디값이 없을경우
+						$('#save_multi_id').removeAttr('disabled');	//다중아이디 활성화
+						value.add("save_multi_id", {required: true, option:"number", max:99}); //다중아이디
+					}
+					else if($('#save_multi_id').val() !="" && $('#multi_id_sch').val() ==""){	//다중아이디값은 있지만, 중복검색을 하지 않은경우
+						$('#save_multi_id').removeAttr('disabled');	//다중아이디 활성화
+						value.add("save_multi_id", {required: true, option:"number", max:99}); //다중아이디
+						$("#save_multi_id_sch").val('');
+					}
+					
+					//다중아이디 생성시 중복체크
+					if($('#save_multi_id_sch').val() ==""){
+						value.add("save_multi_id_sch", {required: true, option:"number", max:99},"다중아이디 중복검색은");
+					}	
+					
+					value.add("save_multi_nm", {required: true}); //다중아이디
+					var result = value.validate();
+					
+					if(!result){
+						alert(value.getErrorMessage()); //디폴트 label 메세지
+						value.getErrorElement().focus();
+						return false;
+					}else{
+						//alert("ok : " + $('#save_upper_seq').val() +" , "+ $('form[name=frmMulti] input[name=save_use_at]:checked').val());
+						if(confirm("[다중항목코드 설정]를 저장하시겠습니까?")){
+						$.post("multi.do",{
+							type	   : "save"
+							,upper_seq : $('#save_upper_seq').val()	//상위일련(초기값 0)
+							,ordr      : 0
+							,use_at    : $('form[name=frmMulti] input[name=save_use_at]:checked').val()	//사용여부
+							,multi_id  : $('#save_multi_id').val()  			//다중아이디
+							,multi_itm : $('#save_upper_seq').val()				//다중아이템 (초기값 0)
+							,multi_nm  : $('#save_multi_nm').val()				//다중항목명
+							,multi_dc  : $('#save_multi_dc').val()				//다중항목설명
+						},
+						function(result){
+						console.log(result)
+							if(result > 0){
+								alert("처리되었습니다");
+								location.reload();
+								return false;
+							}else{
+								alert("실패되었습니다.");
+								return false;
+							}
+						});	
+						return false;
+						}
+					return false;
+					}
+					return false;
+				//다중아이디 중복검색	
+				}).on('click','#btnSch',function(){
+					if($('#save_multi_id').val()==""){
+						alert("[다중아이디] 반드시 입력하셔야 하는 사항입니다." )
+						$('#save_multi_id').focus();
+						return false;
+					}else{
+						$.post("multi.do",{
+							type	: "idSch"						//params type
+							,multi_id : $('#save_multi_id').val()	//다중아이디
+							},
+							function(result){
+								console.log(result)
+								if(result > 0){
+									alert("[다중 아이디]가 중복되었습니다.");
+									$('#save_multi_id').val('');
+								}else{
+									alert("[코드아이디]를 사용하실수 있습니다.");
+									$('#save_multi_id_sch').val('SUCCES');		//중복검색 가능
+									$('#save_upper_seq').val(result);			//상위일련 초기값 셋팅
+									$('#save_multi_id').prop('disabled',true);	//다중아이디 비활성화
+									$('#save_multi_nm').focus();				//다중항목명으로 포커스 이동
+								}
+						});
+						return false;
+					}
+					return false;
+				}).on('click','#btnReset',function(){
+					location.reload();
+				});
+			/** 다중항목코드설정 영역 End */
+			
+			/** 코드아이템관리 영역 Start */
+				//zTree 셋팅
+				var setting = {
+					
+					view: {
+						selectedMulti: false
+					},
+					edit: {
+						drag: {
+							autoExpandTrigger: true,
+							prev: dropPrev,
+							inner: dropInner,
+							next: dropNext
+						},
+						enable: true,
+						showRemoveBtn: false,
+						showRenameBtn: false
+					},		
+					data: {
+						simpleData: {
+							enable: true
+						}
+					},
+					
+					callback: {
+						beforeDrag: beforeDrag,
+						beforeDrop: beforeDrop,
+						beforeDragOpen: beforeDragOpen,
+						onDrag: onDrag,
+						onDrop: onDrop,
+						onExpand: onExpand,
+						beforeClick: beforeClick,
+						onClick: onClick
+					}
+					
+				};
+				
+				
+				//메뉴트리 호출
+				var zNodes =[
+								
+								{ id:"1", pId:"0", upperSeq:"0", multiId:"1", multiItm:"0"
+									,open:true,drag:false,childOuter:false
+								,name:"다중아이디1",od:"0",lv:"1"},
+								
+								{ id:"3", pId:"1", upperSeq:"1", multiId:"1", multiItm:"1"
+									
+								,name:"1-1",od:"1",lv:"2"},
+								
+								{ id:"4", pId:"1", upperSeq:"1", multiId:"1", multiItm:"2"
+									
+								,name:"1-2",od:"2",lv:"2"},
+								
+								{ id:"5", pId:"1", upperSeq:"1", multiId:"1", multiItm:"4"
+									
+								,name:"1-3",od:"3",lv:"2"},
+								
+								{ id:"2", pId:"0", upperSeq:"0", multiId:"2", multiItm:"0"
+									,open:true,drag:false,childOuter:false
+								,name:"다중아이디2",od:"0",lv:"1"},
+								
+								{ id:"6", pId:"2", upperSeq:"2", multiId:"2", multiItm:"1"
+									
+								,name:"2-1",od:"1",lv:"2"},
+								
+								{ id:"9", pId:"2", upperSeq:"2", multiId:"2", multiItm:"8"
+									
+								,name:"2-4",od:"2",lv:"2"},
+								
+								{ id:"7", pId:"2", upperSeq:"2", multiId:"2", multiItm:"2"
+									
+								,name:"2-2",od:"3",lv:"2"},
+								
+								{ id:"8", pId:"2", upperSeq:"2", multiId:"2", multiItm:"4"
+									
+								,name:"2-3",od:"4",lv:"2"},
+								
+								{ id:"10", pId:"2", upperSeq:"2", multiId:"2", multiItm:"16"
+									
+								,name:"2-5",od:"5",lv:"2"},
+								
+								{ id:"11", pId:"2", upperSeq:"2", multiId:"2", multiItm:"32"
+									
+								,name:"2-6",od:"6",lv:"2"},
+								
+								{ id:"12", pId:"2", upperSeq:"2", multiId:"2", multiItm:"64"
+									
+								,name:"test",od:"7",lv:"2"},
+								
+								{ id:"24", pId:"0", upperSeq:"0", multiId:"3", multiItm:"0"
+									,open:true,drag:false,childOuter:false
+								,name:"213",od:"0",lv:"1"},
+								
+								{ id:"25", pId:"24", upperSeq:"24", multiId:"3", multiItm:"1"
+									
+								,name:"111111111",od:"1",lv:"2"},
+								
+								{ id:"26", pId:"24", upperSeq:"24", multiId:"3", multiItm:"2"
+									
+								,name:"222222222",od:"2",lv:"2"},
+								
+								{ id:"27", pId:"24", upperSeq:"24", multiId:"3", multiItm:"4"
+									
+								,name:"33333333333",od:"4",lv:"2"},
+								
+							];
+					
+				function dropPrev(treeId, nodes, targetNode) {
+					var pNode = targetNode.getParentNode();
+					if (pNode && pNode.dropInner === false) {
+						return false;
+					} else {
+						for (var i=0,l=curDragNodes.length; i<l; i++) {
+							var curPNode = curDragNodes[i].getParentNode();
+							if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				function dropInner(treeId, nodes, targetNode) {
+					if (targetNode && targetNode.dropInner === false) {
+						return false;
+					} else {
+						for (var i=0,l=curDragNodes.length; i<l; i++) {
+							if (!targetNode && curDragNodes[i].dropRoot === false) {
+								return false;
+							} else if (curDragNodes[i].parentTId && curDragNodes[i].getParentNode() !== targetNode && curDragNodes[i].getParentNode().childOuter === false) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				
+				function dropNext(treeId, nodes, targetNode) {
+					var pNode = targetNode.getParentNode();
+					if (pNode && pNode.dropInner === false) {
+						return false;
+					} else {
+						for (var i=0,l=curDragNodes.length; i<l; i++) {
+							var curPNode = curDragNodes[i].getParentNode();
+							if (curPNode && curPNode !== targetNode.getParentNode() && curPNode.childOuter === false) {
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				
+				var log, className = "dark", curDragNodes, autoExpandNode;
+				function beforeDrag(treeId, treeNodes) {
+					className = (className === "dark" ? "":"dark");
+					//showLog("[ "+getTime()+" beforeDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag: " + treeNodes.length + " nodes." );
+					for (var i=0,l=treeNodes.length; i<l; i++) {
+						if (treeNodes[i].drag === false) {
+							curDragNodes = null;
+							return false;
+						} else if (treeNodes[i].parentTId && treeNodes[i].getParentNode().childDrag === false) {
+							curDragNodes = null;
+							return false;
+						}
+					}
+					curDragNodes = treeNodes;
+					return true;
+				}
+				
+				function beforeDragOpen(treeId, treeNode) {
+					autoExpandNode = treeNode;
+					return true;
+				}
+				
+				function beforeDrop(treeId, treeNodes, targetNode, moveType, isCopy) {
+					className = (className === "dark" ? "":"dark");
+					//showLog("[ "+getTime()+" beforeDrop ]&nbsp;&nbsp;&nbsp;&nbsp; moveType:" + moveType);
+					//showLog("target: " + (targetNode ? targetNode.name : "root") + "  -- is "+ (isCopy==null? "cancel" : isCopy ? "copy" : "move"));
+					if($('#seq').val() ==""){
+						alert("메뉴클릭 후 순서 병경처리하세요.");
+						$('#ztree').focus();
+						return false;
+					}
+					return true;
+				}
+				
+				function onDrag(event, treeId, treeNodes) {
+					className = (className === "dark" ? "":"dark");
+					//showLog("[ "+getTime()+" onDrag ]&nbsp;&nbsp;&nbsp;&nbsp; drag: " + treeNodes.length + " nodes." );
+				}
+				
+				function onDrop(event, treeId, treeNodes, targetNode, moveType, isCopy) {
+					className = (className === "dark" ? "":"dark");
+					//showLog("[ "+getTime()+" onDrop ]&nbsp;&nbsp;&nbsp;&nbsp; moveType:" + moveType);
+					//showLog("target: " + (targetNode ? targetNode.name : "root") + "  -- is "+ (isCopy==null? "cancel" : isCopy ? "copy" : "move"))
+				}
+				
+				function onExpand(event, treeId, treeNode) {
+					if (treeNode === autoExpandNode) {
+						className = (className === "dark" ? "":"dark");
+						//showLog("[ "+getTime()+" onExpand ]&nbsp;&nbsp;&nbsp;&nbsp;" + treeNode.name);
+					}
+				}
+				
+				function showLog(str) {
+					if (!log) log = $("#log");
+					log.append("<li class='"+className+"'>"+str+"</li>");
+					if(log.children("li").length > 8) {
+						log.get(0).removeChild(log.children("li")[0]);
+					}
+				}
+				
+				function getTime() {
+					var now= new Date(),
+					h=now.getHours(),
+					m=now.getMinutes(),
+					s=now.getSeconds(),
+					ms=now.getMilliseconds();
+					return (h+":"+m+":"+s+ " " +ms);
+				}
+				
+				function setTrigger() {
+					var zTree = $.fn.zTree.getZTreeObj("ztree");
+					zTree.setting.edit.drag.autoExpandTrigger = $("#callbackTrigger").attr("checked");
+				}
+				
+				function beforeClick(treeId, treeNode, clickFlag) {
+					className = (className === "dark" ? "":"dark");
+					return (treeNode.click != false);
+				}	
+				
+				//메뉴 전체펼침,닫힘
+				function expandNode(e) {
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					type = e.data.type,
+					nodes = zTree.getSelectedNodes();
+					if (type == "openTree") {//펼침
+						zTree.expandAll(true);
+					} else if (type == "closeTree") {//닫힘
+						zTree.expandAll(false);
+					} 
+				}	
+				
+				//다중항목코드설정 메뉴트리 클릭 후 상세
+				function onClick(event, treeId, treeNode, clickFlag) {
+					var zTree = $.fn.zTree.getZTreeObj("ztree");
+					var node = zTree.getNodeByParam('id', treeNode.id);
+					var nodeNm = zTree.getNodeByParam('name', treeNode.name);
+					console.log("onClick node id:: " + node.id)
+					console.log("onClick node upperSeq:: " + node.upperSeq)
+					//console.log("onClick node pId:: " + node.pId)
+					if(node.lv ==1){		//코드추가버튼 활성화
+						$("#btnTreeAdd").show();
+					}else if(node.lv ==2){  //코드추가버튼 비활성화
+						$("#btnTreeAdd").hide();
+					}
+					$.post("multi.do",{
+							type      : "treeShow"				//type check
+							,seq       : treeNode.id			//일련
+							,multiId   : treeNode.multiId		//다중아이디
+							,multiItm  : treeNode.multiItm		//다중아이템
+			
+						},
+						function(result){
+							console.log("result : "+ result.treeshow.multiId);
+			
+							if(node.id >0){
+								//코드관리 설정
+								$('form[name=frmMultiTree] input[name=type]').val('treeUpdt');								//타입 셋팅
+								$('form[name=frmMultiTree] input[name=use_at]:radio[value='+result.treeshow.useAt+']').prop("checked",true);			//사용여부
+								$('form[name=frmMultiTree] input[name=seq]').val(result.treeshow.seq);							//일련
+								$('form[name=frmMultiTree] input[name=upper_seq]').val(result.treeshow.upperSeq);				//상위일련
+								$('form[name=frmMultiTree] input[name=ordr]').val(result.treeshow.ordr);						//항목순서					
+								$('form[name=frmMultiTree] input[name=multi_nm]').val(result.treeshow.multiNm);					//항목명
+								$('form[name=frmMultiTree] input[name=multi_id]').val(result.treeshow.multiId);					//항목아이디
+								$('form[name=frmMultiTree] input[name=multi_itm]').val(result.treeshow.multiItm);				//항목아이템
+								$('form[name=frmMultiTree] textarea[name=multi_dc]').val(result.treeshow.multiDc);				//설명
+								
+								//console.log("result.treeshow.multiUpperNm :: " + result.treeshow.multiUpperNm);
+								if(result.treeshow.multiUpperNm !=''){
+									$('form[name=frmMultiTree] input[name=multi_upper_nm]').val(result.treeshow.multiUpperNm);	//상위항목 (값이 있을경우)
+								}else{
+									$('form[name=frmMultiTree] input[name=multi_upper_nm]').val("상위항목없음");						//상위항목 (값이 없을경우 코드관리에서 가져오도록 셋팅)
+								}
+								
+							}else{
+								console.log(treeNode.name+"는 관리 대상이 아닙니다.")
+								//alert(treeNode.name+"는 관리 대상이 아닙니다.");
+								return false;
+							}
+							
+						});
+			
+				}
+				
+				//코드아이템 메뉴트리삭제
+				function fnTreeDelt(e) {
+					console.log("메뉴트리삭제");
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+			
+					if(treeNode){
+						console.log("treeNode.id :: " +treeNode.id);
+						console.log("treeNode.pId :: " +treeNode.pId);
+						console.log("multiId :: " +treeNode.multiId);
+						if(treeNode.id > 0 && treeNode.multiId !=''){
+							
+							console.log("삭제 시작 treeNode.id :: " +treeNode.id);
+							console.log("삭제 시작 treeNode.pId :: " +treeNode.pId);
+							
+							if(confirm("하위메뉴가 있다면 하위메뉴도 전부 삭제됩니다 삭제하시겠습니까?")){
+								
+								$.post("multi.do",{
+										type      : 'treeDelt'			//삭제타입 셋팅	
+										,seq       : treeNode.id		//일련
+										,upper_seq : treeNode.upperSeq	//상위일련
+										,multi_id  : treeNode.multiId	//다중아이디
+										,delete_at : 'Y'
+									},
+									function(result){
+										console.log("treeDelt :: " + result)
+										if(result>0){
+											alert("정상적으로 처리되었습니다.");
+											//location.reload();
+											var callbackFlag = $("#callbackTrigger").attr("checked");
+											zTree.removeNode(treeNode, callbackFlag);
+											var remove = $('form[name=frmMultiTree]');
+											remove.find('input').val('');
+											remove.find('textarea').val('');
+											return false;
+										}else{
+											alert("요청하신 정보가 실패되었습니다.");
+											return false;
+										}
+										return false;
+									}); 
+							}
+							return false;
+						}else{
+							alert('해당 메뉴는 삭제 대상이 아닙니다.');
+							return false;
+						}
+					}else{
+						alert("메뉴를 선택해 주세요.");
+						$('#ztree').focus();
+						return false;
+					}
+			
+				};
+				
+				//메뉴저장,수정
+				function fnTreeSave(e){
+					console.log("fnMenuSave :: " + $("input[name=upper_seq]").val());
+					console.log("fnMenuSave :: " + $("input[name=multi_id]").val());
+					console.log("fnMenuSave :: " + $("input[name=seq]").val());
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					isParent = e.data.isParent,
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+					
+					console.log(treeNode)
+					if (treeNode) {
+						console.log(treeNode.id)
+						console.log(treeNode.pId)
+				
+						var value = new MiyaValidator(document.forms["frmMultiTree"]);
+						value.add("multi_nm", {required: true});  //항목명
+						
+						var result = value.validate();
+						if (!result) {
+							alert(value.getErrorMessage()); //디폴트 label 메세지
+							//alert(value.getErrorMessage("{message}")); //동적 메세지
+							value.getErrorElement().focus();
+							return false;
+						}else {
+							
+							$("form[name=frmMultiTree] input[name=multi_id]").removeAttr('disabled');	//항목아이디 활성화
+							$("form[name=frmMultiTree] input[name=multi_itm]").removeAttr('disabled');	//항목아이템 활성화
+							$("form[name=frmMultiTree] input[name=ordr]").removeAttr('disabled');		//순서 활성화
+							var msg = $('form[name=frmMultiTree] input[name=type]').val() =="treeSave"? '저장':'수정';
+							
+							if(confirm(msg+" 하시겠습니까?")){
+								$('form[name=frmMultiTree]').submit();
+							}
+							return false;
+						}
+						return false;
+					}else{
+						alert("코드메뉴를  선택하세요");
+						$('#ztree').focus();
+						return false;
+					}
+					return false;
+				}
+				
+				//순선변경저장
+				$(document).on('click','#btnTreeChange',function(){	
+						var zTree = $.fn.zTree.getZTreeObj("ztree");
+						var nodeLength=[0,0,0,0,0,0,0,0,0,0];
+						var queryArr=[];
+						
+						$.each(zTree.transformToArray(zTree.getNodes()),function(i,v){
+							if(i>0){
+								if(v.children!=null)
+								nodeLength[v.level]=0;
+								nodeLength[eval(v.level-1)]++;
+								console.log("v check id: "+ v.id)
+								console.log("v check od: "+ v.od)
+								console.log("v check od: "+ nodeLength[eval(v.level-1)])
+								if(typeof(nodeLength[eval(v.level-1)]) !='NaN'){
+									var data={
+											"multi_id":v.multiId,
+											"seq":v.id,
+											"upper_seq":v.pId,
+											"multi_nm":v.name,
+											"ordr":nodeLength[eval(v.level-1)]
+									}
+								}
+								console.log("---------------------")
+								console.log(data)
+								console.log("---------------------")
+								queryArr.push(data);
+							}
+						});
+			
+						if(confirm("[다중항목코드 설정] 순서를 정말로 변경저장 하시겠습니까?")){
+							
+							$.post("multi.do", {dataType:'json',type:'treeChange',data:JSON.stringify(queryArr)}, function(result){
+								console.log("result :: " + result)
+								if(result>0){
+									alert("처리되었습니다.");
+									return false;
+								}else{
+									alert("실패되었습니다.");
+									location.reload();
+									return false;
+								}
+								return false;
+							});
+							
+						}
+				});
+				
+				//메뉴추가
+				function fnTreeAdd(e) {
+					console.log("코드메뉴추가");
+					var zTree = $.fn.zTree.getZTreeObj("ztree"),
+					isParent = e.data.isParent,
+					nodes = zTree.getSelectedNodes(),
+					treeNode = nodes[0];
+					console.log("nodes :: " + nodes.length);
+					
+					if(treeNode){
+						//사이트 생성
+						console.log("[fnAdd level ]:: " +treeNode.level)
+						console.log("[fnAdd id check ]:: " +treeNode.id)
+						console.log("[fnAdd pid check ]:: " +treeNode.pid)
+						console.log("[fnAdd multiId check ]:: " +treeNode.multiId)
+						console.log("[fnAdd multiItm check ]:: " +treeNode.multiItm)
+						//console.log("[fnAdd multiItm check ]:: " +treeNode.multiItm)
+						console.log("[fnAdd lv check ]:: " +treeNode.lv)
+						if(treeNode.lv ==2){
+							alert("["+treeNode.name+"] 다중항목코드는 2뎁스 추가 설정할 수 없습니다.\n다중항목코드는 1뎁스만 추가가 가능합니다.");
+							return false;
+						}
+						//다중항목 아이템값 구하기
+						$.post("multi.do",{type : "treeAdd",multiId : treeNode.multiId},
+						function(result){
+							console.log("result : "+ result);
+							$('form[name=frmMultiTree] input[name=multi_itm]').val(result.treeadd.multiItm ==0? 1:result.treeadd.multiItm*2);			//다중항목아이템 세팅
+						});
+						//설정(초기화)
+						$('form[name=frmMultiTree] input[name=type]').val('treeSave');											//타입 셋팅
+						$('form[name=frmMultiTree] input[name=multi_nm]').val('');												//항목명
+						$('form[name=frmMultiTree] input[name=use_at]').val('Y');												//사용여부
+						$('form[name=frmMultiTree] input[name=multi_id]').val(treeNode.multiId);								//항목아이디
+			
+						if(treeNode.children==null){
+						$('form[name=frmMultiTree] input[name=ordr]').val(1);													//항목순서 레벨별 최상위 셋팅
+						}else{
+						$('form[name=frmMultiTree] input[name=ordr]').val(treeNode.children.length+1);							//항목순서
+						}
+						$('form[name=frmMultiTree] input[name=upper_seq]').val(treeNode.id);									//상위일련
+						$("form[name=frmMultiTree] input[name=multi_upper_nm]").val(treeNode.name+"("+treeNode.id+")");			//상위항목(일련)명	
+						$('form[name=frmMultiTree] textarea[name=multi_dc]').val('');											//설명
+			
+			
+					}else{
+						alert("다중항목코드 트리메뉴를 선택해 주세요.");
+						$('#ztree').focus();
+						return false;
+					}
+				};	
+				
+				$(document).ready(function(){
+					//1.zTree 초기셋팅
+					$.fn.zTree.init($("#ztree"), setting, zNodes);
+					//2.메뉴추가
+					$("#btnTreeAdd").bind("click", {isParent:false}, fnTreeAdd);
+					//3.메뉴삭제
+					$("#btnTreeDelt").bind("click", fnTreeDelt);
+					//4.메뉴저장
+					$("#btnTreeSave").bind("click", {isParent:false}, fnTreeSave);
+					//5.메뉴변경
+					$("#callbackTrigger").bind("change", {}, setTrigger);
+					//6.메뉴트리 전체 펼침
+					$("#btnOpenTree").bind("click", {type:"openTree"}, expandNode);
+					//7.메뉴트리 전체 닫힘
+					$("#btnCloseTree").bind("click", {type:"closeTree"}, expandNode);
+				});
+			
+			/** 코드아이템관리 영역 End */
+			//]]>
+			</script>
+	
+			<form name="frmMulti">
+				<input type="hidden" name="save_multi_id_sch" id="save_multi_id_sch"/>	<!-- 다중아이디 중복 체크 -->
+				<input type="hidden" name="save_upper_seq" id="save_upper_seq">			<!-- 상위 일련 -->
+				<table class="tb_write">
+					<caption>코드관리</caption>
+					<colgroup>
+						<col style="width:120px">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>사용여부</th>
+							<td>
+								<input type="radio" value="Y" name="save_use_at" id="save_use_at1" checked="checked">
+								<label for="save_use_at1">사용</label>
+								<input type="radio" value="N" name="save_use_at" id="save_use_at2">
+								<label for="save_use_at2">미사용</label>
+							</td>
+						</tr>		
+						<tr>
+							<th><label for="save_multi_id"><span class="req">필수입력</span> 다중아이디</label></th>
+							<td>
+								<input type="text" name="save_multi_id" id="save_multi_id" class="text date2" maxlength="2" placeholder="숫자 2자리 이하만 입력가능">
+								<button type="button" class="btn" id="btnSch"><i class="fa fa-search"></i>중복검색</button>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="save_multi_nm"><span class="req">필수입력</span> 다중항목명</label></th>
+							<td>
+								<input type="text" name="save_multi_nm" id="save_multi_nm" class="text date2" style="width:100%">
+							</td>
+						</tr>			
+						<tr>
+							<th><label for="save_multi_dc">다중항목 설명</label></th>
+							<td>
+								<textarea cols="5" rows="4" name="save_multi_dc" id="save_multi_dc" class="include" ></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		
+		
+				<div class="btn_area">
+					<button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+					<button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-pencil"></i> 등록</button>
+				</div>
+			</form>
+			
+			<form name="frmMultiTree" action="./multi.do" method="post">
+				<input type="hidden" name="type" id="type"/>								<!-- 다중항목코드 타입 여부 -->
+				<input type="hidden" name="seq" id="seq"/>								<!-- 일련 -->
+				<input type="hidden" name="upper_seq" id="upper_seq">						<!-- 상위 일련 -->
+				<div class="mng_menu category">
+					<div class="tree_area">
+						<div id="ztree" class="tree_scroll ztree" tabindex="-1"></div>
+					<div class="menu_ctrl">
+						<a href="#none" class="btn act" id="btnTreeAdd">+ 코드추가</a>
+						<a href="#none" class="btn" id="btnTreeDelt">- 코드삭제</a>
+						<a href="#none" class="btn" id="btnTreeChange"> 순서변경</a>
+					</div>
+					</div>
+					<div class="input_area">
+						<table class="tb_write">
+							<caption>다중 상세</caption>
+							<colgroup>
+								<col style="width:110px">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th><label for="multi_nm"><span class="req">필수입력</span> 항목명</label></th>
+									<td><input type="text" name="multi_nm" id="multi_nm"></td>
+								</tr>
+								<tr>
+									<th><span class="req">필수입력</span> 사용여부</th>
+									<td>
+										<input type="radio" value="Y" name="use_at" id="use_at1" checked="checked">
+										<label for="use_at1">사용</label>
+										<input type="radio" value="N" name="use_at" id="use_at2">
+										<label for="use_at2">미사용</label>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="multi_id"><span class="req">필수입력</span> 항목아이디</label></th>
+									<td><input type="text" name="multi_id" id="multi_id" disabled="disabled"></td>
+								</tr>
+								<tr>
+									<th><label for="multi_itm"><span class="req">필수입력</span> 항목아이템</label></th>
+									<td><input type="text" name="multi_itm" id="multi_itm" disabled="disabled"></td>
+								</tr>
+								<tr>
+									<th><label for="ordr"><span class="req">필수입력</span> 항목순서</label></th>
+									<td><input type="text" name="ordr" id="ordr" disabled="disabled"></td>
+								</tr>
+								<tr>
+									<th><label for="multi_upper_nm"><span class="req">필수입력</span> 상위항목</label></th>
+									<td><input type="text" name="multi_upper_nm" id="multi_upper_nm" disabled="disabled"></td>
+								</tr>
+								<tr>
+									<th><label for="multi_dc">설명</label></th>
+									<td><textarea cols="3" rows="1" name="multi_dc" id="multi_dc" class="include" ></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+							
+						<div class="btn_area">
+							<button type="button" class="btn act" id="btnTreeSave"><i class="fa fa-save"></i> 변경내용저장</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

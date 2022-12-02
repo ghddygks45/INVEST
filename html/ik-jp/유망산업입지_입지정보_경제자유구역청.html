@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-ch/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-ch/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-jp/style.css">
+	<link rel="stylesheet" href="../../css/ik-jp-new/style_20220216.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-ch/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>解散 &lt; 解散及び清算 &lt; 経営・生活 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(4, 7, 1)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb10.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>経済自由区域庁</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>有望産業・立地</li>
+						<li>立地情報</li>
+						<li>経済自由区域庁</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="section">
+							<h4 class="sub-tit01">経済自由区域庁</h4>
+							<div>
+								<p>
+									<span class="fwr bold">ビジネスの成功の秘訣　それは</span>
+									<span class="fwr color-blue">大韓民国 経済自由区域</span>
+								</p>
+								<p class="normal-mt">
+									世界の資本と情報が集中する国際的なビジネスの中心地、グローバル企業に <span class="bold underline">最適な経営環境、大韓民国経済自由区域です。</span>
+								</p>
+								<p class="normal-mt">
+									韓国の経済自由区域(Korean Free Economic Zones :
+									KFEZ)は外国人投資企業の経営環境と生活環境を改善し、各種の規制緩和を通じて企業の経済活動の自主性と投資誘因を最大限保証し、外国人投資を積極的に誘致するための特別経済区域を意味し、2003年の仁川からはじまり、釜山ㆍ鎮海、光陽湾圏、京畿、大邱ㆍ慶北、忠北、東海岸圏、光州、蔚山の計9ヵ所が造成・運営されています。
+								</p>
+							</div>
+							<div class="search-area normal-mt2">
+								<div class="form-area m-version">
+									<div class="in">
+										<span class="select-type3 mr5">
+											<select name="" id="local_choice" title="地域選択">
+												<option value="map_00">仁川</option>
+												<option value="map_01">京畿</option>
+												<option value="map_02">東海岸</option>
+												<option value="map_03">忠北</option>
+												<option value="map_04">光州</option>
+												<option value="map_05">光陽湾</option>
+												<option value="map_06">大邱ㆍ慶北</option>
+												<option value="map_17">蔚山</option>
+												<option value="map_07">釜山鎮海</option>
+											</select>
+										</span>
+										<button type="button" class="btn-default-s" onclick="localMapTrans();">検索</button>
+									</div>
+								</div>
+								<div class="sel-local-box fix_local">
+									<div class="l">地域選択</div>
+									<div class="r">
+										<ul>
+											<li><button type="button" class="btn-default-s active">仁川</button></li>
+											<li><button type="button" class="btn-default-s">京畿</button></li>
+											<li><button type="button" class="btn-default-s">東海岸</button></li>
+											<li><button type="button" class="btn-default-s">忠北</button></li>
+											<li><button type="button" class="btn-default-s">光州</button></li>
+											<li><button type="button" class="btn-default-s">光陽湾</button></li>
+											<li><button type="button" class="btn-default-s">大邱ㆍ慶北</button></li>
+											<li><button type="button" class="btn-default-s">蔚山</button></li>
+											<li><button type="button" class="btn-default-s">釜山鎮海</button></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="map-area-box eco_map">
+								<div class="map-l">
+									<img src="../../images/ik-jp/new_20220216/img_eco_map_incheon.gif" alt="仁川" class="active">
+									<img src="../../images/ik-jp/new_20220216/img_eco_map_gyeonggi.gif" alt="京畿">
+									<img src="../../images/ik-jp/new_20220216/img_map_eastsea.gif" alt="東海岸">
+									<img src="../../images/ik-jp/new_20220216/img_eco_map_n_chungcheong.gif" alt="忠北">
+									<img src="../../images/ik-jp/new_20220216/img_deco_map_gwangju.gif" alt="光州">
+									<img src="../../images/ik-jp/new_20220216/img_deco_map_gwangyang.gif" alt="光陽湾">
+									<img src="../../images/ik-jp/new_20220216/img_deco_map_daegu.gif" alt="大邱ㆍ慶北">
+									<img src="../../images/ik-jp/new_20220216/img_deco_map_ulsan.gif" alt="蔚山">
+									<img src="../../images/ik-jp/new_20220216/img_deco_map_busan.gif" alt="釜山鎮海">
+								</div>
+
+								<div class="map-r">
+
+									<!-- 인천 -->
+									<div class="local_info active">
+										<img src="../../images/ik-jp/new_20220216/img_logo_ifez.png" alt="仁川経済自由区域(IFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												グローバルビジネス・フロンティア(Global Business Frontier)
+											</p>
+										</div>
+										<div class="normal-txt">
+											グローバルビジネスハブとして生まれ変わる仁川。12年連続ASQ(米国品質協会)1位に選定された仁川国際空港や急成長している仁川港の港湾インフラ、松島グローバルキャンパスに開校した５つの海外の大学の分校など、国際業務団地を中心に国際的水準のビジネス環境を誇ります。バイオ、物流、医療、教育、先端産業などあらゆる分野を有する仁川経済自由区域(IFEZ)です。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">仁川経済自由区域(IFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													仁川(延寿区ㆍ中区ㆍ西区)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													122.43㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2003. 10. 15
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													仁川国際空港、仁川港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													2030年(第1次03~09、 第2次10~14、 第3次15~30)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">バイオㆍヘルスケア、航空・複合物流、スマート製造(先端産業)、知識・観光サービス</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.ifez.go.kr/index" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.ifez.go.kr/ifezn/pro32" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 인천 -->
+
+									<!-- 경기 -->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_ggfez.png" alt="경기경제자유구역(GGFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												未来新産業の革新成長拠点
+											</p>
+										</div>
+										<div class="normal-txt">
+											京畿経済自由区域(GGFEZ)は、西海岸経済ベルトの中央に位置し、先端産業·物流·流通産業の平沢浦升(BIX)地区、玄徳地区、陸・海・空の無人移動体を研究・開発する始興ベゴッ地区の3地区で造成されます。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">京畿経済自由区域(GGFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													京畿(平沢)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													5.24㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2008. 07. 22
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													平沢港、唐津港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													2020(第1次08~13、第2次14~20)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">先端産業(自動車、IT、機械、化学、物流)、サービス産業(観光、流通、商業、ホテル)</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://ggfez.gg.go.kr/" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://ggfez.gg.go.kr/videos/" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 경기 -->
+
+									<!-- 동해안 -->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_efez.png" alt="東海岸圏経済自由区域(EFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												休養型観光レジャー産業、水素エネルギー産業、先端素材部品産業の北東アジア経済中心地
+											</p>
+										</div>
+										<div class="normal-txt">
+											江原道東海岸地域で外国人投資企業の経営環境と生活環境を改善し、各種の規制緩和を通じた企業の経済活動の自主性と投資誘因を最大限保証する特別経済特区です。多様な税制支援、自由な経済活動のための規制緩和、便利な生活環境、行政サービスの迅速な提供により、自由で幅広い企業活動を保証します。
+											グローバルレベルの国際複合観光都市の造成により1年中楽しめる休養型観光レジャー産業、水素エネルギー産業、先端素材部品産業が活発な北東アジア経済の中心地、東海岸圏経済自由区域(EFEZ)です。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">東海岸圏経済自由区域(EFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">위치 :</strong>
+													江原(江陵、東海)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													4.31㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2013. 07. 19
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													襄陽国際空港、東海港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													2024(第1次13~24)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">休養型観光レジャー産業、水素エネルギー産業、先端素材部品産業</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.efez.go.kr/hb/kor" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.efez.go.kr/hb/kor/pr-vod" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 동해안 -->
+
+									<!-- 충북 -->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_cbfez.png" alt="忠清北道経済自由区域(CBFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												中部圏グローバル先端産業の拠点基地
+											</p>
+										</div>
+										<div class="normal-txt">
+											中部内陸圏域に位置し、全国各地への最短のアクセスが確保できる四通八達の交通の要地、忠清北道。
+											中部圏の産業をけん引し、グローバル都市を育成するための前進基地としてバイオ産業を育成し、回転翼整備産業を連携した都心型航空交通(Urban Air
+											Mobility)産業のハブとして生まれ変わった忠北経済自由区域(CBFEZ)です。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">忠清北道経済自由区域(CBFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													忠清北道(清州)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													4.96㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2013.04.26
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													清州国際空港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													2020(第1次13~20)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">バイオ、航空製造ㆍサービス、複合物流</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.chungbuk.go.kr/eco/index.do" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.chungbuk.go.kr/eco/contents.do?key=2432" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 충북 -->
+
+									<!-- 광주 -->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_gjfez.png" alt="光州経済自由区域(GJFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												未来のためのAI融合複合新産業ハブ
+											</p>
+										</div>
+										<div class="normal-txt">
+											<p>
+												韓国唯一の「AI経済自由区域」である光州経済自由区域は、第4次産業革命の中核分野である人工知能を中心に未来型エコカー、スマートエネルギー、医用生体工学などの先端技術の融合複合を通じて韓国の革新成長の拠点として造成されています。
+											</p>
+											<p class="normal-mt">
+												AI融合複合地区、 未来型自動車地区、スマートエネルギー1、2地区で造成された光州経済自由区域は、企業の投資とビジネスの成功のための最適な環境を約束します。
+											</p>
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">光州経済自由区域(GJFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													光州(南区・北区・光山区)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													4.37㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2021.01.27
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													光州空港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													‘20~’25
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">AI自動車及びエコカー部品、スマートエネルギー関連、次世代バッテリー、医用生体工学及びヘルスケアなど</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.gjfez.go.kr/" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.gjfez.go.kr/boardList.do?boardId=BD0008&pageId=www61" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li>
+												<li><a href="https://www.gjfez.go.kr/contentsView.do?pageId=www14" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 광주 -->
+
+									<!-- 광양만-->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_gfez.gif" alt="光陽湾圏経済自由区域(GFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												北東アジアビジネスの中心地、チャンスの地!<br>
+												最高の投資地域GFEZです。
+											</p>
+										</div>
+										<div class="normal-txt">
+											貴社の成功のために完璧に準備された最適の6特化地区、17団地の開発を通じてダイナミックな国際貿易都市としての姿を整え、北東アジアの物流 · 新産業· 観光のハブとして生まれ変わろうとしています。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">光陽湾圏経済自由区域(GFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													全羅南道(麗水ㆍ順川ㆍ光陽)、慶尚南道(河東郡)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													59.6㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2003. 03. 24
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													光陽港、麗水空港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													22年(第1次03~09、第2次10~14、第3次15~22)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">
+												未来型先端素材産業、機能性化学、二次電池、港湾物流サービス、複合観光レジャー、バイオ産業
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.gfez.go.kr/kor/index.do" class="btn-default-s bg-green" title="새창으로 열림" target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.gfez.go.kr/prog/mvp/pr/sub02_01/B/list.do" class="btn-default-s bg-blue" title="새창으로 열림" target="_blank"><span>広報映像</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 광양만 -->
+
+									<!-- 대구·경북-->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_dgfez.png" alt="大邱ㆍ慶北経済自由区域(DGFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												製造業の神話を経て先端融合複合メディカル産業のビジョンまで
+											</p>
+										</div>
+										<div class="normal-txt">
+											韓国の知識基盤産業及びサービスインフラがバランスよく整った大邱・慶尚北道地域。 IT融合、先端輸送機械部品、メディカル産業を中心に事業敷地、R&D施設、商業及び居住環境を安定的に提供します。
+											韓国最大の自動車部品、IT/SW産業及び医療、鉄鋼産業など、韓国の主力産業クラスターの要であり、豊富な人的資源を誇る大邱・慶北経済自由区域(DGFEZ)です。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">대구ㆍ경북경제자유구역(DGFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													大邱、慶尚北道(慶山、栄川、浦項)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													18.46㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2008.08.13
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													大邱空港、浦項迎日湾港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													2024(第1次08~13、第2次14~24)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">
+												自動車及び機械部品、グリーンエネルギー、バイオ、医療機器、IT、SW
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.dgfez.go.kr/" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.dgfez.go.kr/page.php?mnu_uid=1543&" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li>
+												<li><a href="https://dgfez.go.kr/dgfez_vr/index.html" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 대구·경북 -->
+
+									<!-- 울산 -->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_ufez.gif" alt="蔚山経済自由区域(UFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												北東アジアエネルギーハブ、蔚山経済自由区域<br>(UFEZ : Ulsan Free Economic Zone)
+											</p>
+										</div>
+										<div class="normal-txt">
+											蔚山は一人当たりの地域総生産が韓国1位の産業都市で、自動車·造船·石油化学関連の世界的な企業が位置していることはもちろん、それをサポートする港湾·空港·鉄道などの優秀な産業インフラやUNIST(蔚山科学技術院)·エネルギー経済研究院·韓国化学研究院などの多様な研究機関も有しています。蔚山は今後も、韓国の産業発展において重要な役割を担うために、未来モビリティ·バイオ·化学新素材·水素/低炭素エネルギー産業を重点的に育成する計画であり、その中心に蔚山経済自由区域があります。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">울산경제자유구역(UFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													蔚山(南区ㆍ北区ㆍ蔚州郡)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													4.7㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2021.01.14
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													蔚山空港、蔚山港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													'20~'30
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">
+												未来モビリティ、バイオㆍ化学、新素材、水素ㆍ低炭素エネルギー、水素産業(自動車部品、燃料電池)
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.ulsan.go.kr/s/ufez/main.ulsan" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<!-- <li><a href="#;" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li> -->
+											</ul>
+										</div>
+									</div>
+									<!-- // 울산 -->
+
+									<!-- 부산진해 -->
+									<div class="local_info">
+										<img src="../../images/ik-jp/new_20220216/img_logo_bjfez.png" alt="釜山鎮海経済自由区域(BJFEZ)">
+										<div class="normal-txt normal-mt2">
+											<p class="bold">
+												世界最高の物流·ビジネスの中心
+											</p>
+										</div>
+										<div class="normal-txt">
+											コンテナ取扱量世界7位、トランシップ貨物世界2位の釜山港は、韓国の貨物取扱量の75%を担当する北東アジア最高の物流中心地です。造船·自動車·機械産業が集中するグローバル産業クラスターの中心地で、電気自動車・データセンターなどの次世代デジタル産業の中核地域が釜山·鎮海経済自由区域です。
+										</div>
+										<div class="country_info">
+											<h4 class="sub-tit02">釜山鎮海経済自由区域(BJFEZ)</h4>
+											<ul class="list01">
+												<li>
+													<strong class="bold">位置 :</strong>
+													釜山(江西区)、慶尚南道(昌原市)
+												</li>
+												<li>
+													<strong class="bold">面積 :</strong>
+													51.1㎢
+												</li>
+												<li>
+													<strong class="bold">開庁日 :</strong>
+													2004. 03. 30
+												</li>
+												<li>
+													<strong class="bold">空港ㆍ港湾 :</strong>
+													金海空港、釜山新港
+												</li>
+												<li>
+													<strong class="bold">開発完了 :</strong>
+													2023(第1次04~06、第2次07~15、第3次16~23)
+												</li>
+											</ul>
+											<h5 class="normal-tit normal-mt2">重点誘致業種(中核戦略産業)</h5>
+											<p class="txt-con-box">
+												先端部品素材製造業(自動車、海洋プラント部品、産業機械ㆍ部品など)、港湾物流、R&D、観光レジャー、バイオㆍヘルス
+											</p>
+										</div>
+										<div class="btn-area">
+											<ul class="btn_country">
+												<li><a href="https://www.bjfez.go.kr/main.web" class="btn-default-s bg-green" title="새창으로 열림"
+														target="_blank"><span>ホームページ</span></a></li>
+												<li><a href="https://www.bjfez.go.kr/whybjfez/00033.web" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>広報映像</span></a></li>
+												<li><a href="https://www.bjfez.go.kr/vr/vr/" class="btn-default-s bg-blue" title="새창으로 열림"
+														target="_blank"><span>VR</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- // 부산진해 -->
+
+								</div>
+							</div>
+							<script>
+								$('.btn-default-s').trigger('click');
+
+								// 모바일 일때 지자체 변경
+								function localMapTrans() {
+									var sel_midx = $("#local_choice option").index($("#local_choice option:selected"));
+
+									$('.map-l > img').removeClass('active').eq(sel_midx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_midx).addClass('active');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$('.sel-local-box ul>li').eq(sel_midx).find('button').addClass('active');
+								}
+
+								// pc 일때 지자체 변경
+								$('.sel-local-box ul>li>button').on('click', function () {
+									var sel_pcidx = $(this).closest('li').index();
+
+									$("#local_choice option").eq(sel_pcidx).attr('selected', 'selected');
+									$('.sel-local-box ul>li>button').removeClass('active');
+									$(this).addClass('active');
+									$('.map-l > img').removeClass('active').eq(sel_pcidx).addClass('active');
+									$('.map-r > .local_info').removeClass('active').eq(sel_pcidx).addClass('active');
+								})
+							</script>
+						</div>
+
+					</div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

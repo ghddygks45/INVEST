@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#" class="ico_home">HOME</a> <span>&gt;</span>
+				<a href="#">대메뉴</a> <span>&gt;</span>
+				<a href="#">중메뉴</a> <span>&gt;</span>
+				<strong>현재메뉴</strong>
+			</p>
+			<h2 id="tit_page">게시판 설정</h2>
+			<!-- 콘텐츠 영역 -->
+			<form action="#">
+				<div class="bbs-setting">
+					<div class="set-area set-default">
+						<table class="tb_write compress">
+							<caption>1. 기본설정</caption>
+							<colgroup>
+								<col style="width:100px">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th><label for="bbs_id"><span class="req">필수입력</span> 게시판ID</label></th>
+									<td>
+										<div class="input-group">
+											<input type="text" name="bbs_id" id="bbs_id" title="영문, 숫자만 가능" placeholder="영문, 숫자만 가능">
+											<span class="input-addon">
+												<button type="button" class="btn act" id="btnSch"><i class="fa fa-check"></i> 중복</button>
+												<button type="button" class="btn basic">자동생성</button>
+												<button type="button" class="btn basic" id="btnSchDelt"><i class="fa fa-trash-o"></i><span class="tts">삭제</span></button>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="bbs_nm"><span class="req">필수입력</span> 게시판명</label></th>
+									<td>
+										<input type="text" name="bbs_nm" id="bbs_nm" style="width:100%;">
+									</td>
+								</tr>
+								<tr>
+									<th><label for="bbs_type"><span class="req">필수입력</span> BBSTYPE</label></th>
+									<td>
+										<select name="bbs_type" id="bbs_type">
+											<option value="">선택</option>
+											<option value="1">일반</option>
+											<option value="2">포토형</option>
+											<option value="3">동영상</option>
+											<option value="4">블로그</option>
+											<option value="5">공개형민원</option>
+											<option value="6">답변형민원</option>
+										</select>
+										<label class="ml10"><input type="checkbox"> 공지 사용</label>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="skin_id"><span class="req">필수입력</span> 템플릿</label></th>
+									<td>
+										<select name="skin_id" id="skin_id">
+											<option value="">선택</option>
+											<option value="default">default</option>
+											<option value="free">free</option>
+											<option value="minwon">minwon</option>
+											<option value="movie">movie</option>
+											<option value="photo">photo</option>
+											<option value="webzine">webzine</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="cate_id1">분류1</label></th>
+									<td>
+										<div class="input-group">
+											<input type="text" name="cl1" id="cl1" style="width:160px;" readonly title="분류1">
+											<span class="input-addon">
+												<a href="#none" class="btn basic" id="btnCl1Popup"><i class="fa fa-search"></i> 코드</a>
+												<a href="#none" class="btn basic" id="btnCl1Delt"><i class="fa fa-trash-o"></i> <span class="tts">삭제</span></a>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="cate_id2">분류2</label></th>
+									<td>
+										<div class="input-group">
+											<input type="text" name="cl2" id="cl2" style="width:160px;" readonly title="분류2">
+											<span class="input-addon">
+												<a href="#none" class="btn basic" id="btnCl2Popup"><i class="fa fa-search"></i> 코드</a>
+												<a href="#none" class="btn basic" id="btnCl2Delt"><i class="fa fa-trash-o"></i><span class="tts">삭제</span></a>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="multi_iem">다중분류<br> 설정코드</label></th>
+									<td>
+										<div class="input-group">
+											<input type="text" name="multi_iem" id="multi_iem" style="width:160px;" readonly>
+											<span class="input-addon">
+												<a href="#none" class="btn basic" id="btnMultiPopup"><i class="fa fa-search"></i> 코드</a>
+												<a href="#none" class="btn basic" id="btnMultiDelt"><i class="fa fa-trash-o"></i><span class="tts">삭제</span></a>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="file_co">첨부(FILECO)</label></th>
+									<td>
+										<select id="file_co" name="file_co" style="min-width:85px; width:85px;">
+											<option selected="selected" value="0">미사용</option>
+											<option value="1">1개</option>
+											<option value="2">2개</option>
+											<option value="3">3개</option>
+											<option value="4">4개</option>
+											<option value="5">5개</option>
+											<option value="6">6개</option>
+											<option value="7">7개</option>
+											<option value="8">8개</option>
+											<option value="9">9개</option>
+											<option value="10">10개</option>
+										</select>
+										<input type="text" name="flpth" id="flpth" style="width:calc(100% - 89px);" title="저장경로 (미입력시 게시판ID)" placeholder="저장경로 (미입력시 게시판ID)">
+									</td>
+								</tr>
+								<tr>
+									<th><label for="comment_at"> 댓글 사용</label></th>
+									<td>
+										<label class="form-switch"><input type="checkbox" id="comment_at" value="Y"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label>
+										<label class="ml10"><input type="checkbox" value="Y"> 목록에 댓글 수 노출</label>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="list_co">목록 개수</label></th>
+									<td><input type="text" value="10" name="list_co" id="list_co" style="width:160px;"></td>
+								</tr>
+								<tr>
+									<th><label for="new_usgpd">새글표시</label></th>
+									<td><input type="text" value="1" name="new_usgpd" id="new_usgpd" style="width:160px;"> 일</td>
+								</tr>
+								<tr>
+									<th><label for="sj_lt">제목글자수</label></th>
+									<td><input type="text" value="0" name="sj_lt" id="sj_lt" style="width:160px;"></td>
+								</tr>
+								<tr>
+									<th><label for="top_wrd">최상단<br> 안내문</label></th>
+									<td><textarea name="top_wrd" id="top_wrd" cols="80" rows="3" style="height:74px;"></textarea></td>
+								</tr>
+								<tr>
+									<th><label for="notice_dtls">상단<br> 공지문</label></th>
+									<td><textarea name="notice_dtls" id="notice_dtls" cols="80" rows="3" style="height:74px;"></textarea></td>
+								</tr>
+								<tr>
+									<th><label for="bottom_wrd">하단<br> 안내문</label></th>
+									<td><textarea name="bottom_wrd" id="bottom_wrd" cols="80" rows="3" style="height:74px;"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="set-area set-detail">
+						<table class="tb_data compress">
+							<caption>2. 목록 관련 부가설정</caption>
+							<colgroup>
+								<col style="width:17%">
+								<col style="width:22%">
+								<col span="2" class="col-view">
+								<col span="2">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">항목</th>
+									<th scope="col">공통</th>
+									<th scope="colgroup" colspan="2" class="col-view">입력/상세</th>
+									<th scope="colgroup" colspan="2">목록</th>
+								</tr>
+								<tr>
+									<th scope="col">항목명 변경</th>
+									<th scope="col" class="col-view">필수여부</th>
+									<th scope="col" class="col-view">사용여부</th>
+									<th scope="col">노출여부</th>
+									<th scope="col">너비
+										<span class="tooltip-area tooltip-up">
+											<a class="fa fa-question-circle"><span class="tts">?</span></a>
+											<span class="tooltip-cont">게시판 목록에서 노출되는 각 항목의 너비를 픽셀(px) 또는 비율(%)로 지정합니다.<br> 예) 50px, 20%</span>
+										</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><label for="">번호</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">제목</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox" checked disabled><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox" checked disabled><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox" checked disabled><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">내용</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox" checked disabled><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox" checked disabled><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">분류1</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">분류2</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="">다중항목</label>
+										<span class="tooltip-area">
+											<a class="fa fa-question-circle"><span class="tts">?</span></a>
+											<span class="tooltip-cont">카테고리를 중복하여 선택하는 옵션으로, 기본설정의 다중분류 설정코드에 지정된 항목이 체크박스로 노출됩니다.</span>
+										</span>
+									</th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">부서명</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">작성기관</label>
+									</th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">접수기간</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">엠바고</label>
+										<span class="tooltip-area">
+											<a class="fa fa-question-circle"><span class="tts">?</span></a>
+											<span class="tooltip-cont">게시물 게시 예약 기능으로, 날짜 및 시간을 지정하고 글을 등록해두면 지정한 시간에 사용자 홈페이지에 노출됩니다.</span>
+										</span>
+									</th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">요약</label>
+										<span class="tooltip-area">
+											<a class="fa fa-question-circle"><span class="tts">?</span></a>
+											<span class="tooltip-cont">부제목이나 게시물 내용 요약 문구를 입력하여 목록에 노출하는 용도로 활용합니다.</span>
+										</span>
+									</th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">등록자</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">등록일시</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">조회수</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">첨부</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">상태</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row">썸네일</th>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td>-</td>
+								</tr>
+								<!--<tr>
+									<th scope="row">코멘트 수</th>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row">답글 수</th>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+
+					<div class="btn_area btn_area1">
+						<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 생성</button>
+						<a href="#" class="btn btn_lg basic"><i class="fa fa-list-ul"></i> 목록</a>
+					</div>
+
+					<div class="set-area set-etc">
+						<table class="tb_data compress">
+							<caption>3. 입력/상세 관련 부가설정</caption>
+							<colgroup>
+								<col style="width:27%">
+								<col style="width:32%">
+								<col span="2" class="col-view">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">항목</th>
+									<th scope="col">공통</th>
+									<th scope="colgroup" colspan="2" class="col-view">입력/상세</th>
+								</tr>
+								<tr>
+									<th scope="col">항목명 변경</th>
+									<th scope="col" class="col-view">필수여부</th>
+									<th scope="col" class="col-view">사용여부</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><label for="">이메일</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">연락처</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">FAX</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">URL</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">패스워드</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row">휴대폰</th>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row">주소</th>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row">공개여부</th>
+									<td>-</td>
+									<td>-</td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">수정일시</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">이미지</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">동영상</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">담당부서</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">담당자</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">담당연락처</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">담당이메일</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="btn_area btn_area2">
+						<button type="submit" class="btn btn_lg act"><i class="fa fa-save"></i> 생성</button>
+						<a href="#" class="btn btn_lg basic"><i class="fa fa-list-ul"></i> 목록</a>
+					</div>
+
+					<div class="set-area set-add">
+						<table class="tb_data compress">
+							<caption>4. 여분필드 설정</caption>
+							<colgroup>
+								<col style="width:11%">
+								<col style="width:22%">
+								<col span="3" class="col-view">
+								<col span="2">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">항목</th>
+									<th scope="col">공통</th>
+									<th scope="colgroup" colspan="3" class="col-view">입력/상세</th>
+									<th scope="colgroup" colspan="2">목록</th>
+								</tr>
+								<tr>
+									<th scope="col">항목명 변경</th>
+									<th scope="col" class="col-view">필수여부</th>
+									<th scope="col" class="col-view">사용여부</th>
+									<th scope="col" class="col-view">타입
+										<span class="tooltip-area tooltip-up">
+											<a class="fa fa-question-circle"><span class="tts">?</span></a>
+											<span class="tooltip-cont">입력필드의 타입을 변경합니다.<br> I : input / T : textarea</span>
+										</span>
+									</th>
+									<th scope="col">노출여부</th>
+									<th scope="col">너비
+										<span class="tooltip-area tooltip-up">
+											<a class="fa fa-question-circle"><span class="tts">?</span></a>
+											<span class="tooltip-cont">게시판 목록에서 노출되는 각 항목의 너비를 픽셀(px) 또는 비율(%)로 지정합니다.<br> 예) 50px, 20%</span>
+										</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><label for="">기타1</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타2</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타3</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타4</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타5</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타6</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타7</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">T</span><span class="no">I</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="">기타8</label></th>
+									<td><input type="text" style="width:100%;"></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><label class="form-switch"><input type="checkbox"><span class="btn-switch"><span class="yes">Y</span><span class="no">N</span></span></label></td>
+									<td><input type="text" title="너비" style="width:100%;"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</form>
+
+			<!-- // 콘텐츠 영역 -->
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

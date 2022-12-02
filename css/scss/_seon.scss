@@ -1,0 +1,413 @@
+.country_info {
+	margin-top: 20px;
+	padding: 15px;
+	background: #edf4fa;
+}
+
+.txt-con-box {
+	margin-top: 5px;
+	padding: 12px 14px;
+	background: #fff;
+}
+
+.btn_country {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: -5px;
+
+	>li {
+		width: calc(50% - 3px);
+		margin-bottom: 5px;
+
+		&:nth-child(2n) {
+			margin-left: 5px;
+		}
+	}
+
+	a {
+		display: block;
+		text-align: center;
+	}
+}
+
+.search-head.new-type {
+	.detail-box {
+		.detail-tit {
+			width: 93px;
+		}
+
+		.detail-cont {
+			width: calc(100% - 93px);
+
+			select {
+				width: auto;
+				padding-right: 35px;
+			}
+		}
+	}
+}
+
+.imp-txt {
+	margin-bottom: 10px;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+.invest-company {
+	text-align: center;
+
+	.inv-list {
+		margin: 0 5px;
+		border: solid 1px #d6d6d6;
+
+		.pic {
+			position: relative;
+			height: 120px;
+			text-align: center;
+			line-height: 87px;
+
+			>img {
+				height: auto;
+				vertical-align: middle;
+				display: inline-block;
+				width: auto;
+				max-width: 100%;
+			}
+
+			&.geistkorea {
+				background-size: auto;
+			}
+
+			&.samsung {
+				background-size: auto;
+			}
+
+			&.marketkurly {
+				background-size: auto;
+			}
+		}
+
+		.cont {
+			display: block;
+			background: #f6f6f6;
+			padding: 10px 15px 15px 15px;
+			height: 195px;
+
+			.tit {
+				display: block;
+				margin-bottom: 10px;
+				color: #333;
+				font-size: 15px;
+				font-weight: 400;
+
+				>div {
+					font-size: 13px;
+				}
+			}
+
+			.list01 {
+				>li {
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+			}
+
+			.btn-area {
+				margin-top: 11px
+			}
+		}
+	}
+}
+
+.check-btn {
+	overflow: hidden;
+	margin-bottom: -5px;
+
+	>.form-box {
+		width: auto;
+		margin-bottom: 5px;
+
+		>label {
+			padding: 0 20px;
+		}
+	}
+}
+
+.chapter-tit {
+	height: 30px;
+	line-height: 30px;
+	color: #1d1d1d;
+	font-family: Noto-bold;
+	font-size: 20px
+}
+
+.chapter-tit .num {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	color: #fff;
+	font-family: "Arial", Noto;
+	text-align: center;
+	font-size: 14px;
+	background-color: #226fb2;
+	vertical-align: top;
+	margin-right: 10px
+}
+
+.chapter-tit:first-of-type {
+	margin-top: 30px
+}
+
+.chapter-tit~.chapter-tit {
+	margin-top: 99px
+}
+
+.article-name {
+	font-size: 16px;
+	color: #226fb2;
+	margin: 25px 0 5px 0
+}
+
+.article-wrap {
+	line-height: 20px;
+	word-break: break-word
+}
+
+.article-wrap .hyphen-list>li {
+	padding-left: 10px;
+	position: relative
+}
+
+.article-wrap .hyphen-list>li:before {
+	content: '';
+	width: 5px;
+	height: 1px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	background-color: #666;
+	display: block
+}
+
+.article-wrap .blue {
+	color: #226fb2;
+	vertical-align: top
+}
+
+.article-wrap p+table {
+	margin-top: 9px
+}
+
+.number-list>li {
+	padding-left: 16px;
+	position: relative
+}
+
+.number-list>li p {
+	margin-top: 4px
+}
+
+.number-list>li p:last-of-type {
+	margin-bottom: 9px
+}
+
+.number-list>li .tbl-wrap {
+	margin: 5px 0 5px -16px
+}
+
+.number-list>li .img-term-info {
+	margin: 30px 0 5px -16px
+}
+
+.number-list>li .num {
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.number-list>li dt {
+	color: #1d1d1d
+}
+
+.number-list>li dd {
+	margin-bottom: 8px
+}
+
+.number-list>li dd .number-list {
+	margin: 0
+}
+
+.number-list .number-list {
+	margin: 8px 0
+}
+
+@media all and (min-width: 1217px) {
+	:lang(ko) .fix_local {
+		button {
+			width: 85px;
+			padding: 0 !important;
+		}
+	}
+
+	:lang(en) .eco_map {
+		.map-r {
+			min-height: 941px;
+		}
+	}
+
+	:lang(zh) .detail-tit {
+		padding-right: 10px;
+	}
+
+	:lang(ja) .detail-tit {
+		padding-right: 10px;
+	}
+
+	.eco_map {
+		.map-r {
+			min-height: 804px;
+		}
+
+		.btn-area {
+			float: none !important;
+		}
+	}
+
+	.search-head.new-type {
+		.detail-box {
+			.detail-tit {
+				width: 110px;
+			}
+
+			.detail-cont {
+				width: calc(100% - 110px);
+			}
+		}
+
+		.items3 .form-box,
+		.items4 .form-box {
+			width: auto;
+
+			label {
+				padding: 0 20px;
+			}
+		}
+	}
+
+	:lang(en) .search-head.new-type {
+		.detail-box {
+			.detail-tit {
+				width: 200px;
+			}
+
+			.detail-cont {
+				width: calc(100% - 200px);
+			}
+		}
+	}
+
+	.search-body.new-type {
+		.link01 {
+			display: flex;
+			float: none;
+			width: auto;
+
+			>li {
+				float: none;
+			}
+		}
+
+		.board.list-board {
+			&+.list-board {
+				margin-left: 0;
+			}
+
+			&:nth-child(2n) {
+				margin-left: 20px;
+			}
+		}
+	}
+
+	.invest-company {
+		.inv-list {
+			.pic {
+				position: relative;
+				height: 120px;
+				text-align: center;
+				line-height: 87px;
+
+				>img {
+					height: auto;
+					vertical-align: middle;
+					display: inline-block;
+
+				}
+
+				&.geistkorea {
+					background-size: auto;
+				}
+
+				&.samsung {
+					background-size: auto;
+				}
+
+				&.marketkurly {
+					background-size: auto;
+				}
+			}
+
+			.cont {
+				padding: 15px 20px 20px 20px;
+				height: 248px;
+
+				.tit {
+					margin-bottom: 14px;
+					font-size: 17px;
+
+					>div {
+						margin-bottom: 6px;
+						font-size: 15px;
+					}
+				}
+
+				.btn-area {
+					margin-top: 16px
+				}
+			}
+		}
+	}
+
+	.form-area02 .input-date>input {
+		width: 160px;
+	}
+
+	.li-col3 {
+		>li {
+			width: 298px;
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+
+			&:nth-child(4n) {
+				margin-right: 18px;
+			}
+		}
+	}
+
+	.company-search {
+		display: flex;
+
+		>button {
+			white-space: nowrap;
+		}
+	}
+
+	.liht-nor {
+		line-height: normal !important;
+	}
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+        <article id="content">
+            <p id="page_loc">
+                <a href="#none" class="ico_home">HOME</a>
+                <span>&gt;</span>
+                <a href="#none">운영</a>
+                <span>&gt;</span> 
+                <a href="#none">IKMP</a>
+                <span>&gt;</span>
+                <strong>IKMP Inquiry</strong>
+            </p>
+    
+            <h2 id="tit_page">IKMP Inquiry</h2>
+            
+            <div class="search_area">
+                <table class="tb_search">
+                    <colgroup>
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검색</th>
+                            <td>
+                                <select name="" style="width:160px;" title="검색조건 선택">
+                                    <option value="">검색조건 선택</option>
+                                </select>
+                                <input type="text" title="검색어" placeholder="검색어를 입력해주세요" style="width:32%;">
+                            </td>
+                        </tr>            
+                    </tbody>
+                </table>
+
+                <div class="btn_area">
+                    <button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+                    <button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+                </div>
+            </div>
+
+            <div class="list_status">
+                <p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+                <div class="fr">
+                    <select class="post_num" name="pageItm" id="pageItm">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>               
+                        <option value="80">80</option>                             
+                        <option value="90">90</option>                                
+                        <option value="100">100</option>
+                    </select>
+                    <button type="button" class="btn" id="btnPageItm">적용</button>
+                </div>
+            </div>
+
+            <div class="tb-scroll-x">
+                <table class="tb_list">
+                <colgroup>
+                    <col style="width:75px">
+                    <col>
+                    <col style="width:150px">
+                    <col style="width:150px">
+                    <col style="width:150px">
+                    <col style="width:280px">
+                    <col style="width:140px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>IKMP Project Title</th>
+                        <th>Company</th>
+                        <th>Writer</th>
+                        <th>Poland</th>
+                        <th>Automobile / Machine / Parts</th>
+                        <th>답변여부</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="운영_IKMP_IKMPInquiry_상세.html">Chemical/Material : Fine Chemical Field </a></td>
+                        <td>MicroSoft, LTD</td>
+                        <td>Lee heesung</td>
+                        <td>Poland</td>
+                        <td>Automobile / Machine / Parts</td>
+                        <td><span class="color-blue bold">Not Answered</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="운영_IKMP_IKMPInquiry_상세.html">Chemical/Material : Fine Chemical Field </a></td>
+                        <td>MicroSoft, LTD</td>
+                        <td>Lee heesung</td>
+                        <td>Poland</td>
+                        <td>Automobile / Machine / Parts</td>
+                        <td><span class="color-red bold">Answered</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    
+            <div class="pagination">
+                <strong>1</strong>
+                <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+                <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a> 
+            </div>
+        </article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

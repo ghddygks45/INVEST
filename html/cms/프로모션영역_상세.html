@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#" class="ico_home">HOME</a>						
+				<span>&gt;</span> 
+				<a href="">메인관리</a>
+				<span>&gt;</span> 
+				<strong>프로모션 영역</strong>
+			</p>
+			<h2 id="tit_page">프로모션 영역</h2>
+			
+			<script type="text/javascript">
+			//<![CDATA[
+				$(document).on('click','#btnSave',function(){
+					var value = new MiyaValidator(document.forms["frm"]);
+					$('#site_id').removeAttr('disabled');	//사이트구분 활성화
+					value.add("bgnde", {required: true},"시작일")								//시작일
+					value.add("endde", {required: true},"종료일")								//종료일
+					value.add("site_id", {required: true, minselect: 1,maxselect:1})		//사이트구분
+					value.add("sj", {required: true});										//제목
+					value.add("orginl_file_nm", {required: true, option: "imageonly"});		//이미지첨부
+					value.add("url", {required: true});										//링크URL
+					value.add("dc", {required: true},"이미지설명");								//내용	
+						
+					var result = value.validate();
+					if (!result) {
+						//alert(value.getErrorMessage("{message}")); //동적 메세지
+						alert(value.getErrorMessage()); //디폴트 label 메세지
+						value.getErrorElement().focus();
+						return false;
+					}else {
+						var msg = $('input[name=type]').val() =="save"? '저장':'수정';
+						if(confirm(msg+" 하시겠습니까?") && $('input[name=type]').val() !=''){
+							$('form[name=frm]').submit();
+						}
+						return false;
+					}
+					return false; 
+						
+				//파일찾아보기
+				}).on('click','#btnFileSearch',function(){
+					
+					console.log($('#orginl_file_seq').val())
+					var upload_ext = "gif,bmp,jpg,png,jpeg";
+					var allow_ext = true;
+					
+					//사이즈 조정은 마음대로
+					var width = 500;	//가로
+					var height = 270;	//높이
+					
+					//inseqcms 팝업창
+					inseqcms_popup_centr("/cms/file/select.do?tmpr_seq=tmpr_seq&file_seq=file_seq&file_nm=orginl_file_nm&allow_ext="+allow_ext+"&deny_file="+upload_ext,"winfile",width,height,"no");
+				
+				//파일삭제
+				}).on('click','#btnFileDelt',function(){
+					console.log($('input[name=tmpr_seq]').val());
+					console.log($('input[name=file_seq]').val());
+					console.log($('input[name=orginl_file_nm]').val());
+				
+				}).ready(function(){
+					//게시순위 설정
+					ordrList();
+				});
+				
+				//게시순서
+				function ordrList(){
+					var cnt      = "6";	//model 리턴정보값 셋팅
+					var showOrdr = "6";				//model 리턴정보값 셋팅
+					var obj      = $('select[name="ordr"]');					//selectBox name 정보
+					//console.log("showOrdr :: " + showOrdr);
+					obj.children().remove();
+					//$("#ordr").append("<option value='0'>선택</option>");
+					for(var i=0; i<cnt; i++) {
+						if((i+1) == showOrdr){
+							$("#ordr").append("<option value='"+(i+1)+"' selected='selected'>"+(i+1)+"</option>");
+						}else{
+							$("#ordr").append("<option value='"+(i+1)+"'>"+(i+1)+"</option>");
+						}
+					}
+				}
+			
+			//]]>
+			</script>
+			<form name="frm" action="./updt.do" method="post">
+			<input type="hidden" name="type" id="type" value="updt">						<!-- 타입여부 체크 (저장 save, 수정 updt -->
+			<input type="hidden" name="notice_type" id="notice_type" value="Z">				<!-- 공지타입 체크 (Z:팝업존, P:팝업, B:배너존, F:패밀리, M:미니팝업존, L:미니배너존) -->
+			<input type="hidden" name="seq" id="seq" value="54">					<!-- 일련 -->
+			<input type="hidden" name="site_itm" id="site_itm" value="0">	<!-- 사이트아이템 -->
+			
+				<table class="tb_write">
+					<caption>팝업존 목록</caption>
+					<colgroup>
+						<col style="width:140px">
+						<col>
+						<col style="width:140px">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><span class="req">필수입력</span> 게시여부</th>
+							<td>
+								<input type="radio" value="Y" name="ntce_at" id="ntce_at1" checked="checked">
+								<label for="ntce_at1">게시</label>
+								<input type="radio" value="N" name="ntce_at" id="ntce_at2">
+								<label for="ntce_at2">미게시</label>
+							</td>
+							<th><span class="req">필수입력</span> 새창여부</th>
+							<td>
+								<input type="radio" value="Y" name="window_open_at" id="window_open_at1" checked="checked">
+								<label for="window_open_at1">새창</label>
+								<input type="radio" value="N" name="window_open_at" id="window_open_at2">
+								<label for="window_open_at2">현재창</label>
+							</td>			
+						</tr>
+						<tr>
+							<th><label for="bgnde"><span class="req">필수입력</span> 시작/종료일</label></th>
+							<td>
+								<input type="text" name="bgnde" id="bgnde" style="width:100px;" readonly="readonly" value="2019-02-19">
+								<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+								<input type="text" name="endde" id="endde" style="width:100px;" readonly="readonly" value="2019-02-20" title="종료일">
+								<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+							</td>
+							<th><label for="ordr">게시순위</label></th>
+							<td><input type="hidden" name="last_ordr" value="6"> <!-- 현재 게시순위 -->
+								<select name="ordr" id="ordr" class="class">
+									<!-- <option value="0">선택</option> -->
+								<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6" selected="selected">6</option></select>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="site_id"><span class="req">필수입력</span> 사이트구분</label></th>
+							<td colspan="3">
+								<select name="site_id" id="site_id" disabled="disabled" title="사이트구분">
+									<option value="tmplat-demos">I.N.CMS 사용자데모</option>
+									<option value="tmplat-a" selected="">인시퀀스</option>
+									<option value="eng">런시퀀스</option>
+									<option value="tmplat-b">도와줘요</option>
+									<option value="danwon">테스트</option>
+								</select>
+								<span class="colr_point"><i class="fa fa-warning color-warning"></i> 사이트구분은 변경하실 수 없는 항목입니다.</span>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="sj"><span class="req">필수입력</span> 제목</label></th>
+							<td colspan="3"><input type="text" name="sj" id="sj" maxlength="100" style="width:100%;" value="dasdasd312312321dadasd"></td>
+						</tr>
+						<tr>
+							<th><label for="orginl_file_nm"><span class="req">필수입력</span> 이미지첨부</label></th>
+							<td colspan="3">
+								<span class="attach">
+									<input type="hidden" name="tmpr_seq" id="tmpr_seq">												<!-- tmpr 일련(넘어온값)    -->
+									<input type="hidden" name="file_seq" id="file_seq">												<!-- tmpr 파일 일련(넘어온값) -->
+									<input type="hidden" name="file_type" id="file_type" value="U">									<!-- 파일타입 저장 값(Notice) -->
+									<input type="hidden" name="orginl_seq" id="orginl_seq" value="47">					<!-- 원본 일련(공지첨부파일)    -->
+									<input type="hidden" name="orginl_file_seq" id="orginl_file_seq" value="54">	<!-- 원본 파일일련(공지첨부파일)  -->
+									<input type="text" name="orginl_file_nm" id="orginl_file_nm" style="width:40%;" value="Desert.jpg">
+								</span>
+				
+								<a href="#none" class="btn" id="btnFileSearch"><i class="fa fa-search"></i> 찾아보기</a>
+								
+								<a href="#layer_sample" class="btn" onclick="openLayer(this);">이미지 보기 <i class="fa fa-external-link"></i></a>
+								
+								<span class="colr_point"><i class="fa fa-warning color-warning"></i> (GIF, JPG, JPEG, PNG만 등록)</span>
+								
+								<!-- // 레이어 이미지 -->
+								<div id="layer_sample" class="layer_popup modal"><!-- // 레이어 크기 변경시 사이즈 지정 style="width:600px; height:500px;" -->
+									<div class="bg"></div>
+									<h2 class="tit_layer">[팝업존] dasdasd312312321dadasd</h2>
+									<div class="layer_cont">
+										<p><img src="/upload/global/20190219033518969.jpg" alt="dsadsad"></p>
+									</div>
+									<button type="button" class="btn_layer_close" onclick="closeLayer(this);">레이어닫기</button>
+								</div>
+								
+								<!-- // 레이어 이미지 -->
+							</td>
+						</tr>
+						<tr>
+							<th><label for="url"><span class="req">필수입력</span> 링크URL</label></th>
+							<td colspan="3"><input type="text" name="url" id="url" maxlength="250" style="width:100%;" value="dasdas"></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h3 class="tit1"><label for="dc">이미지 설명 (한글 255자 이내로 작성)</label></h3>
+				<div class="bbs_article_write">
+					<textarea name="dc" id="dc" rows="5" placeholder="* 웹접근성 지침에 맞춰 팝업이미지 설명을 입력해주세요.">dsadsad</textarea>
+				</div>
+				
+				<div class="btn_area">
+					<button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-edit"></i> 수정</button>
+					<a href="./list.do" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+				</div>
+			</form>	
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

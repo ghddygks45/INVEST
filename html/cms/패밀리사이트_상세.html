@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">시스템</a>
+				<span>&gt;</span> 
+				<a href="/system/notice/index.do">알림관리</a>
+				<span>&gt;</span> 
+				<strong>패밀리 사이트</strong>
+			</p>
+	
+			<h2 id="tit_page">패밀리 사이트</h2>
+	
+			<script type="text/javascript">
+			//<![CDATA[
+				$(document).on('click','#btnSave',function(){
+					var value = new MiyaValidator(document.forms["frm"]);
+					$('#site_itm').removeAttr('disabled');	//사이트구분 활성화
+					value.add("site_itm", {required: true, minselect: 1,maxselect:1})		//사이트구분
+					value.add("sj", {required: true});										//제목
+					value.add("url", {required: true});										//링크URL
+				
+					
+					var result = value.validate();
+					if (!result) {
+						//alert(value.getErrorMessage("{message}")); //동적 메세지
+						alert(value.getErrorMessage()); //디폴트 label 메세지
+						value.getErrorElement().focus();
+						return false;
+					}else {
+						var msg = $('input[name=type]').val() =="save"? '저장':'수정';
+						if(confirm(msg+" 하시겠습니까?") && $('input[name=type]').val() !=''){
+							$('form[name=frm]').submit();
+						}
+						return false;
+					}
+					return false; 
+				
+				//파일찾아보기
+				}).on('click','#btnFileSearch',function(){
+					
+					console.log($('#orginl_file_seq').val())
+					var upload_ext = "gif,jpg";
+					var allow_ext = true;
+					
+					//사이즈 조정은 마음대로
+					var width = 500;	//가로
+					var height = 270;	//높이
+					
+					//inseqcms 팝업창
+					inseqcms_popup_centr("/cms/file/select.do?tmpr_seq=tmpr_seq&file_seq=file_seq&file_nm=orginl_file_nm&allow_ext="+allow_ext+"&deny_file="+upload_ext,"winfile",width,height,"no");
+				
+				//파일삭제
+				}).on('click','#btnFileDelt',function(){
+					console.log($('input[name=tmpr_seq]').val());
+					console.log($('input[name=file_seq]').val());
+					console.log($('input[name=orginl_file_nm]').val());
+				
+				}).ready(function(){
+					//게시순위 설정
+					ordrList();
+				});
+				
+				//게시순서
+				function ordrList(){
+					var cnt      = "1";	//model 리턴정보값 셋팅
+					var showOrdr = "1";				//model 리턴정보값 셋팅
+					var obj      = $('select[name="ordr"]');					//selectBox name 정보
+					//console.log("showOrdr :: " + showOrdr);
+					obj.children().remove();
+					//$("#ordr").append("<option value='0'>선택</option>");
+					for(var i=0; i<cnt; i++) {
+						if((i+1) == showOrdr){
+							$("#ordr").append("<option value='"+(i+1)+"' selected='selected'>"+(i+1)+"</option>");
+						}else{
+							$("#ordr").append("<option value='"+(i+1)+"'>"+(i+1)+"</option>");
+						}
+					}
+				}
+			
+			//]]>
+			</script>
+
+			<form name="frm" action="./save.do" method="post">
+				<input type="hidden" name="type" id="type" value="updt">				<!-- 타입여부 체크 (저장 save, 수정 updt -->
+				<input type="hidden" name="notice_type" id="notice_type" value="F">		<!-- 공지타입 체크 (Z:팝업존, P:팝업, B:배너, F:패밀리사이트) -->
+				<input type="hidden" name="seq" id="seq" value="60">			<!-- 일련 -->
+				<table class="tb_write">
+					<caption>패밀리 목록</caption>
+					<colgroup>
+						<col style="width:120px">
+						<col>
+						<col style="width:120px">
+						<col>
+					</colgroup>
+					<tbody>
+					<tr>
+						<th><span class="req">필수입력</span> 게시여부</th>
+						<td>
+							<input type="radio" value="Y" name="ntce_at" id="ntce_at1" checked="checked">
+							<label for="ntce_at1">게시</label>
+							<input type="radio" value="N" name="ntce_at" id="ntce_at2" >
+							<label for="ntce_at2">미게시</label>
+						</td>
+						<th><span class="req">필수입력</span> 새창여부</th>
+						<td>
+							<input type="radio" value="Y" name="window_open_at" id="window_open_at1" checked="checked">
+							<label for="window_open_at1">새창</label>
+							<input type="radio" value="N" name="window_open_at" id="window_open_at" >
+							<label for="window_open_at">현재창</label>
+						</td>			
+					</tr>
+					<tr>
+						<th><label for="select_site_itm"><span class="req">필수입력</span> 분류</label></th>
+						<td>
+							<select name="site_itm" id="site_itm" disabled="disabled" title="분류">
+								<option value="1" >산하기관</option>
+								<option value="2" >정부기관</option>
+								<option value="3" selected>관련기관</option>
+							</select>
+							<span class="colr_point"><i class="fa fa-warning color-warning"></i> 코드관리에서 추가 가능합니다</span>
+						</td>
+						<th><label for="ordr">게시순위</label></th>
+						<td><input type="hidden" name="last_ordr" value="1"/> <!-- 현재 게시순위 -->
+							<select name="ordr" id="ordr" class="class">
+								<!-- <option value="0">선택</option> -->
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="sj"><span class="req">필수입력</span> 관련기관명</label></th>
+						<td colspan="3"><input type="text" name="sj" id="sj" maxlength="100" style="width:100%;" value="농업기술센터"></td>
+					</tr>
+					<tr>
+						<th><label for="url"><span class="req">필수입력</span> 링크URL</label></th>
+						<td colspan="3"><input type="text" name="url" id="url" maxlength="250" style="width:100%;" value="https://nongeop.ansan.go.kr/"></td>
+					</tr>
+					</tbody>
+				</table>
+				
+				<div class="btn_area">
+					<button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-edit"></i> 수정</button>
+					<a href="./list.do" class="btn btn_lg"><i class="fa fa-list-ul"></i> 목록</a>
+				</div>
+			</form>
+			
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

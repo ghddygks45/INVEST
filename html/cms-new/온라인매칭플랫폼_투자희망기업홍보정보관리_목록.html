@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style_20220216.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">운영</a>
+				<span>&gt;</span>
+				<a href="#none">IKMP</a>
+				<span>&gt;</span>
+				<strong>IKMP 사업신청내역 관리</strong>
+			</p>
+
+			<h2 id="tit_page">투자유치 희망기업 홍보정보 관리</h2>
+
+			<div class="search_area">
+				<table class="tb_search">
+					<colgroup>
+						<col style="width:10%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>날짜</th>
+							<td colspan="3">
+								<select name="" id="">
+									<option value="">검색조건 선택</option>
+								</select>
+								<input type="text" name="bgnde" id="bgnde" style="width:100px;">
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+								<input type="text" name="endde" id="endde" style="width:100px;">
+								<a href="#divCalendar" class="btn_cal"
+									onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+							</td>
+						</tr>
+						<tr>
+							<th>업종</th>
+							<td>
+								<select name="" id="">
+									<option value="">검색조건 선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>투자규모</th>
+							<td>
+								<select name="">
+									<option value="">투자규모 선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>상태</th>
+							<td>
+								<select name="">
+									<option value="">전체</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>공개여부</th>
+							<td>
+								<input type="radio" name="check" id="check1" checked>
+								<label for="check1">전체</label>
+								<input type="radio" name="check" id="check1">
+								<label for="check1">공개</label>
+								<input type="radio" name="check" id="check1">
+								<label for="check1">비공개</label>
+							</td>
+						</tr>
+						<tr>
+							<th>검색</th>
+							<td>
+								<select id="subject">
+									<option>검색조건 선택</option>
+								</select>
+								<input type="text" title="검색어" style="width: 300px;" placeholder="검색어를 입력해주세요">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn_area">
+					<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+				</div>
+			</div>
+
+			<div class="list_status">
+				<p class="status">총 <strong class="colr_point">8</strong> 건 (1/1 page)</p>
+				<div class="fr">
+					<select class="post_num" name="pageItm" id="pageItm">
+						<option value="10">10</option>
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+						<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80">80</option>
+						<option value="90">90</option>
+						<option value="100">100</option>
+					</select>
+					<button type="button" class="btn" id="btnPageItm">적용</button>
+				</div>
+			</div>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list">
+					<colgroup>
+						<col style="width:60px">
+						<col style="width:80px">
+						<col style="width:120px">
+						<col style="width: 300px;">
+						<col style="width:120px">
+						<col style="width:120px">
+						<col style="width:120px">
+						<col style="width:120px">
+						<col style="width:100px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>기업명(영문)</th>
+							<th>업종</th>
+							<th>대표제품</th>
+							<th>담당자(영문)</th>
+							<th>최종수정일</th>
+							<th>상태</th>
+							<th>승인일</th>
+							<th>공개</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>GEISTKOREA</td>
+							<td>Pharma / Healthcare</td>
+							<td>Wireless Hand Type Drug Infusion Device</td>
+							<td>Lee hee sung</td>
+							<td>2022-02-03</td>
+							<td>승인완료</td>
+							<td>2022-02-03</td>
+							<td><span class="bold color-blue">공개</span></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>GEISTKOREA</td>
+							<td>Pharma / Healthcare</td>
+							<td>Wireless Hand Type Drug Infusion Device</td>
+							<td>Lee hee sung</td>
+							<td>2022-02-03</td>
+							<td>승인완료</td>
+							<td>2022-02-03</td>
+							<td><span class="bold color-red">비공개</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="pagination">
+				<strong>1</strong>
+				<a
+					href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">2</a>
+				<a
+					href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;searchCl=&amp;pageItm=10">3</a>
+			</div>
+
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

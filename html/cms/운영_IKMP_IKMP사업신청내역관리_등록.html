@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Invest Korea</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">	
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all" />
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+</head>
+
+<body>
+	<div id="popup">
+		<div id="header">
+			<h1>회차정보 관리</h1>
+		</div>
+		<div id="content">
+			<!-- 콘텐츠 영역 -->
+			<table class="tb_write">
+				<colgroup>
+					<col style="width:130px">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>게시여부</th>
+						<td>
+							<input type="radio" name="radio1" id="radio1-1" checked=""><label for="radio1-1">게시</label>
+							<input type="radio" name="radio1" id="radio1-2" ><label for="radio1-2">미게시</label>
+						</td>
+					</tr>					
+					<tr>
+						<th>부서명</th>
+						<td><input type="text" style="width:100%;"></td>
+					</tr>
+					<tr>
+						<th>신청기간</th>
+						<td>
+							<input type="text" name="bgnde" id="bgnde" style="width:100px;" readonly="readonly">
+							<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('bgnde')); return false;">달력</a> ~
+							<input type="text" name="endde" id="endde" style="width:100px;" readonly="readonly" title="종료일">
+							<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('endde')); return false;">달력</a>
+						</td>
+					</tr>
+					<tr>
+						<th>심사기간</th>
+						<td><input type="text" style="width:200px"></td>
+					</tr>
+					<tr>
+						<th>작성자</th>
+						<td>이순신</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn_area">
+                <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 등록</button>
+                <button type="button" class="btn btn_lg act"><i class="fa fa-save"></i> 수정</button>
+                <button type="button" class="btn btn_lg" onclick="window.close()"><i class="fa fa-close"></i> 취소</button>
+            </div>
+			<!-- // 콘텐츠 영역 -->
+		</div>
+		<button type="button" id="btn_pop_close" onclick="window.close()">창닫기</button>
+	</div>
+</body>
+
+</html>

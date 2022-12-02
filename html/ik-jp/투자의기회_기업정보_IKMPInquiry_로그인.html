@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:image:src" content="../../images/ik-ch/pinterest.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="../../images/ik-ch/pinterest.jpg"/>
+	<link rel="stylesheet" href="../../css/ik-ch/style.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+    <script src="../../resources/plugins/canvg.min.js"></script>
+    <script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-ch/Common.js"></script>
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>IKMP Project &lt; 기업정보 &lt; 투자의 기회 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2(){
+			fn_active_menu(2,1,3)
+		}	
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. --> 
+		
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/lnb10.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>IKMP Inquiry</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. --> 
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>투자의 기회</li>
+						<li>기업정보</li>
+						<li>IKMP Inquiry</li>
+					</ul>
+
+					<div class="ctn">
+                        <h4 class="sub-tit01">非会員ログイン</h4>
+                        ログインするには氏名、メールアドレス、電話番号の登録が必要です。
+                        <div class="login lang-login">
+                            <div class="login-form">
+                                <div class="input-box">
+                                    <label for="input-name">氏名</label>
+                                    <span><input type="text" id="input-id"></span>
+                                </div>
+                                <div class="input-box">
+                                    <label for="input-mail">メールアドレス</label>
+                                    <span><input type="text" id="input-mail"></span>
+                                </div>
+                                <div class="input-box">
+                                    <label for="input-phone">電話番号</label>
+                                    <span><input type="text" id="input-phone"></span>
+                                </div>
+                                <button type="submit" class="btn-login">LOGIN</button>
+                            </div>
+                        </div>
+
+                        <div class="notice-wrap">
+                            <div class="checkbox">
+								<input type="checkbox" id="ck2" class="blind">
+								<label for="ck2">オンライン相談のための個人情報提供に同意します。</label>
+							</div>
+						</div>
+						<div class="table-btm">
+                            <div class="pc-l">
+                                個人情報の収集および利用に関するポリシー
+                            </div>
+                            <div class="pc-r m-txt-right">
+                                <button type="button" class="btn-default bg-blue" onclick="fn_open_popup(this,'privacy-popup');">GO</button>
+                            </div>
+						</div>
+						
+						<!-- 개인정보 수집 이용 안내 팝업 -->
+						<div class="layer-popup-box" data-popup="privacy-popup">
+							<div class="popup">
+								<div class="top">
+									<div class="tit">Policy on Collection and Use of Personal Information</div>
+									<button type="button" class="btn-close" onclick="fn_hide_popup('privacy-popup');"><span class="blind">닫기</span></button>
+								</div>
+								<div class="pop-content">
+                                    <div class="normal-box">
+                                        <div class="box">
+                                            <strong class="sub-tit03">1. Purpose of collection of personal information: To contact a member for responding to his/her enquiries and suggestions</strong>
+                                        </div>
+
+                                        <div class="box">
+                                            <strong class="sub-tit03">2. Personal information collected by Invest KOREA: Name (Korean or English), telephone number, e-mail address</strong>
+                                        </div>
+
+                                        <div class="box">
+                                            <strong class="sub-tit03">3. Period of maintaining and using personal information: Until the day a member deletes his/her account.</strong>
+                                        </div>
+
+                                        <div class="box">
+                                            <strong class="sub-tit03">4. Individual’s right to disagree to the provision of personal informa- tion and disadvantages that may be given upon his/her refusal: An individual reserves the right to disagree to the Policy on Collection and Use of Personal Information. However, the individual cannot use the online consulting service unless he/she agrees to the policy.</strong>
+										</div>
+										<div class="box">
+                                            <strong class="sub-tit03">5. Additional Information: Please do not include any personal information including resident registration number, telephone number when posting any content on Online Consulting.</strong>
+                                        </div>
+                                    </div>
+									<div class="checkbox btn-area">
+										<input type="checkbox" id="privacy" class="blind">
+										<label for="privacy">I have read and agree to the following Policy on Collection and Use of Personal Information of Invest KOREA</label>
+									</div>
+                                    <div class="btn-area">
+                                        <div class="r">
+                                            <button type="button" class="btn-default bg-blue" onclick="fn_hide_popup('privacy-popup');">Submit</button>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+						</div>
+						<!-- // 개인정보 수집 이용 안내 팝업 -->
+						
+                    </div>
+				</div>
+				<!-- //content -->
+
+				<!-- aside - 우측 관련정보 레이어 : [퍼블용 임시 include] -->
+				<div w3-include-html="include/aside.html"></div>
+				<!-- //개발 언어로 aside.html을 include 해주세요. -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+</html>

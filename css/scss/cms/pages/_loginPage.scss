@@ -1,0 +1,114 @@
+/* 로그인 */
+.layout-login {
+	min-width: auto;
+	height: 100vh;
+	background: url(#{$url-img}/bg_login.png) no-repeat center center;
+	background-size: cover;
+	overflow: auto;
+}
+
+.login-area {
+	position: absolute;
+	width: 310px;
+	left: 50%;
+	top: 50%;
+	margin: -210px 0 0 -155px;
+	padding: 40px 35px;
+	background-color: #f2f2f6;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-title {
+	font-weight: 600;
+	font-size: 20px;
+	text-align: center;
+	margin: 0 auto 1em;
+
+	img {
+		display: block;
+		max-height: 56px;
+		margin: 0 auto 1.5em;
+	}
+
+	span {
+		font-weight: 300;
+	}
+
+	.incms-logo {
+		width: calc(100% - 90px);
+		margin: 0 auto .6em;
+	}
+}
+
+.login-body {
+	position: relative;
+
+	.row {
+		margin-bottom: 10px;
+
+		input:not([type=checkbox]) {
+			width: 100%;
+			height: 40px;
+			line-height: 28px;
+		}
+
+		p {
+			margin-top: 7px;
+			font-size: 12px;
+			line-height: 1.2;
+		}
+	}
+
+	.keep {
+		margin-top: .5em;
+	}
+
+	.btn {
+		margin-top: 20px;
+		background-color: $color-primary !important;
+	}
+}
+
+/* 로그인연장 안내 레이어 */
+.cms-login-extn {
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	background: url('#{$url-img}/bg_opa80.png');
+	z-index: 2000;
+
+	.msg-updt {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		right: 0;
+		width: 400px;
+		margin: -145px 0 0 -200px;
+		padding: 50px;
+		color: #333;
+		background: #fff;
+		font-size: 18px;
+		box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+
+		.time {
+			margin-top: 5px;
+			font-weight: bold;
+			color: #777;
+			font-size: 40px;
+		}
+	}
+
+	.btn-area {
+		text-align: center;
+		margin-top: 20px;
+		display: block;
+
+		.btn+.btn {
+			margin-left: 5px;
+		}
+	}
+}

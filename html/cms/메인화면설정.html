@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../resources/plugins/zTree/css/zTreeStyle/zTreeStyle.css" />
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.core.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+	<script src="../../resources/plugins/zTree/js/jquery.ztree.exedit.js"></script>   
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+            <p id="page_loc">
+                <a href="#" class="ico_home">HOME</a>
+                <span>&gt;</span> 
+                <a href="">메인관리</a>
+                <span>&gt;</span>
+                <strong>메인화면설정</strong>
+            </p>
+    
+            <h2 id="tit_page">메인화면설정</h2>
+
+            <style>
+            .colr_point2 {
+                color: #f60;
+            }
+            .colr_point3 {
+                color: #33f;
+            }
+            </style>
+            <script type="text/javascript">
+            //<![CDATA[
+            //zTree 셋팅
+            var setting = {
+                view: {
+                    selectedMulti: false
+                },
+                data: {
+                    simpleData: {
+                        enable: true
+                    }
+                },
+                check: {
+                     enable: false
+                },
+                callback: {
+                    onClick: onClick
+                }
+            };
+            
+            function formatJSONDate(jsonDate) {
+                  var newDate = dateFormat(jsonDate, "mm/dd/yyyy");
+                  return newDate;
+                }
+                
+            //메뉴트리 클릭 후 상세
+            function onClick(event, treeId, treeNode, clickFlag) {
+                var zTree = $.fn.zTree.getZTreeObj("ztree");
+                var node = zTree.getNodeByParam('id', treeNode.id);
+                var nodeNm = zTree.getNodeByParam('name', treeNode.name);
+                console.log("onClick node id  :: " + node.id)
+                if(node.id > 0){
+                    $.post("configshow.do",{
+                            siteId   : treeNode.siteId	//사이트아이디
+                        },
+                        function(result){
+                            
+                            console.log("result : " + result);
+                            console.log("result : " + result.length);
+                            if(result.length ==0 && result ==""){//등록
+                                console.log("result 1 : " + result.length);
+                                $("form[name=frmGlobalConfig]").find('input[type="text"]').prop('readonly',true);			//input text box readonly 설정
+                                $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_co"]').prop('readonly',false);		//홍보 목록개수
+                                $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_id"]').prop('readonly',false);		//홍보 게시판ID
+                                $("form[name=frmGlobalConfig]").find('input[name="searchKeyword"]').prop('readonly',false);	//게시판검색어
+                                
+                                $("form[name=frmGlobalConfig]").find('input[type="text"]').val('');				//input text type 초기화
+                                $('input[name=type]').val('save');												//type값 셋팅
+                                $('input[name=seq]').val('');													//일련값 초기화
+                                $('input[name=site_id]').val(treeNode.siteId);									//사이트 코드값 셋팅
+                                $('#viewSiteNm').html(treeNode.name);											//메뉴명
+                                $('#viewSiteId').html("/"+treeNode.siteId+"/idex.do");							//사이트주소
+                                $('#viewRegist').html("");														//등록ID,등록일시
+                                $('#viewUpdt').html("");														//수정ID,수정일시
+                                $('#site_itm option:eq(0)').prop("selected",true);								//사이트구분 
+                                $('input:radio[name=dz_use_at]:input[value="Y"]').prop("checked", true);		//팝업존
+                                $('input:radio[name=db_use_at]:input[value="Y"]').prop("checked", true);		//배너존
+                                $('input:radio[name=dp_use_at]:input[value="Y"]').prop("checked", true);		//팝업
+                                $('input:radio[name=df_use_at]:input[value="Y"]').prop("checked", true);		//패밀리사이트
+                                $('input:radio[name=mz_use_at]:input[value="N"]').prop("checked", true);		//미니팝업존
+                                $('input:radio[name=mb_use_at]:input[value="N"]').prop("checked", true);		//미니배너존
+                                $('input:radio[name=pr_bbs_use_at]:input[value="Y"]').prop("checked", true);	//홍보게시판
+                                $("input:checkbox[id='type_use_at']").attr("checked", false);					//메인보드설정 체크해제
+                                
+                                
+                            }else if(result !="" && typeof(result.length) =='undefined'){//수정
+                                console.log("result 2 ==================================: ");
+                                $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_co"]').prop('readonly',false);		//홍보 목록개수
+                                $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_id"]').prop('readonly',false);		//홍보 게시판ID
+                                $("form[name=frmGlobalConfig]").find('input[name="searchKeyword"]').prop('readonly',false);	//게시판검색어
+                                
+                                $('input[name=type]').val('updt');												//type값 셋팅
+                                $('input[name=seq]').val(result.seq);											//일련값
+                                $('input[name=site_id]').val(result.site_id);									//사이트 코드값 셋팅
+                                $('#viewSiteNm').html(treeNode.name);											//메뉴명
+                                $('#viewSiteId').html("/"+result.site_id+"/idex.do");							//사이트주소
+                                $('#viewRegist').html(result.regist_id+"/"+result.regist_dt);					//등록ID,등록일시
+                                if(result.updt_id !=null){
+                                    $('#viewUpdt').html(result.updt_id+"/"+result.updt_id);						//수정ID,수정일시
+                                }else{
+                                    $('#viewUpdt').html("");													//수정ID,수정일시
+                                }
+                                $('#site_itm').val(result.site_itm);											//사이트구분 
+                                $('input[name=dz_use_at]:radio[value='+result.dz_use_at+']').prop("checked",true);			//팝업존
+                                $('input[name=db_use_at]:radio[value='+result.db_use_at+']').prop("checked",true);			//배너존
+                                $('input[name=dp_use_at]:radio[value='+result.dp_use_at+']').prop("checked",true);			//팝업
+                                $('input[name=df_use_at]:radio[value='+result.df_use_at+']').prop("checked",true);			//패밀리사이트
+                                $('input[name=mz_use_at]:radio[value='+result.mz_use_at+']').prop("checked",true);			//미니팝업존
+                                $('input[name=mb_use_at]:radio[value='+result.mb_use_at+']').prop("checked",true);			//미니배너존
+                                $('input[name=pr_bbs_use_at]:radio[value='+result.pr_bbs_use_at+']').prop("checked",true);	//홍보게시판
+                                $('input[name=pr_bbs_co]').val(result.pr_bbs_co);											//홍보 목록개수
+                                $('input[name=pr_bbs_id]').val(result.pr_bbs_id);											//홍보 게시판ID
+                                if(result.type_use_at =="Y"){
+                                    $("form[name=frmGlobalConfig]").find('input[type="text"]').prop('readonly',false);		//input text box readonly 해제
+                                    $("input:checkbox[name=type_use_at]").prop("checked", true); 				//메인보드설정(사용 설정)
+                                }else{
+                                    $("input:checkbox[name=type_use_at]").prop("checked", false); 				//메인보드설정(미사용 설정)
+                                }
+                                //게시판ID
+                                $('input[name=type_a_bbs_id]').val(result.type_a_bbs_id);
+                                $('input[name=type_b_bbs_id]').val(result.type_b_bbs_id);
+                                $('input[name=type_c_bbs_id]').val(result.type_c_bbs_id);
+                                $('input[name=type_d_bbs_id]').val(result.type_d_bbs_id);
+                                $('input[name=type_e_bbs_id]').val(result.type_e_bbs_id);
+                                $('input[name=type_f_bbs_id]').val(result.type_f_bbs_id);
+                                $('input[name=type_g_bbs_id]').val(result.type_g_bbs_id);
+                                $('input[name=type_h_bbs_id]').val(result.type_h_bbs_id);
+                                $('input[name=type_i_bbs_id]').val(result.type_i_bbs_id);
+                                $('input[name=type_j_bbs_id]').val(result.type_j_bbs_id);
+                                //게시판명
+                                $('input[name=type_a_bbs_nm]').val(result.type_a_bbs_nm);
+                                $('input[name=type_b_bbs_nm]').val(result.type_b_bbs_nm);
+                                $('input[name=type_c_bbs_nm]').val(result.type_c_bbs_nm);
+                                $('input[name=type_d_bbs_nm]').val(result.type_d_bbs_nm);
+                                $('input[name=type_e_bbs_nm]').val(result.type_e_bbs_nm);
+                                $('input[name=type_f_bbs_nm]').val(result.type_f_bbs_nm);
+                                $('input[name=type_g_bbs_nm]').val(result.type_g_bbs_nm);
+                                $('input[name=type_h_bbs_nm]').val(result.type_h_bbs_nm);
+                                $('input[name=type_i_bbs_nm]').val(result.type_i_bbs_nm);
+                                $('input[name=type_j_bbs_nm]').val(result.type_j_bbs_nm);
+                                //게시판URL
+                                $('input[name=type_a_bbs_url]').val(result.type_a_bbs_url);
+                                $('input[name=type_b_bbs_url]').val(result.type_b_bbs_url);
+                                $('input[name=type_c_bbs_url]').val(result.type_c_bbs_url);
+                                $('input[name=type_d_bbs_url]').val(result.type_d_bbs_url);
+                                $('input[name=type_e_bbs_url]').val(result.type_e_bbs_url);
+                                $('input[name=type_f_bbs_url]').val(result.type_f_bbs_url);
+                                $('input[name=type_g_bbs_url]').val(result.type_g_bbs_url);
+                                $('input[name=type_h_bbs_url]').val(result.type_h_bbs_url);
+                                $('input[name=type_i_bbs_url]').val(result.type_i_bbs_url);
+                                $('input[name=type_j_bbs_url]').val(result.type_j_bbs_url);
+                                //게시판 목록개수
+                                $('input[name=type_a_bbs_co]').val(result.type_a_bbs_co);
+                                $('input[name=type_b_bbs_co]').val(result.type_b_bbs_co);
+                                $('input[name=type_c_bbs_co]').val(result.type_c_bbs_co);
+                                $('input[name=type_d_bbs_co]').val(result.type_d_bbs_co);
+                                $('input[name=type_e_bbs_co]').val(result.type_e_bbs_co);
+                                $('input[name=type_f_bbs_co]').val(result.type_f_bbs_co);
+                                $('input[name=type_g_bbs_co]').val(result.type_g_bbs_co);
+                                $('input[name=type_h_bbs_co]').val(result.type_h_bbs_co);
+                                $('input[name=type_i_bbs_co]').val(result.type_i_bbs_co);
+                                $('input[name=type_j_bbs_co]').val(result.type_j_bbs_co);
+                            }
+                            
+                    });
+                }else{
+                    alert("[메인화면설정] 하위메뉴를 선택하세요.\n[메인화면설정]은 저장및삭제 대상이 아닙니다. ");
+                    $('#ztree').focus();
+                    return false;
+                }
+                return false;
+            }
+            $(document).ready(function(){
+                //zTree init 초기 호출
+                $.fn.zTree.init($("#ztree"), setting, zNodes);
+                //1.메뉴트리 전체 펼침
+                $("#btnOpenTree").on("click", {type:"openTree"}, expandNode);
+                //2.메뉴트리 전체 닫힘
+                $("#btnCloseTree").on("click", {type:"closeTree"}, expandNode);
+                //3.초기셋팅
+                $("form[name=frmGlobalConfig]").find('input[type="text"]').prop('readonly',true);			//input text box disabled 적용
+                $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_co"]').prop('readonly',false);		//홍보 목록개수
+                $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_id"]').prop('readonly',false);		//홍보 게시판ID
+                $("form[name=frmGlobalConfig]").find('input[name="searchKeyword"]').prop('readonly',false);	//게시판검색어
+                
+            
+            //저장,수정
+            }).on('click','#btnSave',function(){
+                
+                if($('#site_id').val() =="" && $('#type').val() ==""){
+                    alert("[메인화면설정] 하위메뉴를 선택하세요");
+                    $('#ztree').focus();
+                    return false;
+                //저장,수정
+                }else if($('#site_id').val() !="" && ($('#type').val() =="save" || $('#type').val() =="updt")){
+                    //console.log($(":input:radio[name=pr_bbs_use_at]:checked").val());
+                    //console.log("checkbox : " + $('#type_use_at').is(":checked"))
+            
+                    var value = new MiyaValidator(document.forms["frmGlobalConfig"]);
+                    value.add("site_itm", {required:true});									//사이트구분
+                    if($(":input:radio[name=pr_bbs_use_at]:checked").val() =='Y'){
+                        value.add("pr_bbs_co", {required:true,option:"number", max:11});	//홍보 목록개수
+                        value.add("pr_bbs_id", {required:true});							//홍보 게시판아이디
+                    }
+                    
+                    //메인보드설정 체크박스 체크 후  validate 체크
+                    if($('#type_use_at').is(":checked")){
+                        if($('#type_a_bbs_id').val() !=""){
+                            value.add("type_a_bbs_nm", {required:true});								//게시판명
+                            value.add("type_a_bbs_url", {required:true});								//게시판ID
+                            value.add("type_a_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_b_bbs_id').val() !=""){
+                            value.add("type_b_bbs_nm", {required:true});								//게시판명
+                            value.add("type_b_bbs_url", {required:true});								//게시판ID
+                            value.add("type_b_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_c_bbs_id').val() !=""){
+                            value.add("type_c_bbs_nm", {required:true});								//게시판명
+                            value.add("type_c_bbs_url", {required:true});								//게시판ID
+                            value.add("type_c_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_d_bbs_id').val() !=""){
+                            value.add("type_d_bbs_nm", {required:true});								//게시판명
+                            value.add("type_d_bbs_url", {required:true});								//게시판ID
+                            value.add("type_d_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_e_bbs_id').val() !=""){
+                            value.add("type_e_bbs_nm", {required:true});								//게시판명
+                            value.add("type_e_bbs_url", {required:true});								//게시판ID
+                            value.add("type_e_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_f_bbs_id').val() !=""){
+                            value.add("type_f_bbs_nm", {required:true});								//게시판명
+                            value.add("type_f_bbs_url", {required:true});								//게시판ID
+                            value.add("type_f_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_g_bbs_id').val() !=""){
+                            value.add("type_g_bbs_nm", {required:true});								//게시판명
+                            value.add("type_g_bbs_url", {required:true});								//게시판ID
+                            value.add("type_g_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_h_bbs_id').val() !=""){
+                            value.add("type_h_bbs_nm", {required:true});								//게시판명
+                            value.add("type_h_bbs_url", {required:true});								//게시판ID
+                            value.add("type_h_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_i_bbs_id').val() !=""){
+                            value.add("type_i_bbs_nm", {required:true});								//게시판명
+                            value.add("type_i_bbs_url", {required:true});								//게시판ID
+                            value.add("type_i_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }else if($('#type_j_bbs_id').val() !=""){
+                            value.add("type_j_bbs_nm", {required:true});								//게시판명
+                            value.add("type_j_bbs_url", {required:true});								//게시판ID
+                            value.add("type_j_bbs_co", {required:true,option:"number", min:1, max:11});	//목록개수
+                        }
+                    }
+            
+                    var result = value.validate();
+                    if (!result) {
+                        alert(value.getErrorMessage()); //디폴트 label 메세지
+                        value.getErrorElement().focus();
+                        return false;
+                    }else {
+                        var msg     = $('input[name=type]').val() =="save"? '저장':'수정';
+                        var ajaxUrl = $('input[name=type]').val() =="save"? 'configsave.do':'configupdt.do';
+                        //console.log(ajaxUrl)
+                        if(confirm("[메인화면설정]을 "+msg+" 하시겠습니까?")){
+                            $.ajax({
+                                url: ajaxUrl, 
+                                type:"post",
+                                dataType:"json",
+                                data :  $('#frmGlobalConfig').serializeArray(),
+                                success:function(result){
+                                    alert(result.message);
+                                    //console.log(result.code)
+                                    if(result.code > 0){
+                                        $('form[name=frmGlobalConfig] input[name=type]').val('updt');		//타입설정 값 셋팅
+                                        $('form[name=frmGlobalConfig] input[name=seq]').val(result.code);	//일련 값 셋팅
+                                    }
+                                },
+                                error:function(request,status,error){
+                                    console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                                }
+                            });
+                        }
+                    }
+                }else{
+                    alert("[메인화면설정]에 알수없는 오류가 발견되었습니다.\n관리자에게 문의하세요.");
+                }
+            
+            //삭제
+            }).on('click','#btnDelt',function(){
+                //console.log("btnDelt : " + $('#seq').val())
+                if($('#site_id').val() ==""){
+                    alert("[메인화면설정] 하위메뉴를 선택하세요");
+                    $('#ztree').focus();
+                    return false;
+                }else if($('#site_id').val() !="" && $('#seq').val() ==""){
+                    alert("삭제할 정보가 없습니다.");
+                    return false;
+                }else{
+                    $.post("configdelt.do",{
+                         seq     : $('#seq').val()		//일련
+                        ,site_id : $('#site_id').val()	//사이트아이디
+                    },
+                    function(result){
+                        
+                        //console.log("result : " + result.code);
+                        //console.log("result : " + result.message);
+                        if(result.code > 0){
+                            alert(result.message);
+                            location.reload();
+                            return false;
+                        }else{
+                            alert(result.message);
+                            return false;
+                        }
+                        
+                    });
+                }
+            
+            //메인보드 게시판 검색
+            }).on('click','#btnSearch',function(){
+                if($('#site_id').val() ==""){
+                    alert("메인화면설정을 선택하세요");
+                    $('#ztree').focus();
+                    return false;
+                }else if($('#searchKeyword').val() ==""){
+                    alert("[주제어]를(을) 입력하세요.");
+                    $('#searchKeyword').focus();
+                    return false;
+                }
+                
+                $.post("configsearch.do",{
+                     siteId:$('#site_id').val()
+                    ,searchKeyword:$('#searchKeyword').val()
+                }
+                ,function(result){
+                    var appd  = '';
+                    var result = result.search;
+                    //console.log(result.length);
+                    if(result.length > 0){
+                        for(var i=0; i < result.length; i++){
+                            appd += "[게시판ID: <strong class='colr_point2'>"+result[i].pgmId+"</strong>] <strong class='colr_point3'>" +result[i].menuUrl+"</strong> ["+result[i].menuPathNm+"]<br/>";
+                        }
+                        $('#resultSearch').children().remove();
+                        $('#resultSearch').append($('#resultSearch').html(appd));
+                    }else{
+                        $('#resultSearch').html("검색된 정보가 없습니다.");
+                    }
+                    
+                });	
+            
+            //메인보드 설정
+            }).on('click','#type_use_at',function(){
+                var chk = $(this).is(":checked");//.attr('checked');
+                console.log("chk : " + chk)
+                if(chk){
+                    $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_co"]').prop('readonly',false);		//홍보 목록개수
+                    $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_id"]').prop('readonly',false);		//홍보 게시판ID
+                    $("form[name=frmGlobalConfig]").find('input[name="searchKeyword"]').prop('readonly',false);	//게시판검색어
+                    $("form[name=frmGlobalConfig]").find('input[type="text"]').prop('readonly',false);
+                }else{
+                    $("form[name=frmGlobalConfig]").find('input[type="text"]').prop('readonly',true);
+                    $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_co"]').prop('readonly',false);		//홍보 목록개수
+                    $("form[name=frmGlobalConfig]").find('input[name="pr_bbs_id"]').prop('readonly',false);		//홍보 게시판ID
+                    $("form[name=frmGlobalConfig]").find('input[name="searchKeyword"]').prop('readonly',false);	//게시판검색어
+                }
+            });
+                
+                //메뉴트리
+                var zNodes =[
+                    { siteId:"" ,id:0 ,pId:0 ,name:"메인화면설정" ,open:true ,drag:false},
+                    
+                    { siteId:"tmplat-demos" ,id:"69" ,pId:"0",name:"I.N.CMS 사용자데모"
+                        ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/9.png"
+                        ,od:"1" ,pgmId:"" ,open:true},
+                    
+                    { siteId:"tmplat-a" ,id:"9" ,pId:"0",name:"인시퀀스"
+                        ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/9.png"
+                        ,od:"2" ,pgmId:"" ,open:true},
+                    
+                    { siteId:"eng" ,id:"10" ,pId:"0",name:"런시퀀스"
+                        ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/9.png"
+                        ,od:"3" ,pgmId:"" ,open:true},
+                    
+                    { siteId:"tmplat-b" ,id:"42" ,pId:"0",name:"도와줘요"
+                        ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/9.png"
+                        ,od:"4" ,pgmId:"" ,open:true},
+                    
+                    { siteId:"danwon" ,id:"55" ,pId:"0",name:"테스트"
+                        ,icon:"../../resources/plugins/zTree/css/zTreeStyle/img/diy/9.png"
+                        ,od:"5" ,pgmId:"" ,open:true},
+                    
+                ];
+                
+                //메뉴 전체펼침,닫힘
+                function expandNode(e) {
+                    var zTree = $.fn.zTree.getZTreeObj("ztree"),
+                    type = e.data.type,
+                    nodes = zTree.getSelectedNodes();
+                    if (type == "openTree") {//펼침
+                        zTree.expandAll(true);
+                    } else if (type == "closeTree") {//닫힘
+                        zTree.expandAll(false);
+                    } 
+                }		
+            //]]>	
+            </script>
+                <div class="mng_menu menu-area">
+                    <div class="tree_area">
+                        <div class="tree_ctrl">
+                            <button type="button" class="btn btn_sm nav" id="btnOpenTree">+ 전체열기</button>
+                            <button type="button" class="btn btn_sm nav" id="btnCloseTree">- 전체닫기</button>
+                        </div>
+                        <div class="scroll_area">
+                            <ul id="ztree" class="ztree" tabindex="-1"></ul>
+                        </div>
+                    </div>
+                    
+                    <form name="frmGlobalConfig" id="frmGlobalConfig" >
+                        <input type="hidden" name="type" id="type">			<!-- type 체크 -->
+                        <input type="hidden" name="seq" id="seq">			<!-- 일련 -->
+                        <input type="hidden" name="site_id" id="site_id">	<!-- 사이트 아이디 -->
+                        <div class="input_area setting-area">
+                        <div class="setting-inner">
+                            <div class="bbs-setting setting1">
+                            <div class="set-area set-content1">
+                                <table class="tb_write basic">
+                                <caption class="tit1">기본설정</caption>
+                                <colgroup>
+                                    <col style="width:170px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>등록ID / 등록일시</th>
+                                        <td id="viewRegist"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>수정ID / 수정일시</th>
+                                        <td id="viewUpdt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>사이트명</th>
+                                        <td id="viewSiteNm"></td>
+                                    </tr>			
+                                    <tr>
+                                        <th>사이트주소</th>
+                                        <td id="viewSiteId"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="site_itm"><span class="req">필수입력</span> 사이트구분</label></th>
+                                        <td>
+                                            <select name="site_itm" id="site_itm">
+                                                <option value="">선택</option>
+                                                <option value="1">국문</option>
+                                                <option value="2">영문</option>
+                                                <option value="3">일어</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 팝업존</th>
+                                        <td>
+                                            <input type="radio" name="dz_use_at" id="dz_use_at1" value="Y" checked><label for="dz_use_at1"> 사용</label>
+                                            <input type="radio" name="dz_use_at" id="dz_use_at2" value="N"><label for="dz_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 배너존</th>
+                                        <td>
+                                            <input type="radio" name="db_use_at" id="db_use_at1" value="Y" checked><label for="db_use_at1"> 사용</label>
+                                            <input type="radio" name="db_use_at" id="db_use_at2" value="N"><label for="db_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 팝업</th>
+                                        <td>
+                                            <input type="radio" name="dp_use_at" id="dp_use_at1" value="Y" checked><label for="dp_use_at1"> 사용</label>
+                                            <input type="radio" name="dp_use_at" id="dp_use_at2" value="N"><label for="dp_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 패밀리사이트</th>
+                                        <td>
+                                            <input type="radio" name="df_use_at" id="df_use_at1" value="Y" checked><label for="df_use_at1"> 사용</label>
+                                            <input type="radio" name="df_use_at" id="df_use_at2" value="N"><label for="df_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 미니팝업존</th>
+                                        <td>
+                                            <input type="radio" name="mz_use_at" id="mz_use_at1" value="Y" ><label for="mz_use_at1"> 사용</label>
+                                            <input type="radio" name="mz_use_at" id="mz_use_at2" value="N" checked><label for="mz_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 미니배너존</th>
+                                        <td>
+                                            <input type="radio" name="mb_use_at" id="mb_use_at1" value="Y"><label for="mb_use_at1"> 사용</label>
+                                            <input type="radio" name="mb_use_at" id="mb_use_at2" value="N" checked><label for="mb_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="req">필수입력</span> 홍보 게시판</th>
+                                        <td>
+                                            <input type="radio" name="pr_bbs_use_at" id="pr_bbs_use_at1" value="Y" checked><label for="pr_bbs_use_at1"> 사용</label>
+                                            <input type="radio" name="pr_bbs_use_at" id="pr_vs_use_at2" value="N"><label for="pr_vs_use_at2"> 미사용</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="pr_bbs_co">홍보 목록개수</label></th>
+                                        <td><input type="text" name="pr_bbs_co" id="pr_bbs_co" placeholder="목록개수(숫자2자리 이하만입력)"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="pr_bbs_id">홍보 게시판ID</label></th>
+                                        <td><input type="text" name="pr_bbs_id" id="pr_bbs_id" placeholder="단일게시판(게시판ID) / 여러개게시판(게시판ID,게시판ID)"></td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            <div class="bbs-setting setting2">
+                            <div class="set-area set-content2">
+                                <table class="tb_search">
+                                <caption class="tit1">메인보드 게시판검색</caption>
+                                <colgroup>
+                                    <col style="width:100px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>주제어</th>
+                                        <td>
+                                            <input type="text" name="searchKeyword" id="searchKeyword" class="form-search" title="주제어 검색" placeholder="메뉴명/게시판ID/게시판명"> 
+                                            <button type="button" class="btn btn_sm nav" id="btnSearch"><i class="fa fa-search"></i> 검색</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>정보</th>
+                                        <td id="resultSearch"></td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                            <div class="set-area set-content2">
+                                <table class="tb_data main-board">
+                                    <caption class="tit1"><input type="checkbox" name="type_use_at" id="type_use_at" title="메인보드설정선택"> 메인보드설정</caption>
+                                    <colgroup>
+                                    <col style="width:125px">
+                                    <col style="width:150px">
+                                    <col>
+                                    <col style="width:80px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>게시판ID</th>
+                                        <th>게시판명</th>
+                                        <th>게시판URL</th>
+                                        <th>목록개수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" name="type_a_bbs_id"  id="type_a_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_a_bbs_nm"  id="type_a_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_a_bbs_url" id="type_a_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_a_bbs_co"  id="type_a_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_b_bbs_id"  id="type_b_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_b_bbs_nm"  id="type_b_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_b_bbs_url" id="type_b_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_b_bbs_co"  id="type_b_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_c_bbs_id"  id="type_c_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_c_bbs_nm"  id="type_c_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_c_bbs_url" id="type_c_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_c_bbs_co"  id="type_c_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_d_bbs_id"  id="type_d_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_d_bbs_nm"  id="type_d_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_d_bbs_url" id="type_d_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_d_bbs_co"  id="type_d_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_e_bbs_id"  id="type_e_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_e_bbs_nm"  id="type_e_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_e_bbs_url" id="type_e_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_e_bbs_co"  id="type_e_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_f_bbs_id"  id="type_f_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_f_bbs_nm"  id="type_f_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_f_bbs_url" id="type_f_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_f_bbs_co"  id="type_f_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_g_bbs_id"  id="type_g_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_g_bbs_nm"  id="type_g_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_g_bbs_url" id="type_g_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_g_bbs_co"  id="type_g_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_h_bbs_id"  id="type_h_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_h_bbs_nm"  id="type_h_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_h_bbs_url" id="type_h_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_h_bbs_co"  id="type_h_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_i_bbs_id"  id="type_i_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_i_bbs_nm"  id="type_i_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_i_bbs_url" id="type_i_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_i_bbs_co"  id="type_i_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="type_j_bbs_id"  id="type_j_bbs_id" title="게시판아이디"></td>
+                                        <td><input type="text" name="type_j_bbs_nm"  id="type_j_bbs_nm" title="게시판명"></td>
+                                        <td><input type="text" name="type_j_bbs_url" id="type_j_bbs_url" title="게시판URL"></td>
+                                        <td><input type="text" name="type_j_bbs_co"  id="type_j_bbs_co" title="목록개수"></td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="btn btn_lg act" id="btnSave"><i class="fa fa-save"></i> 저장</button>
+                            <button type="button" class="btn btn_lg basic" id="btnDelt"><i class="fa fa-trash-o"></i> 삭제</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+         </article>
+
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>

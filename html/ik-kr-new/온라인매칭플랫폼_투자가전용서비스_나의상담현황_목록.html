@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image:src" content="../../images/ik-kr/pinterest.jpg" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="../../images/ik-kr/pinterest.jpg" />
+	<link rel="stylesheet" href="../../css/ik-kr/style.css">
+	<link rel="stylesheet" href="../../css/ik-kr-new/style_20220216.css">
+	<link rel="stylesheet" href="../../css/ik-kr/accessibility.css">
+	<link rel="stylesheet" href="../../resources/plugins/billboard/billboard.min.css">
+	<script src="../../js/common/jquery-1.11.2.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../../resources/plugins/html5shiv.js"></script>
+		<script src="../../../resources/plugins/respond.js"></script>
+	<![endif]-->
+	<script src="../../resources/plugins/slick.min.js"></script>
+	<script src="../../resources/plugins/billboard/d3.v5.min.js"></script>
+	<!-- download 기능 -->
+	<script src="../../resources/plugins/es6-promise.auto.js"></script>
+	<script src="../../resources/plugins/html2canvas.min.js"></script>
+	<script src="../../resources/plugins/jspdf.min.js"></script>
+	<script src="../../resources/plugins/canvg.min.js"></script>
+	<script src="../../resources/plugins/download.js"></script>
+	<!-- //download 기능 -->
+	<script src="../../resources/plugins/billboard/billboard.min.js"></script>
+	<script src="../../js/ik-kr/Common.js"></script>
+	<script src="../../js/ik-kr/accessibility.js"></script>
+	<script src="../../js/ik-kr-new/20220217_pub.js"></script>
+	<!-- 2022-03-04 추가 -->
+	<script src="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="../../resources/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<!-- // 2022-03-04 추가 -->
+	<!-- 퍼블용 임시 include 개발 시 삭제 -->
+	<script src="../../js/common/pub.js"></script>
+	<!-- //퍼블용 임시 include 개발 시 삭제 -->
+	<title>목록 &lt; 나의 상담현황 &lt; 온라인 매칭 플랫폼 | Invest Korea</title>
+
+	<!-- 퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+	<script>
+		function fn_pub2() {
+			fn_active_menu(1, 3, 1)
+		}
+	</script>
+	<!-- //퍼블용 임시 현재 위치 활성화 개발 시 삭제-->
+</head>
+
+<body>
+	<div class="wrap">
+
+		<!-- header : [퍼블용 임시 include] -->
+		<div w3-include-html="include/header.html"></div>
+		<!-- //개발 언어로 header.html을 include 해주세요. -->
+
+		<!-- container -->
+		<div class="container">
+			<div class="inner">
+				<!-- lnb : [퍼블용 임시 include] -->
+				<div w3-include-html="include/new_20220216.html"></div>
+				<!-- //개발 언어로 lnb01.html을 include 해주세요. -->
+
+				<!-- content -->
+				<div id="content" class="content">
+					<div class="tit-area">
+						<h3>My Consulting Status</h3>
+						<!-- share : [퍼블용 임시 include] -->
+						<div w3-include-html="include/share.html"></div>
+						<!-- //개발 언어로 share.html을 include 해주세요. -->
+					</div>
+
+					<ul class="location">
+						<li>Home</li>
+						<li>Online Matching Platform</li>
+						<li>My Consulting Status</li>
+					</ul>
+
+					<div class="ctn">
+						<div class="search-area">
+							<div class="form-area">
+								<div class="in">
+									<span class="select-type2">
+										<select name="" id="" title="Category">
+											<option value="">Category</option>
+										</select>
+									</span>
+									<span class="select-type2">
+										<select name="" id="" title="Select status">
+											<option value="">Select status</option>
+										</select>
+									</span>
+									<span class="input-type2"><input type="text" title="Enter company name"
+											placeholder="Enter company name"></span>
+									<button type="submit" class="btn-default-s">Search</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="table-top">
+							<div class="l item-num">Total : <span>235</span> [<span>1</span>/23page]</div>
+							<div class="r txt-right">
+								<div class="legend">
+									<span class="bg_request">Received request</span>
+									<span class="bg_me_request ml8">Sent request</span>
+								</div>
+								<select name="" id="" class="item-view" title="리스트 개수 선택">
+									<option value="">10개씩</option>
+								</select>
+								<button type="button" class="btn-default-s">View</button>
+							</div>
+						</div>
+
+						<div class="table">
+							<table class="normal-table m-scroll">
+								<caption>나의 상담현황 표로 No., 구분, 기업명/기업정보 조회, 업종, 접수일, 상태, 처리일자, 요청정보 정보제공</caption>
+								<colgroup>
+									<col style="width:8%;">
+									<col>
+									<col style="width:25%;">
+									<col>
+									<col>
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">No.</th>
+										<th scope="col">Classification</th>
+										<th scope="col">Company name/Search company name</th>
+										<th scope="col">Type of business</th>
+										<th scope="col">Application date</th>
+										<th scope="col">Status</th>
+										<th scope="col">Completion date</th>
+										<th scope="col">Request</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>3</th>
+										<td><a href="#n" class="request">Received request</a></td>
+										<td class="txt-left"><a class="info" href="#n">Samsung Display
+											</a></td>
+										<td>Pharma / Healthcare</td>
+										<td>2022-01-22</td>
+										<td><span class="fwr color-blue">Request consulting</span></td>
+										<td>2022-01-29</td>
+										<td><a href="온라인매칭플랫폼_투자가전용서비스_나의상담현황_상담요청서.html" class="btn-default-s">View</a>
+										</td>
+									</tr>
+									<tr>
+										<th>2</th>
+										<td><a href="#n" class="request">Received request</a></td>
+										<td class="txt-left"><a class="info" href="#n">Samsung Display
+											</a></td>
+										<td>Pharma / Healthcare</td>
+										<td>2022-01-22</td>
+										<td><span class="fwr color-green">Accept consulting</span></td>
+										<td>2022-01-29</td>
+										<td><a href="온라인매칭플랫폼_투자가전용서비스_나의상담현황_상담요청서.html" class="btn-default-s">View</a>
+										</td>
+									</tr>
+									<tr>
+										<th>1</th>
+										<td><a href="#n" class="me_request">Sent request</a></td>
+										<td class="txt-left"><a class="info" href="#n">Samsung Display
+											</a></td>
+										<td>Pharma / Healthcare</td>
+										<td>2022-01-22</td>
+										<td><span class="fwr">Request consulting</span></td>
+										<td>2022-01-29</td>
+										<td><a href="온라인매칭플랫폼_투자가전용서비스_나의상담현황_상담요청서.html" class="btn-default-s">View</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+						<div class="paging">
+							<a href="#n" class="btn-paging01"><span class="blind">처음 페이지로 이동</span></a>
+							<a href="#n" class="btn-paging02"><span class="blind">이전 페이지로 이동</span></a>
+							<span>
+								<strong>1</strong>
+								<a href="#n">2</a>
+								<a href="#n">3</a>
+								<a href="#n">4</a>
+								<a href="#n">5</a>
+							</span>
+							<a href="#n" class="btn-paging03"><span class="blind">다음 페이지로 이동</span></a>
+							<a href="#n" class="btn-paging04"><span class="blind">마지막 페이지로 이동</span></a>
+						</div>
+
+					</div>
+				</div>
+				<!-- //content -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer : [퍼블용 임시 include] -->
+		<div w3-include-html="include/footer.html"></div>
+		<!-- //개발 언어로 footer.html을 include 해주세요. -->
+	</div>
+</body>
+
+</html>

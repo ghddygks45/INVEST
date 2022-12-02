@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1240">
+	<title>I.N.CMS - 아이앤씨엠에스 | 인시퀀스</title>
+	<link rel="shortcut icon" href="../../images/cms/favicon.ico" media="all">
+	<link rel="stylesheet" type="text/css" href="../../css/cms/style.css" media="all">
+	<script src="../../js/cms/jquery-1.12.0.min.js"></script>
+	<script src="../../js/cms/calendar.js"></script>
+	<script src="../../js/cms/ui.js"></script>
+    <script src="../../js/cms/_layout-setting.js"></script>
+</head>
+
+<body id="user-admin" class="layout-page">
+	<header id="header"></header>
+	<div id="container">
+		<aside id="sidebar"></aside>
+		<article id="content">
+			<p id="page_loc">
+				<a href="#none" class="ico_home">HOME</a>
+				<span>&gt;</span>
+				<a href="#none">로그</a>
+				<span>&gt;</span> 
+				<strong>관리자 메뉴로그</strong>
+			</p>
+	
+			<h2 id="tit_page">관리자 메뉴로그</h2>
+	
+			<script>
+				$(document).ready(function(){
+				//select2 검색 (# select box 넓이를 실제 불러온 데이터 넓이에 맞게 표현하고싶을때 )
+					$('#searchCl').select2(
+						//{width: 'resolve'}
+						{width: '100%'}
+					);
+				
+				//페이지 아이템
+				}).on('click','#btnPageItm',function(){
+					$('form[name=frm]').submit();
+				//초기화
+				}).on('click','#btnReset',function(){
+					var add = $("form[name=frm]");
+					add.find('input').val('');
+					return false;
+				}).on('click','.inseqcms',function(){
+					console.log($(this).data('dt-idx'));
+			
+					var today  = new Date();
+					var dtIdx = $(this).data('dt-idx');
+					$('input[name=searchCondition]').val(dtIdx);
+					//End date 셋팅
+					$('input[name=searchEndDt]').val(dateSetup(today));
+					var inPut='';
+						//당일
+						if(dtIdx==0){
+							inPut=dateSetup(today);
+						//1일전 체크
+						}else if(dtIdx==-1){
+							today.setDate(today.getDate()-1);
+							inPut=dateSetup(today);
+						//7일전 체크(일주일전)
+						}else if(dtIdx==-7){
+							today.setDate(today.getDate()-7);
+							inPut=dateSetup(today);
+						//개월수 체크
+						}else{
+							today.setMonth(eval(today.getMonth()-dtIdx));
+							inPut=dateSetup(today);
+						}
+					//Start date 셋팅
+					$('input[name=searchStartDt]').val(inPut);
+					
+					
+				//select2를 이용하여 검색처리
+				}).on('change','#searchCl',function(){
+					//$("#frm").attr("action", "/weblog/menulog/mngr.do");
+					//$('form[name=frm]').submit();
+					
+				//엑셀다운로드
+				}).on('click','#inseqcmsExcel',function(){
+					var $preparingFileModal = $("#cms-file-modal");
+					$preparingFileModal.dialog({ modal: true });
+					$("#progressbar").progressbar({value: false});
+					
+					$.fileDownload($("#inseqcmsExcelForm").prop('action'),{
+						httpMethod: "POST",
+						data:jQuery("#inseqcmsExcelForm").serialize(),
+						successCallback: function (url) {
+							//console.log("a :: "+url)
+							$preparingFileModal.dialog('close');
+						},
+						failCallback: function (responseHtml, url) {
+							//console.log("b :: "+url)
+							$preparingFileModal.dialog('close');
+							$("#cms-fileError-modal").dialog({ modal: true });
+						}
+					});
+					// 버튼의 원래 클릭 이벤트를 중지
+					return false;
+				});
+				
+				//날짜설정
+				function dateSetup(date){
+					//return date.getFullYear()+"-"+pad(eval(date.getMonth()+1))+"-"+date.getDate();
+					return date.getFullYear()+"-"+add(eval(date.getMonth()+1))+"-"+add(eval(date.getDate()));
+				}
+				
+				//10보다 작을 경우 0 append 처리
+				function add(number) {
+					return (number < 10 ? '0' : '') + number;
+				}
+			</script>
+			
+			<form name="frm" action="/weblog/menulog/mngr.do" method="post">
+				<input type="hidden" name="searchCondition" id="searchCondition" value="">
+				<div class="search_area">
+					<table class="tb_search">
+						<caption>검색조건</caption>
+						<colgroup>
+							<col style="width:120px">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="searchStartDt">발생일시</label></th>
+								<td>
+									<span class="term_setting">
+										<button type="button" class="inseqcms" data-dt-idx="-1">하루전</button>
+										<button type="button" class="inseqcms" data-dt-idx="-7">1주일</button>
+										<button type="button" class="inseqcms" data-dt-idx="1">1개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="3">3개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="6">6개월</button>
+										<button type="button" class="inseqcms" data-dt-idx="12">1년</button>
+									</span>
+									<input type="text" name="searchStartDt" id="searchStartDt" value="" title="시작일" style="width:100px;" readonly="readonly"/>
+									<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchStartDt')); return false;">달력</a> ~
+									<input type="text" name="searchEndDt" id="searchEndDt" value="" title="종료일" style="width:100px;" readonly="readonly"/>
+									<a href="#divCalendar" class="btn_cal" onclick="openCalendar(document.getElementById('searchEndDt')); return false;">달력</a>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="searchCl">사이트명</label></th>
+								<td>
+									<select id="searchCl" name="searchCl">
+										<option value="">사이트 검색</option>
+										
+										<option value="62" >메인관리[ID-62]</option>
+										
+										<option value="49" >운영자 공지사항[ID-49]</option>
+										
+										<option value="50" >조직관리[ID-50]</option>
+										
+										<option value="53" >설문조사[ID-53]</option>
+										
+										<option value="59" >스케줄[ID-59]</option>
+										
+										<option value="125" >통합회원관리[ID-125]</option>
+										
+										<option value="99" >I.N.CMS[ID-99]</option>
+										
+										<option value="1" >인시퀀스[ID-1]</option>
+										
+										<option value="3" >런시퀀스[ID-3]</option>
+										
+										<option value="131" >테스트[ID-131]</option>
+										
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+		
+					<div class="btn_area">
+						<button type="submit" class="btn btn_lg act"><i class="fa fa-search"></i> 검색</button>
+						<button type="reset" class="btn btn_lg" id="btnReset"><i class="fa fa-refresh"></i> 초기화</button>
+					</div>
+				</div>
+				
+				<div class="list_status">
+					<p class="status">총 <strong class="colr_point">24351</strong> 건 (1/10 page)</p>
+					<div class="fr">
+						<button type="button" class="btn xls" id="inseqcmsExcel">엑셀다운로드</button>
+						<select class="post_num" name="pageItm" id="pageItm" title="리스트">								
+							<option value="10" >10</option>
+							<option value="20" >20</option>
+							<option value="30" >30</option>
+							<option value="40" >40</option>
+							<option value="50" >50</option>
+							<option value="60" >60</option>
+							<option value="70" >70</option>
+							<option value="80" >80</option>
+							<option value="90" >90</option>
+							<option value="100" >100</option>
+						</select>
+						<button type="button" class="btn" id="btnPageItm">적용</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="tb-scroll-x">
+				<table class="tb_list compress">
+					<caption>관리자 메뉴로그 목록</caption>
+					<colgroup>
+						<!-- <col style="width:70px" /> -->
+						<col style="width:150px" />
+						<col style="width:180px" />
+						<col style="width:250px" />
+						<col style="width:250px" />
+						<col style="width:250px" />
+						<col style="width:100px" />
+						<col style="width:100px" />
+						<col style="width:100px" />
+						<col style="width:100px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<!-- <th>번호</th> -->
+							<th>로그아이디</th>
+							<th>발생일시</th>
+							<th>메뉴경로</th>
+							<th>접근URL</th>
+							<th>실행Method</th>
+							<th>IP</th>
+							<th>브라우저</th>
+							<th>DEVICE</th>
+							<th>OS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>cms_1594602734657</td>
+							<td>2020-07-13 10:12:14.0</td>
+							<td class="al">메인관리&gt;팝업</td>
+							<td class="al">/cms/extend/i-65/global/notice/popup/list.do</td>
+							<td class="al">/cms/extend/i-65/global/notice/popup/list.do</td>
+							<td>1.235.205.86</td>
+							<td>chrome</td>
+							<td>pc</td>
+							<td>Windows10</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="pagination">
+				<a href="?pageIndex=1&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10" class="direction first">처음</a> <a href="?pageIndex=1&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10" class="direction prev">이전</a> <strong>1</strong> <a href="?pageIndex=2&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">2</a> <a href="?pageIndex=3&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">3</a> <a href="?pageIndex=4&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">4</a> <a href="?pageIndex=5&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">5</a> <a href="?pageIndex=6&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">6</a> <a href="?pageIndex=7&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">7</a> <a href="?pageIndex=8&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">8</a> <a href="?pageIndex=9&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">9</a> <a href="?pageIndex=10&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10">10</a> <a href="?pageIndex=11&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10" class="direction next">다음</a> <a href="?pageIndex=2436&amp;searchStartDt=&amp;searchEndDt=&amp;searchKeyword=&amp;searchCondition=&amp;pageItm=10" class="direction last">마지막</a> 
+			</div>
+			
+			<!-- 엑셀다운 Format Start -->
+			<form id="inseqcmsExcelForm" method="post" action="/cms/inseqcmsCmmnExcelFileDown.do">
+			<input type="hidden" name="excelName" value="관리자 메뉴로그"/>									<!-- 엑셀파일명 -->
+			<input type="hidden" name="excelHead" value="번호,로그아이디,발생일시,메뉴명,접근URL,실행Method,IP,브라우저,DEVICE,OS"/>		<!-- 엑셀상단말머리 -->
+			<input type="hidden" name="searchStartDt" value=""/>												<!-- 작업일시(시작일) -->
+			<input type="hidden" name="searchEndDt" value=""/>													<!-- 작업일시(종료일) -->
+			<input type="hidden" name="searchCl" value=""/>													<!-- 사이트검색 -->
+			<input type="hidden" name="excelSqlMap" value="inseqcms-weblog-menulog.mngrSelectListExcel"/>						<!-- 엑셀데이터쿼리 -->
+			</form>
+			<!-- 엑셀다운 Format End -->		
+			
+		</article>
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+</html>
